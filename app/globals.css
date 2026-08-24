@@ -1,26 +1,203 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* =========================
+     PAGE / BACKGROUNDS
+  ========================= */
+
+  /* Main warm parchment background */
+  --background: #F8F0D8;
+
+  /* Pure / elevated surfaces */
+  --surface: #FFFDF8;
+
+  /* Slightly darker cream sections */
+  --surface-muted: #F1E6C9;
+
+  /* Stronger beige for selected areas */
+  --surface-accent: #E8D8B8;
+
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  /* Main dark brown text */
+  --foreground: #4A3829;
+
+  /* Paragraph / secondary text */
+  --foreground-muted: #6E6255;
+
+  /* Labels, metadata, helper text */
+  --foreground-subtle: #9A8D7A;
+
+
+  /* =========================
+     BRAND / PRIMARY
+  ========================= */
+
+  /* Main brown used for primary actions */
+  --primary: #8A6229;
+
+  /* Hover state */
+  --primary-hover: #755120;
+
+  /* Text on primary buttons */
+  --primary-foreground: #FFFDF8;
+
+
+  /* =========================
+     GOLD ACCENT
+  ========================= */
+
+  /* Decorative / spiritual accent */
+  --accent: #B8873B;
+
+  /* Hover / stronger accent */
+  --accent-hover: #9E722E;
+
+  /* Light gold backgrounds */
+  --accent-muted: #F4E7C8;
+
+  /* Text on gold */
+  --accent-foreground: #4A3829;
+
+
+  /* =========================
+     SECONDARY BUTTONS
+  ========================= */
+
+  --secondary: #F7EEDB;
+
+  --secondary-hover: #EDE1C8;
+
+  --secondary-foreground: #4A3829;
+
+
+  /* =========================
+     BORDERS / DIVIDERS
+  ========================= */
+
+  /* Default subtle border */
+  --border: #E3D5B9;
+
+  /* More visible border */
+  --border-strong: #CDBB96;
+
+  /* Very subtle divider */
+  --border-muted: #EEE4D0;
+
+
+  /* =========================
+     INPUTS / FORMS
+  ========================= */
+
+  --input: #FFFDF8;
+
+  --input-foreground: #4A3829;
+
+  --placeholder: #A69A87;
+
+  --ring: #B8873B;
+
+
+  /* =========================
+     SEMANTIC STATES
+     For Vastu Analysis
+  ========================= */
+
+  /* Favourable */
+  --success: #5F8067;
+  --success-muted: #E6F0E5;
+  --success-foreground: #FFFFFF;
+
+  /* Needs attention */
+  --warning: #C58A3C;
+  --warning-muted: #F8ECD5;
+  --warning-foreground: #4A3829;
+
+  /* Neutral information */
+  --info: #708B9A;
+  --info-muted: #E7EFF2;
+  --info-foreground: #FFFFFF;
+
+  /* Critical issue / error */
+  --error: #A95D4E;
+  --error-muted: #F6E4E0;
+  --error-foreground: #FFFFFF;
 }
 
+
 @theme inline {
+  /* Backgrounds */
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-accent: var(--surface-accent);
+
+  /* Text */
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* Accent */
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Secondary */
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  /* Borders */
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-border-muted: var(--border-muted);
+
+  /* Inputs */
+  --color-input: var(--input);
+  --color-input-foreground: var(--input-foreground);
+  --color-placeholder: var(--placeholder);
+  --color-ring: var(--ring);
+
+  /* States */
+  --color-success: var(--success);
+  --color-success-muted: var(--success-muted);
+  --color-success-foreground: var(--success-foreground);
+
+  --color-warning: var(--warning);
+  --color-warning-muted: var(--warning-muted);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --color-info: var(--info);
+  --color-info-muted: var(--info-muted);
+  --color-info-foreground: var(--info-foreground);
+
+  --color-error: var(--error);
+  --color-error-muted: var(--error-muted);
+  --color-error-foreground: var(--error-foreground);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(180deg, #C17A47,#3D2B1F );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
