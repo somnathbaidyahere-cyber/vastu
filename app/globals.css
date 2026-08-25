@@ -6,7 +6,7 @@
   ========================= */
 
   /* Main warm parchment background */
-  --background: #F8F0D8;
+  --background: #fff8e4;
 
   /* Pure / elevated surfaces */
   --surface: #FFFDF8;
@@ -125,6 +125,9 @@
   --error: #A95D4E;
   --error-muted: #F6E4E0;
   --error-foreground: #FFFFFF;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 
@@ -187,6 +190,9 @@
   /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  
 }
 
 
@@ -196,7 +202,7 @@ body {
 }
 
 @utility text-gradient-brand {
-  background-image: linear-gradient(180deg, #C17A47,#3D2B1F );
+  background-image: linear-gradient(180deg, #F4E7C8,#9E722E,#4A3829 );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
