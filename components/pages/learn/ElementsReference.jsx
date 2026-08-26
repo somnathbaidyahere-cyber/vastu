@@ -13,7 +13,7 @@ export default function ElementsReference() {
               Quick reference
             </span>
 
-            <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               The five elements and their homes
             </h2>
           </div>

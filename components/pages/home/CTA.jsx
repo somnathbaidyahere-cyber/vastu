@@ -17,14 +17,14 @@ export default function CTA() {
       </div>
 
       <div className="relative mx-auto max-w-5xl">
-<div className="relative overflow-hidden rounded-4xl border border-white/35 bg-primary/40 px-6 py-16 text-center shadow-xl backdrop-blur-md backdrop-saturate-150 sm:px-12 lg:py-20">
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_50%)]" />
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_50%)]" />
+        <div className="relative overflow-hidden rounded-4xl border border-white/35 bg-primary/40 px-6 py-16 text-center shadow-xl backdrop-blur-md backdrop-saturate-150 sm:px-12 lg:py-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_50%)]" />
           <div className="relative">
-            <h2 className="text-3xl font-heading font-medium text-primary-foreground sm:text-4xl">
+            <h2 className="cta-heading">
               Begin your journey toward harmony
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
+            <p className="cta-description">
               Explore our free Vastu tools, read curated articles, or book a
               consultation with an expert.
             </p>

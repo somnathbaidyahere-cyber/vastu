@@ -52,7 +52,6 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef(null);
 
-
   useEffect(() => {
     function handleClickOutside(event) {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -70,13 +69,18 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      onClick={()=>setActiveDropdown(null)}
+      onClick={() => setActiveDropdown(null)}
       className="sticky top-0 z-50 w-full border-b border-border/60 bg-background backdrop-blur-md"
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1">
-           <Image src="/plant.png" alt="A kalash with a coconut and plant" width={30} height={30}/>
+          <Image
+            src="/plant.png"
+            alt="A kalash with a coconut and plant"
+            width={30}
+            height={30}
+          />
           <span className="text-gradient-brand text-2xl font-semibold tracking-tight">
             VastuGuru
           </span>
@@ -90,9 +94,7 @@ export default function Navbar() {
             label="Tools"
             isOpen={activeDropdown === "tools"}
             onToggle={() =>
-              setActiveDropdown(
-                activeDropdown === "tools" ? null : "tools"
-              )
+              setActiveDropdown(activeDropdown === "tools" ? null : "tools")
             }
             onMouseEnter={() => setActiveDropdown("tools")}
             links={toolsLinks}
@@ -102,9 +104,7 @@ export default function Navbar() {
             label="Learn"
             isOpen={activeDropdown === "learn"}
             onToggle={() =>
-              setActiveDropdown(
-                activeDropdown === "learn" ? null : "learn"
-              )
+              setActiveDropdown(activeDropdown === "learn" ? null : "learn")
             }
             onMouseEnter={() => setActiveDropdown("learn")}
             links={learnLinks}
@@ -143,10 +143,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="border-t border-border/60 bg-background px-4 py-4 md:hidden">
           <div className="flex flex-col gap-2">
-            <MobileNavLink
-              href="/"
-              onClick={() => setMobileOpen(false)}
-            >
+            <MobileNavLink href="/" onClick={() => setMobileOpen(false)}>
               Home
             </MobileNavLink>
 
@@ -162,17 +159,11 @@ export default function Navbar() {
               onNavigate={() => setMobileOpen(false)}
             />
 
-            <MobileNavLink
-              href="/about"
-              onClick={() => setMobileOpen(false)}
-            >
+            <MobileNavLink href="/about" onClick={() => setMobileOpen(false)}>
               About
             </MobileNavLink>
 
-            <MobileNavLink
-              href="/blog"
-              onClick={() => setMobileOpen(false)}
-            >
+            <MobileNavLink href="/blog" onClick={() => setMobileOpen(false)}>
               Blog
             </MobileNavLink>
 
@@ -201,16 +192,9 @@ function NavLink({ href, children }) {
   );
 }
 
-function Dropdown({
-  label,
-  isOpen,
-  onToggle,
-  onMouseEnter,
-  links,
-}) {
-  const router=useRouter();
-  const href =`/${label.toLowerCase()}`
-
+function Dropdown({ label, isOpen, onToggle, onMouseEnter, links }) {
+  const router = useRouter();
+  const href = `/${label.toLowerCase()}`;
 
   return (
     <div className="relative" onMouseEnter={onMouseEnter}>
@@ -220,10 +204,15 @@ function Dropdown({
         className="group inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
         aria-expanded={isOpen}
       >
-        <span   onClick={(e) => {
+        <span
+          onClick={(e) => {
             e.stopPropagation();
             router.push(href);
-          }}> {label}</span>
+          }}
+        >
+          {" "}
+          {label}
+        </span>
         <ChevronDown
           className={`h-4 w-4 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
@@ -268,12 +257,10 @@ function MobileNavLink({ href, children, onClick }) {
   );
 }
 
-function MobileDropdown({
-  label,
-  links,
-  onNavigate,
-}) {
+function MobileDropdown({ label, links, onNavigate }) {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const href = `/${label.toLowerCase()}`;
 
   return (
     <div className="flex flex-col">
@@ -282,12 +269,16 @@ function MobileDropdown({
         onClick={() => setOpen(!open)}
         className="flex items-center justify-between px-2 py-2 text-base font-medium text-foreground"
       >
-        {label}
-
+        <span
+          onClick={(e) => {
+            e.stopPropagation();
+            router.push(href);
+          }}
+        >
+          {label}
+        </span>
         <ChevronDown
-          className={`h-4 w-4 transition-transform ${
-            open ? "rotate-180" : ""
-          }`}
+          className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
         />
       </button>
 

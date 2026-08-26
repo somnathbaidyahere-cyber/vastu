@@ -4,11 +4,11 @@ export default function LearnCTA() {
   return (
     <section className="bg-primary px-4 py-20 text-primary-foreground sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl font-medium sm:text-4xl">
+        <h2 className="cta-heading">
           Learn it, then test it on your home
         </h2>
 
-        <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
+        <p className="cta-description">
           Pair the chapters with the compass, the interactive map, and the
           mandala to see the theory land on your own floor plan.
         </p>
