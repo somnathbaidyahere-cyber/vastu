@@ -9,7 +9,7 @@ export default function ElementsReference() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-xl">
-            <span className="text-sm font-medium uppercase tracking-widest text-primary">
+            <span className="section-badge">
               Quick reference
             </span>
 

@@ -81,7 +81,7 @@ export default function Navbar() {
             width={30}
             height={30}
           />
-          <span className="text-gradient-brand text-2xl font-semibold tracking-tight">
+          <span className="text-gradient-logo text-2xl font-heading font-semibold tracking-tight">
             VastuGuru
           </span>
         </Link>

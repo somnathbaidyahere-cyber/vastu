@@ -207,9 +207,12 @@ body {
     @apply mt-4 md:mt-5 lg:mt-6 text-3xl sm:text-4xl lg:text-5xl font-heading font-medium leading-[1.15] text-foreground;
   }
   .hero-description {
-    @apply mt-3 md:mt-4 lg:mt-5 text-base md:text-lg leading-relaxed text-foreground-muted;
+    @apply mt-3 md:mt-4 lg:mt-5 text-sm sm:text-base lg:text-lg leading-relaxed text-foreground-muted;
   }
 
+  .section-badge{
+    @apply text-xs sm:text-sm font-medium uppercase tracking-widest text-primary
+  }
   .section-heading {
     @apply mt-3 text-2xl sm:text-3xl md:text-4xl font-heading font-medium text-foreground ;
   }
@@ -226,7 +229,14 @@ body {
 }
 
 @utility text-gradient-brand {
-  background-image: linear-gradient(180deg, #F4E7C8,#9E722E,#4A3829 );
+  background-image: linear-gradient(180deg,  oklch(0.917 0.032 82.8), oklch(0.526 0.088 75.8) );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-logo {
+  background-image: linear-gradient(180deg,  var(--surface-accent), var(--primary)  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

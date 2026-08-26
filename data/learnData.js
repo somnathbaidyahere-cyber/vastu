@@ -44,11 +44,7 @@ export const learnChapters = [
     sanskrit: "Dik Nirnaya",
     blurb:
       "Sixteen directional zones, each with a presiding energy. Learn what the north-east asks for and why the south-west must stay heavy.",
-    reads: [
-      "The 16 zones",
-      "Deity of each direction",
-      "Entrance selection",
-    ],
+    reads: ["The 16 zones", "Deity of each direction", "Entrance selection"],
     icon: Compass,
   },
   {
@@ -73,30 +69,40 @@ export const elements = [
     label: "Earth",
     sanskrit: "Prithvi",
     zone: "South-West",
+    img: "/elements/earth.jpg",
+    alt: "table-land",
   },
   {
     icon: "water",
     label: "Water",
     sanskrit: "Jal",
     zone: "North-East",
+    img: "/elements/water.jpg",
+    alt: "still water",
   },
   {
     icon: Flame,
     label: "Fire",
     sanskrit: "Agni",
     zone: "South-East",
+    img: "/elements/fire.jpg",
+    alt: "flame",
   },
   {
     icon: Wind,
     label: "Air",
     sanskrit: "Vayu",
     zone: "North-West",
+    img: "/elements/air.jpg",
+    alt: "cloud in sky",
   },
   {
     icon: Moon,
     label: "Space",
     sanskrit: "Akash",
     zone: "Centre",
+    img: "/elements/space.jpg",
+    alt: "jupitar-moon",
   },
 ];
 
@@ -104,42 +110,36 @@ export const studyPath = [
   {
     step: "01",
     title: "Understand the frame",
-    body:
-      "Read the fundamentals so the vocabulary — pada, marma, brahmasthan — stops feeling foreign.",
+    body: "Read the fundamentals so the vocabulary — pada, marma, brahmasthan — stops feeling foreign.",
     href: "/learn/fundamentals",
   },
   {
     step: "02",
     title: "Feel the elements",
-    body:
-      "Learn how the five elements sit in a plan before you judge any single room.",
+    body: "Learn how the five elements sit in a plan before you judge any single room.",
     href: "/learn/elements",
   },
   {
     step: "03",
     title: "Orient the directions",
-    body:
-      "Fix true north, then walk the sixteen zones and note what each one governs.",
+    body: "Fix true north, then walk the sixteen zones and note what each one governs.",
     href: "/learn/directions",
   },
   {
     step: "04",
     title: "Correct room by room",
-    body:
-      "Finally apply the rules where they matter most — kitchen, bed, and place of prayer.",
+    body: "Finally apply the rules where they matter most — kitchen, bed, and place of prayer.",
     href: "/learn/rooms",
   },
 ];
 
 export const sutras = [
   {
-    text:
-      "The dwelling is the body of Vastu Purusha; wound no part of it carelessly.",
+    text: "The dwelling is the body of Vastu Purusha; wound no part of it carelessly.",
     source: "Mayamatam",
   },
   {
-    text:
-      "Where light enters first, place water and stillness; where fire lives, keep the west shut.",
+    text: "Where light enters first, place water and stillness; where fire lives, keep the west shut.",
     source: "Manasara Shilpa Shastra",
   },
 ];

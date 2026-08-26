@@ -38,8 +38,8 @@ export default function Features() {
 
             <div className="relative flex items-center">
               <div className="absolute -inset-4 rounded-4xl bg-linear-to-tr from-brand-saffron/10 to-brand-gold/10 blur-2xl" />
-              <div className="relative w-full rounded-2xl border border-border/60 bg-card p-8 divine-shadow sm:p-10">
-                <blockquote className="text-xl font-light leading-relaxed text-foreground sm:text-2xl">
+              <div className="relative w-full rounded-2xl border border-border/60 bg-ring/40 p-8 divine-shadow sm:p-10">
+                <blockquote className="text-xl font-light leading-relaxed text-foreground-muted sm:text-2xl">
                  “The science of house-building has come down to us from the Ṛṣis who obtained it from Brahmā.”
                 </blockquote>
                 <div className="mt-6">

@@ -4,10 +4,10 @@ import { studyPath } from "@/data/learnData";
 
 export default function StudyPath() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24 bg-surface">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
-          <span className="text-sm font-medium uppercase tracking-widest text-primary">
+          <span className="section-badge">
             Suggested order
           </span>
 

@@ -3,10 +3,10 @@ import { learnChapters } from "@/data/learnData";
 
 export default function LearnChapters() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24 bg-surface">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <span className="text-sm font-medium uppercase tracking-widest text-primary">
+          <span className="section-badge">
             The four chapters
           </span>
 
