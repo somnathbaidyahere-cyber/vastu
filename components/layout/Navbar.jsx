@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const toolsLinks = [
   {
@@ -13,12 +14,12 @@ const toolsLinks = [
   },
   {
     label: "Interactive Vastu Map",
-    href: "/tools/planner",
+    href: "/tools/vastu-map",
     description: "Explore Vastu zones across your property",
   },
   {
     label: "Mandala",
-    href: "/tools/energy",
+    href: "/tools/mandala",
     description: "Understand the Vastu Purusha Mandala",
   },
 ];
@@ -41,7 +42,7 @@ const learnLinks = [
   },
   {
     label: "Rooms",
-    href: "/learn/Rooms",
+    href: "/learn/rooms",
     description: "Vastu guidance for every room",
   },
 ];
@@ -50,6 +51,7 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef(null);
+
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -68,14 +70,15 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className="sticky top-0 z-50 w-full border-b border-border/60 bg-[#eee2cc] backdrop-blur-md"
+      onClick={()=>setActiveDropdown(null)}
+      className="sticky top-0 z-50 w-full border-b border-border/60 bg-background backdrop-blur-md"
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1">
            <Image src="/plant.png" alt="A kalash with a coconut and plant" width={30} height={30}/>
           <span className="text-gradient-brand text-2xl font-semibold tracking-tight">
-            VastuVeda
+            VastuGuru
           </span>
         </Link>
 
@@ -117,7 +120,7 @@ export default function Navbar() {
             href="/consultation"
             className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
           >
-            Book Consultation
+            Request Reading
           </Link>
         </div>
 
@@ -178,7 +181,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"
             >
-              Book Consultation
+              Request Reading
             </Link>
           </div>
         </div>
@@ -205,6 +208,10 @@ function Dropdown({
   onMouseEnter,
   links,
 }) {
+  const router=useRouter();
+  const href =`/${label.toLowerCase()}`
+
+
   return (
     <div className="relative" onMouseEnter={onMouseEnter}>
       <button
@@ -213,8 +220,10 @@ function Dropdown({
         className="group inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
         aria-expanded={isOpen}
       >
-        {label}
-
+        <span   onClick={(e) => {
+            e.stopPropagation();
+            router.push(href);
+          }}> {label}</span>
         <ChevronDown
           className={`h-4 w-4 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
@@ -223,7 +232,7 @@ function Dropdown({
       </button>
 
       {isOpen && (
-        <div className="divine-shadow absolute left-0 top-full mt-1 w-72 overflow-hidden rounded-xl border border-border bg-card p-2">
+        <div className="divine-shadow absolute left-0 top-full mt-1 w-72 overflow-hidden rounded-xl border border-border bg-surface p-2">
           <div className="flex flex-col gap-1">
             {links.map((link) => (
               <Link
