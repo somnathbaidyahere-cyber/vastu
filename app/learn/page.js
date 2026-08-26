@@ -1,9 +1,25 @@
-import React from 'react'
+import LearnHero from "@/components/pages/learn/LearnHero";
+import LearnChapters from "@/components/pages/learn/LearnChapters";
+import ElementsReference from "@/components/pages/learn/ElementsReference";
+import StudyPath from "@/components/pages/learn/StudyPath";
+import SutraSection from "@/components/pages/learn/SutraSection";
+import LearnCTA from "@/components/pages/learn/LearnCTA";
 
-function page() {
+export const metadata = {
+  title: "Learn Vastu — Fundamentals, Elements, Directions & Rooms",
+  description:
+    "A guided path through Vastu Shastra: core principles, the five elements, the meaning of each direction, and room-by-room guidance for the modern Indian home.",
+};
+
+export default function LearnPage() {
   return (
-    <div>Learn</div>
-  )
+    <main className="min-h-screen bg-background">
+      <LearnHero />
+      <LearnChapters />
+      <ElementsReference />
+      <StudyPath />
+      <SutraSection />
+      <LearnCTA />
+    </main>
+  );
 }
-
-export default page

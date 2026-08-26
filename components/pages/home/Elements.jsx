@@ -9,7 +9,7 @@ export default function Elements() {
             <span className="text-sm font-medium uppercase tracking-widest text-primary">
               The Panchabhutas
             </span>
-            <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-heading font-medium text-foreground sm:text-4xl">
               Balance the five elements
             </h2>
             <p className="mt-4 text-muted-foreground">

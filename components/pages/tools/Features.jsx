@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export const toolSteps = [
   {
@@ -23,33 +24,46 @@ export const toolSteps = [
 
 export default function Features() {
   return (
-    <section className="border-t border-border/60 bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-            
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-        
-            <div>
-              <span className="text-sm font-medium uppercase tracking-widest text-primary">
-                How it works
-              </span>
-              <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
-                A calm, three-step ritual
-              </h2>
-              <p className="mt-4 text-muted-foreground">
-                Orient, map, then remedy — the same sequence a traditional
-                consultant follows on site.
-              </p>
-            </div>
+    <section className="border-t border-border/60 bg-secondary/30">
+  <div className="grid lg:min-h-[700px] lg:grid-cols-2">
+    
+    {/* Left Image */}
+    <div className="relative hidden min-h-full overflow-hidden lg:block">
+      <Image
+        src="/backgrounds/indian-scriptures.webp"
+        alt=""
+        fill
+        sizes="50vw"
+        className="object-cover object-center opacity-90"
+      />
+    </div>
 
-            <div className="mt-10 space-y-6">
-              {toolSteps.map((step) => (
-                <FeatureRow key={step.number} {...step} />
-              ))}
-            </div>
-          
+    {/* Right Content */}
+    <div className="px-4 py-20 sm:px-6 lg:px-16 lg:py-28 xl:px-24">
+      <div className="max-w-xl">
+        <span className="text-sm font-medium uppercase tracking-widest text-primary">
+          How it works
+        </span>
+
+        <h2 className="mt-3 text-3xl font-heading font-medium text-foreground sm:text-4xl">
+          A calm, three-step ritual
+        </h2>
+
+        <p className="mt-4 text-muted-foreground">
+          Orient, map, then remedy — the same sequence a traditional
+          consultant follows on site.
+        </p>
+
+        <div className="mt-10 space-y-6">
+          {toolSteps.map((step) => (
+            <FeatureRow key={step.number} {...step} />
+          ))}
         </div>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
   );
 }
 

@@ -11,7 +11,7 @@ export default function ToolsHero() {
             <Compass className="h-3.5 w-3.5" />
             Vastu Toolkit
           </span>
-          <h1 className="mt-6 text-4xl font-medium leading-[1.15] text-foreground sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-heading font-medium leading-[1.15] text-foreground sm:text-5xl">
             Tools that translate{" "}
             <span className="text-gradient-brand">shastra</span> into action
           </h1>

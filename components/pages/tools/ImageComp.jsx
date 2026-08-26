@@ -4,16 +4,15 @@ import Image from "next/image";
 
 export default function ImageComp() {
   return (
-    <div className="w-full">
+    <section className="relative w-full aspect-video overflow-hidden">
       <Image
         src="/backgrounds/indian-scriptures.webp"
         alt=""
         fill
-        preload
         sizes="100vw"
-        className="object-cover object-center aspect-video"
+        className="object-cover object-center"
       />
-    </div>
+    </section>
   );
 }
 

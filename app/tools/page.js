@@ -2,7 +2,12 @@ import ToolsHero from "@/components/pages/tools/ToolsHero";
 
 import Features from "@/components/pages/tools/Features";
 import Tools from "@/components/pages/tools/Tools";
-import ImageComp from "@/components/pages/tools/ImageComp";
+
+export const metadata = {
+  title: "Learn Vastu — Fundamentals, Elements, Directions & Rooms | VastuVeda",
+  description:
+    "A guided path through Vastu Shastra: core principles, the five elements, the meaning of each direction, and room-by-room guidance for the modern Indian home.",
+};
 
 export const tools = [
   {
@@ -45,15 +50,11 @@ export const tools = [
 export default function ToolsPage() {
   return (
     <div className="min-h-screen bg-background">
-
       <ToolsHero />
 
       <Tools />
 
       <Features />
-
-      <ImageComp/>
-      
     </div>
   );
 }
