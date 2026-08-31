@@ -20,6 +20,7 @@ import { directions, mistakes, faqs } from "@/data/vastuCompassData";
 import CompassHero from "@/components/pages/tools/compass/CompassHero";
 import FindCenterSection from "@/components/pages/tools/compass/FindCenterSection";
 import CompassInstructions from "@/components/pages/tools/compass/CompassInstructions";
+import DirectionExplorer from "@/components/pages/tools/compass/DirectionExplorer";
 
 // export const metadata = {
 //   title: "Vastu Compass Guide — Find Your Home's Directions | VastuGuru",
@@ -30,7 +31,7 @@ import CompassInstructions from "@/components/pages/tools/compass/CompassInstruc
 export default function CompassPage() {
   const [selectedId, setSelectedId] = useState("N");
   const selected =
-    directions.find((direction) => direction.id === selectedId) ||
+    directions.find((direction) => direction.id === selectedId) ||  
     directions[0];
 
   return (
@@ -170,7 +171,7 @@ export default function CompassPage() {
       </section> */}
       <CompassInstructions/>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      {/* <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
@@ -224,7 +225,8 @@ export default function CompassPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <DirectionExplorer selected={selected} selectedId={selected} setSelectedId={setSelectedId}/>
 
       <section className="border-y border-border/60 bg-secondary/35 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:gap-20">
@@ -415,87 +417,87 @@ function SectionLabel({ number, children }) {
   );
 }
 
-function CompassDiagram({ selectedId, onSelect, decorative = false }) {
-  return (
-    <div className="relative mx-auto aspect-square w-full max-w-155">
-      <div className="vastu-compass-wheel absolute inset-[7%] rounded-full border border-primary/25 shadow-[0_28px_70px_-35px_var(--primary)]">
-        <div className="absolute inset-[10%] rounded-full border border-primary/20" />
-        <div className="absolute inset-[23%] rotate-45 border border-primary/20" />
-        <div className="absolute inset-[23%] border border-primary/20" />
-        <div className="absolute left-1/2 top-[14%] h-[72%] w-px -translate-x-1/2 bg-primary/20" />
-        <div className="absolute left-[14%] top-1/2 h-px w-[72%] -translate-y-1/2 bg-primary/20" />
-        <div className="absolute left-1/2 top-1/2 flex h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-primary/35 bg-background text-center shadow-lg shadow-primary/10">
-          <Home className="h-5 w-5 text-primary" />
-          <span className="mt-1 text-xs font-semibold text-foreground">
-            Home Center
-          </span>
-          <span className="text-[10px] italic text-muted-foreground">
-            Brahmasthan
-          </span>
-        </div>
-      </div>
-      {directions.map((direction) => {
-        const isSelected = selectedId === direction.id;
-        const classes = `absolute z-10 flex h-12 w-12 items-center justify-center rounded-full border text-xs font-semibold transition-all sm:h-14 sm:w-14 ${direction.position} ${
-          isSelected
-            ? "scale-110 border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-            : "border-primary/25 bg-background text-primary hover:border-primary hover:bg-secondary"
-        }`;
-        return decorative ? (
-          <span key={direction.id} className={classes}>
-            {direction.id}
-          </span>
-        ) : (
-          <button
-            key={direction.id}
-            type="button"
-            className={classes}
-            aria-label={`Explore ${direction.name}`}
-            aria-pressed={isSelected}
-            onClick={() => onSelect(direction.id)}
-          >
-            {direction.id}
-          </button>
-        );
-      })}
-      <span className="absolute -mt-2.5 left-1/2 top-0 -translate-x-1/2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-        North
-      </span>
-    </div>
-  );
-}
+// function CompassDiagram({ selectedId, onSelect, decorative = false }) {
+//   return (
+//     <div className="relative mx-auto aspect-square w-full max-w-155">
+//       <div className="vastu-compass-wheel absolute inset-[7%] rounded-full border border-primary/25 shadow-[0_28px_70px_-35px_var(--primary)]">
+//         <div className="absolute inset-[10%] rounded-full border border-primary/20" />
+//         <div className="absolute inset-[23%] rotate-45 border border-primary/20" />
+//         <div className="absolute inset-[23%] border border-primary/20" />
+//         <div className="absolute left-1/2 top-[14%] h-[72%] w-px -translate-x-1/2 bg-primary/20" />
+//         <div className="absolute left-[14%] top-1/2 h-px w-[72%] -translate-y-1/2 bg-primary/20" />
+//         <div className="absolute left-1/2 top-1/2 flex h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-primary/35 bg-background text-center shadow-lg shadow-primary/10">
+//           <Home className="h-5 w-5 text-primary" />
+//           <span className="mt-1 text-xs font-semibold text-foreground">
+//             Home Center
+//           </span>
+//           <span className="text-[10px] italic text-muted-foreground">
+//             Brahmasthan
+//           </span>
+//         </div>
+//       </div>
+//       {directions.map((direction) => {
+//         const isSelected = selectedId === direction.id;
+//         const classes = `absolute z-10 flex h-12 w-12 items-center justify-center rounded-full border text-xs font-semibold transition-all sm:h-14 sm:w-14 ${direction.position} ${
+//           isSelected
+//             ? "scale-110 border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+//             : "border-primary/25 bg-background text-primary hover:border-primary hover:bg-secondary"
+//         }`;
+//         return decorative ? (
+//           <span key={direction.id} className={classes}>
+//             {direction.id}
+//           </span>
+//         ) : (
+//           <button
+//             key={direction.id}
+//             type="button"
+//             className={classes}
+//             aria-label={`Explore ${direction.name}`}
+//             aria-pressed={isSelected}
+//             onClick={() => onSelect(direction.id)}
+//           >
+//             {direction.id}
+//           </button>
+//         );
+//       })}
+//       <span className="absolute -mt-2.5 left-1/2 top-0 -translate-x-1/2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+//         North
+//       </span>
+//     </div>
+//   );
+// }
 
-function FloorPlanCenter() {
-  return (
-    <figure>
-      <div className="relative mx-auto aspect-[6/5] max-w-xl border-2 border-primary/35 bg-card p-[8%] divine-shadow">
-        <div className="absolute left-[8%] top-[8%] h-[34%] w-[38%] border border-border bg-secondary/40 p-3 text-xs text-muted-foreground">
-          Living
-        </div>
-        <div className="absolute right-[8%] top-[8%] h-[34%] w-[38%] border border-border bg-background p-3 text-xs text-muted-foreground">
-          Bedroom
-        </div>
-        <div className="absolute bottom-[8%] left-[8%] h-[34%] w-[30%] border border-border bg-background p-3 text-xs text-muted-foreground">
-          Kitchen
-        </div>
-        <div className="absolute bottom-[8%] right-[8%] h-[34%] w-[46%] border border-border bg-secondary/40 p-3 text-xs text-muted-foreground">
-          Dining
-        </div>
-        <div className="absolute left-[8%] top-[8%] h-px w-[112%] origin-left rotate-[39deg] bg-accent/65" />
-        <div className="absolute right-[8%] top-[8%] h-px w-[112%] origin-right -rotate-[39deg] bg-accent/65" />
-        <div className="absolute left-1/2 top-1/2 z-10 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-2 border-primary bg-background text-center shadow-lg shadow-primary/15">
-          <Crosshair className="h-5 w-5 text-primary" />
-          <span className="mt-1 text-[10px] font-semibold text-foreground">
-            CENTER
-          </span>
-        </div>
-      </div>
-      <figcaption className="mt-5 text-center text-xs uppercase tracking-widest text-muted-foreground">
-        Opposite corners meet near the geometric center
-      </figcaption>
-    </figure>
-  );
-}
+// function FloorPlanCenter() {
+//   return (
+//     <figure>
+//       <div className="relative mx-auto aspect-[6/5] max-w-xl border-2 border-primary/35 bg-card p-[8%] divine-shadow">
+//         <div className="absolute left-[8%] top-[8%] h-[34%] w-[38%] border border-border bg-secondary/40 p-3 text-xs text-muted-foreground">
+//           Living
+//         </div>
+//         <div className="absolute right-[8%] top-[8%] h-[34%] w-[38%] border border-border bg-background p-3 text-xs text-muted-foreground">
+//           Bedroom
+//         </div>
+//         <div className="absolute bottom-[8%] left-[8%] h-[34%] w-[30%] border border-border bg-background p-3 text-xs text-muted-foreground">
+//           Kitchen
+//         </div>
+//         <div className="absolute bottom-[8%] right-[8%] h-[34%] w-[46%] border border-border bg-secondary/40 p-3 text-xs text-muted-foreground">
+//           Dining
+//         </div>
+//         <div className="absolute left-[8%] top-[8%] h-px w-[112%] origin-left rotate-[39deg] bg-accent/65" />
+//         <div className="absolute right-[8%] top-[8%] h-px w-[112%] origin-right -rotate-[39deg] bg-accent/65" />
+//         <div className="absolute left-1/2 top-1/2 z-10 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-2 border-primary bg-background text-center shadow-lg shadow-primary/15">
+//           <Crosshair className="h-5 w-5 text-primary" />
+//           <span className="mt-1 text-[10px] font-semibold text-foreground">
+//             CENTER
+//           </span>
+//         </div>
+//       </div>
+//       <figcaption className="mt-5 text-center text-xs uppercase tracking-widest text-muted-foreground">
+//         Opposite corners meet near the geometric center
+//       </figcaption>
+//     </figure>
+//   );
+// }
 
 function DirectionalHomeMap() {
   return (

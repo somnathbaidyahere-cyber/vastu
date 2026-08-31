@@ -26,7 +26,7 @@ function CompassDiagram({ selectedId, onSelect, decorative = false }) {
         const isSelected = selectedId === direction.id;
         const classes = `absolute z-10 flex h-12 w-12 items-center justify-center rounded-full border text-xs font-semibold transition-all sm:h-14 sm:w-14 ${direction.position} ${
           isSelected
-            ? "scale-110 border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+            ? "scale-110 border-primary bg-accent text-primary-foreground shadow-lg shadow-primary/20"
             : "border-primary/25 bg-background text-primary hover:border-primary hover:bg-secondary"
         }`;
         return decorative ? (
