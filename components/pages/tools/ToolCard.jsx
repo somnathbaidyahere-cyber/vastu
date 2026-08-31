@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   ArrowRight,
   Mountain,
@@ -23,6 +24,8 @@ const iconMap = {
   mandala: Grid3X3,
 };
 
+
+
 export default function ToolCard({
   href,
   icon,
@@ -36,9 +39,9 @@ export default function ToolCard({
   const Icon = iconMap[icon];
 
   return (
-    <a
+    <Link
       href={href}
-      className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-7 transition-all hover:border-primary/30 hover:bg-secondary/40 hover:shadow-lg hover:shadow-primary/5"
+      className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-7 transition-all hover:border-primary/30 hover:bg-secondary/40 hover:shadow-lg hover:shadow-primary/5 hover:shadow-divine-glow"
     >
       {badge && (
         <span className="absolute right-6 top-6 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-primary">
@@ -72,6 +75,6 @@ export default function ToolCard({
         Open tool
         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
       </span>
-    </a>
+    </Link>
   );
 }

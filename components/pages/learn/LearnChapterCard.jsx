@@ -11,7 +11,7 @@ export default function LearnChapterCard({
     <Link
       href={chapter.href}
       className={[
-        "group flex flex-col rounded-3xl border p-8 transition-all duration-300",
+        "group flex flex-col rounded-3xl border p-8 transition-all duration-300 hover:shadow-divine-glow",
         featured
           ? "border-primary/25 bg-secondary/60 lg:col-span-3 lg:flex-row lg:items-center lg:gap-12"
           : "border-border/60 bg-card hover:border-primary/30 hover:bg-secondary/40",
@@ -49,7 +49,7 @@ export default function LearnChapterCard({
       <div
         className={featured ? "mt-8 lg:mt-0 lg:w-1/2" : "mt-6"}
       >
-        <ul className="space-y-2 border-t border-border/60 pt-5">
+        <ul className={`space-y-2 ${featured? "":"border-t border-border/60"}  pt-5`}>
           {chapter.reads.map((item) => (
             <li
               key={item}

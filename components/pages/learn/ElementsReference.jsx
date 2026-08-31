@@ -9,11 +9,11 @@ export default function ElementsReference() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-xl">
-            <span className="text-sm font-medium uppercase tracking-widest text-primary">
+            <span className="section-badge">
               Quick reference
             </span>
 
-            <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               The five elements and their homes
             </h2>
           </div>

@@ -18,17 +18,15 @@ export default function LearnHero() {
             The Learning Path
           </span>
 
-          <h1 className="mt-6 text-4xl font-medium leading-[1.12] text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="hero-heading">
             Learn Vastu the way it was{" "}
-            <span className="text-gradient-brand">
-              meant to be taught
-            </span>
+            <span className="text-gradient-brand">meant to be taught</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="hero-description">
             Four connected chapters — principles, elements, directions, and
-            rooms. Read them in order for a complete foundation, or jump to
-            the question in front of you today.
+            rooms. Read them in order for a complete foundation, or jump to the
+            question in front of you today.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -50,7 +48,7 @@ export default function LearnHero() {
         </div>
 
         <div className="lg:col-span-5">
-          <div className="rounded-3xl border border-border/60 bg-card p-8 divine-shadow">
+          <div className="rounded-3xl border border-border/60 bg-card p-8 shadow-divine">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary">
               In this library
             </p>

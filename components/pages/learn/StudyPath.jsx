@@ -4,18 +4,14 @@ import { studyPath } from "@/data/learnData";
 
 export default function StudyPath() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24 bg-surface">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
-          <span className="text-sm font-medium uppercase tracking-widest text-primary">
-            Suggested order
-          </span>
+          <span className="section-badge">Suggested order</span>
 
-          <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
-            A four-step study path
-          </h2>
+          <h2 className="section-heading">A four-step study path</h2>
 
-          <p className="mt-4 text-muted-foreground">
+          <p className="section-description">
             This is the sequence a traditional teacher follows — frame first,
             detail last. Each step takes about an evening.
           </p>
@@ -39,9 +35,7 @@ export default function StudyPath() {
                   {step.title}
                 </h3>
 
-                <p className="mt-1 text-muted-foreground">
-                  {step.body}
-                </p>
+                <p className="mt-1 text-muted-foreground">{step.body}</p>
 
                 <Link
                   href={step.href}
