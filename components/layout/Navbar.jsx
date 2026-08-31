@@ -111,7 +111,7 @@ export default function Navbar() {
           />
 
           <NavLink href="/about">About</NavLink>
-          <NavLink href="/blog">Blog</NavLink>
+          {/* <NavLink href="/blog">Blog</NavLink> */}
         </nav>
 
         {/* Desktop CTA */}
@@ -120,7 +120,7 @@ export default function Navbar() {
             href="/consultation"
             className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
           >
-            Request Reading
+            Book a consultation
           </Link>
         </div>
 
