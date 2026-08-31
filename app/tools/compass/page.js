@@ -21,6 +21,7 @@ import CompassHero from "@/components/pages/tools/compass/CompassHero";
 import FindCenterSection from "@/components/pages/tools/compass/FindCenterSection";
 import CompassInstructions from "@/components/pages/tools/compass/CompassInstructions";
 import DirectionExplorer from "@/components/pages/tools/compass/DirectionExplorer";
+import HomeMap from "@/components/pages/tools/compass/HomeMap";
 
 // export const metadata = {
 //   title: "Vastu Compass Guide — Find Your Home's Directions | VastuGuru",
@@ -228,7 +229,7 @@ export default function CompassPage() {
       </section> */}
       <DirectionExplorer selected={selected} selectedId={selected} setSelectedId={setSelectedId}/>
 
-      <section className="border-y border-border/60 bg-secondary/35 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      {/* <section className="border-y border-border/60 bg-secondary/35 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-7">
             <DirectionalHomeMap />
@@ -266,7 +267,8 @@ export default function CompassPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
+      <HomeMap/>
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
