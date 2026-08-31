@@ -1,15 +1,21 @@
-import React from 'react'
+'use client'
+import {useState} from 'react'
+import { directions } from "@/data/vastuCompassData";
 import SectionLabel from '@/components/ui/SectionLabel'
 import CompassDiagram from '@/components/ui/CompassDiagram'
 
-function DirectionExplorer({selected, selectedId,setSelectedId}) {
+function DirectionExplorer() {
+    const [selectedId, setSelectedId] = useState("N");
+    const selected =
+      directions.find((direction) => direction.id === selectedId) ||
+      directions[0];
   return (
-     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <SectionLabel number="03">Explore the compass</SectionLabel>
-              <h2 className="mt-4 text-3xl font-medium text-foreground sm:text-4xl">
+              <h2 className="section-heading">
                 The eight Vastu directions
               </h2>
             </div>

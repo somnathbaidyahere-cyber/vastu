@@ -6,7 +6,7 @@ function FindCenterSection() {
   return (
       <section
         id="find-center"
-        className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+        className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface"
       >
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="order-2 lg:order-1">
@@ -14,10 +14,10 @@ function FindCenterSection() {
           </div>
           <div className="order-1 lg:order-2">
             <SectionLabel number="01">Begin at the source</SectionLabel>
-            <h2 className="mt-4 text-3xl font-medium text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               Find your home&apos;s center
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+            <p className="section-description">
               A whole-home direction reading begins at the approximate geometric
               center of the complete floor plan—traditionally understood as the
               Brahmasthan.
@@ -38,6 +38,8 @@ function FindCenterSection() {
             </ol>
             <div className="mt-8 border border-primary/20 bg-secondary/45 p-5">
               <p className="font-medium text-foreground">
+                <span className='text-green-500 font-bold font-base'>*</span>
+                 {" "}
                 Stand close to this point.
               </p>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

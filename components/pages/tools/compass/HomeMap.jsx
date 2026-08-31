@@ -12,10 +12,10 @@ export default function HomeMap() {
         </div>
         <div className="lg:col-span-5">
           <SectionLabel number="04">Map the home</SectionLabel>
-          <h2 className="mt-4 text-3xl font-medium text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             North becomes your reference
           </h2>
-          <p className="mt-5 leading-relaxed text-muted-foreground">
+          <p className="section-description">
             Once North is known, align it with the top of your floor-plan
             sketch. The remaining seven zones follow around the home relative to
             that axis.

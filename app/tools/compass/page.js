@@ -1,6 +1,3 @@
-"use client";
-import { useState } from "react";
-import { directions } from "@/data/vastuCompassData";
 import CompassHero from "@/components/pages/tools/compass/CompassHero";
 import FindCenterSection from "@/components/pages/tools/compass/FindCenterSection";
 import CompassInstructions from "@/components/pages/tools/compass/CompassInstructions";
@@ -18,11 +15,6 @@ export const metadata = {
 };
 
 export default function CompassPage() {
-  const [selectedId, setSelectedId] = useState("N");
-  const selected =
-    directions.find((direction) => direction.id === selectedId) ||
-    directions[0];
-
   return (
     <div className="min-h-screen bg-background">
       <CompassHero />
@@ -31,13 +23,7 @@ export default function CompassPage() {
 
       <CompassInstructions />
 
-      <DirectionExplorer
-        selected={selected}
-        selectedId={selected}
-        setSelectedId={setSelectedId}
-      />
-
-      <HomeMap />
+      <DirectionExplorer />
 
       <CommonMistakes />
 

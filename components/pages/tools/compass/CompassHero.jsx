@@ -7,14 +7,16 @@ function CompassHero() {
     <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
-          <div className="inline-flex items-center gap-2 border-b border-primary/30 pb-2 text-xs font-semibold uppercase tracking-widest text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-primary">
             <Compass className="h-4 w-4" />
             Vastu Direction Guide
-          </div>
-          <h1 className="mt-7 text-4xl font-medium leading-[1.12] text-foreground sm:text-5xl lg:text-6xl">
-            Understand the Directions of Your Space
+          </span>
+
+          <h1 className="hero-heading">
+            Understand the{" "}
+            <span className="text-gradient-brand">Directions</span> of your space
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="hero-description">
             Learn a simple, reliable method to locate your home&apos;s center,
             establish North using your smartphone, and read the eight
             traditional Vastu directions.

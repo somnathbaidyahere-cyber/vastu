@@ -10,7 +10,7 @@ function FreeVsPersonalized() {
             <span className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/70">
               Know the difference
             </span>
-            <h2 className="mt-4 text-3xl font-medium sm:text-4xl">
+            <h2 className="section-heading text-surface">
               Free guidance vs personalized Vastu
             </h2>
           </div>
@@ -52,7 +52,7 @@ function FreeVsPersonalized() {
               </ul>
               <Link
                 href="/consultation"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-6 py-3 font-medium text-primary transition-colors hover:bg-brand-cream"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-6 py-3 font-medium text-primary transition-colors hover:bg-brand-cream divine-shadow"
               >
                 Get personalized Vastu guidance{" "}
                 <ArrowRight className="h-4 w-4" />

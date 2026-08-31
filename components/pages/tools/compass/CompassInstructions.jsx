@@ -4,14 +4,14 @@ import SectionLabel from "@/components/ui/SectionLabel";
 
 function CompassInstructions() {
   return (
-    <section className="border-y border-border/60 bg-secondary/35 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+    <section className="border-y border-border/60 bg-linear-to-br from-surface to-surface-muted/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <SectionLabel number="02">Orient the plan</SectionLabel>
-          <h2 className="mt-4 text-3xl font-medium text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             How to find the directions
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="section-description">
             Use the compass app already available on your smartphone. The
             website does not read or display your device heading.
           </p>
