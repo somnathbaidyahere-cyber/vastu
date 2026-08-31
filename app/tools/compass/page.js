@@ -23,6 +23,7 @@ import CompassInstructions from "@/components/pages/tools/compass/CompassInstruc
 import DirectionExplorer from "@/components/pages/tools/compass/DirectionExplorer";
 import HomeMap from "@/components/pages/tools/compass/HomeMap";
 import CommonMistakes from "@/components/pages/tools/compass/CommonMistakes";
+import FreeVsPersonalized from "@/components/pages/tools/compass/FreeVsPersonalized";
 
 // export const metadata = {
 //   title: "Vastu Compass Guide — Find Your Home's Directions | VastuGuru",
@@ -302,7 +303,7 @@ export default function CompassPage() {
       </section> */}
       <CommonMistakes/>
 
-      <section className="bg-primary px-4 py-20 text-primary-foreground sm:px-6 lg:px-8 lg:py-24">
+      {/* <section className="bg-primary px-4 py-20 text-primary-foreground sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/70">
@@ -358,7 +359,8 @@ export default function CompassPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <FreeVsPersonalized/>
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-20">
