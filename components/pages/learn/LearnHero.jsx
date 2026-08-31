@@ -20,15 +20,13 @@ export default function LearnHero() {
 
           <h1 className="hero-heading">
             Learn Vastu the way it was{" "}
-            <span className="text-gradient-brand">
-              meant to be taught
-            </span>
+            <span className="text-gradient-brand">meant to be taught</span>
           </h1>
 
           <p className="hero-description">
             Four connected chapters — principles, elements, directions, and
-            rooms. Read them in order for a complete foundation, or jump to
-            the question in front of you today.
+            rooms. Read them in order for a complete foundation, or jump to the
+            question in front of you today.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -50,7 +48,7 @@ export default function LearnHero() {
         </div>
 
         <div className="lg:col-span-5">
-          <div className="rounded-3xl border border-border/60 bg-card p-8 divine-shadow">
+          <div className="rounded-3xl border border-border/60 bg-card p-8 shadow-divine">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary">
               In this library
             </p>

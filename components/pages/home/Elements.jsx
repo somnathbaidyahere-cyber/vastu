@@ -62,7 +62,7 @@ function ElementCard({
   description,
 }) {
   return (
-    <div className="group rounded-2xl border border-border/60 bg-card p-6 transition-all hover:border-primary/30 hover:bg-secondary/50">
+    <div className="group rounded-2xl border border-border/60 bg-card p-6 transition-all hover:border-primary/30 hover:bg-secondary/50 hover:shadow-divine-glow">
       <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
         {icon}
       </div>
