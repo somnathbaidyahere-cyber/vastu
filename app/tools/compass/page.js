@@ -17,6 +17,9 @@ import {
   X,
 } from "lucide-react";
 import { directions, mistakes, faqs } from "@/data/vastuCompassData";
+import CompassHero from "@/components/pages/tools/compass/CompassHero";
+import FindCenterSection from "@/components/pages/tools/compass/FindCenterSection";
+import CompassInstructions from "@/components/pages/tools/compass/CompassInstructions";
 
 // export const metadata = {
 //   title: "Vastu Compass Guide — Find Your Home's Directions | VastuGuru",
@@ -32,7 +35,7 @@ export default function CompassPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
+      {/* <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-2 border-b border-primary/30 pb-2 text-xs font-semibold uppercase tracking-widest text-primary">
@@ -64,9 +67,10 @@ export default function CompassPage() {
             <CompassDiagram selectedId="" onSelect={null} decorative />
           </div>
         </div>
-      </section>
+      </section> */}
+      <CompassHero/>
 
-      <section
+      {/* <section
         id="find-center"
         className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
       >
@@ -109,9 +113,10 @@ export default function CompassPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <FindCenterSection/>
 
-      <section className="border-y border-border/60 bg-secondary/35 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+      {/* <section className="border-y border-border/60 bg-secondary/35 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <SectionLabel number="02">Orient the plan</SectionLabel>
@@ -162,7 +167,8 @@ export default function CompassPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      <CompassInstructions/>
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
