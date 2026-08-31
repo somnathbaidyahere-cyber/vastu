@@ -22,6 +22,7 @@ import FindCenterSection from "@/components/pages/tools/compass/FindCenterSectio
 import CompassInstructions from "@/components/pages/tools/compass/CompassInstructions";
 import DirectionExplorer from "@/components/pages/tools/compass/DirectionExplorer";
 import HomeMap from "@/components/pages/tools/compass/HomeMap";
+import CommonMistakes from "@/components/pages/tools/compass/CommonMistakes";
 
 // export const metadata = {
 //   title: "Vastu Compass Guide — Find Your Home's Directions | VastuGuru",
@@ -270,7 +271,7 @@ export default function CompassPage() {
       </section> */}
       <HomeMap/>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+      {/* <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -298,7 +299,8 @@ export default function CompassPage() {
             </ul>
           </div>
         </div>
-      </section>
+      </section> */}
+      <CommonMistakes/>
 
       <section className="bg-primary px-4 py-20 text-primary-foreground sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
