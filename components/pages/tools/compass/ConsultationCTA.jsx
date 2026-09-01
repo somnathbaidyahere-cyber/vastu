@@ -21,7 +21,7 @@ export default function ConsultationCTA() {
       <div className="absolute inset-0 -z-10 bg-secondary/10 backdrop-blur-[1px]" />
 
       <div className="mx-auto max-w-6xl">
-        <div className="relative isolate overflow-hidden rounded-[2rem] border border-primary/20 bg-background/80 shadow-[0_25px_80px_-35px_rgba(0,0,0,0.35)] backdrop-blur-md">
+        <div className="relative isolate overflow-hidden rounded-4xl border border-primary/20 bg-background/80 shadow-[0_25px_80px_-35px_rgba(0,0,0,0.35)] backdrop-blur-md">
 
           {/* Subtle colour atmosphere */}
           <div className="pointer-events-none absolute inset-0 -z-10">
