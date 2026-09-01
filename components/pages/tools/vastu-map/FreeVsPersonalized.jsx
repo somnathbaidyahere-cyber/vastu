@@ -1,34 +1,39 @@
-import React from 'react'
-import Link from 'next/link'
-import { ArrowRight,Check, Sparkles } from 'lucide-react'
-
-const freeItems = [ "Direction identification",
-                  "Eight-direction meanings",
-                  "Basic room associations",
-                  "General planning principles",]
+import Link from "next/link";
+import { ArrowRight, Check, Sparkles } from "lucide-react";
 
 
-const personalizedItems = [ "Property-specific analysis",
-                  "Entrance and layout assessment",
-                  "Room-by-room guidance",
-                  "Context-aware remedies",]
+const freeItems = [
+  "Understand the eight directional zones",
+  "Explore traditional Vastu associations",
+  "Learn common room-direction relationships",
+  "Apply the framework to your floor plan",
+];
 
-function FreeVsPersonalized() {
+const personalizedItems = [
+  "Review your actual floor plan",
+  "Assess entrance and overall layout",
+  "Interpret room placement in context",
+  "Receive property-specific guidance",
+];
+
+export default function FreeVsPersonalized() {
   return (
-     <section className="border-y border-border/60 bg-secondary/35 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="border-y border-border/60 bg-secondary/35 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
 
         {/* Heading */}
         <div className="max-w-3xl">
           <h2 className="section-heading">
-            The compass gives you the directions.
+            The map gives you the framework.
             <span className="text-primary">
-              {" "}Your home directions needs custom evolution.
+              {" "}Your home needs context.
             </span>
           </h2>
 
           <p className="section-description">
-            Use the compass to learn and the directions and explore. Only a personalized review will help you understand what they meant for your property.
+            Use the map to learn and explore. When you want to understand how
+            these principles apply to your actual property, a personalized
+            review goes further.
           </p>
         </div>
 
@@ -116,13 +121,11 @@ function FreeVsPersonalized() {
 
         {/* Disclaimer */}
         <p className="mt-6 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-          The compass provides general directional knowledge. Property-specific
-          interpretation may consider the complete and accurate layout.
+          The map provides general educational guidance. Property-specific
+          interpretation may consider the complete layout, orientation,
+          entrance and other relevant details.
         </p>
       </div>
     </section>
-  )
+  );
 }
-
-export default FreeVsPersonalized
-

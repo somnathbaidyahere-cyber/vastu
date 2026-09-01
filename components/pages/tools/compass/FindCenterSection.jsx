@@ -36,7 +36,7 @@ function FindCenterSection() {
                 </li>
               ))}
             </ol>
-            <div className="mt-8 border border-primary/20 bg-secondary/45 p-5">
+            <div className="mt-8 rounded-2xl border border-primary/20 bg-secondary/45 p-5">
               <p className="font-medium text-foreground">
                 <span className='text-green-500 font-bold font-base'>*</span>
                  {" "}

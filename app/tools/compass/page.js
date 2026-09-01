@@ -2,9 +2,9 @@ import CompassHero from "@/components/pages/tools/compass/CompassHero";
 import FindCenterSection from "@/components/pages/tools/compass/FindCenterSection";
 import CompassInstructions from "@/components/pages/tools/compass/CompassInstructions";
 import DirectionExplorer from "@/components/pages/tools/compass/DirectionExplorer";
-import HomeMap from "@/components/pages/tools/compass/HomeMap";
 import CommonMistakes from "@/components/pages/tools/compass/CommonMistakes";
 import FreeVsPersonalized from "@/components/pages/tools/compass/FreeVsPersonalized";
+import { faqs } from "@/data/vastuCompassData";
 import FAQ from "@/components/ui/FAQ";
 import ConsultationCTA from "@/components/pages/tools/compass/ConsultationCTA";
 
@@ -29,7 +29,7 @@ export default function CompassPage() {
 
       <FreeVsPersonalized />
 
-      <FAQ />
+      <FAQ faqs={faqs} />
 
       <ConsultationCTA />
     </div>
