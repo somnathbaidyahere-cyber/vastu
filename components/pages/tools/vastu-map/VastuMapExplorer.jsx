@@ -27,12 +27,12 @@ export default function VastuMapExplorer() {
               Explore the map
             </SectionLabel>
 
-            <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-[1.1] text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               Explore each Vastu zone
             </h2>
           </div>
 
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-5">
+          <p className="max-w-xl text-sm md:text-base text-foreground-muted leading-relaxed lg:col-span-5">
             Select a direction to understand its traditional associations and
             the broad principles commonly connected with that zone.
           </p>
@@ -44,7 +44,7 @@ export default function VastuMapExplorer() {
           <div className="grid lg:grid-cols-12">
 
             {/* Map */}
-            <div className="relative flex min-h-125 items-center justify-center overflow-hidden border-b border-border bg-background px-6 py-14 lg:col-span-7 lg:min-h-162.5 lg:border-b-0 lg:border-r lg:px-12">
+            <div className="relative flex min-h-125 items-center justify-center overflow-hidden border-b border-border bg-surface/20 px-6 py-14 lg:col-span-7 lg:min-h-162.5 lg:border-b-0 lg:border-r lg:px-12">
 
               {/* Ambient geometry */}
               <div className="pointer-events-none absolute inset-0">

@@ -13,7 +13,7 @@ export default function LearnHero() {
     <section className="relative overflow-hidden bg-ivory-pattern px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-24 lg:pt-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">
         <div className="lg:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-primary">
             <Sun className="h-3.5 w-3.5" />
             The Learning Path
           </span>

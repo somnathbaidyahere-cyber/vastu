@@ -1,18 +1,17 @@
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Compass } from "lucide-react";
+import { ArrowDown, ArrowRight, Compass, Grid, Grid3X3 } from "lucide-react";
 import VastuMapGrid from "./VastuMapGrid";
 
 export default function VastuMapHero() {
   return (
     <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
-
         {/* Content */}
         <div className="lg:col-span-5">
-          <div className="inline-flex items-center gap-2 border-b border-primary/30 pb-2 text-xs font-semibold uppercase tracking-widest text-primary">
-            <Compass className="h-4 w-4" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-border  px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-primary">
+            <Grid3X3 className="h-4 w-4" />
             Vastu Spatial Guide
-          </div>
+          </span>
 
           <h1 className="hero-heading">
             See your Home through the{" "}
@@ -26,7 +25,9 @@ export default function VastuMapHero() {
 
           {/* Context note */}
           <div className="mt-6 flex items-start gap-3 border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted-foreground">
-            <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
+            {/* <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" /> */}
+            <Grid3X3 className="h-4 w-4 shrink-0" />
+
 
             <p>
               This is an educational map. Use the Vastu Compass first to
@@ -62,7 +63,6 @@ export default function VastuMapHero() {
             <VastuMapGrid />
           </div>
         </div>
-
       </div>
     </section>
   );

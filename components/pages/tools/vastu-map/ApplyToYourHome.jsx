@@ -3,7 +3,7 @@ import SectionLabel from "../../../ui/SectionLabel";
 
 export default function ApplyToYourHome() {
   return (
-    <section className="border-y border-border/60 bg-secondary/35 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
@@ -13,12 +13,12 @@ export default function ApplyToYourHome() {
               Apply it to your home
             </SectionLabel>
 
-            <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-[1.1] text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               Now look at your own floor plan.
             </h2>
           </div>
 
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-5">
+          <p className="max-w-xl text-sm md:text-base text-foreground-muted leading-relaxed lg:col-span-5">
             Mark North on your floor plan, then see where your entrance, rooms
             and other major spaces fall within the directional framework.
           </p>
@@ -29,7 +29,7 @@ export default function ApplyToYourHome() {
 
           {/* Floor plan visual */}
           <div className="lg:col-span-7">
-            <div className="relative aspect-[6/4] overflow-hidden rounded-[1.75rem] border border-border bg-background p-6 shadow-[0_25px_70px_-45px_var(--primary)] sm:p-10">
+            <div className="relative aspect-6/4 overflow-hidden rounded-[1.75rem] border border-border bg-background/30 p-6 shadow-[0_25px_70px_-45px_var(--primary)] sm:p-10">
 
               {/* Subtle map grid */}
               <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
@@ -106,7 +106,7 @@ export default function ApplyToYourHome() {
             <div className="space-y-8">
 
               <div className="flex gap-5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background/30 text-primary">
                   <Compass className="h-4 w-4" />
                 </div>
 
@@ -127,7 +127,7 @@ export default function ApplyToYourHome() {
               </div>
 
               <div className="flex gap-5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background/30 text-primary">
                   <MapPinned className="h-4 w-4" />
                 </div>
 
@@ -148,7 +148,7 @@ export default function ApplyToYourHome() {
               </div>
 
               <div className="flex gap-5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background/30 text-primary">
                   <ArrowDown className="h-4 w-4" />
                 </div>
 

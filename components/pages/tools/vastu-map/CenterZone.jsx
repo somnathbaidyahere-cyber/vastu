@@ -4,12 +4,12 @@ import SectionLabel from "../../../ui/SectionLabel";
 
 export default function CenterZone() {
   return (
-    <section className="border-y border-border/60 bg-secondary/35 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-20">
 
         {/* Visual */}
         <div className="lg:col-span-6">
-          <div className="relative mx-auto aspect-square max-w-md overflow-hidden rounded-[1.75rem] border border-primary/20 bg-background p-[12%] shadow-[0_25px_70px_-45px_var(--primary)]">
+          <div className="relative mx-auto aspect-square max-w-md overflow-hidden rounded-[1.75rem] border border-primary/20 bg-background/30  p-[12%] shadow-[0_25px_70px_-45px_var(--primary)]">
 
             {/* Outer geometry */}
             <div className="absolute inset-[10%] rounded-full border border-primary/10" />
@@ -61,7 +61,7 @@ export default function CenterZone() {
             The central zone
           </SectionLabel>
 
-          <h2 className="mt-4 max-w-xl text-3xl font-medium leading-[1.1] text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             Keep the center in context
           </h2>
 

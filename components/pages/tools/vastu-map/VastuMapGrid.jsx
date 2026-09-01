@@ -17,10 +17,10 @@ export default function VastuMapGrid({
       }`}
     >
       {/* Ambient glow */}
-      <div className="absolute -inset-[5%] rounded-[2rem] bg-[radial-gradient(circle_at_center,oklch(0.644_0.111_55/0.08),transparent_65%)]" />
+      <div className="absolute inset-[5%] rounded-4xl bg-[radial-gradient(circle_at_center,oklch(0.644_0.111_55/0.08),transparent_65%)]" />
 
       {/* Map */}
-      <div className="relative grid h-full grid-cols-3 overflow-hidden rounded-[1.5rem] border border-primary/25 bg-card shadow-[0_25px_70px_-40px_var(--primary)]">
+      <div className="relative grid h-full grid-cols-3 overflow-hidden rounded-3xl border border-primary/25 bg-surface shadow-[0_25px_70px_-40px_var(--primary)]">
         {zones.flat().map((id) => {
           const center = id === "CENTER";
           const selected = id === selectedId;

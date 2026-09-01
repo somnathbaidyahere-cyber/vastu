@@ -12,7 +12,7 @@ const mistakes = [
 
 export default function CommonMistakes() {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20 bg-surface">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:gap-16">
 
         {/* Intro */}
@@ -25,11 +25,11 @@ export default function CommonMistakes() {
             <TriangleAlert className="h-5 w-5" />
           </div>
 
-          <h2 className="mt-5 max-w-sm text-3xl font-medium leading-[1.1] text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             Common map mistakes
           </h2>
 
-          <p className="mt-4 max-w-sm leading-relaxed text-muted-foreground">
+          <p className="section-description">
             A correct directional reference matters more than a complicated
             interpretation.
           </p>
@@ -49,8 +49,8 @@ export default function CommonMistakes() {
                 </span>
 
                 {/* Icon */}
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                  <X className="h-3.5 w-3.5" />
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-primary-foreground">
+                  <X className="h-3.5 w-3.5 group-hover:text-orange-400" />
                 </span>
 
                 {/* Text */}

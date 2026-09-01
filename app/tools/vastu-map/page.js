@@ -1,5 +1,4 @@
 import VastuMapHero from "@/components/pages/tools/vastu-map/VastuMapHero";
-import MapIntroduction from "@/components/pages/tools/vastu-map/MapIntroduction";
 import OrientHome from "@/components/pages/tools/vastu-map/OrientHome";
 import VastuMapExplorer from "@/components/pages/tools/vastu-map/VastuMapExplorer";
 import CenterZone from "@/components/pages/tools/vastu-map/CenterZone";
@@ -9,7 +8,6 @@ import CommonMistakes from "@/components/pages/tools/vastu-map/CommonMistakes";
 import FreeVsPersonalized from "@/components/pages/tools/vastu-map/FreeVsPersonalized";
 import VastuMapFAQ from "@/components/pages/tools/vastu-map/VastuMapFAQ";
 import ConsultationCTA from "@/components/pages/tools/vastu-map/ConsultationCTA";
-import MapOrientation from "@/components/pages/tools/vastu-map/MapOrientation";
 
 export const metadata = {
   title: "Vastu Map — Explore the Directions of Your Home | LeadWala",
@@ -21,10 +19,6 @@ export default function VastuMapPage() {
   return (
     <main>
       <VastuMapHero />
-
-      {/* <MapOrientation/> */}
-
-      {/* <MapIntroduction /> */}
 
       <OrientHome />
 

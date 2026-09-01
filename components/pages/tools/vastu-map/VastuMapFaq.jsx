@@ -32,7 +32,7 @@ const faqs = [
 
 export default function VastuMapFAQ() {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24 bg-surface">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-20">
 
         {/* Intro */}
@@ -74,7 +74,7 @@ export default function VastuMapFAQ() {
                   </span>
 
                   {/* Toggle */}
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border text-lg font-light text-primary transition-all group-open:rotate-45 group-open:border-primary/30">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-lg font-light text-primary transition-all group-open:rotate-45 group-open:border-primary/30">
                     +
                   </span>
                 </summary>

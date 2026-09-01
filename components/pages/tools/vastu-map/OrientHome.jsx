@@ -35,11 +35,11 @@ export default function OrientHome() {
             Orient your home
           </SectionLabel>
 
-          <h2 className="mt-4 max-w-lg text-3xl font-medium leading-[1.1] text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             Start with North
           </h2>
 
-          <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
+          <p className="section-description">
             A Vastu map needs a directional reference. Establish North first,
             then use it to orient the map of your home.
           </p>
@@ -62,12 +62,12 @@ export default function OrientHome() {
               return (
                 <div
                   key={step.number}
-                  className="bg-surface p-7 transition-colors hover:bg-secondary/40 sm:p-8"
+                  className="group bg-surface p-7 transition-colors hover:bg-secondary/40 sm:p-8"
                 >
                   <div className="flex items-center justify-between">
-                    <Icon className="h-5 w-5 text-primary" />
+                    <Icon className="h-6 w-6 p-0.5 rounded-full text-primary transition-all duration-150 group-hover:text-surface group-hover:bg-primary" />
 
-                    <span className="font-heading text-2xl text-primary/30">
+                    <span className="font-heading text-2xl text-primary/30 group-hover:text-primary">
                       {step.number}
                     </span>
                   </div>

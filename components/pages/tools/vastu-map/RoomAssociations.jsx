@@ -53,12 +53,12 @@ export default function RoomAssociations() {
               Apply the framework
             </SectionLabel>
 
-            <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-[1.1] text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               Where do common spaces fit?
             </h2>
           </div>
 
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-5">
+          <p className="max-w-xl text-sm md:text-base text-foreground-muted leading-relaxed lg:col-span-5">
             Vastu traditionally associates certain spaces and activities with
             particular zones. Use these as broad reference points, not fixed
             rules for every home.
@@ -70,11 +70,11 @@ export default function RoomAssociations() {
           {associations.map((item) => (
             <article
               key={item.direction}
-              className="group relative overflow-hidden rounded-[1.25rem] border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-lg hover:shadow-primary/5 sm:p-7"
+              className="group relative overflow-hidden rounded-[1.25rem] border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-lg hover:shadow-divine-glow sm:p-7"
             >
               {/* Direction */}
               <div className="flex items-start justify-between">
-                <span className="font-heading text-4xl text-primary/25 transition-colors group-hover:text-primary/45">
+                <span className="font-heading text-4xl text-primary/25 transition-colors group-hover:text-primary/60">
                   {item.direction}
                 </span>
 

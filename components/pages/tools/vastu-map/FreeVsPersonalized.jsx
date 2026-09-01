@@ -28,14 +28,14 @@ export default function FreeVsPersonalized() {
             Know the difference
           </SectionLabel> */}
 
-          <h2 className="mt-5 text-3xl font-medium leading-[1.1] text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="section-heading">
             The map gives you the framework.
             <span className="text-primary">
               {" "}Your home needs context.
             </span>
           </h2>
 
-          <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
+          <p className="section-description">
             Use the map to learn and explore. When you want to understand how
             these principles apply to your actual property, a personalized
             review goes further.
