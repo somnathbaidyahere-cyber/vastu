@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
-import SectionLabel from "../../../ui/SectionLabel";
 
 
 const freeItems = [
@@ -24,10 +23,6 @@ export default function FreeVsPersonalized() {
 
         {/* Heading */}
         <div className="max-w-3xl">
-          {/* <SectionLabel number="08">
-            Know the difference
-          </SectionLabel> */}
-
           <h2 className="section-heading">
             The map gives you the framework.
             <span className="text-primary">

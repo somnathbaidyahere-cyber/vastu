@@ -1,7 +1,6 @@
 import { TriangleAlert, X } from "lucide-react";
 import SectionLabel from "../../../ui/SectionLabel";
 
-
 const mistakes = [
   "Assuming the top of every floor plan is North.",
   "Using the entrance direction as the direction of the entire home.",
@@ -14,7 +13,6 @@ export default function CommonMistakes() {
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20 bg-surface">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:gap-16">
-
         {/* Intro */}
         <div className="lg:col-span-4">
           {/* <SectionLabel number="07">
@@ -25,9 +23,7 @@ export default function CommonMistakes() {
             <TriangleAlert className="h-5 w-5" />
           </div>
 
-          <h2 className="section-heading">
-            Common map mistakes
-          </h2>
+          <h2 className="section-heading">Common map mistakes</h2>
 
           <p className="section-description">
             A correct directional reference matters more than a complicated
@@ -39,29 +35,16 @@ export default function CommonMistakes() {
         <div className="lg:col-span-8">
           <ul className="divide-y divide-border border-y border-border">
             {mistakes.map((mistake, index) => (
-              <li
-                key={mistake}
-                className="group flex items-center gap-5 py-5"
-              >
-                {/* Number */}
-                <span className="w-7 shrink-0 font-heading text-lg text-primary/30 transition-colors group-hover:text-primary/60">
+              <li key={mistake} className="flex items-center gap-5 py-5">
+                <span className="font-heading text-lg text-primary/45">
                   0{index + 1}
                 </span>
-
-                {/* Icon */}
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-primary-foreground">
-                  <X className="h-3.5 w-3.5 group-hover:text-orange-400" />
-                </span>
-
-                {/* Text */}
-                <span className="text-sm leading-relaxed text-foreground/85 sm:text-base">
-                  {mistake}
-                </span>
+                <X className="h-4 w-4 shrink-0 text-orange-400" />
+                <span className="text-foreground/85">{mistake}</span>
               </li>
             ))}
           </ul>
         </div>
-
       </div>
     </section>
   );

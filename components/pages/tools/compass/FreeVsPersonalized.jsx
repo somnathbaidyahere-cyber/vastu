@@ -2,66 +2,127 @@ import React from 'react'
 import Link from 'next/link'
 import { ArrowRight,Check, Sparkles } from 'lucide-react'
 
-function FreeVsPersonalized() {
-  return (
-     <section className="bg-primary px-4 py-20 text-primary-foreground sm:px-6 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/70">
-              Know the difference
-            </span>
-            <h2 className="section-heading text-surface">
-              Free guidance vs personalized Vastu
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-10 border-y border-primary-foreground/20 py-10 md:grid-cols-2 md:gap-0">
-            <div className="md:border-r md:border-primary-foreground/20 md:pr-12">
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
-                In this guide
-              </p>
-              <ul className="mt-6 space-y-4">
-                {[
-                  "Direction identification",
+const freeItems = [ "Direction identification",
                   "Eight-direction meanings",
                   "Basic room associations",
-                  "General planning principles",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <Check className="h-4 w-4" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="md:pl-12">
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
-                With a consultant
-              </p>
-              <ul className="mt-6 space-y-4">
-                {[
-                  "Property-specific analysis",
+                  "General planning principles",]
+
+
+const personalizedItems = [ "Property-specific analysis",
                   "Entrance and layout assessment",
                   "Room-by-room guidance",
-                  "Context-aware remedies",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <Sparkles className="h-4 w-4" />
+                  "Context-aware remedies",]
+
+function FreeVsPersonalized() {
+  return (
+     <section className="border-y border-border/60 bg-secondary/35 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+
+        {/* Heading */}
+        <div className="max-w-3xl">
+          <h2 className="section-heading">
+            The compass gives you the directions.
+            <span className="text-primary">
+              {" "}Your home directions needs custom evolution.
+            </span>
+          </h2>
+
+          <p className="section-description">
+            Use the compass to learn and the directions and explore. Only a personalized review will help you understand what they meant for your property.
+          </p>
+        </div>
+
+        {/* Comparison */}
+        <div className="mt-12 grid overflow-hidden rounded-[1.75rem] border border-border bg-background lg:grid-cols-2">
+
+          {/* Free */}
+          <div className="p-7 sm:p-10 lg:p-12">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  Explore for free
+                </p>
+
+                <h3 className="mt-3 text-2xl font-medium text-foreground">
+                  Learn the Vastu framework
+                </h3>
+              </div>
+
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/15 bg-secondary text-primary">
+                <Check className="h-4 w-4" />
+              </div>
+            </div>
+
+            <ul className="mt-8 space-y-4">
+              {freeItems.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
+                >
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Personalized */}
+          <div className="relative overflow-hidden border-t border-border bg-primary p-7 text-primary-foreground sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+
+            {/* Decorative glow */}
+            <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary-foreground/10 blur-3xl" />
+
+            <div className="relative">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/65">
+                    Go deeper
+                  </p>
+
+                  <h3 className="mt-3 text-2xl font-medium">
+                    Understand your property
+                  </h3>
+                </div>
+
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 bg-primary-foreground/10">
+                  <Sparkles className="h-4 w-4" />
+                </div>
+              </div>
+
+              <ul className="mt-8 space-y-4">
+                {personalizedItems.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm leading-relaxed text-primary-foreground/85"
+                  >
+                    <Check className="mt-0.5 h-4 w-4 shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
+
               <Link
                 href="/consultation"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-6 py-3 font-medium text-primary transition-colors hover:bg-brand-cream divine-shadow"
+                className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-6 py-3.5 text-sm font-medium text-primary transition-all hover:bg-brand-cream"
               >
-                Get personalized Vastu guidance{" "}
-                <ArrowRight className="h-4 w-4" />
+                Get My Property Reviewed
+
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
+
         </div>
-      </section>
+
+        {/* Disclaimer */}
+        <p className="mt-6 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+          The compass provides general directional knowledge. Property-specific
+          interpretation may consider the complete and accurate layout.
+        </p>
+      </div>
+    </section>
   )
 }
 
 export default FreeVsPersonalized
+

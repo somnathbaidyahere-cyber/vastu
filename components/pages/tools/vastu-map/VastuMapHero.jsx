@@ -8,7 +8,7 @@ export default function VastuMapHero() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
         {/* Content */}
         <div className="lg:col-span-5">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border  px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border  px-4 py-1.5 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-primary">
             <Grid3X3 className="h-4 w-4" />
             Vastu Spatial Guide
           </span>

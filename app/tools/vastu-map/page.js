@@ -6,7 +6,8 @@ import RoomAssociations from "@/components/pages/tools/vastu-map/RoomAssociation
 import ApplyToYourHome from "@/components/pages/tools/vastu-map/ApplyToYourHome";
 import CommonMistakes from "@/components/pages/tools/vastu-map/CommonMistakes";
 import FreeVsPersonalized from "@/components/pages/tools/vastu-map/FreeVsPersonalized";
-import VastuMapFAQ from "@/components/pages/tools/vastu-map/VastuMapFAQ";
+import { faqs } from "@/data/vastuMapData";
+import FAQ from "@/components/ui/FAQ";
 import ConsultationCTA from "@/components/pages/tools/vastu-map/ConsultationCTA";
 
 export const metadata = {
@@ -34,7 +35,7 @@ export default function VastuMapPage() {
 
       <FreeVsPersonalized />
 
-      <VastuMapFAQ />
+      <FAQ faqs={faqs} />
 
       <ConsultationCTA />
     </main>

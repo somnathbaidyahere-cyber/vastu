@@ -5,7 +5,8 @@ export const directions = [
     sanskrit: "Uttara",
     theme: "Growth & opportunity",
     association: "Traditionally linked with movement, work and prosperity.",
-    guidance: "Open, active spaces such as a living area or study are commonly considered here.",
+    guidance:
+      "Open, active spaces such as a living area or study are commonly considered here.",
     room: "Living / study",
     position: "left-1/2 top-3 -translate-x-1/2",
   },
@@ -14,8 +15,10 @@ export const directions = [
     name: "North-East",
     sanskrit: "Ishanya",
     theme: "Clarity & contemplation",
-    association: "Regarded as a light, quiet zone associated with reflection and water.",
-    guidance: "A prayer, meditation or calm study space is a common traditional preference.",
+    association:
+      "Regarded as a light, quiet zone associated with reflection and water.",
+    guidance:
+      "A prayer, meditation or calm study space is a common traditional preference.",
     room: "Pooja / meditation",
     position: "right-[12%] top-[13%]",
   },
@@ -24,8 +27,10 @@ export const directions = [
     name: "East",
     sanskrit: "Purva",
     theme: "Light & vitality",
-    association: "Connected with sunrise, renewal and beneficial morning light.",
-    guidance: "Entrances, windows and social spaces are often welcomed along this side.",
+    association:
+      "Connected with sunrise, renewal and beneficial morning light.",
+    guidance:
+      "Entrances, windows and social spaces are often welcomed along this side.",
     room: "Entrance / living",
     position: "right-3 top-1/2 -translate-y-1/2",
   },
@@ -34,8 +39,10 @@ export const directions = [
     name: "South-East",
     sanskrit: "Agneya",
     theme: "Fire & transformation",
-    association: "The traditional fire zone, associated with heat, energy and preparation.",
-    guidance: "The kitchen is commonly placed here when the overall plan allows it.",
+    association:
+      "The traditional fire zone, associated with heat, energy and preparation.",
+    guidance:
+      "The kitchen is commonly placed here when the overall plan allows it.",
     room: "Kitchen",
     position: "bottom-[13%] right-[12%]",
   },
@@ -45,7 +52,8 @@ export const directions = [
     sanskrit: "Dakshina",
     theme: "Discipline & strength",
     association: "Associated with stability, boundaries and focused activity.",
-    guidance: "Heavier, enclosed or work-oriented uses are traditionally preferred over openness.",
+    guidance:
+      "Heavier, enclosed or work-oriented uses are traditionally preferred over openness.",
     room: "Storage / work",
     position: "bottom-3 left-1/2 -translate-x-1/2",
   },
@@ -54,8 +62,10 @@ export const directions = [
     name: "South-West",
     sanskrit: "Nairutya",
     theme: "Stability & grounding",
-    association: "Considered the most settled and weight-bearing part of a home.",
-    guidance: "The primary bedroom or substantial storage is often associated with this zone.",
+    association:
+      "Considered the most settled and weight-bearing part of a home.",
+    guidance:
+      "The primary bedroom or substantial storage is often associated with this zone.",
     room: "Primary bedroom",
     position: "bottom-[13%] left-[12%]",
   },
@@ -64,8 +74,10 @@ export const directions = [
     name: "West",
     sanskrit: "Pashchima",
     theme: "Completion & support",
-    association: "Linked with consolidation, maturity and the later part of the day.",
-    guidance: "Dining, study or storage can be considered here in general planning.",
+    association:
+      "Linked with consolidation, maturity and the later part of the day.",
+    guidance:
+      "Dining, study or storage can be considered here in general planning.",
     room: "Dining / study",
     position: "left-3 top-1/2 -translate-y-1/2",
   },
@@ -74,8 +86,10 @@ export const directions = [
     name: "North-West",
     sanskrit: "Vayavya",
     theme: "Movement & exchange",
-    association: "A dynamic air zone associated with movement, guests and transition.",
-    guidance: "Guest rooms, utility spaces or circulation are common associations.",
+    association:
+      "A dynamic air zone associated with movement, guests and transition.",
+    guidance:
+      "Guest rooms, utility spaces or circulation are common associations.",
     room: "Guest / utility",
     position: "left-[12%] top-[13%]",
   },
@@ -90,24 +104,29 @@ export const mistakes = [
 ];
 
 export const faqs = [
-  [
-    "Where should I stand?",
-    "Stand as close as practical to the approximate geometric center of the entire home—not at the main door or the center of one room.",
-  ],
-  [
-    "What is Brahmasthan?",
-    "Brahmasthan is the central zone of the Vastu plan. For this guide, use the practical geometric center of your home's overall footprint as your reading point.",
-  ],
-  [
-    "Can I use my phone compass?",
-    "Yes. Place the phone flat in your palm, follow its calibration prompt, and keep away from large metal objects and electrical equipment.",
-  ],
-  [
-    "Why can compass readings differ?",
-    "Nearby metal, magnets, appliances, reinforced concrete and an uncalibrated sensor can shift a reading. Compare a few readings from the same central area.",
-  ],
-  [
-    "Can this guide identify Vastu defects?",
-    "No. It teaches direction identification and broad traditional associations. A property-specific assessment needs the full plan, orientation and site context.",
-  ],
+  {
+    question: "Where should I stand?",
+    answer:
+      "Stand as close as practical to the approximate geometric center of the entire home—not at the main door or the center of one room.",
+  },
+  {
+    question: "What is Brahmasthan?",
+    answer:
+      "Brahmasthan is the central zone of the Vastu plan. For this guide, use the practical geometric center of your home's overall footprint as your reading point.",
+  },
+  {
+    question: "Can I use my phone compass?",
+    answer:
+      "Yes. Place the phone flat in your palm, follow its calibration prompt, and keep away from large metal objects and electrical equipment.",
+  },
+  {
+    question: "Why can compass readings differ?",
+    answer:
+      "Nearby metal, magnets, appliances, reinforced concrete and an uncalibrated sensor can shift a reading. Compare a few readings from the same central area.",
+  },
+  {
+    question: "Can this guide identify Vastu defects?",
+    answer:
+      "No. It teaches direction identification and broad traditional associations. A property-specific assessment needs the full plan, orientation and site context.",
+  },
 ];
