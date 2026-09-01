@@ -1,119 +1,55 @@
-import { ArrowDown } from "lucide-react";
+// components/mandala/mandala-introduction.jsx
 
-function MandalaIntro() {
+import { ArrowRight } from "lucide-react";
+
+export default function MandalaIntro() {
+  const framework = ["Direction", "Element", "Zone", "Space"];
+
   return (
-    <section className="relative overflow-hidden bg-[#F5F1E8] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+    <section
+      id="mandala-introduction"
+      className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-5">
+            <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+              01 · The framework
+            </span>
 
-          {/* Visual */}
-          <div className="relative mx-auto w-full max-w-[520px]">
-            <div className="relative aspect-square">
-
-              {/* Outer geometry */}
-              <div className="absolute inset-[4%] rotate-45 border border-[#9A7D45]/20" />
-
-              {/* Inner geometry */}
-              <div className="absolute inset-[17%] border border-[#171820]/10" />
-
-              {/* Grid */}
-              <div className="absolute inset-[17%]">
-                <div className="absolute left-1/3 top-0 h-full w-px bg-[#171820]/10" />
-                <div className="absolute left-2/3 top-0 h-full w-px bg-[#171820]/10" />
-
-                <div className="absolute left-0 top-1/3 h-px w-full bg-[#171820]/10" />
-                <div className="absolute left-0 top-2/3 h-px w-full bg-[#171820]/10" />
-              </div>
-
-              {/* Cardinal axis */}
-              <div className="absolute left-1/2 top-[8%] h-[84%] w-px -translate-x-1/2 bg-[#9A7D45]/15" />
-              <div className="absolute left-[8%] top-1/2 h-px w-[84%] -translate-y-1/2 bg-[#9A7D45]/15" />
-
-              {/* Centre */}
-              <div className="absolute left-1/2 top-1/2 flex h-[18%] w-[18%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#9A7D45]/30 bg-[#F5F1E8]">
-                <div className="h-2 w-2 rounded-full bg-[#9A7D45]/60" />
-              </div>
-
-              {/* Direction labels */}
-              <span className="absolute left-1/2 top-0 -translate-x-1/2 text-[10px] font-medium tracking-[0.25em] text-[#75613C]/60">
-                N
-              </span>
-
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[10px] font-medium tracking-[0.25em] text-[#75613C]/60">
-                S
-              </span>
-
-              <span className="absolute left-0 top-1/2 -translate-y-1/2 text-[10px] font-medium tracking-[0.25em] text-[#75613C]/60">
-                W
-              </span>
-
-              <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[10px] font-medium tracking-[0.25em] text-[#75613C]/60">
-                E
-              </span>
-
-              {/* Decorative dots */}
-              <span className="absolute left-[14%] top-[14%] h-1.5 w-1.5 rounded-full bg-[#9A7D45]/30" />
-              <span className="absolute right-[14%] top-[14%] h-1.5 w-1.5 rounded-full bg-[#9A7D45]/30" />
-              <span className="absolute bottom-[14%] left-[14%] h-1.5 w-1.5 rounded-full bg-[#9A7D45]/30" />
-              <span className="absolute bottom-[14%] right-[14%] h-1.5 w-1.5 rounded-full bg-[#9A7D45]/30" />
-
-              {/* Soft glow */}
-              <div className="absolute left-1/2 top-1/2 -z-10 h-[45%] w-[45%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#B99A5B]/10 blur-3xl" />
-            </div>
+            <h2 className="mt-5 text-3xl font-medium text-foreground sm:text-5xl">
+              Space understood as relationship
+            </h2>
           </div>
 
-          {/* Content */}
-          <div className="max-w-xl">
-
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9A7D45]">
-              The Mandala
+          <div className="lg:col-span-7 lg:pt-8">
+            <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              The Vastu Purusha Mandala is a traditional diagram for reading
+              an oriented site as an interconnected whole. It brings
+              direction, natural qualities, spatial zones, and the lived use
+              of space into one ordered framework.
             </p>
 
-            <h2 className="mt-5 text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-[#171820] sm:text-5xl lg:text-[3.5rem]">
-              A spatial language,
-              <br />
-              <span className="font-serif italic text-[#75613C]">
-                not simply a diagram.
-              </span>
-            </h2>
+            <div className="mt-10 grid border-y border-border sm:grid-cols-4">
+              {framework.map((item, index) => (
+                <div
+                  key={item}
+                  className="relative border-b border-border px-5 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+                >
+                  <span className="text-[10px] font-semibold text-primary/45">
+                    0{index + 1}
+                  </span>
 
-            <div className="mt-7 space-y-5 text-base leading-7 text-[#5C5A54] sm:text-lg sm:leading-8">
-              <p>
-                The Vastu Purusha Mandala is a traditional geometric
-                framework for understanding a space through its divisions,
-                directions, and elemental relationships.
-              </p>
+                  <p className="mt-2 font-heading text-xl text-foreground">
+                    {item}
+                  </p>
 
-              <p>
-                Rather than viewing a home as a collection of rooms, the
-                Mandala offers a way of seeing the dwelling as an ordered
-                spatial field.
-              </p>
+                  {index < 3 && (
+                    <ArrowRight className="absolute -right-2 top-1/2 z-10 hidden h-4 w-4 -translate-y-1/2 bg-background text-primary sm:block" />
+                  )}
+                </div>
+              ))}
             </div>
-
-            {/* Concept line */}
-            <div className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-medium text-[#171820]">
-              <span>Direction</span>
-              <span className="text-[#9A7D45]/50">→</span>
-              <span>Element</span>
-              <span className="text-[#9A7D45]/50">→</span>
-              <span>Zone</span>
-              <span className="text-[#9A7D45]/50">→</span>
-              <span>Space</span>
-            </div>
-
-            {/* Scroll cue */}
-            <a
-              href="#interactive-mandala"
-              className="group mt-10 inline-flex items-center gap-2 text-sm font-medium text-[#75613C]"
-            >
-              Explore the framework
-
-              <ArrowDown
-                size={15}
-                className="transition-transform duration-300 group-hover:translate-y-1"
-              />
-            </a>
           </div>
         </div>
       </div>
@@ -121,5 +57,4 @@ function MandalaIntro() {
   );
 }
 
-export default MandalaIntro;
-
+// NAMED EXPORT

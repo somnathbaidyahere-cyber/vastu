@@ -3,7 +3,7 @@
 import { CircleDot } from "lucide-react";
 import { zones } from "./mandala-data";
 
-export default function MandalaGrid({
+export function MandalaGrid({
   activeZone,
   onZoneSelect,
   interactive = false,
