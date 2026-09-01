@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { directions } from "@/data/vastuCompassData";
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
 import VastuMapGrid from "./VastuMapGrid";
 
 export default function VastuMapExplorer() {
@@ -23,7 +23,7 @@ export default function VastuMapExplorer() {
         {/* Section heading */}
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <SectionLabel number="03">
+            <SectionLabel number="02">
               Explore the map
             </SectionLabel>
 

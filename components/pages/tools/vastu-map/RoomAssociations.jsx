@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
+
 
 const associations = [
   {
@@ -48,7 +49,7 @@ export default function RoomAssociations() {
         {/* Header */}
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <SectionLabel number="05">
+            <SectionLabel number="04">
               Apply the framework
             </SectionLabel>
 

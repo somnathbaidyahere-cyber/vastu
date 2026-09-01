@@ -1,5 +1,6 @@
 import { TriangleAlert, X } from "lucide-react";
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
+
 
 const mistakes = [
   "Assuming the top of every floor plan is North.",
@@ -16,9 +17,9 @@ export default function CommonMistakes() {
 
         {/* Intro */}
         <div className="lg:col-span-4">
-          <SectionLabel number="07">
+          {/* <SectionLabel number="07">
             Read carefully
-          </SectionLabel>
+          </SectionLabel> */}
 
           <div className="mt-6 flex h-11 w-11 items-center justify-center rounded-full border border-accent/20 bg-accent/10 text-accent">
             <TriangleAlert className="h-5 w-5" />

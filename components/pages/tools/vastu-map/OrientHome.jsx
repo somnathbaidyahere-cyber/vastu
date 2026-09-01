@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Compass, Crosshair, Map } from "lucide-react";
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
+
 
 const steps = [
   {
@@ -25,12 +26,12 @@ const steps = [
 
 export default function OrientHome() {
   return (
-    <section className="border-y border-border/60 bg-secondary/35 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section className="border-y border-border/60 bg-primary-foreground px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-20">
 
         {/* Intro */}
         <div className="lg:col-span-5">
-          <SectionLabel number="02">
+          <SectionLabel number="01">
             Orient your home
           </SectionLabel>
 
@@ -61,7 +62,7 @@ export default function OrientHome() {
               return (
                 <div
                   key={step.number}
-                  className="bg-background p-7 transition-colors hover:bg-secondary/40 sm:p-8"
+                  className="bg-surface p-7 transition-colors hover:bg-secondary/40 sm:p-8"
                 >
                   <div className="flex items-center justify-between">
                     <Icon className="h-5 w-5 text-primary" />

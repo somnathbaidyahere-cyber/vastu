@@ -14,11 +14,12 @@ export default function VastuMapHero() {
             Vastu Spatial Guide
           </div>
 
-          <h1 className="mt-7 text-4xl font-medium leading-[1.12] text-foreground sm:text-5xl lg:text-6xl">
-            See Your Home Through the Vastu Map
+          <h1 className="hero-heading">
+            See your Home through the{" "}
+            <span className="text-gradient-brand">Vastu Map</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="hero-description">
             Understand how the eight directions are arranged across a home and
             explore the traditional Vastu associations of each zone.
           </p>

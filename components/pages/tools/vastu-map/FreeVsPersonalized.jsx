@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
+
 
 const freeItems = [
   "Understand the eight directional zones",
@@ -23,9 +24,9 @@ export default function FreeVsPersonalized() {
 
         {/* Heading */}
         <div className="max-w-3xl">
-          <SectionLabel number="08">
+          {/* <SectionLabel number="08">
             Know the difference
-          </SectionLabel>
+          </SectionLabel> */}
 
           <h2 className="mt-5 text-3xl font-medium leading-[1.1] text-foreground sm:text-4xl lg:text-5xl">
             The map gives you the framework.

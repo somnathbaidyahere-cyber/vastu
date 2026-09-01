@@ -1,4 +1,5 @@
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
+
 
 export default function MapIntroduction() {
   return (

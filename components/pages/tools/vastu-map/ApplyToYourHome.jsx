@@ -1,5 +1,5 @@
 import { ArrowDown, Compass, MapPinned } from "lucide-react";
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
 
 export default function ApplyToYourHome() {
   return (
@@ -9,7 +9,7 @@ export default function ApplyToYourHome() {
         {/* Header */}
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <SectionLabel number="06">
+            <SectionLabel number="05">
               Apply it to your home
             </SectionLabel>
 

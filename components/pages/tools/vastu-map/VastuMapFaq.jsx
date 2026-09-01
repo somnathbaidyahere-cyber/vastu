@@ -1,5 +1,6 @@
 import { HelpCircle } from "lucide-react";
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
+
 
 const faqs = [
   {
@@ -36,9 +37,9 @@ export default function VastuMapFAQ() {
 
         {/* Intro */}
         <div className="lg:col-span-4">
-          <SectionLabel number="09">
+          {/* <SectionLabel number="09">
             Questions, answered
-          </SectionLabel>
+          </SectionLabel> */}
 
           <HelpCircle className="mt-7 h-7 w-7 text-primary" />
 

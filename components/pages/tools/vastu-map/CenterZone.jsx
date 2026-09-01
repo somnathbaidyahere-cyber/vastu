@@ -1,5 +1,6 @@
 import { Crosshair } from "lucide-react";
-import SectionLabel from "./SectionLabel";
+import SectionLabel from "../../../ui/SectionLabel";
+
 
 export default function CenterZone() {
   return (
@@ -56,7 +57,7 @@ export default function CenterZone() {
 
         {/* Content */}
         <div className="lg:col-span-6">
-          <SectionLabel number="04">
+          <SectionLabel number="03">
             The central zone
           </SectionLabel>
 
