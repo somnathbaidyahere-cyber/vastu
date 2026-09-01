@@ -24,17 +24,22 @@ export default function VastuMapGrid({
         {zones.flat().map((id) => {
           const center = id === "CENTER";
           const selected = id === selectedId;
+          
 
-          const className = `
+          const className = ` group
             relative flex flex-col items-center justify-center
             border border-border/70 p-3 text-center transition-all
-            ${center ? "bg-primary text-primary-foreground" : "bg-background/85"}
+            ${center ? "bg-primary text-primary-foreground " : "bg-background/85"}
             ${
               selected && !center
                 ? "z-10 bg-secondary shadow-inner ring-2 ring-inset ring-primary/40"
                 : ""
             }
             ${interactive ? "cursor-pointer hover:bg-secondary/70" : ""}
+            ${ selected && id == "NW"? "rounded-tl-3xl":"" }
+            ${ selected && id == "NE"? "rounded-tr-3xl":"" }
+            ${ selected && id == "SW"? "rounded-bl-3xl":"" }
+            ${ selected && id == "SE"? "rounded-br-3xl":"" }
           `;
 
           const content = (
@@ -42,7 +47,7 @@ export default function VastuMapGrid({
               <span
                 className={`font-heading text-2xl sm:text-3xl ${
                   center
-                    ? "text-primary-foreground"
+                    ? "text-primary-foreground group-hover:text-accent"
                     : "text-primary"
                 }`}
               >
@@ -52,7 +57,7 @@ export default function VastuMapGrid({
               <span
                 className={`mt-1 text-[9px] uppercase tracking-widest sm:text-[10px] ${
                   center
-                    ? "text-primary-foreground/70"
+                    ? "text-primary-foreground/70 group-hover:text-primary"
                     : "text-muted-foreground"
                 }`}
               >
