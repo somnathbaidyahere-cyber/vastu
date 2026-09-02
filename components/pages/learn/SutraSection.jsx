@@ -2,7 +2,7 @@ import { sutras } from "@/data/learnData";
 
 export default function SutraSection() {
   return (
-    <section className="bg-ivory-pattern px-4 py-20 sm:px-6 lg:px-8 lg:py-24 bg-surface">
+    <section className="bg-surface/50  px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-6 sm:grid-cols-2">
           {sutras.map((sutra, i) => (

@@ -11,8 +11,8 @@ import {
 export const learnChapters = [
   {
     href: "/learn/fundamentals",
-    kicker: "Start here",
-    name: "Fundamentals",
+    kicker: "Start here . Vastu Basics",
+    name: "Vastu Shastra Fundamentals",
     sanskrit: "Vastu Shastra",
     blurb:
       "The grammar of the shastra — the mandala, the axis, the brahmasthan, and why orientation decides the mood of a home.",
@@ -26,7 +26,7 @@ export const learnChapters = [
   {
     href: "/learn/elements",
     kicker: "Chapter two",
-    name: "Five Elements",
+    name: "Five Elements of Vastu",
     sanskrit: "Pancha Bhuta",
     blurb:
       "Earth, water, fire, air and space — where each element belongs, and what happens when they are placed against their nature.",
@@ -50,10 +50,10 @@ export const learnChapters = [
   {
     href: "/learn/rooms",
     kicker: "Apply it",
-    name: "Rooms",
+    name: "Vastu for Rooms",
     sanskrit: "Griha Vinyasa",
     blurb:
-      "Vastu guidance for every room — kitchen, bedroom, pooja room, staircase, bath and study, in the order a consultant walks a home.",
+      "Practical Vastu guidance for every room — kitchen, bedroom, pooja room, staircase, bath and study & other rooms.",
     reads: [
       "Room-by-room checklists",
       "Kitchen & pooja rules",
@@ -142,4 +142,37 @@ export const sutras = [
     text: "Where light enters first, place water and stillness; where fire lives, keep the west shut.",
     source: "Manasara Shilpa Shastra",
   },
+];
+
+export const faqs = [
+  {
+    question: "What is Vastu Shastra?",
+    answer:
+      "Vastu Shastra is a traditional Indian system of architecture and spatial planning that considers directions, elements, proportions, and the arrangement of spaces to create a harmonious environment."
+  },
+  {
+    question: "Why is Vastu important?",
+    answer:
+      "Vastu provides a traditional framework for understanding how a space is oriented, organized, and used. Learning its principles can help you make more intentional decisions about the layout and use of your home or workplace."
+  },
+  {
+    question: "Why are directions important in Vastu?",
+    answer:
+      "Directions form an important part of Vastu because different areas of a building are traditionally associated with different qualities, elements, and activities. Understanding orientation is therefore one of the first steps in applying Vastu."
+  },
+  {
+    question: "What is the Vastu Purusha Mandala?",
+    answer:
+      "The Vastu Purusha Mandala is a geometric framework used in Vastu to organize and understand space. It divides a site into a structured grid of zones, helping relate different parts of a space to directions and traditional principles."
+  },
+  {
+    question: "Can Vastu principles be applied to modern homes?",
+    answer:
+      "Yes. Vastu principles can be studied and thoughtfully applied to modern homes without treating every traditional guideline as an absolute rule. Practical considerations such as architecture, safety, ventilation, natural light, and building requirements should always be considered alongside Vastu."
+  },
+  {
+    question: "Do I need to rebuild my home to follow Vastu?",
+    answer:
+      "No. Understanding Vastu does not automatically mean making major structural changes. Many people begin by understanding the orientation, layout, room usage, and existing characteristics of their space before considering any changes."
+  }
 ];

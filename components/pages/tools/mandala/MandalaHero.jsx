@@ -30,10 +30,10 @@ export default function MandalaHero() {
         </div>
 
         <div
-          className="relative h-[420px] sm:h-[560px] lg:col-span-6 lg:h-[650px]"
+          className="relative h-105 sm:h-140 lg:col-span-6 lg:h-162.5"
           aria-hidden="true"
         >
-          <div className="absolute left-1/2 top-1/2 aspect-square w-[610px] -translate-x-1/2 -translate-y-1/2 rotate-45 border border-primary/20 sm:w-[760px] lg:left-[62%] lg:w-[880px]">
+          <div className="absolute left-1/2 top-1/2 aspect-square w-152.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-primary/20 sm:w-190 lg:left-[62%] lg:w-220">
             <div className="absolute inset-[8%] border border-primary/20" />
             <div className="absolute inset-[19%] border border-accent/25" />
             <div className="absolute inset-[31%] border border-primary/25" />
@@ -42,7 +42,7 @@ export default function MandalaHero() {
             <div className="absolute left-0 top-1/2 h-px w-full bg-primary/15" />
           </div>
 
-          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[330px] -translate-x-1/2 -translate-y-1/2 grid-cols-3 border border-primary/25 bg-background/70 shadow-2xl shadow-primary/10 backdrop-blur-sm sm:w-[430px] lg:left-[62%] lg:w-[500px]">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-82.5 -translate-x-1/2 -translate-y-1/2 grid-cols-3 border border-primary/25 bg-background/70 shadow-2xl shadow-primary/10 backdrop-blur-sm sm:w-107.5 lg:left-[62%] lg:w-125">
             {["NW", "N", "NE", "W", "CENTER", "E", "SW", "S", "SE"].map(
               (zone) => (
                 <div

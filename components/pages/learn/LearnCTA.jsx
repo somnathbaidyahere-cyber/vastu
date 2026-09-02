@@ -28,7 +28,7 @@ export default function LearnCTA() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
-                href="/consultation"
+                href="/tools"
                 className="inline-flex items-center justify-center rounded-full bg-primary-foreground px-7 py-3.5 text-base font-medium text-primary transition-all hover:bg-brand-cream"
               >
                 Explore the tools

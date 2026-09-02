@@ -13,6 +13,10 @@ export default function LearnChapters() {
           <h2 className="section-heading">
             From first principles to the room you sleep in
           </h2>
+
+           <p className="section-description">
+            Build a foundation in Vastu Shastra before exploring individual directions, elements and rooms.
+          </p>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">

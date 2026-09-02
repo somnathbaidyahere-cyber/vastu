@@ -23,7 +23,7 @@ export const tools = [
   },
   {
     slug: "map",
-    href: "/tools/map",
+    href: "/tools/vastu-map",
     icon: "map",
     name: "Interactive Vastu Map",
     sanskrit: "Kshetra Darshana",
