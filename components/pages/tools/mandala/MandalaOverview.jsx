@@ -45,7 +45,7 @@ export default function MandalaOverview() {
           </div>
         </div>
 
-        <p className="mx-auto mt-10 max-w-3xl font-heading text-xl leading-relaxed text-foreground sm:text-2xl">
+        <p className="section-description">
           Compass helps me find. Home Map helps me apply. Mandala helps me
           understand.
         </p>
