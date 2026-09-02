@@ -1,9 +1,9 @@
 // components/mandala/mandala-grid.jsx
 
 import { CircleDot } from "lucide-react";
-import { zones } from "./mandala-data";
+import { zones } from "../../../../data/mandalaData";
 
-export function MandalaGrid({
+export default function MandalaGrid({
   activeZone,
   onZoneSelect,
   interactive = false,

@@ -1,11 +1,10 @@
 // components/mandala/elements-section.jsx
-
+'use client'
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 
-import { elements, zones } from "./mandala-data";
+import { elements, zones } from "../../../../data/mandalaData";
 
-export function ElementsSection() {
+export default function ElementsSection() {
   const [selectedElement, setSelectedElement] = useState("Space");
 
   const activeElement = elements.find(
@@ -21,18 +20,18 @@ export function ElementsSection() {
               04 · Pancha Mahabhuta
             </span>
 
-            <h2 className="mt-5 text-3xl font-medium text-foreground sm:text-5xl">
+            <h2 className="ssection-heading">
               Five elements, one field
             </h2>
 
-            <p className="mt-5 leading-relaxed text-muted-foreground">
+            <p className="section-description">
               Select an element to see where its quality becomes most legible
               in this simplified Mandala.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               {elements.map(([name]) => (
-                <Button
+                <button
                   key={name}
                   type="button"
                   variant={
@@ -43,7 +42,7 @@ export function ElementsSection() {
                   className="rounded-full"
                 >
                   {name}
-                </Button>
+                </button>
               ))}
             </div>
 

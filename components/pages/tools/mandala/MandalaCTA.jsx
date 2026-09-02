@@ -1,9 +1,8 @@
 // components/mandala/mandala-cta.jsx
 
 import { Home, MoveUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-export function MandalaCTA() {
+export default function  MandalaCTA() {
   return (
     <section className="relative overflow-hidden border-t border-border/60 bg-secondary/40 px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
       <div
@@ -23,24 +22,24 @@ export function MandalaCTA() {
       </div>
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl ">
           <Home className="h-8 w-8 text-primary" />
 
-          <h2 className="mt-7 text-4xl font-medium text-foreground sm:text-6xl">
+          <h2 className="text-primary cta-heading">
             See your home with a deeper understanding.
           </h2>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="text-primary cta-description">
             Carry this spatial perspective into the plan you have already
             explored.
           </p>
 
-          <Button asChild size="lg" className="mt-9 rounded-full px-7">
+          <button  size="lg" className="mt-9 rounded-full px-7">
             <a href="/tools/map">
               Explore My Home Map
               <MoveUpRight className="h-4 w-4" />
             </a>
-          </Button>
+          </button>
         </div>
       </div>
     </section>

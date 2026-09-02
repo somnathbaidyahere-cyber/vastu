@@ -1,12 +1,15 @@
 // components/mandala/interactive-mandala.jsx
+"use client";
 
-import { useState } from "react";
+import { useMandala } from "./MandalaContext";
 
-import { zones } from "./mandala-data";
-import { MandalaGrid } from "./mandala-grid";
+// import { useState } from "react";
 
-export function InteractiveMandala() {
-  const [selectedZone, setSelectedZone] = useState("CENTER");
+import { zones } from "../../../../data/mandalaData";
+import  MandalaGrid  from "./MandalaGrid";
+
+export default function InteractiveMandala() {
+   const { selectedZone, setSelectedZone } = useMandala();
 
   const activeZone =
     zones.find((zone) => zone.id === selectedZone) || zones[4];
@@ -23,12 +26,12 @@ export function InteractiveMandala() {
               02 · Interactive Mandala
             </span>
 
-            <h2 className="mt-5 text-3xl font-medium text-foreground sm:text-5xl">
+            <h2 className="section-heading">
               Read the whole through each part
             </h2>
           </div>
 
-          <p className="max-w-xl leading-relaxed text-muted-foreground lg:col-span-5">
+          <p className="max-w-xl section-description lg:col-span-5">
             Select a field within the Mandala. The diagram is the navigation:
             each zone reveals a traditional association, elemental
             relationship, and spatial character.

@@ -1,8 +1,8 @@
 // components/mandala/mandala-overview.jsx
 
-import { zones } from "./mandala-data";
+import { zones } from "../../../../data/mandalaData";
 
-export function MandalaOverview() {
+export default function MandalaOverview() {
   return (
     <section className="border-y border-border/60 bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl text-center">
@@ -10,7 +10,7 @@ export function MandalaOverview() {
           07 · Mandala in one view
         </span>
 
-        <h2 className="mt-5 text-3xl font-medium text-foreground sm:text-5xl">
+        <h2 className="section-heading">
           One center. Eight fields. Five elements.
         </h2>
 

@@ -8,7 +8,7 @@ export default function MandalaIntro() {
   return (
     <section
       id="mandala-introduction"
-      className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+      className="scroll-mt-24 bg-primary-foreground px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
@@ -17,13 +17,13 @@ export default function MandalaIntro() {
               01 · The framework
             </span>
 
-            <h2 className="mt-5 text-3xl font-medium text-foreground sm:text-5xl">
+            <h2 className="section-heading">
               Space understood as relationship
             </h2>
           </div>
 
           <div className="lg:col-span-7 lg:pt-8">
-            <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            <p className="section-description">
               The Vastu Purusha Mandala is a traditional diagram for reading
               an oriented site as an interconnected whole. It brings
               direction, natural qualities, spatial zones, and the lived use

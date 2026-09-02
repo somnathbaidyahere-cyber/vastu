@@ -1,30 +1,32 @@
-// components/mandala/directional-framework.jsx
+"use client";
 
-import { zones } from "./mandala-data";
+import { useMandala } from "./MandalaContext";
+import { zones } from "../../../../data/mandalaData";
 
-export function DirectionalFramework() {
-  const handleZoneClick = () => {
-    document
-      .getElementById("interactive-mandala")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-  };
+export default function DirectionalFramework() {
+   const { setSelectedZone } = useMandala();
+  // const handleZoneClick = () => {
+  //   document
+  //     .getElementById("interactive-mandala")
+  //     ?.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "center",
+  //     });
+  // };
 
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="px-4 bg-primary-foreground py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:items-center lg:gap-20">
         <div className="lg:col-span-5">
           <span className="text-xs font-semibold uppercase tracking-widest text-primary">
             03 · Directional framework
           </span>
 
-          <h2 className="mt-5 text-3xl font-medium text-foreground sm:text-5xl">
+          <h2 className="section-heading">
             Eight characters around one center
           </h2>
 
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+          <p className="section-description">
             The directions no longer act as compass points alone. In the
             Mandala, they become distinct spatial characters—flowing, radiant,
             active, settled—held in balance by the center.
@@ -37,12 +39,15 @@ export function DirectionalFramework() {
         </div>
 
         <div className="relative lg:col-span-7">
-          <div className="grid aspect-square max-w-2xl grid-cols-3 border border-primary/25 bg-card divine-shadow">
+          <div className="grid aspect-square max-w-2xl grid-cols-3 border border-primary/25 bg-card shadow-divine">
             {zones.map((zone) => (
               <button
                 key={zone.id}
                 type="button"
-                onClick={handleZoneClick}
+                  onClick={() => {
+                    setSelectedZone(zone.id);
+                    document.getElementById("interactive-mandala")?.scrollIntoView({ behavior: "smooth", block: "center" });
+                  }}
                 className={`flex flex-col items-center justify-center border border-primary/15 p-3 text-center transition-colors ${zone.position} ${
                   zone.id === "CENTER"
                     ? "bg-primary text-primary-foreground"

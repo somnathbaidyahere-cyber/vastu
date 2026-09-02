@@ -2,7 +2,7 @@
 
 import { Sparkles } from "lucide-react";
 
-export function VastuPerspective() {
+export default function VastuPerspective() {
   return (
     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-20">

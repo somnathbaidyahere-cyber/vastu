@@ -2,7 +2,7 @@
 
 import { CircleDot } from "lucide-react";
 
-export function Brahmasthan() {
+export default function Brahmasthan() {
   return (
     <section className="relative overflow-hidden bg-primary px-4 py-24 text-primary-foreground sm:px-6 lg:px-8 lg:py-36">
       <div

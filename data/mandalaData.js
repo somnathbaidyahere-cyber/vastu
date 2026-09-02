@@ -90,25 +90,48 @@ export const elements = [
   ["Space", "Openness · relation", "The field that allows every other element and zone to coexist."],
 ];
 
+export const principleCards = [
+  {
+    principle: "Orientation",
+    description:
+      "Establishes how the spatial field meets light, movement, and the wider site.",
+  },
+  {
+    principle: "Balance",
+    description:
+      "Reads every zone in relation to its opposite, its neighbors, and the center.",
+  },
+  {
+    principle: "Harmony",
+    description:
+      "Emerges from relationships that support the real life unfolding within the plan.",
+  },
+];
+
 export const faqs = [
-  [
-    "Is the Vastu Purusha Mandala always an 81-square grid?",
-    "Traditional texts describe several grid forms for different contexts. The 9×9 or 81-pada form is widely used for domestic study; this page simplifies its outer relationships into nine readable fields.",
-  ],
-  [
-    "Does every square prescribe a specific room?",
-    "No. The Mandala expresses qualities and relationships before room labels. A thoughtful reading considers the complete plan, proportions, openings, use, and lived context.",
-  ],
-  [
-    "What is a pada?",
-    "Pada means a step or portion. In the Mandala it refers to one unit of the underlying grid, helping translate a continuous space into an ordered field.",
-  ],
-  [
-    "Why are deities associated with the zones?",
-    "The names personify observable spatial qualities—light, movement, heat, stability, or openness. They are a traditional vocabulary for remembering relationships within the whole.",
-  ],
-  [
-    "Can I overlay the Mandala on any floor plan?",
-    "It can be used as an interpretive layer after the plan is oriented and mapped. Irregular plots and complex layouts need thoughtful adjustment rather than a rigid, automatic overlay.",
-  ],
+  {
+    question: "Is the Vastu Purusha Mandala always an 81-square grid?",
+    answer:
+      "Traditional texts describe several grid forms for different contexts. The 9×9 or 81-pada form is widely used for domestic study; this page simplifies its outer relationships into nine readable fields.",
+  },
+  {
+    question: "Does every square prescribe a specific room?",
+    answer:
+      "No. The Mandala expresses qualities and relationships before room labels. A thoughtful reading considers the complete plan, proportions, openings, use, and lived context.",
+  },
+  {
+    question: "What is a pada?",
+    answer:
+      "Pada means a step or portion. In the Mandala it refers to one unit of the underlying grid, helping translate a continuous space into an ordered field.",
+  },
+  {
+    question: "Why are deities associated with the zones?",
+    answer:
+      "The names personify observable spatial qualities—light, movement, heat, stability, or openness. They are a traditional vocabulary for remembering relationships within the whole.",
+  },
+  {
+    question: "Can I overlay the Mandala on any floor plan?",
+    answer:
+      "It can be used as an interpretive layer after the plan is oriented and mapped. Irregular plots and complex layouts need thoughtful adjustment rather than a rigid, automatic overlay.",
+  },
 ];

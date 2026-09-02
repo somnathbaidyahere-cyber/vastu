@@ -1,9 +1,9 @@
 // components/mandala/mandala-principles.jsx
 
 import { ArrowRight } from "lucide-react";
-import { principleCards } from "./mandala-data";
+import { principleCards } from "../../../../data/mandalaData";
 
-export function MandalaPrinciples() {
+export default function MandalaPrinciples() {
   const flow = [
     "Orientation",
     "Mandala",
@@ -13,7 +13,7 @@ export function MandalaPrinciples() {
   ];
 
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="bg-primary-foreground px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -21,7 +21,7 @@ export function MandalaPrinciples() {
               06 · Mandala principles
             </span>
 
-            <h2 className="mt-5 text-3xl font-medium text-foreground sm:text-5xl">
+            <h2 className="section-heading">
               From orientation to harmony
             </h2>
           </div>
@@ -45,9 +45,9 @@ export function MandalaPrinciples() {
             </div>
 
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
-              {principleCards.map(([heading, copy], index) => (
+              {principleCards.map(({principle, description}, index) => (
                 <div
-                  key={heading}
+                  key={index}
                   className="border-t-2 border-primary/30 pt-5"
                 >
                   <span className="text-xs text-primary/50">
@@ -55,11 +55,11 @@ export function MandalaPrinciples() {
                   </span>
 
                   <h3 className="mt-3 text-xl font-medium text-foreground">
-                    {heading}
+                    {principle}
                   </h3>
 
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {copy}
+                    {description}
                   </p>
                 </div>
               ))}
