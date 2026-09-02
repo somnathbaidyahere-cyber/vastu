@@ -18,7 +18,7 @@ export default function MandalaPrinciples() {
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-              06 · Mandala principles
+              Mandala principles
             </span>
 
             <h2 className="section-heading">
@@ -54,7 +54,7 @@ export default function MandalaPrinciples() {
                     0{index + 1}
                   </span>
 
-                  <h3 className="mt-3 text-xl font-medium text-foreground">
+                  <h3 className="mt-3 text-xl font-medium text-accent-hover">
                     {principle}
                   </h3>
 
