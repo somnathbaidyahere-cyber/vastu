@@ -10,11 +10,11 @@ export default function MandalaCTA() {
       {/* Background texture */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/backgrounds/floorPlan.webp"
+          src="/backgrounds/vastu-purush.webp"
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-80"
+          className="object-cover object-center opacity-90"
         />
       </div>
 
@@ -33,94 +33,7 @@ export default function MandalaCTA() {
           </div>
 
        {/* Sacred Vastu Mandala Compass Decoration */}
-<div className="pointer-events-none absolute -right-32 top-1/2 hidden aspect-square w-[60%] -translate-y-1/2 lg:block">
-  
-  {/* Outer Glow Ring */}
-  <div className="absolute inset-0 rounded-full bg-primary/5 blur-2xl" />
 
-  {/* Outer Mandala Square Frame (Padas Border) */}
-  <div className="absolute inset-[6%] rotate-45 border border-primary/20 opacity-40" />
-  <div className="absolute inset-[6%] border border-primary/20 opacity-40" />
-
-  {/* Concentric Vastu Zones (Brahma, Daivika, Manusha, Paisacha) */}
-  <div className="absolute inset-[2%] rounded-full border border-dashed border-primary/15" />
-  <div className="absolute inset-[12%] rounded-full border border-primary/20" />
-  <div className="absolute inset-[24%] rounded-full border border-primary/25" />
-  <div className="absolute inset-[36%] rounded-full border border-dashed border-primary/20" />
-
-  {/* 8 Sacred Cardinal & Intercardinal Directional Rays */}
-  {/* N-S / E-W Main Axes */}
-  <div className="absolute left-1/2 top-[2%] h-[96%] w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
-  <div className="absolute left-[2%] top-1/2 h-px w-[96%] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-  
-  {/* Diagonal Axes (NE-SW / NW-SE) */}
-  <div className="absolute left-1/2 top-[2%] h-[96%] w-px rotate-45 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
-  <div className="absolute left-1/2 top-[2%] h-[96%] w-px -rotate-45 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
-
-  {/* Brahmasthan (Central Core Sacred Shrine) */}
-  <div className="absolute left-1/2 top-1/2 flex h-36 w-36 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary/30 bg-background/40 backdrop-blur-md shadow-divine">
-    {/* Inner Sacred Ring */}
-    <div className="flex h-24 w-24 flex-col items-center justify-center rounded-full border border-primary/40 bg-primary/5 text-center">
-      <Home className="h-5 w-5 text-primary" />
-      <span className="mt-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-primary">
-        Brahmasthan
-      </span>
-      <span className="text-[8px] font-medium text-muted-foreground">
-        Center
-      </span>
-    </div>
-  </div>
-
-  {/* Ashtadikpalaka (8 Directional Nodes) */}
-  {/* North */}
-  <div className="absolute left-1/2 top-[3%] -translate-x-1/2 flex flex-col items-center">
-    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-    <span className="mt-1 text-[11px] font-bold tracking-widest text-primary">N</span>
-  </div>
-
-  {/* North-East (Ishan - Sacred Water Corner) */}
-  <div className="absolute right-[14%] top-[14%] flex flex-col items-center">
-    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
-    <span className="mt-1 text-[10px] font-semibold text-primary/80">NE</span>
-  </div>
-
-  {/* East */}
-  <div className="absolute right-[3%] top-1/2 -translate-y-1/2 flex items-center gap-1">
-    <span className="text-[11px] font-bold tracking-widest text-primary">E</span>
-    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-  </div>
-
-  {/* South-East (Agni - Fire Corner) */}
-  <div className="absolute bottom-[14%] right-[14%] flex flex-col items-center">
-    <span className="text-[10px] font-semibold text-primary/80">SE</span>
-    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary/70" />
-  </div>
-
-  {/* South */}
-  <div className="absolute bottom-[3%] left-1/2 -translate-x-1/2 flex flex-col items-center">
-    <span className="text-[11px] font-bold tracking-widest text-primary">S</span>
-    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary" />
-  </div>
-
-  {/* South-West (Nairitya - Earth Corner) */}
-  <div className="absolute bottom-[14%] left-[14%] flex flex-col items-center">
-    <span className="text-[10px] font-semibold text-primary/80">SW</span>
-    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary/70" />
-  </div>
-
-  {/* West */}
-  <div className="absolute left-[3%] top-1/2 -translate-y-1/2 flex items-center gap-1">
-    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-    <span className="text-[11px] font-bold tracking-widest text-primary">W</span>
-  </div>
-
-  {/* North-West (Vayu - Air Corner) */}
-  <div className="absolute left-[14%] top-[14%] flex flex-col items-center">
-    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
-    <span className="mt-1 text-[10px] font-semibold text-primary/80">NW</span>
-  </div>
-
-</div>
 
           {/* Content */}
           <div className="relative z-10 px-6 py-14 sm:px-10 sm:py-16 lg:max-w-[64%] lg:px-16 lg:py-20">
