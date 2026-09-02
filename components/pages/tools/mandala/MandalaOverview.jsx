@@ -7,7 +7,7 @@ export default function MandalaOverview() {
     <section className="border-y border-border/60 bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl text-center">
         <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-          07 · Mandala in one view
+           Mandala in one view
         </span>
 
         <h2 className="section-heading">

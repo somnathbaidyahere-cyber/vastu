@@ -13,7 +13,7 @@ export default function MandalaGrid({
 }) {
   return (
     <div className="relative aspect-square w-full">
-      <div className="absolute inset-0 rotate-45 border border-primary/20" />
+      <div className="absolute inset-0 rotate-45 border border-primary/20 shadow-divine" />
 
       <div className="absolute inset-[5%] rotate-45 border border-accent/20" />
 

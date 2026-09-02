@@ -1,5 +1,5 @@
 // components/mandala/elements-section.jsx
-'use client'
+"use client";
 import { useState } from "react";
 
 import { elements, zones } from "../../../../data/mandalaData";
@@ -7,9 +7,7 @@ import { elements, zones } from "../../../../data/mandalaData";
 export default function ElementsSection() {
   const [selectedElement, setSelectedElement] = useState("Space");
 
-  const activeElement = elements.find(
-    ([name]) => name === selectedElement
-  );
+  const activeElement = elements.find(([name]) => name === selectedElement);
 
   return (
     <section className="border-y border-border/60 bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
@@ -20,13 +18,11 @@ export default function ElementsSection() {
               04 · Pancha Mahabhuta
             </span>
 
-            <h2 className="ssection-heading">
-              Five elements, one field
-            </h2>
+            <h2 className="section-heading">Five elements, one field</h2>
 
             <p className="section-description">
-              Select an element to see where its quality becomes most legible
-              in this simplified Mandala.
+              Select an element to see where its quality becomes most legible in
+              this simplified Mandala.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -34,12 +30,12 @@ export default function ElementsSection() {
                 <button
                   key={name}
                   type="button"
-                  variant={
-                    selectedElement === name ? "default" : "outline"
-                  }
-                  size="sm"
                   onClick={() => setSelectedElement(name)}
-                  className="rounded-full"
+                  className={`inline-flex h-8 cursor-pointer items-center justify-center whitespace-nowrap rounded-full px-3 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ${
+                    selectedElement === name
+                      ? "bg-primary text-primary-foreground shadow hover:bg-primary/90"
+                      : "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground"
+                  }`}
                 >
                   {name}
                 </button>
@@ -62,7 +58,7 @@ export default function ElementsSection() {
           </div>
 
           <div className="lg:col-span-8">
-            <div className="relative mx-auto aspect-square max-w-2xl border-2 border-primary/25 bg-background p-[7%] divine-shadow">
+            <div className="relative mx-auto aspect-square max-w-2xl border-2 border-primary/25 bg-background p-[7%] shadow-divine">
               <div className="absolute inset-[7%] grid grid-cols-3">
                 {zones.map((zone) => {
                   const isRelated = zone.element === selectedElement;

@@ -36,7 +36,7 @@ export default function MandalaPage() {
 
       <MandalaOverview />
 
-      <VastuPerspective />
+      {/* <VastuPerspective /> */}
 
       <FAQ faqs={faqs} />
 

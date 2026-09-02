@@ -40,7 +40,7 @@ export default function InteractiveMandala() {
 
         <div className="mt-14 grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
-            <div className="relative mx-auto aspect-square w-full max-w-[680px] p-[7%]">
+            <div className="relative mx-auto aspect-square w-full max-w-[680px] p-[7%] bg-background shadow-divine">
               <MandalaGrid
                 activeZone={activeZone.id}
                 onZoneSelect={setSelectedZone}

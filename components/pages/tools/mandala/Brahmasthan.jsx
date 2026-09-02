@@ -6,11 +6,11 @@ export default function Brahmasthan() {
   return (
     <section className="relative overflow-hidden bg-primary px-4 py-24 text-primary-foreground sm:px-6 lg:px-8 lg:py-36">
       <div
-        className="absolute left-1/2 top-1/2 aspect-square w-[540px] -translate-x-1/2 -translate-y-1/2 rotate-45 border border-primary-foreground/10"
+        className="absolute left-1/2 top-1/2 aspect-square w-[540px] -translate-x-1/2 -translate-y-1/2 rotate-45 border border-primary-foreground/10 shadow-divine-lg"
         aria-hidden="true"
       >
-        <div className="absolute inset-[16%] border border-primary-foreground/10" />
-        <div className="absolute inset-[34%] border border-primary-foreground/15" />
+        <div className="absolute inset-[16%] border border-primary-foreground/10 shadow-divine-lg" />
+        <div className="absolute inset-[34%] border border-primary-foreground/15 shadow-divine-lg" />
       </div>
 
       <div className="relative mx-auto max-w-3xl text-center">
