@@ -35,7 +35,7 @@ function FAQ({ faqs }) {
               const isOpen = openIndex === index;
 
               return (
-                <div key={faq.question}>
+                <div key={index}>
 
                   {/* Question */}
                   <button
