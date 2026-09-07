@@ -30,7 +30,7 @@ export default function FinalCTASection() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/tools"
-                className="inline-flex items-center justify-center rounded-full bg-primary-foreground px-7 py-3.5 text-base font-medium text-primary transition-all hover:bg-brand-cream"
+                className="inline-flex items-center justify-center rounded-full bg-primary-foreground px-7 py-3.5 text-base font-medium text-primary transition-all hover:bg-surface-muted"
               >
                 Explore the tools
               </Link>

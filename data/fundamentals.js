@@ -24,11 +24,6 @@ export const faqs = [
       "North. Once true north is established for the whole home, every other zone is understood relative to it. Learning a single room's direction before fixing the reference point is the most common beginner mistake.",
   },
   {
-    question: "Is Vastu the same as Feng Shui?",
-    answer:
-      "No. Both study space and orientation, but they come from different traditions with different vocabularies, diagrams and rules. Mixing the two usually produces contradictions, so it is better to study one framework at a time.",
-  },
-  {
     question: "Can I learn Vastu without a consultant?",
     answer:
       "The fundamentals — directions, elements, zoning and the logic behind them — are entirely learnable on your own. A consultant becomes useful when a specific property has constraints that the general principles do not resolve.",

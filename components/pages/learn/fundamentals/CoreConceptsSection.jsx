@@ -1,4 +1,3 @@
-import SectionHeader from "./SectionHeader";
 import { concepts } from "@/data/fundamentals";
 
 export default function CoreConceptsSection() {
@@ -27,14 +26,14 @@ export default function CoreConceptsSection() {
       {concepts.map(({ icon: Icon, name, sanskrit, body }) => (
         <article
           key={name}
-          className="group flex min-h-[250px] flex-col rounded-2xl border border-border/70 bg-suraface-accent p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-divine-glow sm:p-8 "
+          className="group flex min-h-62.5 flex-col rounded-2xl border border-border/70 bg-suraface-accent p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-divine-glow sm:p-8 "
         >
           {/* Icon */}
           <div
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-surface text-primary transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary/5"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-surface text-primary transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary-hover group-hover:text-surface"
           >
             <Icon
-              className="h-[18px] w-[18px]"
+              className="h-4.5 w-4.5"
               strokeWidth={1.7}
               aria-hidden="true"
             />
