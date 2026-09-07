@@ -30,7 +30,7 @@ export default function MandalaHero() {
         </div>
 
         <div
-          className="relative h-105 sm:h-140 lg:col-span-6 lg:h-162.5"
+          className="relative flex flex-col  h-105 sm:h-140 lg:col-span-6 lg:h-162.5"
           aria-hidden="true"
         >
           <div className="absolute left-1/2 top-1/2 aspect-square w-152.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-primary/20 sm:w-190 lg:left-[62%] lg:w-220">
@@ -63,7 +63,7 @@ export default function MandalaHero() {
             )}
           </div>
 
-          <p className="absolute bottom-2 right-0 text-xs uppercase tracking-widest text-muted-foreground sm:right-8 lg:right-0">
+          <p className="absolute bottom-2 right-0 text-xs uppercase tracking-widest text-muted-foreground sm:right-8 md:right-80 lg:right-22">
             A whole revealed through its centre
           </p>
         </div>
