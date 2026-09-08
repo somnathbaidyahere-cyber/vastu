@@ -7,7 +7,9 @@ export default function FundamentalsHero() {
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-7">
           <span className="section-badge">Chapter one</span>
-          <h1 className="hero-heading">Vastu Fundamentals</h1>
+          <h1 className="hero-heading">
+            Vastu {" "}<span className="text-gradient-brand">Fundamentals</span>
+          </h1>
           <p className="hero-description">
             The vocabulary and reasoning behind Vastu Shastra, explained without
             mystification. Start here to understand orientation, the five
@@ -19,7 +21,8 @@ export default function FundamentalsHero() {
               href="#start-learning"
               className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
             >
-              Start the path <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
+              Start the path{" "}
+              <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
             </a>
             <a
               href="#core-concepts"

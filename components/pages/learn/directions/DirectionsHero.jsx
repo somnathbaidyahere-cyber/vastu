@@ -11,11 +11,11 @@ export default function DirectionsHero() {
             Chapter three
           </span>
 
-          <h1 className="mt-5 text-4xl font-medium leading-[1.12] text-foreground sm:text-5xl lg:text-6xl">
-            The 8 Directions
+          <h1 className="hero-heading">
+            The {" "}<span className="text-gradient-brand">8 Directions</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="hero-description">
             Every reading in Vastu begins with direction. Before a room, a
             wall or a doorway is judged, the plan is first oriented against
             eight fixed points — and each one carries its own traditional

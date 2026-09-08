@@ -12,7 +12,7 @@ export default function FiveElementsHero() {
           </span>
 
           <h1 className="hero-heading">
-            Five Elements
+            Five {" "}<span className="text-gradient-brand">Elements</span>
           </h1>
 
           <p className="hero-description">
