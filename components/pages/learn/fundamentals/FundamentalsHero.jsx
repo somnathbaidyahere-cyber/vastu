@@ -31,10 +31,10 @@ export default function FundamentalsHero() {
         </div>
         <div className="lg:col-span-5">
           <Image
-            src="/backgrounds/compass-symbol.png"
+            src="/backgrounds/compass-symbol-2.png"
             alt=""
-            width={600}
-            height={400}
+            width={400}
+            height={250}
           />
         </div>
       </div>

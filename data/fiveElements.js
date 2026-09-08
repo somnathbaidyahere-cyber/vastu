@@ -1,49 +1,53 @@
-import {
-  Mountain,
-  Droplets,
-  Flame,
-  Wind,
-  Orbit,
-} from "lucide-react";
+import { Mountain, Droplets, Flame, Wind, Orbit } from "lucide-react";
 export const elements = [
   {
     slug: "earth",
     icon: Mountain,
     name: "Earth",
+    color: "bg-[#A66A3F]/15",
     sanskrit: "Prithvi",
-    meaning: "Mass, weight and stability — the element every structure ultimately rests on.",
+    meaning:
+      "Mass, weight and stability — the element every structure ultimately rests on.",
     body: "Prithvi governs solidity: foundations, load-bearing walls, and the parts of a home meant to stay still. In the zones it rules, Vastu asks for density rather than opening.",
   },
   {
     slug: "water",
     icon: Droplets,
     name: "Water",
+    color: "bg-[#287C8C]/15",
     sanskrit: "Jal",
-    meaning: "Flow, coolness and the movement that keeps a home from stagnating.",
+    meaning:
+      "Flow, coolness and the movement that keeps a home from stagnating.",
     body: "Jal is read wherever moisture, storage and gentle movement belong — wells, sumps, and the quiet north-east corner traditionally reserved for it.",
   },
   {
     slug: "fire",
     icon: Flame,
     name: "Fire",
+    color: "bg-[#D88A32]/15",
     sanskrit: "Agni",
-    meaning: "Heat, transformation and the energy a household converts and consumes.",
+    meaning:
+      "Heat, transformation and the energy a household converts and consumes.",
     body: "Agni is placed where transformation happens — the kitchen, the hearth, anywhere combustion or exertion occurs — and kept apart from water's calm.",
   },
   {
     slug: "air",
     icon: Wind,
     name: "Air",
+    color: "bg-[#789B82]/15",
     sanskrit: "Vayu",
-    meaning: "Circulation and exchange — the element that keeps a space breathing.",
+    meaning:
+      "Circulation and exchange — the element that keeps a space breathing.",
     body: "Vayu is cross-ventilation and movement: openings, corridors and the northwest zone traditionally left light and unobstructed for air to pass through.",
   },
   {
     slug: "space",
     icon: Orbit,
     name: "Space",
+    color: "bg-[#4F4B78]/15",
     sanskrit: "Akasha",
-    meaning: "The void that holds the other four — what a home leaves open, not filled.",
+    meaning:
+      "The void that holds the other four — what a home leaves open, not filled.",
     body: "Akasha is the courtyard, the double-height room, the centre kept empty. It is the hardest element to design for, because its whole purpose is absence.",
   },
 ];
