@@ -112,7 +112,7 @@ export const tools = [
 ];
 
 export const articles = [
-  { img: "/backgrounds/open-courtyard.webp", alt: "Sunlit ivory Indian courtyard with clean stone paving", kicker: "Space", slug:"courtyard-space", title: "Why the centre is kept empty", body: "The courtyard house explains the brahmasthan better than any diagram — an open middle that lets light and air reach every room around it." },
-  { img: "/backgrounds/home-entrance.webp", alt: "Carved wooden doorway with a traditional stone threshold", kicker: "Entrance",slug:"entrance-threshold", title: "The threshold as a decision", body: "Entrance placement carries more weight in the texts than almost any interior rule. Here is the reasoning behind it, stated plainly." },
-  { img: "/backgrounds/house-floor-plan.webp", alt: "Hand-drawn architectural floor plan on cream paper with a brass ruler", kicker: "Method",slug:"reading-floor-plan", title: "Reading a floor plan honestly", body: "Before applying a single rule, learn to find the true outline, the centre and the axis of the plan you actually have." },
+  { img: "/backgrounds/open-courtyard.webp", alt: "Sunlit ivory Indian courtyard with clean stone paving", kicker: "Space", slug:"space", title: "Why the centre is kept empty", body: "The courtyard house explains the brahmasthan better than any diagram — an open middle that lets light and air reach every room around it." },
+  { img: "/backgrounds/home-entrance.webp", alt: "Carved wooden doorway with a traditional stone threshold", kicker: "Entrance",slug:"entrance", title: "The threshold as a decision", body: "Entrance placement carries more weight in the texts than almost any interior rule. Here is the reasoning behind it, stated plainly." },
+  { img: "/backgrounds/house-floor-plan.webp", alt: "Hand-drawn architectural floor plan on cream paper with a brass ruler", kicker: "Method",slug:"method", title: "Reading a floor plan honestly", body: "Before applying a single rule, learn to find the true outline, the centre and the axis of the plan you actually have." },
 ];

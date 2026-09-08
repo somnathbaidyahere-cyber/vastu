@@ -25,7 +25,7 @@ export default function MoreFundamentalsSection() {
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {articles.map((article) => (
-            <Link key={article.title} href={`/learn/${article.title}`} className="group">
+            <Link key={article.title} href={`/learn/fundamentals/${article.slug}`} className="group">
               <div className="overflow-hidden rounded-2xl border border-border/60">
                 <Image
                   src={article.img}

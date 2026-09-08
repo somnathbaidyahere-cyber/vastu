@@ -32,7 +32,7 @@ const learnLinks = [
   },
   {
     label: "Five Elements",
-    href: "/learn/elements",
+    href: "/learn/five-elements",
     description: "Earth, Water, Fire, Air, Space",
   },
   {
@@ -41,8 +41,8 @@ const learnLinks = [
     description: "Significance of each direction",
   },
   {
-    label: "Rooms",
-    href: "/learn/rooms",
+    label: "Spaces",
+    href: "/learn/spaces",
     description: "Vastu guidance for every room",
   },
 ];

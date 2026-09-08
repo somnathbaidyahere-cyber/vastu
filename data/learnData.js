@@ -24,7 +24,7 @@ export const learnChapters = [
     icon: BookOpen,
   },
   {
-    href: "/learn/elements",
+    href: "/learn/five-elements",
     kicker: "Chapter two",
     name: "Five Elements of Vastu",
     sanskrit: "Pancha Bhuta",
@@ -48,9 +48,9 @@ export const learnChapters = [
     icon: Compass,
   },
   {
-    href: "/learn/rooms",
+    href: "/learn/spaces",
     kicker: "Apply it",
-    name: "Vastu for Rooms",
+    name: "Vastu for Spaces",
     sanskrit: "Griha Vinyasa",
     blurb:
       "Practical Vastu guidance for every room — kitchen, bedroom, pooja room, staircase, bath and study & other rooms.",
