@@ -19,23 +19,24 @@ export default function LearnHero() {
           </span>
 
           <h1 className="hero-heading">
-            Learn Vastu the way it was{" "}
-            <span className="text-gradient-brand">meant to be taught</span>
+            Learn <span className="text-gradient-brand">Vastu Shastra </span>
+            from the fundamentals.
           </h1>
 
           <p className="hero-description">
-            Four connected chapters — principles, elements, directions, and
-            rooms. Read them in order for a complete foundation, or jump to the
-            question in front of you today.
+            Explore the fundamentals of Vastu Shastra through its core
+            principles, five elements, directions and practical application to
+            different spaces. Start from the basics or explore the topic you
+            need today.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/learn/fundamentals"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
             >
               Begin with fundamentals
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4 transition-all duration-100 group-hover:translate-x-1" />
             </Link>
 
             <Link

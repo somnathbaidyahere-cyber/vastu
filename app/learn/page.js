@@ -4,6 +4,8 @@ import ElementsReference from "@/components/pages/learn/ElementsReference";
 import StudyPath from "@/components/pages/learn/StudyPath";
 import SutraSection from "@/components/pages/learn/SutraSection";
 import LearnCTA from "@/components/pages/learn/LearnCTA";
+import FAQ from "@/components/ui/FAQ";
+import { faqs } from "@/data/learnData";
 
 export const metadata = {
   title: "Learn Vastu — Fundamentals, Elements, Directions & Rooms",
@@ -19,6 +21,7 @@ export default function LearnPage() {
       <ElementsReference />
       <StudyPath />
       <SutraSection />
+      <FAQ faqs={faqs} />
       <LearnCTA />
     </main>
   );

@@ -4,7 +4,7 @@ import { zones } from "../../../../data/mandalaData";
 
 export default function MandalaOverview() {
   return (
-    <section className="border-y border-border/60 bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="overflow-hidden border-y border-border/60 bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl text-center">
         <span className="text-xs font-semibold uppercase tracking-widest text-primary">
            Mandala in one view

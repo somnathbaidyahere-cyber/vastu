@@ -13,7 +13,7 @@ export default function MandalaPrinciples() {
   ];
 
   return (
-    <section className="bg-primary-foreground px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="bg-background px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">

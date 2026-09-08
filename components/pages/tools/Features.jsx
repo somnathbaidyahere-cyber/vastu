@@ -41,15 +41,15 @@ export default function Features() {
     {/* Right Content */}
     <div className="px-4 py-20 sm:px-6 lg:px-16 lg:py-28 xl:px-24">
       <div className="max-w-xl">
-        <span className="text-sm font-medium uppercase tracking-widest text-primary">
+        <span className="section-badge">
           How it works
         </span>
 
-        <h2 className="mt-3 text-3xl font-heading font-medium text-foreground sm:text-4xl">
+        <h2 className="section-heading">
           A calm, three-step ritual
         </h2>
 
-        <p className="mt-4 text-muted-foreground">
+        <p className="section-description">
           Orient, map, then remedy — the same sequence a traditional
           consultant follows on site.
         </p>
