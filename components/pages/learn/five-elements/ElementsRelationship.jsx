@@ -7,15 +7,15 @@ export default function ElementsRelationship() {
         </div>
 
         <div className="lg:col-span-6">
-          <span className="text-sm font-medium uppercase tracking-widest text-primary">
+          <span className="section-badge">
             How they relate
           </span>
 
-          <h2 className="mt-3 text-3xl font-medium sm:text-4xl">
+          <h2 className="section-heading">
             One system, not five parts
           </h2>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="section-description">
             The elements are traditionally described as nesting inside one
             another — space gives rise to air, air to fire, fire to water,
             water to earth.

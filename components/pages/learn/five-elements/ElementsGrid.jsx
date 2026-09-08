@@ -10,28 +10,29 @@ export default function ElementsGrid() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <span className="text-sm font-medium uppercase tracking-widest text-primary">
+          <span className="section-badge">
             The five
           </span>
 
-          <h2 className="mt-3 text-3xl font-medium sm:text-4xl">
+          <h2 className="section-heading">
             Panchabhutas
           </h2>
 
-          <p className="mt-4 text-muted-foreground">
+          <p className="section-description">
             Explore each element and how Vastu traditionally understands it.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-border/60 bg-border/60 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-px overflow rounded-3xl sm:grid-cols-2 lg:grid-cols-3">
           {elements.map((element) => {
             const Icon = element.icon;
+            const color = element.color;
 
             return (
               <Link
                 key={element.slug}
                 href={`/learn/elements/${element.slug}`}
-                className="group bg-card p-8 transition-colors hover:bg-secondary/60"
+                className={`group ${color} p-8 transition-colors hover:bg-secondary/60 rounded-2xl hover:shadow-divine-glow`}
               >
                 <Icon
                   className="h-5 w-5 text-primary"

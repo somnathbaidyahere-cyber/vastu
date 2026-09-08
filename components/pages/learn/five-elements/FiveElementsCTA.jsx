@@ -7,7 +7,7 @@ export default function FiveElementsCTA() {
 <section className="relative isolate px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-primary-foreground ">
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/backgrounds/mountain-morning.webp"
+          src="/section-images/dark-courtyard.webp"
           alt=""
           fill
           preload
