@@ -8,6 +8,8 @@ import DirectionsAtGlance from "@/components/pages/learn/directions/DirectionsAt
 import DirectionDeepDive from "@/components/pages/learn/directions/DirectionDeepDive";
 import DirectionsPanchabhuta from "@/components/pages/learn/directions/DirectionsPanchabhuta";
 import DirectionsExploreFurther from "@/components/pages/learn/directions/DirectionsExploreFurther";
+import  FAQ  from '@/components/ui/FAQ';
+import { faqs } from "@/data/directions";
 
 export default function DirectionsPage() {
   return (
@@ -68,6 +70,8 @@ export default function DirectionsPage() {
       <DirectionsPanchabhuta />
 
       <DirectionsExploreFurther />
+
+      <FAQ faqs={faqs}/>
     </main>
   );
 }

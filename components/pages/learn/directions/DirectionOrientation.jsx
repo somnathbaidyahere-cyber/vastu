@@ -3,12 +3,12 @@ import { ArrowRight, Compass } from "lucide-react";
 
 export default function DirectionOrientation() {
   return (
-    <section className="border-y border-border/60 bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
           <Compass className="h-5 w-5 text-primary" aria-hidden="true" />
 
-          <h2 className="mt-5 text-3xl font-medium text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             Why direction comes first
           </h2>
         </div>

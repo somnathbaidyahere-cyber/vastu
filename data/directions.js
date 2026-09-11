@@ -12,6 +12,49 @@ export const elementIcon = {
   Air: Wind,
 };
 
+export const faqs = [
+  {
+    question: "Why are directions important in Vastu?",
+    answer:
+      "Direction is one of the first things considered in Vastu because the position and orientation of a space provide the framework for interpreting its different zones. Traditional Vastu associates each direction with particular qualities, elements and deities.",
+  },
+  {
+    question: "What are the 8 directions in Vastu?",
+    answer:
+      "The eight directions are North, Northeast, East, Southeast, South, Southwest, West and Northwest. They consist of four cardinal directions and four intercardinal directions.",
+  },
+  {
+    question: "What is the difference between cardinal and intercardinal directions?",
+    answer:
+      "Cardinal directions are the four primary directions: North, East, South and West. Intercardinal directions lie between them: Northeast, Southeast, Southwest and Northwest.",
+  },
+  {
+    question: "How do I determine the direction of my house or plot?",
+    answer:
+      "The orientation should be established using a reliable compass or other accurate method of determining north. Once north is identified, the remaining directions can be mapped consistently across the property.",
+  },
+  {
+    question: "Does the entrance direction determine the direction of a house?",
+    answer:
+      "Not necessarily. In Vastu, the orientation of the overall plot or building and the direction of individual spaces can be considered separately. The entrance is only one part of the directional assessment.",
+  },
+  {
+    question: "Why does Vastu associate different qualities with different directions?",
+    answer:
+      "Traditional Vastu treats the eight directions as distinct zones, each associated with particular elemental, symbolic and functional qualities. These associations form part of the framework used to interpret a space.",
+  },
+  {
+    question: "Are the eight directions connected to the five elements?",
+    answer:
+      "Yes. Vastu connects directional zones with the Panchabhuta, or five elements. Understanding this relationship provides another layer for interpreting the qualities traditionally associated with different parts of a space.",
+  },
+  {
+    question: "Can I use the Vastu Compass to identify directions?",
+    answer:
+      "Yes. The Vastu Compass can help you identify and explore the eight directions interactively. Use it as a starting point for establishing orientation before evaluating a space.",
+  },
+];
+
 export const directions = [
   {
     code: "N",

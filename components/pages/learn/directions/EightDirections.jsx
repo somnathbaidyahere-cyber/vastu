@@ -8,15 +8,15 @@ export default function EightDirections() {
     >
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
         <div className="lg:col-span-5">
-          <span className="text-sm font-medium uppercase tracking-widest text-primary">
+          <span className="section-badge">
             The system
           </span>
 
-          <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             Four cardinal, four intercardinal
           </h2>
 
-          <p className="mt-5 text-muted-foreground">
+          <p className="section-description">
             The four cardinal directions mark the plot&apos;s main faces. The
             four intercardinal directions occupy the corners between them and
             carry their own traditional significance.
