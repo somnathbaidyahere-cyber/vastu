@@ -38,19 +38,34 @@ export default function FiveElementsHero() {
           </div>
         </div>
 
-        <div className="lg:col-span-5">
-          <Image
-            src="/section-images/panchabhuta.webp"
-            alt=""
-            width={600}
-            height={400}
-            preload
-            fetchPriority="high"
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+       <div className="lg:col-span-5">
+          <ElementsHeroImage/>
         </div>
       </div>
     </header>
+  );
+}
+
+function ElementsHeroImage() {
+  return (
+    <div className="relative mx-auto aspect-square w-full max-w-lg">
+      {/* Soft background glow */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-6 rounded-full bg-primary/10 blur-3xl"
+      />
+
+      {/* Image */}
+      <div className="relative h-full w-full overflow-hidden rounded-4xl border border-border/60 bg-card shadow-sm">
+        <Image
+          src="/section-images/open-natural-courtyard.webp"
+          alt="Traditional Indian palace floor and architectural layout"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 448px"
+          className="object-cover"
+          priority
+        />
+      </div>
+    </div>
   );
 }

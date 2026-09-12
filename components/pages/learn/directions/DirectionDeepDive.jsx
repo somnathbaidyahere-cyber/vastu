@@ -9,7 +9,7 @@ export default function DirectionDeepDive() {
   const [active, setActive] = useState("NE");
 
   const activeDirection = directions.find(
-    (direction) => direction.code === active
+    (direction) => direction.code === active,
   );
 
   const ActiveIcon = elementIcon[activeDirection.element];
@@ -18,13 +18,9 @@ export default function DirectionDeepDive() {
     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <span className="section-badge">
-            Deep dive
-          </span>
+          <span className="section-badge">Deep dive</span>
 
-          <h2 className="section-heading">
-            One direction at a time
-          </h2>
+          <h2 className="section-heading">One direction at a time</h2>
 
           <p className="section-description">
             Select a direction to understand what it represents and how it is
@@ -51,22 +47,28 @@ export default function DirectionDeepDive() {
         </div>
 
         <div className="mt-8 rounded-3xl border border-border/60 bg-card p-8 sm:p-10 lg:p-12">
-         <div className="relative overflow-hidden rounded-2xl bg-card p-6 sm:p-8">
-  {/* Faint Background Image Overlay */}
+         <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-card p-6 sm:p-8 shadow-sm">
+  {/* Premium Vivid Background Overlay Container */}
   <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
     <Image
       src={activeDirection.image}
       alt=""
       aria-hidden="true"
-      className="h-full w-full object-cover object-center opacity-[0.07] mix-blend-multiply filter contrast-125 grayscale"
+      fill
+      className="h-full w-full object-cover object-right opacity-35 saturate-125 transition-all duration-700 ease-out"
     />
-    {/* Gradient Mask to smoothly fade edges into the card background */}
-    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-card/50" />
+
+    {/* Subtle Glassmorphism Blur Layer */}
+    <div className="absolute inset-0 backdrop-blur-[2px]" />
+
+    {/* Dual-Axis Gradient Mask */}
+    <div className="absolute inset-0 bg-linear-to-r from-card via-card/80 to-transparent" />
+    <div className="absolute inset-0 bg-linear-to-b from-card/30 via-transparent to-card" />
   </div>
 
-  {/* Foreground Content (relative z-10 keeps text crisp and above the overlay) */}
+  {/* Foreground Content */}
   <div className="relative z-10 flex flex-wrap items-start justify-between gap-6">
-    <div>
+    <div className="flex-1 min-w-[280px]">
       <p className="text-xs font-semibold uppercase tracking-widest text-primary">
         {activeDirection.sanskrit}
       </p>
@@ -75,9 +77,12 @@ export default function DirectionDeepDive() {
         {activeDirection.name}
       </h3>
 
-      <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
-        {activeDirection.meaning}
-      </p>
+      {/* Reserved height wrapper to prevent vertical height shifts */}
+      <div className="mt-3 min-h-[4.5rem] sm:min-h-[3.75rem]">
+        <p className="max-w-xl text-base leading-relaxed text-muted-foreground transition-opacity duration-300">
+          {activeDirection.meaning}
+        </p>
+      </div>
     </div>
 
     <dl className="grid shrink-0 grid-cols-2 gap-x-8 gap-y-4 text-sm">

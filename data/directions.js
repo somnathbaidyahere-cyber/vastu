@@ -1,9 +1,4 @@
-import {
-  Droplets,
-  Flame,
-  Mountain,
-  Wind,
-} from "lucide-react";
+import { Droplets, Flame, Mountain, Wind } from "lucide-react";
 
 export const elementIcon = {
   Water: Droplets,
@@ -24,7 +19,8 @@ export const faqs = [
       "The eight directions are North, Northeast, East, Southeast, South, Southwest, West and Northwest. They consist of four cardinal directions and four intercardinal directions.",
   },
   {
-    question: "What is the difference between cardinal and intercardinal directions?",
+    question:
+      "What is the difference between cardinal and intercardinal directions?",
     answer:
       "Cardinal directions are the four primary directions: North, East, South and West. Intercardinal directions lie between them: Northeast, Southeast, Southwest and Northwest.",
   },
@@ -39,7 +35,8 @@ export const faqs = [
       "Not necessarily. In Vastu, the orientation of the overall plot or building and the direction of individual spaces can be considered separately. The entrance is only one part of the directional assessment.",
   },
   {
-    question: "Why does Vastu associate different qualities with different directions?",
+    question:
+      "Why does Vastu associate different qualities with different directions?",
     answer:
       "Traditional Vastu treats the eight directions as distinct zones, each associated with particular elemental, symbolic and functional qualities. These associations form part of the framework used to interpret a space.",
   },
@@ -62,6 +59,7 @@ export const directions = [
     sanskrit: "Uttara",
     deity: "Kubera",
     element: "Water",
+    image: "/elements/water.jpg",
     quality: "Wealth & career flow",
     meaning:
       "The direction associated with income, opportunity and the movement of resources into a home.",
@@ -76,6 +74,7 @@ export const directions = [
     sanskrit: "Ishanya",
     deity: "Ishana",
     element: "Water",
+    image: "/elements/water.jpg",
     quality: "Clarity & spiritual focus",
     meaning:
       "The most sacred of the eight zones — a corner reserved for stillness rather than activity.",
@@ -90,6 +89,7 @@ export const directions = [
     sanskrit: "Purva",
     deity: "Indra",
     element: "Fire",
+    image: "/elements/fire.jpg",
     quality: "Growth & vitality",
     meaning:
       "The direction of the rising sun — associated with early light, health and steady growth.",
@@ -104,6 +104,7 @@ export const directions = [
     sanskrit: "Agneya",
     deity: "Agni",
     element: "Fire",
+    image: "/elements/fire.jpg",
     quality: "Energy & transformation",
     meaning:
       "The zone of heat, combustion and conversion — where raw material becomes useful.",
@@ -118,6 +119,7 @@ export const directions = [
     sanskrit: "Dakshina",
     deity: "Yama",
     element: "Earth",
+    image: "/elements/earth.jpg",
     quality: "Rest & ancestral stability",
     meaning:
       "The direction of settlement — mass, permanence, and the household's continuity.",
@@ -132,6 +134,7 @@ export const directions = [
     sanskrit: "Nairutya",
     deity: "Niruti",
     element: "Earth",
+    image: "/elements/earth.jpg",
     quality: "Strength & grounding",
     meaning:
       "The plot's heaviest, most solid corner — the anchor the rest of the home rests against.",
@@ -146,6 +149,7 @@ export const directions = [
     sanskrit: "Paschima",
     deity: "Varuna",
     element: "Air",
+    image: "/elements/air.jpg",
     quality: "Gains & completion",
     meaning:
       "The direction of the setting sun — associated with consolidation and steady returns.",
@@ -160,6 +164,7 @@ export const directions = [
     sanskrit: "Vayavya",
     deity: "Vayu",
     element: "Air",
+    image: "/elements/air.jpg",
     quality: "Movement & relationships",
     meaning:
       "The zone of circulation — air, guests, and the coming and going of people.",
@@ -186,9 +191,9 @@ directions.forEach((direction) => {
 });
 
 export const cardinal = directions.filter((direction) =>
-  ["N", "E", "S", "W"].includes(direction.code)
+  ["N", "E", "S", "W"].includes(direction.code),
 );
 
 export const intercardinal = directions.filter((direction) =>
-  ["NE", "SE", "SW", "NW"].includes(direction.code)
+  ["NE", "SE", "SW", "NW"].includes(direction.code),
 );
