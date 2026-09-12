@@ -10,15 +10,15 @@ export default function ElementsInSpace() {
     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
+          <p className="section-badge">
             Five elements × space
           </p>
 
-          <h2 className="mt-3 text-3xl font-medium sm:text-4xl">
+          <h2 className="section-heading">
             Material qualities, translated into space
           </h2>
 
-          <p className="mt-4 text-muted-foreground">
+          <p className="section-description">
             Explore the spatial qualities associated with each
             element and how they can influence the experience of a
             place.
@@ -57,7 +57,7 @@ export default function ElementsInSpace() {
             })}
           </div>
 
-          <div className="rounded-lg border border-border/60 bg-secondary/35 p-8 lg:col-span-5">
+          <div className="rounded-lg border border-border/60 bg-secondary/35 p-8 lg:col-span-5 shadow-divine">
             <p className="text-xs uppercase tracking-widest text-primary">
               {selected.zone}
             </p>

@@ -4,25 +4,25 @@ export default function OutsideIn() {
   return (
     <section className="relative overflow-hidden border-y border-border/60">
       <Image
-        src="/images/spaces/outside-in.jpg"
+        src="/spaces/varanda.webp"
         alt="Architecture connecting landscape, exterior and interior space"
         width={1600}
         height={900}
         loading="lazy"
-        className="h-[34rem] w-full object-cover sm:h-[42rem]"
+        className="h-136 w-full object-cover sm:h-168"
       />
 
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-4 pb-10 pt-32 sm:px-6 lg:px-8 lg:pb-14">
-        <div className="mx-auto max-w-7xl text-white">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
+      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 via-black/50 to-transparent px-4 pb-10 pt-32 sm:px-6 lg:px-8 lg:pb-14">
+        <div className="mx-auto max-w-7xl">
+          <p className="section-badge text-surface-muted">
             From outside in
           </p>
 
-          <h2 className="mt-3 max-w-xl text-3xl font-medium sm:text-4xl">
+          <h2 className="section-heading text-surface">
             A room begins before its walls
           </h2>
 
-          <div className="mt-7 flex flex-wrap gap-4 text-sm">
+          <div className="mt-7 flex flex-wrap gap-4 text-sm text-surface-muted">
             <span>Landscape</span>
             <span>→</span>
             <span>Building</span>

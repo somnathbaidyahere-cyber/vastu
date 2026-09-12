@@ -5,15 +5,15 @@ export default function SpaceMistakes() {
     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
+          <p className="section-badge">
             Common mistakes
           </p>
 
-          <h2 className="mt-3 text-3xl font-medium sm:text-4xl">
+          <h2 className="section-heading">
             When a principle becomes a shortcut
           </h2>
 
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          <p className="section-description">
             Space needs to be read as a whole. These are common
             ways a thoughtful framework gets reduced to rigid rules.
           </p>

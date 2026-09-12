@@ -102,37 +102,37 @@ export const spaceExperiences = [
   {
     name: "Living",
     label: "Connection without crowding",
-    image: "/images/spaces/living.jpg",
+    image: "/spaces/living-space.jpg",
     alt: "Indian living space opening toward a green courtyard",
   },
   {
     name: "Working",
     label: "Focus held by daylight",
-    image: "/images/spaces/working.jpg",
+    image: "/spaces/work-station.jpg",
     alt: "Minimal workspace beside a large daylight opening",
   },
   {
     name: "Learning",
     label: "Calm attention and clarity",
-    image: "/images/spaces/learning.jpg",
+    image: "/spaces/reading-space.jpg",
     alt: "Quiet reading space with natural light",
   },
   {
     name: "Gathering",
     label: "A generous shared centre",
-    image: "/images/spaces/gathering.jpg",
+    image: "/spaces/gathering-room.jpg",
     alt: "Shared gathering space opening toward a courtyard",
   },
   {
     name: "Rest",
     label: "Shelter, quiet and retreat",
-    image: "/images/spaces/rest.jpg",
+    image: "/spaces/bedroom.jpg",
     alt: "Quiet bedroom with a garden view",
   },
   {
     name: "Transition",
     label: "Thresholds that prepare us",
-    image: "/images/spaces/transition.jpg",
+    image: "/spaces/home-entryway.jpg",
     alt: "Architectural passage leading toward a sunlit threshold",
   },
 ];

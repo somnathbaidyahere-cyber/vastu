@@ -38,11 +38,11 @@ export default function ExploreMore() {
   return (
     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
-        <p className="text-sm font-medium uppercase tracking-widest text-primary">
+        <p className="section-badge">
           Continue exploring
         </p>
 
-        <h2 className="mt-3 max-w-2xl text-3xl font-medium sm:text-4xl">
+        <h2 className="section-heading">
           From an idea of space to the rooms you use
         </h2>
 

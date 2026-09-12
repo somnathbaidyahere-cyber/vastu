@@ -114,15 +114,15 @@ export default function DirectionSpace() {
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
         <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
+          <p className="section-badge">
             Direction × space
           </p>
 
-          <h2 className="mt-3 text-3xl font-medium sm:text-4xl">
+          <h2 className="section-heading">
             Direction gives space a character
           </h2>
 
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          <p className="section-description">
             Explore how orientation changes the relationship between
             light, movement and spatial experience.
           </p>
