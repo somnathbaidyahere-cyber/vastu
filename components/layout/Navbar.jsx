@@ -43,6 +43,11 @@ const learnLinks = [
   {
     label: "Spaces",
     href: "/learn/spaces",
+    description: "Learn to understand the space",
+  },
+   {
+    label: "Rooms",
+    href: "/learn/rooms",
     description: "Vastu guidance for every room",
   },
 ];

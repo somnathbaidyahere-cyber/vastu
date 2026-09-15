@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function FiveElementsCTA() {
   return (
-<section className="relative isolate px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-primary-foreground ">
+    <section className="relative isolate px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-primary-foreground ">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/section-images/dark-courtyard.webp"
@@ -24,7 +24,7 @@ export default function FiveElementsCTA() {
           <div className="relative">
             <h2 className="cta-heading">See the elements in your own plan</h2>
             <p className="cta-description">
-             Explore how the five elements map onto the zones of a space.
+              Explore how the five elements map onto the zones of a space.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
@@ -46,5 +46,3 @@ export default function FiveElementsCTA() {
     </section>
   );
 }
-
-  
