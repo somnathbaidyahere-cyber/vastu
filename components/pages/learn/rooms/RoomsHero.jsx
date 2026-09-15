@@ -33,10 +33,10 @@ export default function RoomsHero() {
 
           <a
             href="#room-explorer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 font-medium text-primary transition-colors hover:bg-brand-cream"
+            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 font-medium text-primary transition-colors duration-100 hover:bg-brand-cream hover:shadow-divine-lg hover:shadow-divine-glow"
           >
             Walk through the home
-            <ArrowDown className="h-4 w-4" />
+            <ArrowDown className="h-4 w-4 transition-all duration-100 group-hover:translate-y-0.5" />
           </a>
         </div>
       </div>
