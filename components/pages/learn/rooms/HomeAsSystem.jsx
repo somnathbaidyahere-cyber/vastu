@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-import systemImage from "@/public/spaces/bedroom.jpg";
-
 export default function HomeAsSystem() {
   return (
     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface">

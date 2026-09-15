@@ -37,16 +37,16 @@ export default function RoomExplorer() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">
+            <p className="section-badge">
               Room explorer
             </p>
 
-            <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               Explore the rooms
             </h2>
           </div>
 
-          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+          <p className="section-description">
             Begin with the space you use every day, then notice how it connects
             to the rest of your home.
           </p>
@@ -65,12 +65,12 @@ export default function RoomExplorer() {
                 <article>
                   <div className="relative overflow-hidden border border-border/60 bg-card">
                     <Image
-                      src={room.image.url}
+                      src={room.imageUrl}
                       alt={room.alt}
                       loading="lazy"
                       width={1024}
                       height={768}
-                      className="aspect-[4/3] w-full object-cover transition-transform duration-700 motion-reduce:transition-none group-hover:scale-[1.025]"
+                      className="aspect-4/3 w-full object-cover transition-transform duration-700 motion-reduce:transition-none group-hover:scale-[1.025]"
                     />
 
                     <span className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-background/90 text-primary backdrop-blur-sm">

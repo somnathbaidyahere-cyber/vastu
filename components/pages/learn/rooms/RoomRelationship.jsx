@@ -24,18 +24,18 @@ export default function RoomRelationship() {
   const [activeSequence, setActiveSequence] = useState(spatialSequences[0]);
 
   return (
-    <section className="border-y border-border/60 bg-ivory-pattern px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
+          <p className="section-badge">
             Rooms in relation
           </p>
 
-          <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             Rooms don’t exist alone.
           </h2>
 
-          <p className="mt-4 text-muted-foreground">
+          <p className="section-description">
             Choose a way of reading the plan. The sequence changes, but the
             transitions between spaces remain the key.
           </p>

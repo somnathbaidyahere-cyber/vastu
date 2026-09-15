@@ -294,3 +294,18 @@ body {
     transform:  translateY(-6px);
   }
 }
+
+
+@keyframes pill-shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-12deg);
+  }
+
+  100% {
+    transform: translateX(500%) skewX(-12deg);
+  }
+}
+
+.animate-pill-shimmer {
+  animation: pill-shimmer 2.4s ease-in-out infinite;
+}

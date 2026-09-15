@@ -1,19 +1,10 @@
-// import bedroomImage from "@/public/spaces/bedroom.jpg";
-// import kitchenImage from "/public/spaces/living-space.jpg";
-// import livingImage from "/public/spaces/living-space.jpg";
-// import studyImage from "/public/spaces/living-space.jpg";
-// import diningImage from "/public/spaces/living-space.jpg";
-// import prayerImage from "/public/spaces/living-space.jpg";
-// import entranceImage from "/public/spaces/living-space.jpg";
-// import bathroomImage from "/public/spaces/living-space.jpg";
-// import courtyardImage from "/public/spaces/living-space.jpg";
 
 export const rooms = [
   {
     slug: "bedroom",
     name: "Bedroom",
     purpose: "Rest & restoration",
-    image:"@/public/spaces/bedroom.jpg",
+    imageUrl:"/spaces/bedroom.jpg",
     alt: "Quiet bedroom with warm walls and a framed garden view",
     introduction: "A bedroom works best when the home grows quieter around it. Enclosure, filtered light and low movement help the body understand that the day is ending.",
     qualities: ["Privacy", "Stillness", "Grounding"],
@@ -24,7 +15,7 @@ export const rooms = [
     slug: "kitchen",
     name: "Kitchen",
     purpose: "Nourishment & activity",
-    image: "@/public/spaces/bedroom.jpg",
+    imageUrl: "/rooms/kitchen.webp",
     alt: "Warm daylight moving across a calm architectural interior",
     introduction: "The kitchen concentrates heat, water, movement and daily ritual. A clear working sequence matters as much as its position within the home.",
     qualities: ["Heat", "Rhythm", "Transformation"],
@@ -35,7 +26,7 @@ export const rooms = [
     slug: "living-room",
     name: "Living Room",
     purpose: "Connection & gathering",
-    image: "@/public/spaces/bedroom.jpg",
+    imageUrl: "/spaces/living-space.jpg",
     alt: "Ivory living room opening fully to a green courtyard",
     introduction: "The living room receives people and holds shared time. It should feel connected to arrival without becoming a corridor for the whole house.",
     qualities: ["Welcome", "Conversation", "Flow"],
@@ -46,7 +37,7 @@ export const rooms = [
     slug: "study",
     name: "Study",
     purpose: "Focus & work",
-    image: "@/public/spaces/bedroom.jpg",
+    imageUrl: "/spaces/reading-space.jpg",
     alt: "Minimal home workspace beside a large daylight window",
     introduction: "A study supports sustained attention through steady light, a composed view and a clear boundary from household movement.",
     qualities: ["Clarity", "Attention", "Order"],
@@ -57,7 +48,7 @@ export const rooms = [
     slug: "dining",
     name: "Dining",
     purpose: "Sharing & nourishment",
-    image: "@/public/spaces/bedroom.jpg",
+    imageUrl: "/rooms/dining.webp",
     alt: "Long dining table beneath a timber veranda beside a courtyard",
     introduction: "Dining turns nourishment into a shared pause. Its strongest relationship is often with the kitchen, living space and the natural rhythm of daylight.",
     qualities: ["Sharing", "Pause", "Belonging"],
@@ -68,7 +59,7 @@ export const rooms = [
     slug: "prayer-quiet-space",
     name: "Prayer / Quiet Space",
     purpose: "Reflection & stillness",
-    image: "@/public/spaces/bedroom.jpg",
+    imageUrl: "/rooms/quite-space.webp",
     alt: "Stone-lined reading alcove with books and soft natural light",
     introduction: "A quiet space needs less visual information, not more decoration. Light, proportion and distance from household activity create its contemplative character.",
     qualities: ["Reflection", "Openness", "Restraint"],
@@ -79,7 +70,7 @@ export const rooms = [
     slug: "entrance",
     name: "Entrance",
     purpose: "Arrival & transition",
-    image: "@/public/spaces/bedroom.jpg",
+    imageUrl: "/spaces/home-entrance.jpg",
     alt: "Rhythmic stone passage leading through a sunlit threshold",
     introduction: "The entrance is a sequence rather than a single door. It shifts us from public to private life and establishes the first reading of the home.",
     qualities: ["Arrival", "Orientation", "Threshold"],
@@ -90,18 +81,18 @@ export const rooms = [
     slug: "bathroom",
     name: "Bathroom",
     purpose: "Cleansing & release",
-    image: "@/public/spaces/bedroom.jpg",
+    imageUrl: "/rooms/bathroom.webp",
     alt: "Contemporary Indian interior opening to a planted outdoor edge",
     introduction: "Bathrooms combine water, privacy and ventilation in a compact space. Their success depends on dryness, daylight and separation from shared living areas.",
     qualities: ["Release", "Freshness", "Privacy"],
     observe: "Check ventilation, natural light, wet and dry zones, and the relationship to adjoining rooms.",
-    consider: "Prioritise drainage, air movement and a clear threshold between cleansing and living spaces.",
+    consider: "Prioritise drainage, air movement and a clear threshold between cleansing and living rooms.",
   },
   {
     slug: "courtyard-open-space",
     name: "Courtyard / Open Space",
     purpose: "Light & openness",
-    image: "@/public/spaces/bedroom.jpg",
+    imageUrl: "/rooms/courtyard.webp",
     alt: "Contemporary Indian courtyard framed by stone colonnades and a reflecting pool",
     introduction: "An open space gives the home a place to breathe. It gathers sky, weather and light while helping surrounding rooms remain connected to nature.",
     qualities: ["Light", "Breath", "Connection"],
