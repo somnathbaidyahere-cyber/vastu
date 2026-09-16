@@ -116,6 +116,8 @@ export default function Navbar() {
           />
 
           <NavLink href="/about">About</NavLink>
+
+          <NavLink href="/contact">Contact</NavLink>
           {/* <NavLink href="/blog">Blog</NavLink> */}
         </nav>
 
@@ -168,8 +170,8 @@ export default function Navbar() {
               About
             </MobileNavLink>
 
-            <MobileNavLink href="/blog" onClick={() => setMobileOpen(false)}>
-              Blog
+            <MobileNavLink href="/contact" onClick={() => setMobileOpen(false)}>
+              Contact
             </MobileNavLink>
 
             <Link

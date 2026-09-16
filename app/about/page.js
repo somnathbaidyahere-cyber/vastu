@@ -152,11 +152,31 @@ const standAgainst = [
 ];
 
 const spacesWeExplore = [
-  "Home",
-  "Work",
-  "Entrance",
-  "Courtyard",
-  "Personal space",
+  {
+    name: "Home",
+    imageAlt: "A thoughtfully designed Indian home interior",
+    image: "/rooms/cozy-room.webp",
+  },
+  {
+    name: "Work",
+    imageAlt: "A calm contemporary workspace",
+    image: "/spaces/work-station.jpg",
+  },
+  {
+    name: "Entrance",
+    imageAlt: "An Indian home entrance and threshold",
+    image: "/spaces/home-entrance.jpg",
+  },
+  {
+    name: "Courtyard",
+    imageAlt: "A traditional Indian courtyard with natural light",
+    image: "/section-images/chettinad-courtyard.webp",
+  },
+  {
+    name: "Personal space",
+    imageAlt: "A quiet personal space within a home",
+    image: "/spaces/living-space.jpg",
+  },
 ];
 
 const exploreLinks = [
@@ -236,7 +256,8 @@ function Hero() {
               href="/contact"
               className="text-sm font-medium text-foreground underline decoration-border decoration-1 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
             >
-              Discuss your space
+
+              Discuss your space 
             </Link>
           </div>
         </div>
@@ -716,36 +737,36 @@ function Philosophy() {
  * 09 — What We Stand Against
  * ---------------------------------------------------------------------- */
 
-function WhatWeStandAgainst() {
-  return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface">
-      <div className="mx-auto max-w-4xl">
-        <span className="section-badge">
-          What we stand against
-        </span>
-        <h2 className="section-heading">
-          No fear. No shortcuts. No one-size-fits-all answers.
-        </h2>
+// function WhatWeStandAgainst() {
+//   return (
+//     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface">
+//       <div className="mx-auto max-w-4xl">
+//         <span className="section-badge">
+//           What we stand against
+//         </span>
+//         <h2 className="section-heading">
+//           No fear. No shortcuts. No one-size-fits-all answers.
+//         </h2>
 
-        <dl className="mt-14 divide-y divide-border/60 border-t border-border/60">
-          {standAgainst.map((item) => (
-            <div
-              key={item.statement}
-              className="grid gap-2 py-6 sm:grid-cols-2 sm:gap-6"
-            >
-              <dt className="text-lg text-muted-foreground line-through decoration-1">
-                {item.statement}
-              </dt>
-              <dd className="text-lg font-medium text-foreground">
-                {item.stance}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </section>
-  );
-}
+//         <dl className="mt-14 divide-y divide-border/60 border-t border-border/60">
+//           {standAgainst.map((item) => (
+//             <div
+//               key={item.statement}
+//               className="grid gap-2 py-6 sm:grid-cols-2 sm:gap-6"
+//             >
+//               <dt className="text-lg text-muted-foreground line-through decoration-1">
+//                 {item.statement}
+//               </dt>
+//               <dd className="text-lg font-medium text-foreground">
+//                 {item.stance}
+//               </dd>
+//             </div>
+//           ))}
+//         </dl>
+//       </div>
+//     </section>
+//   );
+// }
 
 /* -------------------------------------------------------------------------
  * 10 — Spaces We Explore
@@ -753,23 +774,23 @@ function WhatWeStandAgainst() {
 
 function SpacesWeExplore() {
   return (
-    <section className="border-y border-border/60 bg-secondary/25 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
+          <span className="section-badge">
             Spaces we explore
-          </p>
-          <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+          </span>
+          <h2 className="section-heading">
             Different spaces ask different questions.
           </h2>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-5">
-          {spacesWeExplore.map((space) => (
-            <div key={space} className="relative">
-              <ImagePlaceholder ratio="aspect-square" className="rounded-md" />
+          {spacesWeExplore.map((space,index) => (
+            <div key={index} className="relative">
+              <ImagePlaceholder src={space.image} alt={space.imageAlt} ratio="aspect-square" className="rounded-md" />
               <span className="mt-3 block text-sm font-medium text-foreground">
-                {space}
+                {space.name}
               </span>
             </div>
           ))}
@@ -777,9 +798,9 @@ function SpacesWeExplore() {
 
         <Link
           href="/rooms"
-          className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-foreground"
+          className="group mt-10 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-foreground"
         >
-          Explore all spaces <ArrowRight className="h-4 w-4" />
+          Explore all spaces <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-0.5" />
         </Link>
       </div>
     </section>
@@ -792,20 +813,24 @@ function SpacesWeExplore() {
 
 function ContinueExploring() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-4xl">
-        <p className="text-sm font-medium uppercase tracking-widest text-primary">
-          Continue exploring
-        </p>
-        <ul className="mt-8 divide-y divide-border/60 border-t border-border/60">
+   <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <span className="text-sm font-medium uppercase tracking-widest text-primary">
+          Explore further
+        </span>
+
+        <ul className="mt-6 divide-y divide-border/60 border-t border-border/60 perspective:[1000px]">
           {exploreLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="relative">
               <Link
                 href={link.href}
-                className="group flex items-center justify-between py-8 text-3xl font-medium text-foreground transition-colors hover:text-primary sm:text-5xl"
+                className="group relative flex items-center justify-between rounded-lg px-4 py-5 text-lg font-medium text-foreground transition-all duration-300 ease-out transform-3d hover:z-20 hover:bg-surface hover:text-primary hover:shadow-xl hover:[transform:translateZ(12px)_rotateX(2deg)_scale(1.01)]"
               >
-                {link.label}
-                <ArrowRight className="h-6 w-6 -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                <span className="transition-transform duration-300 transform-3d group-hover:transform-[translateZ(10px)]">
+                  {link.label}
+                </span>
+
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 transform-3d group-hover:translate-x-1.5 group-hover:transform-[translateZ(15px)]" />
               </Link>
             </li>
           ))}
@@ -824,7 +849,7 @@ function FinalConversion() {
     <section className="relative overflow-hidden">
       <ImagePlaceholder
         src="/about/modern-villa.webp"
-        alt="modern villam evening view"
+        alt="modern villa evening view"
         label="Full-bleed architectural photograph"
         ratio="aspect-[4/5] sm:aspect-[16/9]"
         className="border-0"
@@ -840,9 +865,9 @@ function FinalConversion() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 font-medium text-foreground transition-colors hover:bg-brand-cream"
+            className="group inline-flex items-center gap-2 rounded-full bg-primary-foreground/70 px-7 py-3.5 font-medium text-foreground transition-colors hover:bg-primary-foreground/50 "
           >
-            Start a conversation <ArrowRight className="h-4 w-4" />
+            Start a conversation <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
           </Link>
           <Link
             href="/learn"

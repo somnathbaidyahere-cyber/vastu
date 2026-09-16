@@ -31,7 +31,7 @@ export default function FiveElementsHero() {
 
             <a
               href="#in-vastu"
-              className="inline-flex items-center rounded-full border border-border px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
+              className="inline-flex items-center rounded-full border border-border px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary" 
             >
               See it in a plan
             </a>
