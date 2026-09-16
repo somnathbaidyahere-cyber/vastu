@@ -199,7 +199,7 @@ export default function AboutPage() {
       <ConversionOne />
       <AncientContemporary />
       <Philosophy />
-      <WhatWeStandAgainst />
+      {/* <WhatWeStandAgainst /> */}
       <SpacesWeExplore />
       <ContinueExploring />
       <FinalConversion />
@@ -267,17 +267,13 @@ function Hero() {
 
 function OurBeginning() {
   return (
-    <section className="border-y border-border/60 bg-secondary/25 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-4xl text-center">
-        <p className="section-badge">
-          Why we exist
-        </p>
+        <p className="section-badge">Why we exist</p>
         <h2 className="section-heading">
           We believe a space is more than walls, rooms and directions.
         </h2>
-        <p className="section-description">
-          It is where life unfolds.
-        </p>
+        <p className="section-description">It is where life unfolds.</p>
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           We started by asking a simple question: why does one room feel settled
           while another, built the same way, never quite feels right? The answer
@@ -299,14 +295,14 @@ function OurBeginning() {
         <div
           className="
       absolute
-      left-4
-      bottom-0
+      left-3
+      -bottom-6
       z-20
       max-w-xs
       translate-y-1/2
       border
       border-border/60
-      bg-surface
+      bg-background/90
       px-5
       py-4
       shadow-sm
@@ -314,7 +310,7 @@ function OurBeginning() {
       lg:left-12
     "
         >
-          <p className="text-sm leading-relaxed text-muted-foreground">
+          <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
             The threshold between inside and outside — often the first place a
             space starts to make sense.
           </p>
@@ -334,9 +330,7 @@ function VastuReframed() {
   return (
     <section ref={ref} className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
       <div className="mx-auto max-w-4xl text-center">
-        <p className="section-badge">
-          Vastu, reframed
-        </p>
+        <p className="section-badge">Vastu, reframed</p>
         <div className="mt-10 flex flex-col items-center gap-3 sm:gap-4">
           {reframedWords.map((word, index) => (
             <span
@@ -374,12 +368,10 @@ function FiveElementsSpectrum() {
   const Icon = current.icon;
 
   return (
-    <section className="border-y border-border/60 bg-secondary/25 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <p className="section-badge">
-            The five elements
-          </p>
+          <p className="section-badge">The five elements</p>
           <h2 className="section-heading">
             Everything begins with the elements.
           </h2>
@@ -434,9 +426,10 @@ function FiveElementsSpectrum() {
 
         <Link
           href="/learn/elements"
-          className="mt-12 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-foreground"
+          className="group mt-12 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-foreground"
         >
-          Explore the five elements <ArrowRight className="h-4 w-4" />
+          Explore the five elements{" "}
+          <ArrowRight className="h-4 w-4 transition-all suration-150 group-hover:translate-x-0.5" />
         </Link>
       </div>
     </section>
@@ -449,48 +442,109 @@ function FiveElementsSpectrum() {
 
 function OurApproach() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
+        {/* Header */}
         <div className="max-w-2xl">
-          <p className="section-badge">
+          <p className="section-badge inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-primary">
+            <span className="section-badge" />
             Our approach
           </p>
-          <h2 className="section-heading">
-            Understand, interpret, apply.
-          </h2>
+
+          <h2 className="section-heading  ">Understand, interpret, apply.</h2>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-3 lg:gap-0">
-          {approachStages.map((stage, index) => (
-            <div
-              key={stage.number}
-              className={`relative border-t border-border/60 pt-6 lg:pt-8 ${
-                index > 0 ? "lg:border-l lg:border-t-0 lg:pl-10" : ""
-              }`}
-            >
-              <div className="flex items-center gap-4">
-                <span className="text-xs font-medium text-primary">
-                  {stage.number}
-                </span>
-                <span
-                  className="h-px flex-1 bg-border/60 lg:hidden"
-                  aria-hidden="true"
-                />
-              </div>
-              <h3 className="mt-4 text-xl font-medium text-foreground">
-                {stage.name}
-              </h3>
-              <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-                {stage.copy}
-              </p>
-              {index < approachStages.length - 1 && (
-                <ArrowRight
-                  aria-hidden="true"
-                  className="mt-6 hidden h-4 w-4 text-primary/40 lg:block"
-                />
-              )}
-            </div>
-          ))}
+        {/* Approach Journey */}
+        <div className="relative mt-16 lg:mt-20">
+          <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
+            {approachStages.map((stage, index) => {
+              const isLast = index === approachStages.length - 1;
+
+              return (
+                <div key={stage.number} className="group relative">
+                  {/* Step marker */}
+                  <div className="relative z-10 flex items-center justify-between">
+                    <div
+                      className="
+                        flex h-6 w-6 items-center justify-center
+                        rounded-full
+                        border border-border/80
+                        bg-background
+                        text-[10px]
+                        font-medium
+                        text-primary
+                        transition-all duration-500
+                        group-hover:scale-110
+                        group-hover:border-primary/50
+                        group-hover:bg-primary/5
+                      "
+                    >
+                      {stage.number}
+                    </div>
+
+                    {/* Mobile connector */}
+                    {!isLast && (
+                      <div
+                        className="ml-3 h-px flex-1 bg-border/60 lg:hidden"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="mt-7 min-h-37.5">
+                    <div className="flex items-baseline gap-3">
+                      <h3
+                        className="
+        text-xl font-medium tracking-tight text-foreground
+        transition-all duration-500
+        group-hover:translate-x-1 group-hover:text-accent-hover
+      "
+                      >
+                        {stage.name}
+                      </h3>
+                    </div>
+
+                    <p
+                      className="
+      mt-3 max-w-sm text-sm leading-relaxed
+      text-muted-foreground
+      transition-colors duration-500
+      group-hover:text-foreground/75
+    "
+                    >
+                      {stage.copy}
+                    </p>
+                  </div>
+
+                  {/* Bottom detail */}
+                  <div className="mt-3 md:mt-4 flex items-center gap-2 lg:mt-8">
+                    <span
+                      className="
+      h-px w-8 bg-border/70
+      transition-all duration-500
+      group-hover:w-12
+      group-hover:bg-primary/50
+    "
+                    />
+
+                    <span
+                      className="
+      text-[10px] uppercase tracking-[0.18em]
+      text-muted-foreground/50
+      transition-colors duration-500
+      group-hover:text-primary/70
+    "
+                    >
+                      {index === 0 && "Begin"}
+                      {index === 1 && "Read"}
+                      {index === 2 && "Respond"}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
@@ -505,11 +559,13 @@ function ConversionOne() {
   return (
     <section className="relative overflow-hidden border-y border-border/60">
       <ImagePlaceholder
+        src="/about/srilankan-house.jpg"
+        alt="srilankan contemporary house courtyard"
         label="Editorial photograph"
         ratio="aspect-[16/10] sm:aspect-[21/9]"
         className="border-0"
       />
-      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-foreground/85 via-foreground/40 to-transparent px-4 pb-10 pt-24 sm:px-6 lg:px-8 lg:pb-14">
+      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-foreground/90 via-foreground/50 to-transparent px-4 pb-10 pt-24 sm:px-6 lg:px-8 lg:pb-14">
         <div className="mx-auto max-w-7xl text-primary-foreground">
           <h2 className="section-heading text-surface-muted">
             Have a space in mind?
@@ -521,9 +577,10 @@ function ConversionOne() {
           </p>
           <Link
             href="/contact"
-            className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-primary-foreground underline decoration-primary-foreground/40 underline-offset-4 transition-colors hover:decoration-primary-foreground"
+            className="group mt-7 rounded-2xl py-1.5 px-3 inline-flex items-center gap-2 text-sm font-medium border border-border-muted bg-surface-muted/15 text-primary-foreground decoration-primary-foreground/40 underline-offset-4 transition-colors hover:decoration-primary-foreground hover:shadow-divine-glow"
           >
-            Discuss your space <ArrowRight className="h-4 w-4" />
+            Discuss your space{" "}
+            <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-0.5" />
           </Link>
         </div>
       </div>
@@ -554,13 +611,11 @@ function AncientContemporary() {
   ];
 
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
-            Then and now
-          </p>
-          <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+          <p className="section-badge">Then and now</p>
+          <h2 className="section-heading">
             The spaces have changed. The questions remain.
           </h2>
         </div>
@@ -568,7 +623,9 @@ function AncientContemporary() {
         <div className="relative mt-12 aspect-video overflow-hidden rounded-xl border border-border/60">
           <div className="absolute inset-0">
             <ImagePlaceholder
-              label="Traditional courtyard"
+              src="/about/modern-courtyard.webp"
+              alt="contemporary courtyard"
+              label="Contemporary interior"
               ratio="h-full"
               className="h-full rounded-none border-0"
             />
@@ -578,7 +635,9 @@ function AncientContemporary() {
             style={{ clipPath: `inset(0 ${100 - split}% 0 0)` }}
           >
             <ImagePlaceholder
-              label="Contemporary interior"
+              src="/about/traditional-courtyard.webp"
+              alt="indian ancient courtyard"
+              label="Traditional courtyard"
               ratio="h-full"
               className="h-full rounded-none border-0 bg-primary/10"
             />
@@ -636,15 +695,13 @@ function AncientContemporary() {
 
 function Philosophy() {
   return (
-    <section className="border-y border-border/60 bg-secondary/25 px-4 py-24 sm:px-6 lg:px-8 lg:py-36">
+    <section className="border-y border-border/60 bg-primary  px-4 py-24 sm:px-6 lg:px-8 lg:py-36">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-sm font-medium uppercase tracking-widest text-primary">
-          Our philosophy
-        </p>
-        <p className="mt-8 text-3xl font-medium leading-tight text-foreground sm:text-4xl lg:text-5xl">
+        <p className="section-badge text-surface-muted">Our philosophy</p>
+        <h2 className="section-heading text-surface">
           Vastu should create awareness, not anxiety.
-        </p>
-        <p className="mx-auto mt-10 max-w-xl text-lg leading-relaxed text-muted-foreground">
+        </h2>
+        <p className="section-description text-surface-accent">
           We believe Vastu is best approached with curiosity rather than fear.
           It should encourage us to observe our spaces more carefully and make
           intentional choices — not turn everyday living into a list of things
@@ -661,12 +718,12 @@ function Philosophy() {
 
 function WhatWeStandAgainst() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface">
       <div className="mx-auto max-w-4xl">
-        <p className="text-sm font-medium uppercase tracking-widest text-primary">
+        <span className="section-badge">
           What we stand against
-        </p>
-        <h2 className="mt-4 text-3xl font-medium leading-tight text-foreground sm:text-4xl">
+        </span>
+        <h2 className="section-heading">
           No fear. No shortcuts. No one-size-fits-all answers.
         </h2>
 
@@ -766,11 +823,13 @@ function FinalConversion() {
   return (
     <section className="relative overflow-hidden">
       <ImagePlaceholder
+        src="/about/modern-villa.webp"
+        alt="modern villam evening view"
         label="Full-bleed architectural photograph"
         ratio="aspect-[4/5] sm:aspect-[16/9]"
         className="border-0"
       />
-      <div className="absolute inset-0 bg-foreground/55" aria-hidden="true" />
+      <div className="absolute inset-0 bg-foreground/25" aria-hidden="true" />
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
         <p className="max-w-2xl text-3xl font-medium leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
           Your space is unique. Your questions should be too.
