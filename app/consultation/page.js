@@ -7,6 +7,7 @@ import ConsultationProcess from "@/components/pages/consultation/ConsultationPro
 import ConsultationTrust from "@/components/pages/consultation/ConsultationTrust";
 import ConsultationBooking from "@/components/pages/consultation/ConsultationBooking";
 import ConsultationClosing from "@/components/pages/consultation/ConsultationClosing";
+import ConsultationConversation from "@/components/pages/consultation/ConsultationConversation"
 
 export const metadata = {
   title: "Vastu Consultation for Your Home | VastuVeda",
@@ -30,6 +31,8 @@ export default function ConsultationPage() {
       <ConsultationProcess />
 
       <ConsultationTrust />
+
+      <ConsultationConversation/>
 
       {/* <ConsultationBooking />
 

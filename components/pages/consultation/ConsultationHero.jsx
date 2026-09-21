@@ -4,7 +4,7 @@ export default function ConsultationHero() {
   return (
     <header className="relative min-h-[calc(100svh-5rem)] overflow-hidden border-b border-border/60">
       <img
-        src="/section-images/spaces-transition.jpg"
+        src="/rooms/doorway-2.webp"
         alt="A sequence of quiet stone doorways illuminated by natural light"
         width={1536}
         height={1024}
@@ -32,10 +32,10 @@ export default function ConsultationHero() {
 
           <a
             href="#booking"
-            className="mt-9 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 font-medium text-primary transition-colors hover:bg-brand-cream"
+            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 font-medium text-primary transition-colors hover:bg-brand-cream"
           >
             Book a consultation
-            <ArrowDown className="h-4 w-4" aria-hidden="true" />
+            <ArrowDown className="h-4 w-4 transition-all duration-150 group-hover:translate-y-1" aria-hidden="true" />
           </a>
         </div>
       </div>

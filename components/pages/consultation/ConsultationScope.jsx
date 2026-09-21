@@ -10,7 +10,7 @@ const scope = [
 
 export default function ConsultationScope() {
   return (
-    <section className="border-y border-border/60 bg-secondary/25 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl text-center">
         <p className="text-sm font-medium uppercase tracking-widest text-primary">
           What the consultation covers

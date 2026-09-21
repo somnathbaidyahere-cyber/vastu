@@ -16,11 +16,11 @@ const preparation = [
 
 export default function ConsultationPreparation() {
   return (
-    <section className="border-y border-border/60 bg-ivory-pattern px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
         <div className="relative lg:col-span-7">
           <img
-            src="/learn-plan.jpg"
+            src="/rooms/floor-plan.webp"
             alt="Architectural floor plan with drawing tools and material references"
             loading="lazy"
             width={1024}
