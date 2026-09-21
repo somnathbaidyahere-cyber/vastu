@@ -116,8 +116,8 @@ export default function BlogPage() {
                 Journal
               </p>
 
-              <h1 className="mt-4 text-5xl font-medium leading-tight text-foreground sm:text-6xl">
-                Vastu Blog
+              <h1 className="hero-heading">
+                Vastu{" "}<span className="text-gradient-brand">Blog</span>
               </h1>
 
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -137,7 +137,7 @@ export default function BlogPage() {
                   >
                     <article className="h-full border-b border-border/60 pb-6">
                       {/* Cover Image */}
-                      <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-card">
+                      <div className="relative aspect-4/3 overflow-hidden rounded-xl border border-border/60 bg-card">
                         <Image
                           src={article.coverImage}
                           alt={article.imageAlt || article.title}
