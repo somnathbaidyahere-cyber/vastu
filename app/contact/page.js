@@ -139,7 +139,7 @@ function Hero() {
 
         {/* Serif Headline */}
         <h1 className="hero-heading text-surface">
-          Let&rsquo;s talk about your space.
+          Let&rsquo;s{" "}<span className="text-gradient-brand">talk</span> about your space.
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-surface font-sans leading-relaxed font-light max-w-2xl">

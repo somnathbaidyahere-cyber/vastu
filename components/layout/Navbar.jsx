@@ -45,7 +45,7 @@ const learnLinks = [
     href: "/learn/spaces",
     description: "Learn to understand the space",
   },
-   {
+  {
     label: "Rooms",
     href: "/learn/rooms",
     description: "Vastu guidance for every room",
@@ -116,6 +116,8 @@ export default function Navbar() {
           />
 
           <NavLink href="/about">About</NavLink>
+          
+          <NavLink href="/blog">Blog</NavLink>
 
           <NavLink href="/contact">Contact</NavLink>
           {/* <NavLink href="/blog">Blog</NavLink> */}
@@ -168,6 +170,10 @@ export default function Navbar() {
 
             <MobileNavLink href="/about" onClick={() => setMobileOpen(false)}>
               About
+            </MobileNavLink>
+
+            <MobileNavLink href="/blog" onClick={() => setMobileOpen(false)}>
+              Blog
             </MobileNavLink>
 
             <MobileNavLink href="/contact" onClick={() => setMobileOpen(false)}>

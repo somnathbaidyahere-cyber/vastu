@@ -10,6 +10,7 @@ import LearnNavigation from "@/components/pages/learn/rooms/LearnNavigation";
 export default function RoomsPage() {
   return (
     <main>
+      
       <RoomsHero />
       <HomeAsSystem />
       <RoomExplorer />

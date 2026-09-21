@@ -1,8 +1,14 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { ArrowUpRight, MessageSquare, Phone, Mail, CheckCircle2 } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+import {
+  ArrowUpRight,
+  MessageSquare,
+  Phone,
+  Mail,
+  CheckCircle2,
+} from "lucide-react";
 
 export default function ConsultationConversation() {
   // Replace these with your actual contact details
@@ -13,29 +19,27 @@ export default function ConsultationConversation() {
   return (
     <section className="w-full bg-surface text-[#2C2825] py-20 lg:py-32 px-6 sm:px-12 md:px-16 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
-        
         {/* Top Hairline Divider */}
-        <div className="w-full h-[1px] bg-[#E2DACC] mb-16 lg:mb-24" />
+        <div className="w-full h-px bg-[#E2DACC] mb-16 lg:mb-24" />
 
         {/* Main Editorial Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
           {/* Left Column: Heading & Narrative */}
           <div className="lg:col-span-6 flex flex-col space-y-6">
-            <span className="section-badge">
-              START A CONVERSATION
-            </span>
+            <span className="section-badge">START A CONVERSATION</span>
 
             <h2 className="section-heading">
               Want to understand your home better ?
             </h2>
 
             <p className="text-base sm:text-lg text-[#5C554E] font-sans leading-relaxed max-w-lg">
-              Whether you are evaluating a prospective property, planning a subtle renovation, or simply seeking clarity on your current living space, we are here to help you navigate it.
+              Whether you are evaluating a prospective property, planning a
+              subtle renovation, or simply seeking clarity on your current
+              living space, we are here to help you navigate it.
             </p>
 
             {/* Subtle Accent Divider */}
-            <div className="w-16 h-[1px] bg-[#8C6A3C]/40 my-2" />
+            <div className="w-16 h-px bg-[#8C6A3C]/40 my-2" />
 
             {/* Integrated Closing Statement */}
             <p className="text-lg sm:text-xl font-serif text-[#745228] italic leading-snug pt-2">
@@ -46,9 +50,10 @@ export default function ConsultationConversation() {
           {/* Right Column: CTAs & Direct Contact */}
           <div className="lg:col-span-6 flex flex-col justify-between bg-[#FFFDFA] border border-[#E2DACC] p-8 sm:p-10 md:p-12 rounded-sm shadow-sm">
             <div className="space-y-8">
-              
               <p className="text-base text-[#5C554E] leading-relaxed">
-                Reach out directly via your preferred channel. We operate with a direct, conversational approach without lengthy intake questionnaires.
+                Reach out directly via your preferred channel. We operate with a
+                direct, conversational approach without lengthy intake
+                questionnaires.
               </p>
 
               {/* Primary WhatsApp CTA */}
@@ -61,7 +66,9 @@ export default function ConsultationConversation() {
                 >
                   <span className="flex items-center space-x-3">
                     <MessageSquare className="w-5 h-5 text-[#FAF7F0]/90" />
-                    <span className="font-medium tracking-wide">Start a Conversation</span>
+                    <span className="font-medium tracking-wide">
+                      Start a Conversation
+                    </span>
                   </span>
                   <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
@@ -93,14 +100,14 @@ export default function ConsultationConversation() {
               {/* Reassurance Note */}
               <div className="flex items-start space-x-3 pt-4 border-t border-[#E2DACC]/60 text-xs sm:text-sm text-[#7A7268]">
                 <CheckCircle2 className="w-4 h-4 text-[#8C6A3C] shrink-0 mt-0.5" />
-                <span>No detailed documents, floor plans, or file uploads are required to get started.</span>
+                <span>
+                  No detailed documents, floor plans, or file uploads are
+                  required to get started.
+                </span>
               </div>
-
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
