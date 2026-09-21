@@ -30,7 +30,7 @@ export default function ConsultationPage() {
 
       <ConsultationProcess />
 
-      <ConsultationTrust />
+      {/* <ConsultationTrust /> */}
 
       <ConsultationConversation/>
 

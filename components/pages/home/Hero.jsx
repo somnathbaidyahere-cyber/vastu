@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Compass, BookOpen, Home, Sun } from "lucide-react";
+import { Compass, BookOpen, Home, Sun, Link } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -41,12 +41,12 @@ export default function Hero() {
                 >
                   Explore Tools
                 </a>
-                <a
+                <Link
                   href="/learn/fundamentals"
                   className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-3.5 text-xs sm:text-sm md:text-base font-medium text-accent-muted transition-colors hover:bg-secondary hover:text-foreground"
                 >
                   Learn Vastu
-                </a>
+                </Link>
               </div>
 
               <div className="mt-10 flex items-center gap-6 text-sm text-primary-foreground">

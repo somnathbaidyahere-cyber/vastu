@@ -12,11 +12,11 @@ export default function ConsultationScope() {
   return (
     <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl text-center">
-        <p className="text-sm font-medium uppercase tracking-widest text-primary">
+        <p className="section-badge">
           What the consultation covers
         </p>
 
-        <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-medium text-foreground sm:text-4xl">
+        <h2 className="section-heading">
           A connected reading of your space.
         </h2>
 

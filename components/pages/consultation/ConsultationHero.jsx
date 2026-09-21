@@ -1,9 +1,10 @@
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 export default function ConsultationHero() {
   return (
     <header className="relative min-h-[calc(100svh-5rem)] overflow-hidden border-b border-border/60">
-      <img
+      <Image
         src="/rooms/doorway-2.webp"
         alt="A sequence of quiet stone doorways illuminated by natural light"
         width={1536}
@@ -12,7 +13,7 @@ export default function ConsultationHero() {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/55 to-foreground/10" />
+      <div className="absolute inset-0 bg-linear-to-r from-foreground/90 via-foreground/55 to-foreground/10" />
 
       <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl items-end px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
         <div className="max-w-2xl text-primary-foreground">
@@ -32,7 +33,7 @@ export default function ConsultationHero() {
 
           <a
             href="#booking"
-            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 font-medium text-primary transition-colors hover:bg-brand-cream"
+            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 font-medium text-primary transition-colors hover:shadow-divine-glow"
           >
             Book a consultation
             <ArrowDown className="h-4 w-4 transition-all duration-150 group-hover:translate-y-1" aria-hidden="true" />

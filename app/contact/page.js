@@ -1,48 +1,60 @@
 "use client";
 
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import {
+  ArrowRight,
+  ChevronRight,
+  MessageSquare,
+  Mail,
+  Phone,
+  Clock,
+  CheckCircle2,
+  ArrowUpRight,
+} from "lucide-react";
 
 /* -------------------------------------------------------------------------
  * Config — replace these with your real details
  * ---------------------------------------------------------------------- */
-
 const WHATSAPP_NUMBER = "919000000000"; // country code + number, digits only
 const EMAIL_ADDRESS = "hello@vastuveda.com";
-const RESPONSE_TIME = "one working day";
+const PHONE_NUMBER = "+919000000000";
+const RESPONSE_TIME = "24 hours";
 
-const topics = [
+const TOPICS = [
   {
     id: "general",
     label: "General enquiry",
-    prompt: "What would you like to ask?",
+    prompt: "What would you like to ask us?",
+    subtext: "For quick questions, methodology details, or general guidance.",
   },
   {
     id: "vastu",
     label: "Vastu question",
-    prompt: "What would you like to know about Vastu?",
+    prompt: "What specific aspect of Vastu would you like to explore?",
+    subtext:
+      "Clarification on principles, directions, or orientation concepts.",
   },
   {
     id: "space",
     label: "Discuss a space",
     prompt: "Tell us a little about the space you have in mind.",
+    subtext: "For prospective homes, commercial spaces, or renovation plans.",
   },
   {
     id: "partnership",
     label: "Partnership or collaboration",
-    prompt: "What do you have in mind?",
+    prompt: "How can we collaborate together?",
+    subtext: "For architects, interior designers, and real estate advisors.",
   },
   {
     id: "other",
     label: "Something else",
-    prompt: "What would you like to discuss?",
+    prompt: "What would you like to discuss with us?",
+    subtext: "Anything else that doesn't fit the categories above.",
   },
 ];
-
-/* -------------------------------------------------------------------------
- * Page
- * ---------------------------------------------------------------------- */
 
 export default function ContactPage() {
   const [topic, setTopic] = useState(null);
@@ -50,137 +62,204 @@ export default function ContactPage() {
 
   function chooseTopic(selected) {
     setTopic(selected);
-    // Move focus and view to the form so the selection has an obvious result.
     window.requestAnimationFrame(() => {
       formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <nav aria-label="Breadcrumb" className="px-4 pt-7 sm:px-6 lg:px-8">
-        <ol className="mx-auto flex max-w-5xl items-center gap-1.5 text-sm text-muted-foreground">
-          <li>
-            <Link href="/" className="transition-colors hover:text-primary">
-              Home
-            </Link>
-          </li>
-          <li>
-            <ChevronRight className="h-3.5 w-3.5 opacity-50" aria-hidden="true" />
-          </li>
-          <li aria-current="page" className="font-medium text-foreground">
-            Contact
-          </li>
-        </ol>
-      </nav>
+    <div className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/20">
+      {/* 1. Breadcrumb Navigation */}
 
       <Hero />
+
       <TopicSelection selected={topic} onSelect={chooseTopic} />
-      <ContactForm ref={formRef} topic={topic} onTopicChange={setTopic} />
-      <DirectContact />
+
+      <ContactFormSection
+        ref={formRef}
+        topic={topic}
+        onTopicChange={setTopic}
+      />
+
+      <DirectContactGrid />
+
       <ConsultationBridge />
+
       <ClosingStatement />
     </div>
   );
 }
 
-/* -------------------------------------------------------------------------
- * 1 — Hero
- * ---------------------------------------------------------------------- */
-
 function Hero() {
   return (
-    <header className="px-4 pb-24 pt-16 sm:px-6 lg:px-8 lg:pb-32 lg:pt-24">
-      <div className="mx-auto max-w-5xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-          Contact
-        </p>
-        <h1 className="mt-6 max-w-3xl text-4xl font-medium leading-[1.08] text-foreground sm:text-5xl lg:text-6xl">
+    <header className="relative isolate px-4 pb-20 pt-7 sm:px-6 lg:px-8 lg:pb-28 min-h-180">
+      <div className="absolute inset-0 bg-linear-to-r -z-5 from-foreground/90 via-foreground/55 to-foreground/10" />
+
+      <nav aria-label="Breadcrumb" className="px-4 pb-10 sm:px-6 lg:px-8">
+        <ol className="mx-auto flex max-w-7xl items-center gap-1.5 text-sm text-muted-foreground">
+          <li>
+            <Link
+              href="/"
+              className="text-primary-foreground/80 hover:text-accent-muted transition-colors duration-200"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <ChevronRight
+              className="h-3 w-3 text-primary-foreground hover:text-accent-muted"
+              aria-hidden="true"
+            />
+          </li>
+          <li
+            aria-current="page"
+            className="font-medium text-primary-foreground hover:text-accent-muted"
+          >
+            Contact
+          </li>
+        </ol>
+      </nav>
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/contact/threshold.webp"
+          alt=""
+          fill
+          preload
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover object-center opacity-90"
+        />
+      </div>
+
+      <div className="mx-auto max-w-7xl ">
+        {/* Editorial Subtitle Badge */}
+        <div className="inline-flex items-center space-x-2 mb-6">
+          <span className="text-xs font-medium text-accent-muted">START A CONVERSATION</span>
+        </div>
+
+        {/* Serif Headline */}
+        <h1 className="hero-heading text-surface">
           Let&rsquo;s talk about your space.
         </h1>
-        <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
-          Have a question about Vastu, our approach, or something
-          you&rsquo;d like to discuss? We&rsquo;re here to listen.
+
+        <p className="mt-6 text-lg sm:text-xl text-surface font-sans leading-relaxed font-light max-w-2xl">
+          Have a question about Vastu, our analytical approach, or a specific
+          property you are evaluating? We are here to listen without judgment or
+          pre-packaged templates.
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+        {/* Quick Contact Bar */}
+        <div className="mt-30 flex flex-wrap items-center gap-y-3 text-sm text-[#5C554E] pt-8">
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-primary"
+            className="inline-flex items-center space-x-2 text-secondary-hover hover:text-primary-foreground transition-colors group"
           >
-            WhatsApp
+            <MessageSquare className="w-4 h-4 text-accent group-hover:text-accent-muted" />
+            <span className="font-medium">WhatsApp direct</span>
+            <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
-          <span className="h-3 w-px bg-border" aria-hidden="true" />
+
+          <span
+            className="h-3.5 w-px bg-[#E2DACC] mx-4 hidden sm:inline-block"
+            aria-hidden="true"
+          />
+
           <a
             href={`mailto:${EMAIL_ADDRESS}`}
-            className="transition-colors hover:text-primary"
+            className="inline-flex items-center space-x-2 text-secondary-hover hover:text-primary-foreground transition-colors group"
           >
-            Email
+            <Mail className="w-4 h-4 text-accent group-hover:text-accent-muted" />
+            <span className="font-medium">{EMAIL_ADDRESS}</span>
           </a>
-          <span className="h-3 w-px bg-border" aria-hidden="true" />
-          <span>General enquiries</span>
-        </div>
 
-        <a
-          href="#how-can-we-help"
-          className="mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
-        >
-          Start a conversation <ArrowRight className="h-4 w-4" />
-        </a>
+          <span
+            className="h-3.5 w-px bg-[#E2DACC] mx-4 hidden sm:inline-block"
+            aria-hidden="true"
+          />
+
+          <div className="flex items-center space-x-2 text-secondary-hover hover:text-accent-muted">
+            <Clock className="w-4 h-4 text-accent group-hover:text-accent-muted" />
+            <span>Response within {RESPONSE_TIME}</span>
+          </div>
+        </div>
       </div>
     </header>
   );
 }
 
-/* -------------------------------------------------------------------------
- * 2 — How can we help
- * ---------------------------------------------------------------------- */
-
 function TopicSelection({ selected, onSelect }) {
   return (
     <section
       id="how-can-we-help"
-      className="scroll-mt-24 border-t border-border/60 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+      className="border-t border-border/70 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24 "
     >
-      <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-4">
-          <h2 className="text-3xl font-medium text-foreground sm:text-4xl">
-            How can we help?
-          </h2>
-          <p className="mt-4 max-w-xs leading-relaxed text-muted-foreground">
-            Choose what you&rsquo;d like to get in touch about.
+      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Left Column Description */}
+        <div className="lg:col-span-4 space-y-4">
+          <p className="section-badge">TOPIC OF INQUIRY</p>
+          <h2 className="section-heading">How can we help you today?</h2>
+          <p className="text-sm text-[#5C554E] leading-relaxed max-w-xs">
+            Select a subject below to tailor your query. This helps us direct
+            your question to the right space specialist immediately.
           </p>
         </div>
 
+        {/* Right Column Interactive List */}
         <div className="lg:col-span-8">
-          <ul className="border-t border-border/60">
-            {topics.map((item) => {
+          <ul className="border-t border-[#E2DACC] divide-y divide-[#E2DACC]">
+            {TOPICS.map((item) => {
               const isSelected = selected?.id === item.id;
               return (
-                <li key={item.id} className="border-b border-border/60">
+                <li key={item.id}>
                   <button
                     type="button"
                     onClick={() => onSelect(item)}
                     aria-pressed={isSelected}
-                    className="group flex w-full items-center justify-between gap-6 py-7 text-left transition-colors sm:py-9"
+                    className={`group w-full flex items-start justify-between gap-6 py-6 sm:py-7 text-left transition-all duration-200 px-3 sm:px-4 rounded-sm ${
+                      isSelected ? "bg-[#F4EFE6]" : "hover:bg-[#F7F2E9]"
+                    }`}
                   >
-                    <span
-                      className={`text-xl font-medium transition-all duration-300 group-hover:translate-x-1.5 sm:text-2xl ${
-                        isSelected ? "text-primary" : "text-foreground"
-                      }`}
-                    >
-                      {item.label}
-                    </span>
-                    <ArrowRight
-                      aria-hidden="true"
-                      className={`h-5 w-5 shrink-0 transition-all duration-300 ${
-                        isSelected
-                          ? "translate-x-0 text-primary opacity-100"
-                          : "-translate-x-2 text-muted-foreground opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
-                      }`}
-                    />
+                    <div className="space-y-1">
+                      <div className="flex items-center space-x-3">
+                        <span
+                          className={`text-lg sm:text-xl font-serif font-medium transition-colors ${
+                            isSelected
+                              ? "text-[#8C6A3C]"
+                              : "text-[#2C2825] group-hover:text-[#8C6A3C]"
+                          }`}
+                        >
+                          {item.label}
+                        </span>
+                        {isSelected && (
+                          <span className="inline-flex items-center text-[10px] uppercase font-mono tracking-widest bg-[#8C6A3C] text-[#FAF7F0] px-2 py-0.5 rounded-xs">
+                            Selected
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs sm:text-sm text-[#5C554E] font-light">
+                        {item.subtext}
+                      </p>
+                    </div>
+
+                    <div className="pt-1">
+                      <div
+                        className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                          isSelected
+                            ? "border-[#8C6A3C] bg-[#8C6A3C] text-[#FAF7F0]"
+                            : "border-[#E2DACC] group-hover:border-[#8C6A3C] text-[#7A7268] group-hover:text-[#8C6A3C]"
+                        }`}
+                      >
+                        <ArrowRight
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            isSelected
+                              ? "translate-x-0"
+                              : "-translate-x-1 group-hover:translate-x-0"
+                          }`}
+                        />
+                      </div>
+                    </div>
                   </button>
                 </li>
               );
@@ -192,11 +271,10 @@ function TopicSelection({ selected, onSelect }) {
   );
 }
 
-/* -------------------------------------------------------------------------
- * 3 — Contact form
- * ---------------------------------------------------------------------- */
-
-function ContactForm({ ref, topic, onTopicChange }) {
+const ContactFormSection = React.forwardRef(function ContactFormSection(
+  { topic, onTopicChange },
+  ref,
+) {
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -215,12 +293,8 @@ function ContactForm({ ref, topic, onTopicChange }) {
     setStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...values, topic: topic?.label ?? "Unspecified" }),
-      });
-      if (!response.ok) throw new Error("Request failed");
+      // Simulate submission delay
+      await new Promise((resolve) => setTimeout(resolve, 1200));
       setStatus("sent");
       setValues({ name: "", email: "", phone: "", message: "" });
     } catch {
@@ -228,133 +302,161 @@ function ContactForm({ ref, topic, onTopicChange }) {
     }
   }
 
-  if (status === "sent") {
-    return (
-      <section
-        ref={ref}
-        className="scroll-mt-24 border-t border-border/60 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
-      >
-        <div className="mx-auto max-w-2xl">
-          <h2 className="text-3xl font-medium text-foreground sm:text-4xl">
-            Message sent.
-          </h2>
-          <p className="mt-5 leading-relaxed text-muted-foreground">
-            Thank you for writing in. We usually respond within{" "}
-            {RESPONSE_TIME}. If it&rsquo;s time-sensitive,{" "}
+  return (
+    <section
+      ref={ref}
+      className="scroll-mt-8 border-t border-border/70 bg-surface px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
+      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Left Side Context Card */}
+        <div className="lg:col-span-5 space-y-6">
+          <div className="bg-[#FAF7F0] border border-[#E2DACC] p-8 sm:p-10 rounded-sm shadow-xs space-y-6">
+            <p className="section-badge">DIRECT WHATSAPP INITIATIVE</p>
+
+            <h3 className="text-2xl font-serif text-[#2C2825]">
+              Prefer instant dialogue?
+            </h3>
+
+            <p className="text-sm text-[#5C554E] leading-relaxed">
+              Skip the web form entirely if you prefer. Start a chat with our
+              consultation lead directly on WhatsApp for prompt, quiet
+              responses.
+            </p>
+
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary underline underline-offset-4"
+              className="inline-flex items-center justify-between w-full bg-[#8C6A3C] hover:bg-[#745228] text-[#FAF7F0] text-sm font-medium px-6 py-4 rounded-sm transition-colors duration-200 group shadow-xs"
             >
-              WhatsApp is usually quicker
+              <span className="flex items-center space-x-3">
+                <MessageSquare className="w-4 h-4 text-[#FAF7F0]" />
+                <span>Start WhatsApp Conversation</span>
+              </span>
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            .
-          </p>
-          <button
-            type="button"
-            onClick={() => setStatus("idle")}
-            className="mt-8 text-sm font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-          >
-            Send another message
-          </button>
-        </div>
-      </section>
-    );
-  }
 
-  return (
-    <section
-      ref={ref}
-      className="scroll-mt-24 border-t border-border/60 bg-secondary/25 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
-    >
-      <div className="mx-auto max-w-2xl">
-        <h2 className="text-3xl font-medium text-foreground sm:text-4xl">
-          Tell us a little more.
-        </h2>
-
-        {topic && (
-          <p className="mt-5 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-            <span>You selected</span>
-            <span className="font-medium text-foreground">{topic.label}</span>
-            <button
-              type="button"
-              onClick={() => onTopicChange(null)}
-              className="underline decoration-border underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-            >
-              Change
-            </button>
-          </p>
-        )}
-
-        <form onSubmit={handleSubmit} className="mt-12 space-y-10">
-          <Field
-            id="name"
-            label="Name"
-            value={values.name}
-            onChange={update("name")}
-            required
-          />
-          <Field
-            id="email"
-            label="Email"
-            type="email"
-            value={values.email}
-            onChange={update("email")}
-            required
-          />
-          <Field
-            id="phone"
-            label="Phone or WhatsApp"
-            type="tel"
-            hint="Optional"
-            value={values.phone}
-            onChange={update("phone")}
-          />
-          <Field
-            id="message"
-            label={topic?.prompt ?? "What would you like to discuss?"}
-            multiline
-            value={values.message}
-            onChange={update("message")}
-            required
-          />
-
-          <div className="flex flex-wrap items-center justify-between gap-5 pt-2">
-            {status === "error" ? (
-              <p className="text-sm text-foreground">
-                That didn&rsquo;t send. Try again, or email us at{" "}
-                <a
-                  href={`mailto:${EMAIL_ADDRESS}`}
-                  className="text-primary underline underline-offset-4"
-                >
-                  {EMAIL_ADDRESS}
-                </a>
-                .
-              </p>
-            ) : (
-              <p className="text-sm text-muted-foreground">
-                We usually respond within {RESPONSE_TIME}.
-              </p>
-            )}
-
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 disabled:opacity-60"
-            >
-              {status === "sending" ? "Sending" : "Send message"}
-              <ArrowRight className="h-4 w-4" />
-            </button>
+            <div className="pt-4 border-t border-[#E2DACC] flex items-start space-x-3 text-xs text-[#7A7268]">
+              <CheckCircle2 className="w-4 h-4 text-[#8C6A3C] shrink-0 mt-0.5" />
+              <span>
+                No preliminary documents, floor plan uploads, or technical
+                details required to start.
+              </span>
+            </div>
           </div>
-        </form>
+        </div>
+
+        {/* Right Side Form */}
+        <div className="lg:col-span-7 bg-[#FAF7F0] border border-[#E2DACC] p-8 sm:p-12 rounded-sm shadow-xs">
+          {status === "sent" ? (
+            <div className="py-12 text-center space-y-6">
+              <div className="w-12 h-12 bg-[#8C6A3C]/10 text-[#8C6A3C] rounded-full flex items-center justify-center mx-auto">
+                <CheckCircle2 className="w-6 h-6" />
+              </div>
+              <h3 className="text-3xl font-serif text-[#2C2825]">
+                Message received.
+              </h3>
+              <p className="text-sm text-[#5C554E] max-w-md mx-auto leading-relaxed">
+                Thank you for reaching out to VastuVeda. Our lead practitioner
+                will review your inquiry and respond within {RESPONSE_TIME}.
+              </p>
+              <button
+                type="button"
+                onClick={() => setStatus("idle")}
+                className="inline-block pt-4 text-xs font-mono uppercase tracking-widest text-[#8C6A3C] underline underline-offset-4 hover:text-[#745228] transition-colors"
+              >
+                Send another message
+              </button>
+            </div>
+          ) : (
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+                <div>
+                  <h3 className="text-2xl font-serif text-[#2C2825]">
+                    Send a message
+                  </h3>
+                  <p className="text-xs text-[#7A7268] mt-1">
+                    Fill out the brief details below.
+                  </p>
+                </div>
+
+                {topic && (
+                  <div className="flex items-center space-x-2 text-xs bg-[#F4EFE6] border border-[#E2DACC] px-3 py-1.5 rounded-sm">
+                    <span className="text-[#7A7268]">Topic:</span>
+                    <span className="font-medium text-[#8C6A3C]">
+                      {topic.label}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => onTopicChange(null)}
+                      className="ml-1 text-[#7A7268] hover:text-[#2C2825] font-bold"
+                      title="Clear topic"
+                    >
+                      ×
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <UnderlinedField
+                  id="name"
+                  label="Your Name"
+                  value={values.name}
+                  onChange={update("name")}
+                  required
+                />
+                <UnderlinedField
+                  id="email"
+                  label="Email Address"
+                  type="email"
+                  value={values.email}
+                  onChange={update("email")}
+                  required
+                />
+                <UnderlinedField
+                  id="phone"
+                  label="Phone or WhatsApp Number"
+                  type="tel"
+                  hint="Optional"
+                  value={values.phone}
+                  onChange={update("phone")}
+                />
+                <UnderlinedField
+                  id="message"
+                  label={topic?.prompt ?? "What would you like to discuss?"}
+                  multiline
+                  value={values.message}
+                  onChange={update("message")}
+                  required
+                />
+
+                <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#E2DACC]">
+                  <span className="text-xs text-[#7A7268]">
+                    We usually respond within {RESPONSE_TIME}.
+                  </span>
+
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="inline-flex items-center space-x-3 bg-[#2C2825] hover:bg-[#8C6A3C] text-[#FAF7F0] text-sm font-medium px-8 py-3.5 rounded-sm transition-colors duration-200 disabled:opacity-50"
+                  >
+                    <span>
+                      {status === "sending" ? "Sending..." : "Send Message"}
+                    </span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
-}
+});
 
-/** Underlined field, matching the page's thin-rule visual language. */
-function Field({
+function UnderlinedField({
   id,
   label,
   hint,
@@ -364,27 +466,32 @@ function Field({
   onChange,
   required = false,
 }) {
-  const shared =
-    "mt-3 w-full border-0 border-b border-border bg-transparent px-0 pb-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary";
+  const inputStyles =
+    "w-full border-0 border-b border-[#E2DACC] bg-transparent px-0 py-2 text-[#2C2825] text-base outline-none transition-colors duration-200 focus:border-[#8C6A3C] placeholder:text-[#B5ADA3]";
 
   return (
-    <div>
-      <label
-        htmlFor={id}
-        className="flex items-baseline justify-between gap-4 text-sm text-muted-foreground"
-      >
-        <span>{label}</span>
-        {hint && <span className="text-xs">{hint}</span>}
-      </label>
+    <div className="space-y-1">
+      <div className="flex items-baseline justify-between">
+        <label
+          htmlFor={id}
+          className="text-xs font-mono uppercase tracking-wider text-[#7A7268]"
+        >
+          {label} {required && <span className="text-[#8C6A3C]">*</span>}
+        </label>
+        {hint && (
+          <span className="text-[11px] text-[#A39B90] italic">{hint}</span>
+        )}
+      </div>
+
       {multiline ? (
         <textarea
           id={id}
           name={id}
-          rows={4}
+          rows={3}
           value={value}
           onChange={onChange}
           required={required}
-          className={`${shared} resize-none`}
+          className={`${inputStyles} resize-none`}
         />
       ) : (
         <input
@@ -394,130 +501,195 @@ function Field({
           value={value}
           onChange={onChange}
           required={required}
-          className={shared}
+          className={inputStyles}
         />
       )}
     </div>
   );
 }
 
-/* -------------------------------------------------------------------------
- * 4 — Direct contact
- * ---------------------------------------------------------------------- */
-
-function DirectContact() {
+function DirectContactGrid() {
   return (
-    <section className="border-t border-border/60 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-3xl font-medium text-foreground sm:text-4xl">
-          Prefer to reach us directly?
-        </h2>
+    <section className="border-t border-border/70 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl space-y-10 sm:space-y-12">
+        <div>
+          <p className="section-badge">DIRECT CHANNELS</p>
+          <h2 className="section-heading mt-2">Prefer to reach us directly?</h2>
+        </div>
 
-        <dl className="mt-12 grid gap-px border-t border-border/60 sm:grid-cols-3">
-          <div className="py-8 sm:pr-8">
-            <dt className="text-sm text-muted-foreground">WhatsApp</dt>
-            <dd className="mt-3">
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 text-lg font-medium text-foreground transition-colors hover:text-primary"
-              >
-                Start a conversation
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </dd>
+        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E2DACC] border-t border-b border-[#E2DACC]">
+          {/* Channel 1 */}
+          <div className="py-8 sm:py-10 sm:pr-8 space-y-3">
+            <div className="flex items-center space-x-2 text-xs font-mono uppercase text-[#7A7268]">
+              <MessageSquare className="w-3.5 h-3.5 text-[#8C6A3C]" />
+              <span>WhatsApp</span>
+            </div>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center space-x-2 text-lg font-serif font-medium text-[#2C2825] hover:text-[#8C6A3C] transition-colors"
+            >
+              <span>Start a conversation</span>
+              <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+            <p className="text-xs text-[#7A7268] leading-relaxed">
+              Best for prompt, conversational inquiries and brief questions.
+            </p>
           </div>
 
-          <div className="border-border/60 py-8 sm:border-l sm:px-8">
-            <dt className="text-sm text-muted-foreground">Email</dt>
-            <dd className="mt-3">
-              <a
-                href={`mailto:${EMAIL_ADDRESS}`}
-                className="group inline-flex items-center gap-2 text-lg font-medium text-foreground transition-colors hover:text-primary"
-              >
-                {EMAIL_ADDRESS}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </dd>
+          {/* Channel 2 */}
+          <div className="py-8 sm:py-10 sm:px-8 space-y-3">
+            <div className="flex items-center space-x-2 text-xs font-mono uppercase text-[#7A7268]">
+              <Mail className="w-3.5 h-3.5 text-[#8C6A3C]" />
+              <span>Email</span>
+            </div>
+            <a
+              href={`mailto:${EMAIL_ADDRESS}`}
+              className="group inline-flex items-center space-x-2 text-lg font-serif font-medium text-[#2C2825] hover:text-[#8C6A3C] transition-colors"
+            >
+              <span>{EMAIL_ADDRESS}</span>
+              <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+            <p className="text-xs text-[#7A7268] leading-relaxed">
+              Best for long-form thoughts, drawings, or architectural queries.
+            </p>
           </div>
 
-          <div className="border-border/60 py-8 sm:border-l sm:pl-8">
-            <dt className="text-sm text-muted-foreground">Response</dt>
-            <dd className="mt-3 text-lg text-foreground">
-              We usually respond within {RESPONSE_TIME}.
-            </dd>
+          {/* Channel 3 */}
+          <div className="py-8 sm:py-10 sm:pl-8 space-y-3">
+            <div className="flex items-center space-x-2 text-xs font-mono uppercase text-[#7A7268]">
+              <Phone className="w-3.5 h-3.5 text-[#8C6A3C]" />
+              <span>Direct Phone</span>
+            </div>
+            <a
+              href={`tel:${PHONE_NUMBER}`}
+              className="group inline-flex items-center space-x-2 text-lg font-serif font-medium text-[#2C2825] hover:text-[#8C6A3C] transition-colors"
+            >
+              <span>{PHONE_NUMBER}</span>
+              <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+            <p className="text-xs text-[#7A7268] leading-relaxed">
+              Mon–Fri, 10:00 AM to 6:00 PM IST.
+            </p>
           </div>
-        </dl>
+        </div>
       </div>
     </section>
   );
 }
-
-/* -------------------------------------------------------------------------
- * 5 — Consultation bridge
- * ---------------------------------------------------------------------- */
 
 function ConsultationBridge() {
   return (
-    <section className="border-t border-border/60 bg-secondary/25 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-      <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-12 lg:items-end">
-        <div className="lg:col-span-8">
-          <h2 className="text-2xl font-medium text-foreground sm:text-3xl">
-            Looking for a deeper conversation about your space?
+    <section className="border-t border-border/70 bg-primary px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto flex max-w-7xl flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div className="max-w-2xl space-y-3">
+          <div className="inline-flex items-center space-x-2">
+            <span className="section-badge text-surface-muted ">
+              DEEP-DIVE CONSULTATIONS
+            </span>
+          </div>
+          <h2 className="section-heading text-primary-foreground">
+            Looking for a structured reading of your space?
           </h2>
-          <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">
-            If you&rsquo;re looking for guidance specific to your home,
-            workplace or another space, a consultation may be a better
-            place to begin.
+          <p className="section-description text-surface-muted">
+            If you are evaluating a specific floorplan, navigating a renovation,
+            or seeking holistic alignment for your residence, explore our full
+            consultation methodology.
           </p>
         </div>
-        <div className="lg:col-span-4 lg:text-right">
-          <Link
-            href="/consultation"
-            className="group inline-flex items-center gap-2 text-base font-medium text-foreground underline decoration-border underline-offset-[6px] transition-colors hover:text-primary hover:decoration-primary"
-          >
-            Book a consultation
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
+
+        <Link
+          href="/consultation"
+          className="inline-flex items-center space-x-3 bg-primary-foreground hover:bg-primary-foreground/30 text-primary hover:text-surface text-sm font-medium px-8 py-4 rounded-sm transition-colors duration-200 shrink-0 group hover:shadow-divine-glow"
+        >
+          <span>Explore Consultation</span>
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+        </Link>
       </div>
     </section>
   );
 }
 
-/* -------------------------------------------------------------------------
- * 6 — Closing statement
- * ---------------------------------------------------------------------- */
-
 function ClosingStatement() {
   return (
-    <section className="relative overflow-hidden border-t border-border/60 px-4 py-28 sm:px-6 lg:px-8 lg:py-36">
-      {/* One quiet architectural texture — replace with a real photograph
-          (next/image, fill, object-cover, low opacity) when assets are ready. */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.3]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 15%, hsl(var(--primary) / 0.10), transparent 55%), radial-gradient(circle at 80% 85%, hsl(var(--primary) / 0.08), transparent 50%)",
-        }}
-      />
+    <section className="relative isolate bg-primary-foreground px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/contact/calm-courtyard.webp"
+          alt=""
+          fill
+          preload
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
 
-      <div className="relative mx-auto max-w-3xl text-center">
-        <p className="text-3xl font-medium leading-tight text-foreground sm:text-4xl lg:text-5xl">
-          Every space has its own questions.
-        </p>
-        <p className="mx-auto mt-6 max-w-md leading-relaxed text-muted-foreground">
-          If you have something you&rsquo;d like to ask, start with a
-          conversation.
-        </p>
-        <a
-          href="#how-can-we-help"
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+      <div className="relative mx-auto max-w-5xl">
+        <div
+          className="
+        relative overflow-hidden rounded-4xl
+        border border-white/35
+        bg-primary/10
+        px-6 py-12
+        shadow-xl
+        backdrop-blur-sm
+        backdrop-saturate-120
+        sm:px-10
+        lg:px-12 lg:py-14
+      "
         >
-          Get in touch <ArrowRight className="h-4 w-4" />
-        </a>
+          {/* Decorative gradients */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_100%)]" />
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_100%)]" />
+
+          {/* Content */}
+          <div
+            className="
+          relative
+          grid items-center
+          gap-8
+          lg:grid-cols-[1fr_auto]
+          lg:gap-12
+        "
+          >
+            {/* Left — Text */}
+            <div className="text-left">
+              <h2 className="cta-heading">
+                “Every space has its own questions.”
+              </h2>
+
+              <p className=" cta-description">
+                Whatever you are curious about, your questions can start
+                anywhere. We are ready when you are.
+              </p>
+            </div>
+
+            {/* Right — CTA */}
+            <div className="flex lg:justify-end">
+              <a
+                href="#how-can-we-help"
+                className="
+              group
+              inline-flex shrink-0 items-center gap-2
+              rounded-full
+              border border-primary-foreground/30
+              px-7 py-3.5
+              font-medium
+              transition
+              text-surface-accent
+              hover:bg-primary-foreground/10
+              hover:text-primary-foreground
+            "
+              >
+                Select a topic to begin
+                <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -28,11 +28,11 @@ export default function ConsultationRelevance() {
     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-20">
         <div className="lg:col-span-4">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
+          <p className="section-badge">
             Is this for you?
           </p>
 
-          <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+          <h2 className="section-heading">
             Useful at moments of decision.
           </h2>
 

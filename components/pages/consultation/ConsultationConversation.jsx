@@ -1,103 +1,106 @@
+'use client';
+
 import React from 'react';
-import { MessageCircle, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowUpRight, MessageSquare, Phone, Mail, CheckCircle2 } from 'lucide-react';
 
 export default function ConsultationConversation() {
-  // Replace with actual contact details
+  // Replace these with your actual contact details
   const whatsappNumber = "1234567890";
   const phoneNumber = "+1234567890";
-  const emailAddress = "contact@vastuveda.com";
-  const whatsappMessage = encodeURIComponent("Hello, I would like to inquire about a Vastu consultation for my space.");
+  const emailAddress = "hello@vastuguru.com";
 
   return (
-    <section className="bg-surface py-24 md:py-36 px-6 md:px-12 border-t border-stone-200/60 font-serif">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-          
-          {/* Left Column: Heading & Philosophical Framing */}
-          <div className="lg:col-span-6 flex flex-col justify-between h-full space-y-8 md:space-y-12">
-            <div>
-              {/* Section Tag */}
-              <span className="section-badge">
-                Start a Conversation
-              </span>
-              
-              {/* Main Heading */}
-              <h2 className="section-heading">
-                Have a space in mind?
-              </h2>
+    <section className="w-full bg-surface text-[#2C2825] py-20 lg:py-32 px-6 sm:px-12 md:px-16 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Top Hairline Divider */}
+        <div className="w-full h-[1px] bg-[#E2DACC] mb-16 lg:mb-24" />
 
-              {/* Supporting Text */}
-              <p className="section-description">
-                Every environment carries its own subtle energy and orientation. Whether you are building, renovating, or simply adjusting an existing home, we are here to explore possibilities together.
-              </p>
-            </div>
+        {/* Main Editorial Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column: Heading & Narrative */}
+          <div className="lg:col-span-6 flex flex-col space-y-6">
+            <span className="section-badge">
+              START A CONVERSATION
+            </span>
+
+            <h2 className="section-heading">
+              Want to understand your home better ?
+            </h2>
+
+            <p className="text-base sm:text-lg text-[#5C554E] font-sans leading-relaxed max-w-lg">
+              Whether you are evaluating a prospective property, planning a subtle renovation, or simply seeking clarity on your current living space, we are here to help you navigate it.
+            </p>
+
+            {/* Subtle Accent Divider */}
+            <div className="w-16 h-[1px] bg-[#8C6A3C]/40 my-2" />
 
             {/* Integrated Closing Statement */}
-            <div className="pt-8 border-t border-stone-200/60">
-              <p className="text-xl sm:text-2xl text-stone-800 font-light italic leading-snug">
-                “Your space is unique. Your questions can start anywhere.”
-              </p>
-            </div>
+            <p className="text-lg sm:text-xl font-serif text-[#745228] italic leading-snug pt-2">
+              “Your space is unique. Your questions can start anywhere.”
+            </p>
           </div>
 
-          {/* Right Column: Direct Contact & Next Steps */}
-          <div className="lg:col-span-6 flex flex-col justify-between pt-2 lg:pt-0">
-            <div className="space-y-10">
-              {/* Short Intro */}
-              <p className="font-sans text-stone-600 text-base sm:text-lg leading-relaxed font-light">
-                We believe in thoughtful dialogue over automated forms. Reach out directly to begin discussing your project at your own pace.
+          {/* Right Column: CTAs & Direct Contact */}
+          <div className="lg:col-span-6 flex flex-col justify-between bg-[#FFFDFA] border border-[#E2DACC] p-8 sm:p-10 md:p-12 rounded-sm shadow-sm">
+            <div className="space-y-8">
+              
+              <p className="text-base text-[#5C554E] leading-relaxed">
+                Reach out directly via your preferred channel. We operate with a direct, conversational approach without lengthy intake questionnaires.
               </p>
 
-              {/* Primary CTA: WhatsApp */}
-              <div className="pt-2">
-                <a
-                  href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+              {/* Primary WhatsApp CTA */}
+              <div>
+                <Link
+                  href={`https://wa.me/${whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-between w-full sm:w-auto min-w-[280px] px-8 py-4 bg-stone-900 text-stone-100 font-sans text-sm tracking-wider uppercase transition-all duration-300 ease-out hover:bg-stone-800 border border-stone-900 rounded-2xl"
+                  className="inline-flex items-center justify-between w-full bg-[#8C6A3C] hover:bg-[#745228] text-[#FAF7F0] font-sans text-base px-6 py-4 rounded-sm transition-all duration-200 group shadow-sm"
                 >
-                  <button className="flex items-center gap-3 ">
-                    <MessageCircle className="w-4 h-4 text-stone-300 group-hover:text-green-500  transition-colors" />
-                    Start a Conversation
-                  </button>
-                  <ArrowUpRight className="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
-                </a>
+                  <span className="flex items-center space-x-3">
+                    <MessageSquare className="w-5 h-5 text-[#FAF7F0]/90" />
+                    <span className="font-medium tracking-wide">Start a Conversation</span>
+                  </span>
+                  <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
               </div>
 
-              {/* Secondary Contact Links */}
-              <div className="pt-6 border-t border-stone-200/60 font-sans text-sm">
-                <p className="text-xs uppercase tracking-widest text-stone-400 mb-4 font-medium">Alternative Contact</p>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 text-stone-700">
-                  <a 
-                    href={`tel:${phoneNumber}`} 
-                    className="inline-flex items-center gap-2.5 hover:text-stone-900 transition-colors group py-1"
-                  >
-                    <Phone className="w-4 h-4 text-stone-400 group-hover:text-stone-800 transition-colors" />
-                    <span>Call us</span>
-                  </a>
+              {/* Secondary Links (Phone & Email) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#E2DACC]">
+                <Link
+                  href={`tel:${phoneNumber}`}
+                  className="flex items-center space-x-3 text-sm text-[#5C554E] hover:text-[#8C6A3C] transition-colors duration-150 py-2 group"
+                >
+                  <Phone className="w-4 h-4 text-[#8C6A3C] group-hover:scale-105 transition-transform" />
+                  <span className="underline underline-offset-4 decoration-[#E2DACC] group-hover:decoration-[#8C6A3C]">
+                    Call us
+                  </span>
+                </Link>
 
-                  <span className="hidden sm:inline text-stone-300">|</span>
-
-                  <a 
-                    href={`mailto:${emailAddress}`} 
-                    className="inline-flex items-center gap-2.5 hover:text-stone-900 transition-colors group py-1"
-                  >
-                    <Mail className="w-4 h-4 text-stone-400 group-hover:text-stone-800 transition-colors" />
-                    <span>Send an email</span>
-                  </a>
-                </div>
+                <Link
+                  href={`mailto:${emailAddress}`}
+                  className="flex items-center space-x-3 text-sm text-[#5C554E] hover:text-[#8C6A3C] transition-colors duration-150 py-2 group"
+                >
+                  <Mail className="w-4 h-4 text-[#8C6A3C] group-hover:scale-105 transition-transform" />
+                  <span className="underline underline-offset-4 decoration-[#E2DACC] group-hover:decoration-[#8C6A3C]">
+                    Send an email
+                  </span>
+                </Link>
               </div>
 
-              {/* Reassurance Message */}
-              <div className="pt-4">
-                <p className="font-sans text-xs tracking-wide text-stone-500 font-light italic">
-                  * No detailed documents or floor plans are required to get started.
-                </p>
+              {/* Reassurance Note */}
+              <div className="flex items-start space-x-3 pt-4 border-t border-[#E2DACC]/60 text-xs sm:text-sm text-[#7A7268]">
+                <CheckCircle2 className="w-4 h-4 text-[#8C6A3C] shrink-0 mt-0.5" />
+                <span>No detailed documents, floor plans, or file uploads are required to get started.</span>
               </div>
+
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );
