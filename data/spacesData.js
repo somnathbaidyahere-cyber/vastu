@@ -132,7 +132,7 @@ export const spaceExperiences = [
   {
     name: "Transition",
     label: "Thresholds that prepare us",
-    image: "/spaces/home-entryway.jpg",
+    image: "/spaces/home-entrance.jpg",
     alt: "Architectural passage leading toward a sunlit threshold",
   },
 ];
