@@ -100,8 +100,9 @@ function BlogStructuredData() {
    Page
 -------------------------------------------------- */
 
-export default function BlogPage() {
-  const articles = getPublishedBlogs();
+export default async function BlogPage() {
+  const articles = await getPublishedBlogs();
+  console.log(articles)
 
   return (
     <>

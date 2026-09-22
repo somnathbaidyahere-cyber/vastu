@@ -2,6 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { PortableText } from "@portabletext/react";
+import { urlFor } from "@/lib/sanity/image";
 
 import {
   formatBlogDate,
@@ -29,8 +31,11 @@ const organizationId = `${siteUrl}/#organization`;
    Useful when blogs are stored locally.
 -------------------------------------------------- */
 
-export function generateStaticParams() {
-  return getPublishedBlogs().map((article) => ({
+export async function generateStaticParams() {
+  const articles = await getPublishedBlogs();
+  console.log(articles)
+
+  return articles.map((article) => ({
     slug: article.slug,
   }));
 }
@@ -42,7 +47,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
-  const article = getBlogBySlug(slug);
+  const article = await  getBlogBySlug(slug);
 
   if (!article) {
     return {
@@ -248,15 +253,15 @@ function StructuredData({ article }) {
 export default async function BlogArticlePage({ params }) {
   const { slug } = await params;
 
-  const article = getBlogBySlug(slug);
+  const article = await getBlogBySlug(slug);
 
   if (!article) {
     notFound();
   }
 
-  const relatedArticles = getRelatedBlogs(article);
+  const relatedArticles = await getRelatedBlogs(article);
 
-  const toc = getArticleHeadings(article.content);
+  const toc = getArticleHeadings(article.body || []);
 
   return (
     <>
@@ -349,25 +354,27 @@ function BlogBreadcrumb({ article }) {
    Article Hero
 -------------------------------------------------- */
 
+
 function ArticleHero({ article }) {
-  const readingTime =
-    article.readingTime || estimateReadingTime(article.content);
+  const readingTime = estimateReadingTime(article.body || []);
 
   return (
     <header className="px-4 pb-16 pt-8 sm:px-6 lg:px-8 lg:pb-24">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
         <div className="lg:col-span-5">
           <span className="inline-flex border-y border-primary/40 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-            {article.category}
+            {article.category || "Vastu"}
           </span>
 
           <h1 className="mt-6 text-4xl font-medium leading-[1.08] text-foreground sm:text-5xl lg:text-6xl">
             {article.title}
           </h1>
 
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            {article.excerpt}
-          </p>
+          {article.excerpt && (
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              {article.excerpt}
+            </p>
+          )}
 
           <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
             <span className="font-medium text-foreground">
@@ -400,15 +407,21 @@ function ArticleHero({ article }) {
         </div>
 
         <figure className="lg:col-span-7">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border/60 bg-card divine-shadow">
-            <Image
-              src={article.coverImage}
-              alt={article.imageAlt || article.title}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 58vw"
-              className="object-cover"
-            />
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border/60 bg-muted">
+            {article.coverImage ? (
+              <Image
+                src={article.coverImage}
+                alt={article.imageAlt || article.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 65vw"
+                priority
+              />
+            ) : (
+              <div className="flex h-full min-h-64 items-center justify-center text-sm text-muted-foreground">
+                No image available
+              </div>
+            )}
           </div>
 
           {article.imageCaption && (
@@ -442,130 +455,128 @@ function ArticleLayout({ article, toc }) {
    Article Content
 -------------------------------------------------- */
 
+
+const portableTextComponents = {
+  block: {
+    normal: ({ children }) => (
+      <p className="mb-5 text-lg leading-8 text-foreground/85">
+        {children}
+      </p>
+    ),
+
+    h2: ({ children }) => (
+      <h2 className="scroll-mt-28 pt-8 text-3xl font-medium leading-tight text-foreground">
+        {children}
+      </h2>
+    ),
+
+    h3: ({ children }) => (
+      <h3 className="scroll-mt-28 pt-6 text-2xl font-medium leading-tight text-foreground">
+        {children}
+      </h3>
+    ),
+
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-2 border-primary/50 pl-6 italic text-muted-foreground">
+        {children}
+      </blockquote>
+    ),
+  },
+
+  list: {
+    bullet: ({ children }) => (
+      <ul className="mb-6 space-y-3 pl-6 text-lg leading-8 text-foreground/85">
+        {children}
+      </ul>
+    ),
+
+    number: ({ children }) => (
+      <ol className="mb-6 list-decimal space-y-3 pl-6 text-lg leading-8 text-foreground/85">
+        {children}
+      </ol>
+    ),
+  },
+
+  listItem: {
+    bullet: ({ children }) => (
+      <li className="pl-2">{children}</li>
+    ),
+
+    number: ({ children }) => (
+      <li className="pl-2">{children}</li>
+    ),
+  },
+    marks: {
+    strong: ({ children }) => (
+      <strong className="font-semibold text-foreground">
+        {children}
+      </strong>
+    ),
+
+    em: ({ children }) => <em>{children}</em>,
+  },
+    types: {
+    image: ({ value }) => {
+      if (!value?.asset?._ref) {
+        return null;
+      }
+
+      const imageUrl = urlFor(value)
+        .width(1200)
+        .fit("max")
+        .auto("format")
+        .url();
+
+      const altText =
+        value.alt || "Vastu article image";
+
+      return (
+        <figure className="my-10">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
+            <Image
+              src={imageUrl}
+              alt={altText}
+              fill
+              sizes="(max-width: 1024px) 100vw, 800px"
+              className="object-cover"
+            />
+          </div>
+
+          {value.caption && (
+            <figcaption className="mt-3 text-center text-sm leading-6 text-muted-foreground">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+  },
+};
+
 function ArticleContent({ article }) {
+  if (!article?.body?.length) {
+    return (
+      <article className="min-w-0 lg:col-span-8">
+        <p className="text-muted-foreground">
+          This article does not have any content yet.
+        </p>
+      </article>
+    );
+  }
+
   return (
     <article className="min-w-0 lg:col-span-8">
-      <div className="max-w-3xl space-y-8">
-        {article.content.map((block, index) => (
-          <ContentBlock
-            key={`${block.type}-${index}`}
-            block={block}
-          />
-        ))}
+      <div className="max-w-3xl">
+        <PortableText
+          value={article.body}
+          components={portableTextComponents}
+        />
       </div>
     </article>
   );
 }
 
-function ContentBlock({ block }) {
-  if (block.type === "paragraph") {
-    return (
-      <p className="text-lg leading-8 text-foreground/85">
-        {block.text}
-      </p>
-    );
-  }
 
-  if (block.type === "heading") {
-    const id = slugifyForPage(block.text);
-
-    if (block.level === 3) {
-      return (
-        <h3
-          id={id}
-          className="scroll-mt-28 pt-4 text-2xl font-medium leading-tight text-foreground"
-        >
-          {block.text}
-        </h3>
-      );
-    }
-
-    return (
-      <h2
-        id={id}
-        className="scroll-mt-28 pt-8 text-3xl font-medium leading-tight text-foreground"
-      >
-        {block.text}
-      </h2>
-    );
-  }
-
-  if (block.type === "list") {
-    return (
-      <ul className="space-y-3 border-l border-primary/35 pl-6 text-base leading-7 text-muted-foreground">
-        {block.items.map((item, index) => (
-          <li
-            key={`${item}-${index}`}
-            className="relative pl-5 before:absolute before:left-0 before:top-3 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary"
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
-  if (block.type === "tip") {
-    return (
-      <aside className="border-y border-primary/30 bg-background/70 px-6 py-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-          {block.title}
-        </p>
-
-        <p className="mt-3 text-base leading-7 text-foreground">
-          {block.text}
-        </p>
-      </aside>
-    );
-  }
-
-  if (block.type === "image") {
-    return (
-      <figure className="py-2">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-card">
-          <Image
-            src={block.src}
-            alt={block.alt || ""}
-            fill
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 768px"
-            className="object-cover"
-          />
-        </div>
-
-        {block.alt && (
-          <figcaption className="mt-3 text-sm text-muted-foreground">
-            {block.alt}
-          </figcaption>
-        )}
-      </figure>
-    );
-  }
-
-  if (block.type === "links") {
-    return (
-      <div className="grid gap-px overflow-hidden rounded-xl border border-border/60 bg-border/60 sm:grid-cols-3">
-        {block.links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="group bg-card p-5 transition-colors hover:bg-background"
-          >
-            <span className="text-sm font-medium text-foreground group-hover:text-primary">
-              {link.label}
-            </span>
-
-            <span className="mt-4 block text-sm text-primary">
-              Read more →
-            </span>
-          </Link>
-        ))}
-      </div>
-    );
-  }
-
-  return null;
-}
 
 /* --------------------------------------------------
    Table of Contents
@@ -716,7 +727,7 @@ function RelatedArticles({ articles, category }) {
               className="group block"
             >
               <article className="h-full border-b border-border/60 pb-6">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-card">
+                <div className="relative aspect-4/3 overflow-hidden rounded-xl border border-border/60 bg-card">
                   <Image
                     src={article.coverImage}
                     alt={article.imageAlt || article.title}
@@ -762,7 +773,7 @@ function ConsultationBridge({ article }) {
 
           <h2 className="mt-3 text-3xl font-medium leading-tight text-foreground sm:text-4xl">
             Want to understand this for your own{" "}
-            {article.category.toLowerCase()} context?
+            {(article?.category || "Vastu").toLowerCase()} context?
           </h2>
         </div>
 
