@@ -144,7 +144,7 @@ function Hero() {
           Let&rsquo;s{" "}<span className="text-gradient-brand">talk</span> about your space.
         </h1>
 
-        <p className="mt-6 text-lg sm:text-xl text-surface font-sans leading-relaxed font-light max-w-2xl">
+        <p className="mt-6 hero-description text-surface max-w-2xl">
           Have a question about Vastu, our analytical approach, or a specific
           property you are evaluating? We are here to listen without judgment or
           pre-packaged templates.

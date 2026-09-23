@@ -47,9 +47,9 @@ function Footer() {
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="/learn/fundamentals" className="hover:text-primary">
+                <Link href="/learn/fundamentals" className="hover:text-primary">
                   Fundamentals
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="/learn/elements" className="hover:text-primary">
@@ -62,9 +62,9 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/learn/rooms" className="hover:text-primary">
+                <Link href="/learn/rooms" className="hover:text-primary">
                   Rooms
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -79,9 +79,14 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/blog" className="hover:text-primary">
+                <Link href="/blog" className="hover:text-primary">
                   Blog
-                </a>
+                </Link>
+              </li>
+               <li>
+                <Link href="/contact" className="hover:text-primary">
+                  Contact
+                </Link>
               </li>
               <li>
                 <a href="/consultation" className="hover:text-primary">
