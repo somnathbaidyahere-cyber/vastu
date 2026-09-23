@@ -39,7 +39,7 @@ export default function SpacesHero() {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
         <div className="lg:col-span-5">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            Architecture of experience
+            CHAPTER FOUR
           </p>
 
           <h1 className="hero-heading">

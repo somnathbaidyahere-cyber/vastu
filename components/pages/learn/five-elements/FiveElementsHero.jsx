@@ -8,7 +8,7 @@ export default function FiveElementsHero() {
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-7">
           <span className="section-badge">
-            Fundamentals
+            CHAPTER TWO
           </span>
 
           <h1 className="hero-heading">

@@ -92,7 +92,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 min-[900px]:flex">
           <NavLink href="/">Home</NavLink>
 
           <Dropdown
@@ -124,7 +124,7 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
+        <div className="hidden min-[900px]:block">
           <Link
             href="/consultation"
             className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
@@ -136,7 +136,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-foreground md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-foreground min-[900px]:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
@@ -150,7 +150,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="border-t border-border/60 bg-background px-4 py-4 md:hidden">
+        <div className="border-t border-border/60 bg-background px-4 py-4 min-[900px]:hidden">
           <div className="flex flex-col gap-2">
             <MobileNavLink href="/" onClick={() => setMobileOpen(false)}>
               Home
@@ -185,7 +185,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"
             >
-              Request Reading
+              Request Consultation
             </Link>
           </div>
         </div>

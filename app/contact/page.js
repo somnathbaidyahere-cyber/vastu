@@ -12,6 +12,7 @@ import {
   Clock,
   CheckCircle2,
   ArrowUpRight,
+  MessageCircle
 } from "lucide-react";
 
 /* -------------------------------------------------------------------------
@@ -131,11 +132,12 @@ function Hero() {
         />
       </div>
 
-      <div className="mx-auto max-w-7xl ">
+      <div className="mx-auto max-w-7xl mt-5">
         {/* Editorial Subtitle Badge */}
-        <div className="inline-flex items-center space-x-2 mb-6">
-          <span className="text-xs font-medium text-accent-muted">START A CONVERSATION</span>
-        </div>
+         <span className="inline-flex items-center gap-2 rounded-full border border-border-muted bg-card/60 px-4 py-1.5 text-[10px] md:text-xs font-medium uppercase tracking-widest text-surface-muted mt-6">
+              <MessageCircle className="h-3.5 w-3.5" />
+              Start a Conversation
+            </span>
 
         {/* Serif Headline */}
         <h1 className="hero-heading text-surface">
@@ -581,18 +583,18 @@ function DirectContactGrid() {
 
 function ConsultationBridge() {
   return (
-    <section className="border-t border-border/70 bg-primary px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="border-t border-border/70 bg-surface px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto flex max-w-7xl flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
         <div className="max-w-2xl space-y-3">
           <div className="inline-flex items-center space-x-2">
-            <span className="section-badge text-surface-muted ">
+            <span className="section-badge ">
               DEEP-DIVE CONSULTATIONS
             </span>
           </div>
-          <h2 className="section-heading text-primary-foreground">
+          <h2 className="section-heading">
             Looking for a structured reading of your space?
           </h2>
-          <p className="section-description text-surface-muted">
+          <p className="section-description">
             If you are evaluating a specific floorplan, navigating a renovation,
             or seeking holistic alignment for your residence, explore our full
             consultation methodology.
@@ -601,7 +603,7 @@ function ConsultationBridge() {
 
         <Link
           href="/consultation"
-          className="inline-flex items-center space-x-3 bg-primary-foreground hover:bg-primary-foreground/30 text-primary hover:text-surface text-sm font-medium px-8 py-4 rounded-sm transition-colors duration-200 shrink-0 group hover:shadow-divine-glow"
+          className="inline-flex items-center space-x-3 bg-primary text-primary-foreground hover:text-surface text-sm font-medium px-8 py-4 rounded-sm transition-colors duration-200 shrink-0 group shadow-divine"
         >
           <span>Explore Consultation</span>
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
