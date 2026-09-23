@@ -6,8 +6,6 @@ import MandalaFramework from "@/components/pages/tools/mandala/MandalaFramework"
 import  ElementsSection  from "@/components/pages/tools/mandala/ElementsSection";
 import  Brahmasthan  from "@/components/pages/tools/mandala/Brahmasthan";
 import  MandalaPrinciples  from "@/components/pages/tools/mandala/MandalaPrinciples";
-import  MandalaOverview  from "@/components/pages/tools/mandala/MandalaOverview";
-import  VastuPerspective  from "@/components/pages/tools/mandala/VastuPerspective";
 import  MandalaCTA  from "@/components/pages/tools/mandala/MandalaCTA";
 import FAQ from "@/components/ui/FAQ";
 import { faqs } from "@/data/mandalaData";
@@ -34,9 +32,6 @@ export default function MandalaPage() {
 
       <MandalaPrinciples />
 
-      {/* <MandalaOverview /> */}
-
-      {/* <VastuPerspective /> */}
 
       <FAQ faqs={faqs} />
 

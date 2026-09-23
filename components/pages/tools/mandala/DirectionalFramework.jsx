@@ -17,7 +17,7 @@ export default function DirectionalFramework() {
   return (
     <section className="px-4 bg-primary-foreground py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:items-center lg:gap-20">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-7">
           <span className="text-xs font-semibold uppercase tracking-widest text-primary">
             03 · Directional framework
           </span>
@@ -38,7 +38,7 @@ export default function DirectionalFramework() {
           </p>
         </div>
 
-        <div className="relative lg:col-span-7">
+        <div className="relative lg:col-span-5">
           <div className="grid aspect-square max-w-2xl grid-cols-3 border border-primary/25 bg-card shadow-divine">
             {zones.map((zone) => (
               <button
@@ -54,7 +54,7 @@ export default function DirectionalFramework() {
                     : "hover:bg-secondary"
                 }`}
               >
-                <span className="font-heading text-lg sm:text-2xl">
+                <span className="font-heading text-lg sm:text-xl">
                   {zone.id === "CENTER" ? "Brahmasthan" : zone.quality}
                 </span>
 
