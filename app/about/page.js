@@ -10,9 +10,13 @@ import {
   Compass,
   Droplets,
   Flame,
+  Info,
   Mountain,
   Wind,
 } from "lucide-react";
+
+import Hero from "@/components/pages/about/Hero";
+import OurBeginning from "@/components/pages/about/OurBeginning";
 
 /* -------------------------------------------------------------------------
  * Shared helpers
@@ -192,7 +196,7 @@ const exploreLinks = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
-      <nav aria-label="Breadcrumb" className="px-4 pt-7 sm:px-6 lg:px-8">
+      {/* <nav aria-label="Breadcrumb" className="px-4 pt-7 sm:px-6 lg:px-8">
         <ol className="mx-auto flex max-w-7xl items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="transition-colors hover:text-primary">
@@ -209,7 +213,7 @@ export default function AboutPage() {
             About
           </li>
         </ol>
-      </nav>
+      </nav> */}
 
       <Hero />
       <OurBeginning />
@@ -231,115 +235,150 @@ export default function AboutPage() {
  * 01 — Hero
  * ---------------------------------------------------------------------- */
 
-function Hero() {
-  return (
-    <header className="px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pb-28">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
-        <div className="lg:col-span-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            About us
-          </p>
-          <h1 className="hero-heading">Understanding the space around us.</h1>
-          <p className="hero-description">
-            We look at homes and workplaces as living systems — where direction,
-            light and movement meet the people who use them every day.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-6">
-            <Link
-              href="/learn"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
-            >
-              Explore Vastu{" "}
-              <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm font-medium text-foreground underline decoration-border decoration-1 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-            >
+// function Hero() {
+//   return (
+//     <header className="relative isolate px-4 pb-20 pt-7 sm:px-6 lg:px-8 lg:pb-28 min-h-180">
+//       <div className="absolute inset-0 bg-linear-to-r -z-5 from-foreground/90 via-foreground/55 to-foreground/10" />
 
-              Discuss your space 
-            </Link>
-          </div>
-        </div>
-        <div className="relative lg:col-span-7">
-          <ImagePlaceholder
-            src="/about/old-building-varanda.webp"
-            alt="Old indian building varanda"
-            label="Architectural photograph"
-            ratio="aspect-[4/3]"
-            className="rounded-2xl divine-shadow"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute right-8 top-8 h-10 w-10 rounded-full border border-primary/30"
-          >
-            <span className="absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-primary/40" />
-            <span className="absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 bg-primary/40" />
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-}
+//       <nav aria-label="Breadcrumb" className="px-4 pb-10 sm:px-6 lg:px-8">
+//         <ol className="mx-auto flex max-w-7xl items-center gap-1.5 text-sm text-muted-foreground">
+//           <li>
+//             <Link
+//               href="/"
+//               className="text-primary-foreground/80 hover:text-accent-muted transition-colors duration-200"
+//             >
+//               Home
+//             </Link>
+//           </li>
+//           <li>
+//             <ChevronRight
+//               className="h-3 w-3 text-primary-foreground hover:text-accent-muted"
+//               aria-hidden="true"
+//             />
+//           </li>
+//           <li
+//             aria-current="page"
+//             className="font-medium text-primary-foreground hover:text-accent-muted"
+//           >
+//             About
+//           </li>
+//         </ol>
+//       </nav>
+//       <div className="absolute inset-0 -z-10">
+//         <Image
+//           src="/about/old-building-varanda.webp"
+//           alt="Old indian building varanda"
+//           fill
+//           preload
+//           fetchPriority="high"
+//           sizes="100vw"
+//           className="object-cover object-center opacity-90"
+//         />
+//       </div>
+
+//       <div className="mx-auto max-w-7xl mt-5">
+//         {/* Editorial Subtitle Badge */}
+//         <span className="inline-flex items-center gap-2 rounded-full border border-border-muted bg-card/60 px-4 py-1.5 text-[10px] md:text-xs font-medium uppercase tracking-widest text-surface-muted mt-6">
+//           <Info className="h-3.5 w-3.5" />
+//           About Us
+//         </span>
+
+//         {/* Serif Headline */}
+//         <h1 className="hero-heading text-surface">
+//           Understanding the <span className="text-gradient-brand">space</span>{" "}
+//           around us.
+//         </h1>
+
+//         <p className="mt-6 hero-description text-surface max-w-2xl">
+//           We look at homes and workplaces as living systems — where direction,
+//           light and movement meet the people who use them every day.
+//         </p>
+
+//         {/* Quick Contact Bar */}
+//         <div className="mt-35 flex flex-wrap items-center gap-6">
+//           <Link
+//             href="/learn"
+//             className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+//           >
+//             Explore Vastu{" "}
+//             <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
+//           </Link>
+//           {/* <Link
+//             href="/contact"
+//             className="text-sm font-medium text-primary-foreground underline decoration-border decoration-1 underline-offset-4 transition-colors hover:text-surface hover:decoration-primary  "
+//           >
+//             Discuss your space
+//           </Link> */}
+//           <Link 
+//             href="/contact"
+//             className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-3.5 text-xs sm:text-sm md:text-base font-medium text-surface/50 transition-colors hover:bg-secondary hover:text-foreground"
+//           >
+//             Discuss your space
+//           </Link>
+//         </div>
+//       </div>
+//     </header>
+//   );
+// }
 
 /* -------------------------------------------------------------------------
  * 02 — Our Beginning
  * ---------------------------------------------------------------------- */
 
-function OurBeginning() {
-  return (
-    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-4xl text-center">
-        <p className="section-badge">Why we exist</p>
-        <h2 className="section-heading">
-          We believe a space is more than walls, rooms and directions.
-        </h2>
-        <p className="section-description">It is where life unfolds.</p>
-        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          We started by asking a simple question: why does one room feel settled
-          while another, built the same way, never quite feels right? The answer
-          was rarely a single wall or a single direction — it was the
-          relationship between all of them. That question is still what shapes
-          how we work today.
-        </p>
-      </div>
+// function OurBeginning() {
+//   return (
+//     <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+//       <div className="mx-auto max-w-4xl text-center">
+//         <p className="section-badge">Why we exist</p>
+//         <h2 className="section-heading">
+//           We believe a space is more than walls, rooms and directions.
+//         </h2>
+//         <p className="section-description">It is where life unfolds.</p>
+//         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+//           We started by asking a simple question: why does one room feel settled
+//           while another, built the same way, never quite feels right? The answer
+//           was rarely a single wall or a single direction — it was the
+//           relationship between all of them. That question is still what shapes
+//           how we work today.
+//         </p>
+//       </div>
 
-      <div className="relative mx-auto mt-16 max-w-5xl">
-        <ImagePlaceholder
-          src="/section-images/dark-courtyard.webp"
-          alt="dark Indian house courtyard"
-          label="Threshold / courtyard"
-          ratio="aspect-[16/8]"
-          className="relative z-0 rounded-xl"
-        />
+//       <div className="relative mx-auto mt-16 max-w-5xl">
+//         <ImagePlaceholder
+//           src="/section-images/dark-courtyard.webp"
+//           alt="dark Indian house courtyard"
+//           label="Threshold / courtyard"
+//           ratio="aspect-[16/8]"
+//           className="relative z-0 rounded-xl"
+//         />
 
-        <div
-          className="
-      absolute
-      left-3
-      -bottom-6
-      z-20
-      max-w-xs
-      translate-y-1/2
-      border
-      border-border/60
-      bg-background/90
-      px-5
-      py-4
-      shadow-sm
-      sm:left-8
-      lg:left-12
-    "
-        >
-          <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
-            The threshold between inside and outside — often the first place a
-            space starts to make sense.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
+//         <div
+//           className="
+//       absolute
+//       left-3
+//       -bottom-6
+//       z-20
+//       max-w-xs
+//       translate-y-1/2
+//       border
+//       border-border/60
+//       bg-background/90
+//       px-5
+//       py-4
+//       shadow-sm
+//       sm:left-8
+//       lg:left-12
+//     "
+//         >
+//           <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
+//             The threshold between inside and outside — often the first place a
+//             space starts to make sense.
+//           </p>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 /* -------------------------------------------------------------------------
  * 03 — Vastu, Reframed
@@ -777,18 +816,21 @@ function SpacesWeExplore() {
     <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <span className="section-badge">
-            Spaces we explore
-          </span>
+          <span className="section-badge">Spaces we explore</span>
           <h2 className="section-heading">
             Different spaces ask different questions.
           </h2>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-5">
-          {spacesWeExplore.map((space,index) => (
+          {spacesWeExplore.map((space, index) => (
             <div key={index} className="relative">
-              <ImagePlaceholder src={space.image} alt={space.imageAlt} ratio="aspect-square" className="rounded-md" />
+              <ImagePlaceholder
+                src={space.image}
+                alt={space.imageAlt}
+                ratio="aspect-square"
+                className="rounded-md"
+              />
               <span className="mt-3 block text-sm font-medium text-foreground">
                 {space.name}
               </span>
@@ -800,7 +842,8 @@ function SpacesWeExplore() {
           href="/rooms"
           className="group mt-10 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-foreground"
         >
-          Explore all spaces <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-0.5" />
+          Explore all spaces{" "}
+          <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-0.5" />
         </Link>
       </div>
     </section>
@@ -813,7 +856,7 @@ function SpacesWeExplore() {
 
 function ContinueExploring() {
   return (
-   <section className="px-4 py-16 sm:px-6 lg:px-8">
+    <section className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <span className="text-sm font-medium uppercase tracking-widest text-primary">
           Explore further
@@ -867,7 +910,8 @@ function FinalConversion() {
             href="/contact"
             className="group inline-flex items-center gap-2 rounded-full bg-primary-foreground/70 px-7 py-3.5 font-medium text-foreground transition-colors hover:bg-primary-foreground/50 "
           >
-            Start a conversation <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
+            Start a conversation{" "}
+            <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
           </Link>
           <Link
             href="/learn"
