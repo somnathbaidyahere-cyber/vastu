@@ -24,7 +24,7 @@ export default function RoomRelationship() {
   const [activeSequence, setActiveSequence] = useState(spatialSequences[0]);
 
   return (
-    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className=" overflow-hidden border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <p className="section-badge">
