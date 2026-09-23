@@ -11,7 +11,7 @@ export default function RoomsHero() {
     alt="A sequence of warm stone doorways leading through naturally lit rooms"
     width={1536}
     height={1024}
-    priority
+    fetchPriority="high"
     className="absolute inset-0 h-full w-full object-cover"
   />
 
@@ -61,11 +61,11 @@ export default function RoomsHero() {
       <div className="max-w-2xl text-primary-foreground">
 
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/75">
-          Rooms
+         CHAPTER FIVE
         </p>
 
         <h1 className="hero-heading text-surface">
-          Every room has a role.
+          Every{" "} <span className="text-gradient-brand">Room</span>  has a role.
         </h1>
 
         <p className="hero-description text-surface-accent">

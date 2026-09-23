@@ -1,9 +1,9 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/lib/sanity/image";
+import { ArrowRight } from "lucide-react";
 
 import {
   formatBlogDate,
@@ -19,10 +19,9 @@ import {
    Site Configuration
 -------------------------------------------------- */
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
 
-const siteName = "VastuVeda";
+const siteName = "VastuGuru";
 
 const organizationId = `${siteUrl}/#organization`;
 
@@ -33,7 +32,6 @@ const organizationId = `${siteUrl}/#organization`;
 
 export async function generateStaticParams() {
   const articles = await getPublishedBlogs();
-  console.log(articles)
 
   return articles.map((article) => ({
     slug: article.slug,
@@ -47,12 +45,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
-  const article = await  getBlogBySlug(slug);
+  const article = await getBlogBySlug(slug);
 
   if (!article) {
     return {
-      title: "Article unavailable | VastuVeda",
-      description: "This VastuVeda article is unavailable.",
+      title: "Article unavailable | VastuGuru",
+      description: "This VastuGuru article is unavailable.",
 
       robots: {
         index: false,
@@ -129,9 +127,7 @@ export async function generateMetadata({ params }) {
 function getAbsoluteImageUrl(imagePath) {
   if (!imagePath) return `${siteUrl}/og/blog.jpg`;
 
-  return imagePath.startsWith("http")
-    ? imagePath
-    : `${siteUrl}${imagePath}`;
+  return imagePath.startsWith("http") ? imagePath : `${siteUrl}${imagePath}`;
 }
 
 function createStructuredData(article) {
@@ -156,9 +152,7 @@ function createStructuredData(article) {
       "@type": "ListItem",
       position: 3,
       name: article.category,
-      item: `${siteUrl}/blog?category=${encodeURIComponent(
-        article.category
-      )}`,
+      item: `${siteUrl}/blog?category=${encodeURIComponent(article.category)}`,
     },
     {
       "@type": "ListItem",
@@ -237,10 +231,7 @@ function StructuredData({ article }) {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData).replace(
-          /</g,
-          "\\u003c"
-        ),
+        __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
       }}
     />
   );
@@ -293,16 +284,10 @@ export default async function BlogArticlePage({ params }) {
 
 function BlogBreadcrumb({ article }) {
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className="px-4 py-5 sm:px-6 lg:px-8"
-    >
+    <nav aria-label="Breadcrumb" className="px-4 py-5 sm:px-6 lg:px-8">
       <ol className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 text-sm text-muted-foreground">
         <li>
-          <Link
-            href="/"
-            className="transition-colors hover:text-primary"
-          >
+          <Link href="/" className="transition-colors hover:text-primary">
             Home
           </Link>
         </li>
@@ -312,10 +297,7 @@ function BlogBreadcrumb({ article }) {
         </li>
 
         <li>
-          <Link
-            href="/blog"
-            className="transition-colors hover:text-primary"
-          >
+          <Link href="/blog" className="transition-colors hover:text-primary">
             Blog
           </Link>
         </li>
@@ -326,9 +308,7 @@ function BlogBreadcrumb({ article }) {
 
         <li>
           <Link
-            href={`/blog?category=${encodeURIComponent(
-              article.category
-            )}`}
+            href={`/blog?category=${encodeURIComponent(article.category)}`}
             className="transition-colors hover:text-primary"
           >
             {article.category}
@@ -354,7 +334,6 @@ function BlogBreadcrumb({ article }) {
    Article Hero
 -------------------------------------------------- */
 
-
 function ArticleHero({ article }) {
   const readingTime = estimateReadingTime(article.body || []);
 
@@ -366,7 +345,7 @@ function ArticleHero({ article }) {
             {article.category || "Vastu"}
           </span>
 
-          <h1 className="mt-6 text-4xl font-medium leading-[1.08] text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="hero-heading">
             {article.title}
           </h1>
 
@@ -378,7 +357,7 @@ function ArticleHero({ article }) {
 
           <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
             <span className="font-medium text-foreground">
-              {article.author || "VastuVeda"}
+              {article.author || "VastuGuru"}
             </span>
 
             <span
@@ -398,21 +377,21 @@ function ArticleHero({ article }) {
             <span>{readingTime}</span>
           </div>
 
-          {article.updatedAt &&
-            article.updatedAt !== article.publishedAt && (
-              <p className="mt-3 text-xs text-muted-foreground">
-                Updated {formatBlogDate(article.updatedAt)}
-              </p>
-            )}
+          {article.updatedAt && article.updatedAt !== article.publishedAt && (
+            <p className="mt-3 text-xs text-muted-foreground">
+              Updated {formatBlogDate(article.updatedAt)}
+            </p>
+          )}
         </div>
 
         <figure className="lg:col-span-7">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border/60 bg-muted">
+          <div className="relative aspect-16/10 overflow-hidden rounded-2xl border border-border/60 bg-muted">
             {article.coverImage ? (
               <Image
                 src={article.coverImage}
                 alt={article.imageAlt || article.title}
                 fill
+                unoptimized
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 65vw"
                 priority
@@ -441,7 +420,7 @@ function ArticleHero({ article }) {
 
 function ArticleLayout({ article, toc }) {
   return (
-    <section className="border-y border-border/60 bg-secondary/25 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="border-y border-border/60 bg-foreground-subtle/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
         <ArticleContent article={article} />
 
@@ -455,13 +434,10 @@ function ArticleLayout({ article, toc }) {
    Article Content
 -------------------------------------------------- */
 
-
 const portableTextComponents = {
   block: {
     normal: ({ children }) => (
-      <p className="mb-5 text-lg leading-8 text-foreground/85">
-        {children}
-      </p>
+      <p className="mb-5 text-lg leading-8 text-foreground/85">{children}</p>
     ),
 
     h2: ({ children }) => (
@@ -498,24 +474,18 @@ const portableTextComponents = {
   },
 
   listItem: {
-    bullet: ({ children }) => (
-      <li className="pl-2">{children}</li>
-    ),
+    bullet: ({ children }) => <li className="pl-2">{children}</li>,
 
-    number: ({ children }) => (
-      <li className="pl-2">{children}</li>
-    ),
+    number: ({ children }) => <li className="pl-2">{children}</li>,
   },
-    marks: {
+  marks: {
     strong: ({ children }) => (
-      <strong className="font-semibold text-foreground">
-        {children}
-      </strong>
+      <strong className="font-semibold text-foreground">{children}</strong>
     ),
 
     em: ({ children }) => <em>{children}</em>,
   },
-    types: {
+  types: {
     image: ({ value }) => {
       if (!value?.asset?._ref) {
         return null;
@@ -527,16 +497,16 @@ const portableTextComponents = {
         .auto("format")
         .url();
 
-      const altText =
-        value.alt || "Vastu article image";
+      const altText = value.alt || "Vastu article image";
 
       return (
         <figure className="my-10">
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
+          <div className="relative aspect-16/10 w-full overflow-hidden rounded-2xl">
             <Image
               src={imageUrl}
               alt={altText}
               fill
+              unoptimized
               sizes="(max-width: 1024px) 100vw, 800px"
               className="object-cover"
             />
@@ -576,8 +546,6 @@ function ArticleContent({ article }) {
   );
 }
 
-
-
 /* --------------------------------------------------
    Table of Contents
 -------------------------------------------------- */
@@ -616,7 +584,7 @@ function ArticleSidebar({ article, toc }) {
     <aside className="lg:col-span-4">
       <div className="space-y-6 lg:sticky lg:top-28">
         {toc?.length > 0 && (
-          <div className="rounded-xl border border-border/60 bg-card p-6">
+          <div className="rounded-xl border border-border-strong/80 bg-card p-6">
             <ArticleTableOfContents toc={toc} />
           </div>
         )}
@@ -647,15 +615,17 @@ function ArticleSidebar({ article, toc }) {
           </h2>
 
           <p className="mt-3 text-sm leading-6 text-primary-foreground/80">
-            Share your floor plan and questions, and get a guided
-            interpretation for your actual space.
+            Share your floor plan and questions, and get a guided interpretation
+            for your actual space.
           </p>
 
           <Link
             href="/consultation"
-            className="mt-6 inline-flex items-center rounded-full bg-primary-foreground px-5 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-brand-cream"
+            className="group mt-6 inline-flex items-center rounded-full bg-primary-foreground px-5 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-brand-cream"
           >
-            Book consultation →
+            Book consultation{" "}
+            <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1 ml-1" />
+
           </Link>
         </div>
       </div>
@@ -673,9 +643,7 @@ function SidebarLinkCard({ title, text, href }) {
         {title}
       </p>
 
-      <p className="mt-3 text-sm leading-6 text-muted-foreground">
-        {text}
-      </p>
+      <p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p>
 
       <span className="mt-5 inline-flex text-sm font-medium text-primary">
         Explore →
@@ -779,16 +747,17 @@ function ConsultationBridge({ article }) {
 
         <div className="lg:col-span-5">
           <p className="leading-relaxed text-muted-foreground">
-            General guidance is a starting point. A consultation reads
-            your actual plan, orientation, light and constraints before
-            suggesting practical next steps.
+            General guidance is a starting point. A consultation reads your
+            actual plan, orientation, light and constraints before suggesting
+            practical next steps.
           </p>
 
           <Link
             href="/consultation"
-            className="mt-7 inline-flex items-center rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="group mt-7 inline-flex items-center rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Book a consultation →
+            Book a consultation{" "}
+            <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1 ml-1" />
           </Link>
         </div>
       </div>
@@ -802,14 +771,25 @@ function ConsultationBridge({ article }) {
 
 function BlogFinalCTA() {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 border-t border-border/60 pt-10 sm:flex-row sm:items-center sm:justify-between">
+    <section className="relative isolate px-4 py-16 sm:px-6 lg:px-8">
+      {/* Image background */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/blogCta/sunset-valley.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-95"
+        />
+      </div>
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 pb-5 border-b border-border/60  pt-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
-            VastuVeda Journal
+          <p className="text-sm font-medium uppercase tracking-widest text-accent-muted">
+            VastuGuru Journal
           </p>
 
-          <h2 className="mt-3 text-2xl font-medium text-foreground">
+          <h2 className="cta-heading text-primary-foreground/95">
             Keep learning with calm, practical Vastu guidance.
           </h2>
         </div>
@@ -817,16 +797,20 @@ function BlogFinalCTA() {
         <div className="flex flex-wrap gap-3">
           <Link
             href="/learn/fundamentals"
-            className="inline-flex rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            className="group inline-flex rounded-full border border-border bg-white/10 px-5 py-2.5 text-sm font-medium text-surface transition-colors hover:bg-surface/16"
           >
-            Learn fundamentals
+            <span className="transiion-all duration-100 group-hover:-translate-y-0.25">
+              Learn fundamentals
+            </span>
           </Link>
 
           <Link
             href="/tools"
-            className="inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="group inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Explore tools
+            <span className="transiion-all duration-100 group-hover:-translate-y-0.25">
+              Explore tools
+            </span>
           </Link>
         </div>
       </div>
