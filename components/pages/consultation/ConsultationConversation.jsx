@@ -17,7 +17,7 @@ export default function ConsultationConversation() {
   const emailAddress = "hello@vastuguru.com";
 
   return (
-    <section className="w-full bg-surface text-[#2C2825] py-20 lg:py-32 px-6 sm:px-12 md:px-16 transition-colors duration-300">
+    <section id="booking" className="w-full bg-surface text-[#2C2825] py-20 lg:py-32 px-6 sm:px-12 md:px-16 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Top Hairline Divider */}
         <div className="w-full h-px bg-[#E2DACC] mb-16 lg:mb-24" />

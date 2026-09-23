@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { Compass, BookOpen, Home, Sun, Link } from "lucide-react";
+import Link from "next/link";
+import { Compass, BookOpen, Home, Sun} from "lucide-react";
 
 export default function Hero() {
   return (
