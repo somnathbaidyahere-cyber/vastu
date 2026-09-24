@@ -39,7 +39,3 @@ export default function MandalaPage() {
     </main>
   );
 }
-
-// IMPORTANT:
-// Keep this Route export because TanStack Router uses it.
-// You do NOT need a default export.
