@@ -1,4 +1,4 @@
-import { ArrowDown, CircleDot, Grid3X3 } from "lucide-react";
+import { ArrowDown, CircleDot, Flower } from "lucide-react";
 
 export default function MandalaHero() {
   return (
@@ -6,7 +6,7 @@ export default function MandalaHero() {
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12">
         <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-border  px-4 py-1.5 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-primary">
-            <Grid3X3 className="h-4 w-4" />
+            <Flower className="h-4 w-4" />
             Vastu Purusha Mandala
           </span>
 
@@ -21,11 +21,11 @@ export default function MandalaHero() {
           </p>
 
           <a
-            href="#mandala-introduction"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+            href="#interactive-mandala"
+            className="group mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
           >
             Explore the Mandala
-            <ArrowDown className="h-4 w-4" />
+            <ArrowDown className="h-4 w-4 transition-all duration-100 group-hover:translate-y-0.5" />
           </a>
         </div>
 

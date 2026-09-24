@@ -13,7 +13,7 @@ export default function ElementsSection() {
     <section className="border-y border-border/60 bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-5">
             <span className="text-xs font-semibold uppercase tracking-widest text-primary">
               04 · Pancha Mahabhuta
             </span>
@@ -57,7 +57,7 @@ export default function ElementsSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-7">
             <div className="relative mx-auto aspect-square max-w-2xl border-2 border-primary/25 bg-background p-[7%] shadow-divine">
               <div className="absolute inset-[7%] grid grid-cols-3">
                 {zones.map((zone) => {

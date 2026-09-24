@@ -309,3 +309,33 @@ body {
 .animate-pill-shimmer {
   animation: pill-shimmer 2.4s ease-in-out infinite;
 }
+
+
+/* 404 motion */
+/* Append to app/globals.css (works with Tailwind v3 and v4) */
+
+@keyframes vg-sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+
+@keyframes vg-pulse {
+  0%       { transform: scale(0.94); opacity: 0.4; }
+  70%, 100% { transform: scale(1.35); opacity: 0; }
+}
+
+@keyframes vg-drift {
+  0%, 100% { transform: translate3d(-54%, 0, 0); }
+  50%      { transform: translate3d(-46%, 3%, 0); }
+}
+
+.vg-sway  { animation: vg-sway 5s ease-in-out infinite; }
+.vg-pulse { animation: vg-pulse 4.5s ease-out infinite; }
+.vg-drift { animation: vg-drift 16s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .vg-sway,
+  .vg-pulse,
+  .vg-drift { animation: none; }
+  .vg-pulse { opacity: 0; }
+}

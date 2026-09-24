@@ -3,8 +3,6 @@
 
 import { useMandala } from "./MandalaContext";
 
-// import { useState } from "react";
-
 import { zones } from "../../../../data/mandalaData";
 import  MandalaGrid  from "./MandalaGrid";
 
@@ -39,7 +37,7 @@ export default function InteractiveMandala() {
         </div>
 
         <div className="mt-14 grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <div className="relative mx-auto aspect-square w-full max-w-170 p-[7%] bg-background shadow-divine">
               <MandalaGrid
                 activeZone={activeZone.id}
@@ -49,8 +47,8 @@ export default function InteractiveMandala() {
               />
             </div>
           </div>
-
-          <div className="lg:col-span-5" aria-live="polite">
+ 
+          <div className="lg:col-span-6 ml-3" aria-live="polite">
             <div className="min-h-97.5 border-l-2 border-primary pl-6 sm:pl-9">
               <div className="flex items-center justify-between gap-4">
                 <span className="font-heading text-6xl text-primary/20">
