@@ -41,25 +41,25 @@ export default function VastuReframed() {
     <section ref={ref} className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
       <div className="mx-auto max-w-4xl text-center">
         <p className="section-badge">Vastu, reframed</p>
-        <div className="mt-10 flex flex-col items-center gap-3 sm:gap-4">
+        <div className="mt-10 flex flex-col items-center gap-3">
           {reframedWords.map((word, index) => (
             <span
               key={word}
-              className={`text-2xl font-medium tracking-tight text-foreground transition-all duration-700 ease-out sm:text-3xl lg:text-4xl ${
+              className={`text-xl font-medium tracking-tight text-foreground transition-all duration-700 ease-out md:text-2xl ${
                 active ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               }`}
               style={{ transitionDelay: active ? `${index * 110}ms` : "0ms" }}
             >
               {word}
               {index < reframedWords.length - 1 && (
-                <span className="mt-3 block text-primary/40" aria-hidden="true">
+                <span className=" block text-primary/40" aria-hidden="true">
                   ↓
                 </span>
               )}
             </span>
           ))}
         </div>
-        <p className="mx-auto mt-12 max-w-xl text-lg leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-12 max-w-xl text-sm md:text-base leading-relaxed text-muted-foreground">
           We explore Vastu as a system of relationships rather than a collection
           of isolated rules.
         </p>

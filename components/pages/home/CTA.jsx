@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CTA() {
   return (
@@ -31,16 +32,16 @@ export default function CTA() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a
                 href="/consultation"
-                className="inline-flex items-center justify-center rounded-full bg-primary-foreground px-7 py-3.5 text-base font-medium text-primary transition-all hover:bg-brand-cream"
+                className="inline-flex items-center justify-center rounded-full bg-primary-foreground px-7 py-3 text-xs md:text-sm font-medium text-primary transition-all hover:bg-brand-cream"
               >
                 Book a Consultation
               </a>
-              <a
+              <Link
                 href="/blog"
-                className="inline-flex items-center justify-center rounded-full border border-primary-foreground/30 px-7 py-3.5 text-base font-medium text-primary-foreground transition-colors bg-foreground  hover:bg-primary-foreground/10 hover:text-foreground"
+                className="inline-flex items-center justify-center rounded-full border border-primary-foreground/30 px-7 py-3 text-xs md:text-sm font-medium text-primary-foreground transition-colors bg-foreground  hover:bg-primary-foreground/10 hover:text-foreground"
               >
                 Read the Blog
-              </a>
+              </Link>
             </div>
           </div>
         </div>

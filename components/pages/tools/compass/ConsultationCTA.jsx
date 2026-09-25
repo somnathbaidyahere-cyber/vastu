@@ -20,7 +20,7 @@ export default function ConsultationCTA() {
 
       <div className="absolute inset-0 -z-10 bg-secondary/10 backdrop-blur-[1px]" />
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         <div className="relative isolate overflow-hidden rounded-4xl border border-primary/20 bg-background/80 shadow-[0_25px_80px_-35px_rgba(0,0,0,0.35)] backdrop-blur-md">
 
           {/* Subtle colour atmosphere */}
@@ -119,7 +119,7 @@ export default function ConsultationCTA() {
               Now understand what they mean for your home.
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-6 max-w-xl text-sm md:text-base leading-relaxed text-muted-foreground">
               A compass can show you where each direction lies. A
               property-specific Vastu review looks at how those directions,
               your entrance, rooms and overall layout come together.
@@ -129,7 +129,7 @@ export default function ConsultationCTA() {
 
               <Link
                 href="/consultation"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
               >
                 Get My Home Assessed
 

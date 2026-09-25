@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ChevronRight,Info,ArrowRight } from "lucide-react";
 export default function Hero() {
   return (
-    <header className="relative isolate px-4 pb-20 pt-7 sm:px-6 lg:px-8 lg:pb-28 min-h-180">
+    <header className="relative isolate px-4 pb-20 pt-7 sm:px-6 lg:px-8 lg:pb-28 min-h-170">
       <div className="absolute inset-0 bg-linear-to-r -z-5 from-foreground/90 via-foreground/55 to-foreground/10" />
 
       <nav aria-label="Breadcrumb" className="px-4 pb-10 sm:px-6 lg:px-8">
@@ -44,7 +44,7 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl mt-5">
         {/* Editorial Subtitle Badge */}
-        <span className="inline-flex items-center gap-2 rounded-full border border-border-muted bg-card/60 px-4 py-1.5 text-[10px] md:text-xs font-medium uppercase tracking-widest text-surface-muted mt-6">
+        <span className="inline-flex items-center gap-2 rounded-full border border-border-muted bg-card/60 px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-surface-muted mt-6">
           <Info className="h-3.5 w-3.5" />
           About Us
         </span>
@@ -64,7 +64,7 @@ export default function Hero() {
         <div className="mt-35 flex flex-wrap items-center gap-6">
           <Link
             href="/learn"
-            className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+            className="group inline-flex items-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
           >
             Explore Vastu{" "}
             <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
@@ -77,7 +77,7 @@ export default function Hero() {
           </Link> */}
           <Link 
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-3.5 text-xs sm:text-sm md:text-base font-medium text-surface/50 transition-colors hover:bg-secondary hover:text-foreground"
+            className="inline-flex items-center justify-center rounded-full border border-border bg-card hero-btn font-medium text-surface-muted lg:text-surface/60 transition-colors hover:bg-secondary hover:text-foreground"
           >
             Discuss your space
           </Link>

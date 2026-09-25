@@ -72,7 +72,7 @@ export default function OrientHome() {
                     </span>
                   </div>
 
-                  <h3 className="mt-7 text-xl font-medium text-foreground">
+                  <h3 className="mt-7 text-lg font-medium text-foreground">
                     {step.title}
                   </h3>
 

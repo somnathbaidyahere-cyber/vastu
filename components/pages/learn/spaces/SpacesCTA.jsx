@@ -66,7 +66,7 @@ export default function SpacesCTA() {
               inline-flex shrink-0 items-center gap-2
               rounded-full
               border border-primary-foreground/30
-              px-7 py-3.5
+              hero-btn
               font-medium
               transition
               text-surface-accent

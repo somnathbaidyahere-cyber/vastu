@@ -131,7 +131,7 @@ export default function DirectionSpace() {
         {/* Explorer */}
         <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:items-stretch">
           {/* Direction Grid */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-5">
             <div className="relative mx-auto grid aspect-square max-w-xl grid-cols-3 grid-rows-3 gap-2 border border-border/60 bg-secondary/30 p-3 sm:gap-3 sm:p-5">
               {directions.map((direction) => {
                 const active =
@@ -188,7 +188,7 @@ export default function DirectionSpace() {
 
           {/* Information Panel */}
           <div
-            className="flex min-h-[30rem] flex-col justify-between rounded-lg border border-border/60 bg-card p-7 sm:p-10 lg:col-span-6"
+            className="flex min-h-[30rem] flex-col justify-between rounded-lg border border-border/60 bg-card p-7 sm:p-10 lg:col-span-7"
             aria-live="polite"
           >
             <div>
@@ -198,7 +198,7 @@ export default function DirectionSpace() {
                     Selected orientation
                   </p>
 
-                  <h3 className="mt-3 text-3xl font-medium">
+                  <h3 className="mt-3 text-2xl font-medium">
                     {selectedDirection.name}
                   </h3>
                 </div>
@@ -208,7 +208,7 @@ export default function DirectionSpace() {
                 </span>
               </div>
 
-              <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+              <p className="mt-8 text-sm md:text-base leading-relaxed text-muted-foreground">
                 {selectedDirection.summary}
               </p>
 

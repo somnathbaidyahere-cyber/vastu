@@ -20,20 +20,20 @@ export default function MandalaCTA() {
       {/* Soft overlay */}
       {/* <div className="absolute inset-0 -z-10 bg-secondary/75 backdrop-blur-[1px]" /> */}
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         {/* CTA panel */}
         <div className="relative flex items-center overflow-hidden rounded-4xl border border-primary/20 bg-background/15 shadow-[0_25px_80px_-35px_rgba(0,0,0,0.35)] backdrop-blur-md">
           {/* Content */}
           <div className="relative z-10 px-6 py-14 sm:px-10 sm:py-16 lg:max-w-[64%] lg:px-16 lg:py-20">
-            <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent-muted">
+            <span className="inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-muted">
               Ready for your property?
             </span>
 
-            <h2 className="cta-heading mt-6 max-w-2xl text-primary-foreground">
+            <h2 className="cta-heading mt-1 text-primary-foreground">
               See your home with a deeper understanding.
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-accent-muted sm:text-lg">
+            <p className="section-description text-surface">
               Carry this spatial perspective into the plan you have already
               explored.
             </p>

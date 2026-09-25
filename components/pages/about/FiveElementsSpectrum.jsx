@@ -51,7 +51,7 @@ export default function FiveElementsSpectrum() {
                   }`}
                 >
                   <ElIcon className="h-5 w-5" aria-hidden="true" />
-                  <span className="text-xs font-medium uppercase tracking-widest sm:text-sm">
+                  <span className="text-xs font-medium uppercase tracking-widest">
                     {element.name}
                   </span>
                 </button>
@@ -62,11 +62,11 @@ export default function FiveElementsSpectrum() {
           <div className="lg:col-span-4" aria-live="polite">
             <div className="flex items-baseline gap-4 border-b border-border/60 pb-5">
               <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
-              <h3 className="text-2xl font-medium text-foreground">
+              <h3 className="text-xl font-medium text-foreground">
                 {current.quality}
               </h3>
             </div>
-            <p className="mt-5 leading-relaxed text-muted-foreground">
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               {current.name} shapes how a space holds{" "}
               {current.quality.toLowerCase()} — one part of a balance that only
               makes sense alongside the other four.

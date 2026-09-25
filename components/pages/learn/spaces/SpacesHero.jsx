@@ -54,7 +54,7 @@ export default function SpacesHero() {
 
           <a
             href="#principles"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition hover:bg-primary/90"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition hover:bg-primary/90"
           >
             Explore spatial character
             <ArrowDown className="h-4 w-4" />

@@ -44,7 +44,7 @@ export default function VastuMapExplorer() {
           <div className="grid lg:grid-cols-12">
 
             {/* Map */}
-            <div className="relative flex min-h-125 items-center justify-center overflow-hidden border-b border-border bg-surface/20 px-6 py-14 lg:col-span-7 lg:min-h-162.5 lg:border-b-0 lg:border-r lg:px-12">
+            <div className="relative flex min-h-125 items-center justify-center overflow-hidden border-b border-border bg-surface/20 px-6 py-14 lg:col-span-5 lg:min-h-162.5 lg:border-b-0 lg:border-r lg:px-12">
 
               {/* Ambient geometry */}
               <div className="pointer-events-none absolute inset-0">

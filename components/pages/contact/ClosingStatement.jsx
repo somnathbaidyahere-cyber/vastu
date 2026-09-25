@@ -17,7 +17,7 @@ export default function ClosingStatement() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto max-w-4xl">
         <div
           className="
         relative overflow-hidden rounded-4xl
@@ -32,9 +32,9 @@ export default function ClosingStatement() {
       "
         >
           {/* Decorative gradients */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_50%)]" />
 
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_50%)]" />
 
           {/* Content */}
           <div
@@ -67,10 +67,12 @@ export default function ClosingStatement() {
               inline-flex shrink-0 items-center gap-2
               rounded-full
               border border-primary-foreground/30
-              px-7 py-3.5
+              hero-btn
               font-medium
               transition
-              text-surface-accent
+              text-surface
+
+              md:text-surface-accent
               hover:bg-primary-foreground/10
               hover:text-primary-foreground
             "

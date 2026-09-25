@@ -20,7 +20,7 @@ export default function ContinueExploring() {
             <li key={link.href} className="relative">
               <Link
                 href={link.href}
-                className="group relative flex items-center justify-between rounded-lg px-4 py-5 text-lg font-medium text-foreground transition-all duration-300 ease-out transform-3d hover:z-20 hover:bg-surface hover:text-primary hover:shadow-xl hover:[transform:translateZ(12px)_rotateX(2deg)_scale(1.01)]"
+                className="group relative flex items-center justify-between rounded-lg px-4 py-5 text-base font-medium text-foreground transition-all duration-300 ease-out transform-3d hover:z-20 hover:bg-surface hover:text-primary hover:shadow-xl hover:[transform:translateZ(12px)_rotateX(2deg)_scale(1.01)]"
               >
                 <span className="transition-transform duration-300 transform-3d group-hover:transform-[translateZ(10px)]">
                   {link.label}

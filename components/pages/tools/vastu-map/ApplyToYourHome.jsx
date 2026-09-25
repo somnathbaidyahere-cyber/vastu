@@ -28,7 +28,7 @@ export default function ApplyToYourHome() {
         <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-center">
 
           {/* Floor plan visual */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-5">
             <div className="relative aspect-6/4 overflow-hidden rounded-[1.75rem] border border-border bg-background/30 p-6 shadow-[0_25px_70px_-45px_var(--primary)] sm:p-10">
 
               {/* Subtle map grid */}
@@ -102,7 +102,7 @@ export default function ApplyToYourHome() {
           </div>
 
           {/* Steps */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-7">
             <div className="space-y-8">
 
               <div className="flex gap-5">

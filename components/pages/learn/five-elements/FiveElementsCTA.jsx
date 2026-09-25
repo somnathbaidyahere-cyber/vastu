@@ -29,13 +29,13 @@ export default function FiveElementsCTA() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/tools/mandala"
-                className="inline-flex items-center justify-center rounded-full bg-primary-foreground px-7 py-3.5 text-base font-medium text-primary transition-all hover:bg-surface-muted"
+                className="inline-flex items-center justify-center rounded-full bg-primary-foreground hero-btn font-medium text-primary transition-all hover:bg-surface-muted"
               >
                 Open the mandala tool
               </Link>
               <Link
                 href="/learn"
-                className="inline-flex items-center justify-center rounded-full border border-primary-foreground/30 px-7 py-3.5 text-base font-medium text-primary-foreground transition-colors bg-foreground  hover:bg-primary-foreground/10 hover:text-accent-muted"
+                className="inline-flex items-center justify-center rounded-full border border-primary-foreground/30 hero-btn font-medium text-primary-foreground transition-colors bg-foreground  hover:bg-primary-foreground/10 hover:text-accent-muted"
               >
                 Back to learn
               </Link>

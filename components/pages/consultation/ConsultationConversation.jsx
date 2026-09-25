@@ -34,7 +34,7 @@ export default function ConsultationConversation() {
               Want to understand your home better ?
             </h2>
 
-            <p className="text-base sm:text-lg text-[#5C554E] font-sans leading-relaxed max-w-lg">
+            <p className="section-description">
               Whether you are evaluating a prospective property, planning a
               subtle renovation, or simply seeking clarity on your current
               living space, we are here to help you navigate it.
@@ -52,7 +52,7 @@ export default function ConsultationConversation() {
           {/* Right Column: CTAs & Direct Contact */}
           <div className="lg:col-span-6 flex flex-col justify-between bg-[#FFFDFA] border border-[#E2DACC] p-8 sm:p-10 md:p-12 rounded-sm shadow-sm">
             <div className="space-y-8">
-              <p className="text-base text-[#5C554E] leading-relaxed">
+              <p className="section-description">
                 Reach out directly via your preferred channel. We operate with a
                 direct, conversational approach without lengthy intake
                 questionnaires.
@@ -68,7 +68,7 @@ export default function ConsultationConversation() {
                 >
                   <span className="flex items-center space-x-3">
                     <MessageSquare className="w-5 h-5 text-[#FAF7F0]/90" />
-                    <span className="font-medium tracking-wide">
+                    <span className="font-medium tracking-wide text-sm">
                       Start a Conversation
                     </span>
                   </span>

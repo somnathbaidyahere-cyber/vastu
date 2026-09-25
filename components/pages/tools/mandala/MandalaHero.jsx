@@ -22,7 +22,7 @@ export default function MandalaHero() {
 
           <a
             href="#interactive-mandala"
-            className="group mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+            className="group mt-6 inline-flex items-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
           >
             Explore the Mandala
             <ArrowDown className="h-4 w-4 transition-all duration-100 group-hover:translate-y-0.5" />

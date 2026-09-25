@@ -37,8 +37,8 @@ function UnderlinedField({
           onBlur={onBlur}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${id}-error` : undefined}
-          rows={3}
-          className={`w-full resize-none border-0 border-b bg-transparent px-0 py-3 text-base text-[#2C2825] outline-none transition-colors placeholder:text-[#A49A8D] focus:ring-0 ${
+          rows={1}
+          className={`min-h-20 w-full resize-y border-0 border-b border-[#E2DACC] bg-transparent px-0 py-2 text-sm leading-relaxed text-[#2C2825] outline-none transition-colors focus:border-[#8C6A3C] ${
             error
               ? "border-red-500 focus:border-red-500"
               : "border-[#D9CDBB] focus:border-[#8C6A3C]"
@@ -54,7 +54,7 @@ function UnderlinedField({
           onBlur={onBlur}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${id}-error` : undefined}
-          className={`w-full border-0 border-b bg-transparent px-0 py-3 text-base text-[#2C2825] outline-none transition-colors placeholder:text-[#A49A8D] focus:ring-0 ${
+          className={`w-full border-0 border-b border-[#E2DACC] bg-transparent px-0 py-2 text-sm text-[#2C2825] outline-none transition-colors focus:border-[#8C6A3C]" ${
             error
               ? "border-red-500 focus:border-red-500"
               : "border-[#D9CDBB] focus:border-[#8C6A3C]"

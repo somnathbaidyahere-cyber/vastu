@@ -29,7 +29,7 @@ function Footer() {
       </Link>
 
       {/* Brief Description */}
-      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+      <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
         Ancient Vastu wisdom for modern, harmonious living. Tools,
         learning, and expert guidance for every home.
       </p>
@@ -77,7 +77,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Tools
             </h4>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
               <li>
                 <a href="/tools/compass" className="hover:text-primary">
                   Vastu Compass
@@ -99,7 +99,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Learn
             </h4>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
               <li>
                 <Link href="/learn/fundamentals" className="hover:text-primary">
                   Fundamentals
@@ -131,7 +131,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Company
             </h4>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
               <li>
                 <a href="/about" className="hover:text-primary">
                   About Us
@@ -156,14 +156,14 @@ function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} VastuVeda. All rights reserved.
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} VastuGuru. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="/privacy-policy" className="hover:text-primary">
+          <div className="flex gap-6 text-xs text-muted-foreground">
+            <a href="/privacy-policy" className="hover:text-primary transition-all duration-50 hover:-translate-y-0.5">
               Privacy
             </a>
-            <a href="/terms-and-conditions" className="hover:text-primary">
+            <a href="/terms-and-conditions" className="hover:text-primary transition-all duration-50 hover:-translate-y-0.5">
               Terms
             </a>
           </div>

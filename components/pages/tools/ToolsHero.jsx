@@ -24,13 +24,13 @@ export default function ToolsHero() {
         <div className="mt-8 flex flex-wrap justify-center  gap-4">
           <Link
             href="/tools/compass"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-xs sm:text-sm md:text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+            className="inline-flex items-center justify-center rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
           >
             Start with the compass
           </Link>
           <Link
             href="/learn/fundamentals"
-            className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-3.5 text-xs sm:text-sm md:text-base font-medium text-foreground transition-colors hover:bg-secondary hover:text-foreground"
+            className="inline-flex items-center justify-center rounded-full border border-border bg-card hero-btn font-medium text-foreground transition-colors hover:bg-secondary hover:text-foreground"
           >
             Learn the basics
           </Link>
