@@ -116,7 +116,7 @@ export default async function BlogPage() {
 
       <main className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="bg-ivory-pattern px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <section className="bg-ivory-pattern px-4 py-12 sm:px-6 lg:px-8 lg:py-15">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
@@ -124,7 +124,7 @@ export default async function BlogPage() {
               </p>
 
               <h1 className="hero-heading">
-                Vastu{" "}<span className="text-gradient-brand">Blog</span>
+                Vastu{" "}<span className="text-gradient-brand">blog</span>
               </h1>
 
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
