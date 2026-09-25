@@ -18,7 +18,7 @@ import {
 } from "@/lib/whatsapp";
 
 // Keep these in your existing constants/config file
-const WHATSAPP_NUMBER = "YOUR_WHATSAPP_NUMBER";
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP;
 const RESPONSE_TIME = "24–48 hours";
 
 export default function ContactFormSection() {
@@ -196,7 +196,7 @@ const handleWhatsAppSubmit = (event) => {
           responses.
         </p>
 
-        <a
+          <a
           href={`https://wa.me/${WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noopener noreferrer"

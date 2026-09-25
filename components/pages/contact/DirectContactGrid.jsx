@@ -5,9 +5,10 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-const WHATSAPP_NUMBER = "919000000000";
+
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP;
 const EMAIL_ADDRESS = "hello@vastuveda.com";
-const PHONE_NUMBER = "+919000000000";
+const PHONE_NUMBER = WHATSAPP_NUMBER;
 
 export default function DirectContactGrid() {
   return (

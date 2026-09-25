@@ -52,13 +52,18 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="/learn/elements" className="hover:text-primary">
+                <a href="/learn/five-elements" className="hover:text-primary">
                   Five Elements
                 </a>
               </li>
               <li>
                 <a href="/learn/directions" className="hover:text-primary">
                   Directions
+                </a>
+              </li>
+                <li>
+                <a href="/learn/spaces" className="hover:text-primary">
+                  Spaces
                 </a>
               </li>
               <li>
