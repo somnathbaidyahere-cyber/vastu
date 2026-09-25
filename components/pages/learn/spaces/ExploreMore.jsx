@@ -54,19 +54,19 @@ export default function ExploreMore() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="group bg-card p-7 transition-colors hover:bg-secondary"
+                className="group bg-card p-7 transition-colors hover:bg-secondary flex flex-col justify-between"
               >
                 <Icon className="h-5 w-5 text-primary" />
 
-                <h3 className="mt-8 text-lg font-medium">
+                <h3 className="mt-4 text-lg font-medium">
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className=" text-sm text-muted-foreground">
                   {item.description}
                 </p>
 
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
                   Explore
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>

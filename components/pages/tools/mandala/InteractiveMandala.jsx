@@ -51,7 +51,7 @@ export default function InteractiveMandala() {
           <div className="lg:col-span-6 ml-3" aria-live="polite">
             <div className="min-h-97.5 border-l-2 border-primary pl-6 sm:pl-9">
               <div className="flex items-center justify-between gap-4">
-                <span className="font-heading text-6xl text-primary/20">
+                <span className="font-heading text-5xl text-primary/20">
                   {activeZone.id}
                 </span>
 
@@ -72,7 +72,7 @@ export default function InteractiveMandala() {
                 {activeZone.quality}
               </p>
 
-              <p className="mt-7 max-w-md text-lg leading-relaxed text-muted-foreground">
+              <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
                 {activeZone.meaning}
               </p>
 
@@ -81,7 +81,7 @@ export default function InteractiveMandala() {
                   Spatial reading
                 </p>
 
-                <p className="mt-3 leading-relaxed text-foreground/80">
+                <p className="mt-3 text-sm leading-relaxed text-foreground/80">
                   Read this quality in relation to the center and neighboring
                   fields—not as an isolated prescription.
                 </p>

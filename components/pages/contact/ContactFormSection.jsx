@@ -222,146 +222,147 @@ const handleWhatsAppSubmit = (event) => {
     </div>
 
     {/* Right Side Form */}
-    <div className="rounded-sm border border-[#E2DACC] bg-[#FAF7F0] p-8 shadow-xs sm:p-12 lg:col-span-7">
-      {status === "sent" ? (
-        <div className="space-y-6 py-12 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#8C6A3C]/10 text-[#8C6A3C]">
-            <CheckCircle2 className="h-6 w-6" />
-          </div>
+   
+<div className="rounded-sm border border-[#E2DACC] bg-[#FAF7F0] p-5 shadow-xs sm:p-7 lg:col-span-7 lg:p-8">
+  {status === "sent" ? (
+    <div className="space-y-4 py-8 text-center">
+      <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#8C6A3C]/10 text-[#8C6A3C]">
+        <CheckCircle2 className="h-5 w-5" />
+      </div>
 
-          <h3 className="font-serif text-3xl text-[#2C2825]">
-            Message received.
+      <h3 className="font-serif text-2xl text-[#2C2825]">
+        Message received.
+      </h3>
+
+      <p className="mx-auto max-w-md text-sm leading-relaxed text-[#5C554E]">
+        Thank you for reaching out to VastuVeda. Our lead practitioner
+        will review your inquiry and respond within {RESPONSE_TIME}.
+      </p>
+
+      <button
+        type="button"
+        onClick={() => setStatus("idle")}
+        className="inline-block pt-2 font-mono text-xs uppercase tracking-widest text-[#8C6A3C] underline underline-offset-4 transition-colors hover:text-[#745228]"
+      >
+        Send another message
+      </button>
+    </div>
+  ) : (
+    <div>
+      {/* Form Header */}
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h3 className="font-serif text-2xl text-[#2C2825]">
+            Send a message
           </h3>
 
-          <p className="mx-auto max-w-md text-sm leading-relaxed text-[#5C554E]">
-            Thank you for reaching out to VastuVeda. Our lead practitioner
-            will review your inquiry and respond within {RESPONSE_TIME}.
+          <p className="mt-1 text-xs text-[#7A7268]">
+            Fill out the brief details below.
           </p>
+        </div>
+
+        {topic && (
+          <div className="flex items-center space-x-2 rounded-sm border border-[#E2DACC] bg-[#F4EFE6] px-2.5 py-1 text-xs">
+            <span className="text-[#7A7268]">Topic:</span>
+
+            <span className="font-medium text-[#8C6A3C]">
+              {topic.label}
+            </span>
+
+            <button
+              type="button"
+              onClick={clearTopic}
+              className="ml-1 font-bold text-[#7A7268] hover:text-[#2C2825]"
+              title="Clear topic"
+            >
+              ×
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Form */}
+      <form
+        onSubmit={handleWhatsAppSubmit}
+        noValidate
+        className="space-y-1"
+      >
+        {/* Name */}
+        <UnderlinedField
+          id="name"
+          label="Your Name"
+          value={values.name}
+          onChange={update("name")}
+          onBlur={() => validateField("name", values.name)}
+          error={errors.name}
+          required
+        />
+
+        {/* Email */}
+        <UnderlinedField
+          id="email"
+          label="Email Address"
+          type="email"
+          value={values.email}
+          onChange={update("email")}
+          onBlur={() => validateField("email", values.email)}
+          error={errors.email}
+          required
+        />
+
+        {/* Phone */}
+        <UnderlinedField
+          id="phone"
+          label="Phone or WhatsApp Number"
+          type="tel"
+          hint="Optional"
+          value={values.phone}
+          onChange={update("phone")}
+          onBlur={() => validateField("phone", values.phone)}
+          error={errors.phone}
+        />
+
+        {/* Message */}
+        <UnderlinedField
+          id="message"
+          label={topic?.prompt ?? "What would you like to discuss?"}
+          multiline
+          value={values.message}
+          onChange={update("message")}
+          onBlur={() => validateField("message", values.message)}
+          error={errors.message}
+          required
+        />
+
+        {/* General Error */}
+        {errors.general && (
+          <p className="text-sm text-red-600" role="alert">
+            {errors.general}
+          </p>
+        )}
+
+        {/* Submit Row */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#E2DACC] pt-4">
+          <span className="text-xs text-[#7A7268]">
+            We usually respond within {RESPONSE_TIME}.
+          </span>
 
           <button
-            type="button"
-            onClick={() => setStatus("idle")}
-            className="inline-block pt-4 font-mono text-xs uppercase tracking-widest text-[#8C6A3C] underline underline-offset-4 transition-colors hover:text-[#745228]"
+            type="submit"
+            disabled={status === "sending" || hasErrors}
+            className="inline-flex items-center space-x-2 rounded-sm bg-[#2C2825] px-6 py-3 text-sm font-medium text-[#FAF7F0] transition-colors duration-200 hover:bg-[#8C6A3C] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            Send another message
+            <span>
+              {status === "sending" ? "Opening..." : "Send Message"}
+            </span>
+
+            <ArrowRight className="h-4 w-4" />
           </button>
         </div>
-      ) : (
-        <div>
-          {/* Form Header */}
-          <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <h3 className="font-serif text-2xl text-[#2C2825]">
-                Send a message
-              </h3>
-
-              <p className="mt-1 text-xs text-[#7A7268]">
-                Fill out the brief details below.
-              </p>
-            </div>
-
-            {topic && (
-              <div className="flex items-center space-x-2 rounded-sm border border-[#E2DACC] bg-[#F4EFE6] px-3 py-1.5 text-xs">
-                <span className="text-[#7A7268]">Topic:</span>
-
-                <span className="font-medium text-[#8C6A3C]">
-                  {topic.label}
-                </span>
-
-                <button
-                  type="button"
-                  onClick={clearTopic}
-                  className="ml-1 font-bold text-[#7A7268] hover:text-[#2C2825]"
-                  title="Clear topic"
-                >
-                  ×
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* Form */}
-          <form
-            onSubmit={handleWhatsAppSubmit}
-            noValidate
-            className="space-y-8"
-          >
-            {/* Name */}
-            <UnderlinedField
-              id="name"
-              label="Your Name"
-              value={values.name}
-              onChange={update("name")}
-              onBlur={() => validateField("name", values.name)}
-              error={errors.name}
-              required
-            />
-
-            {/* Email */}
-            <UnderlinedField
-              id="email"
-              label="Email Address"
-              type="email"
-              value={values.email}
-              onChange={update("email")}
-              onBlur={() => validateField("email", values.email)}
-              error={errors.email}
-              required
-            />
-
-            {/* Phone */}
-            <UnderlinedField
-              id="phone"
-              label="Phone or WhatsApp Number"
-              type="tel"
-              hint="Optional"
-              value={values.phone}
-              onChange={update("phone")}
-              onBlur={() => validateField("phone", values.phone)}
-              error={errors.phone}
-            />
-
-            {/* Message */}
-            <UnderlinedField
-              id="message"
-              label={topic?.prompt ?? "What would you like to discuss?"}
-              multiline
-              value={values.message}
-              onChange={update("message")}
-              onBlur={() => validateField("message", values.message)}
-              error={errors.message}
-              required
-            />
-
-            {/* General Error */}
-            {errors.general && (
-              <p className="text-sm text-red-600" role="alert">
-                {errors.general}
-              </p>
-            )}
-
-            {/* Submit Row */}
-            <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#E2DACC] pt-4">
-              <span className="text-xs text-[#7A7268]">
-                We usually respond within {RESPONSE_TIME}.
-              </span>
-
-              <button
-                type="submit"
-                 disabled={status === "sending" || hasErrors}
-                className="inline-flex items-center space-x-3 rounded-sm bg-[#2C2825] px-8 py-3.5 text-sm font-medium text-[#FAF7F0] transition-colors duration-200 hover:bg-[#8C6A3C] disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <span>
-                  {status === "sending" ? "Opening..." : "Send Message"}
-                </span>
-
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-          </form>
-        </div>
-      )}
+      </form>
     </div>
+  )}
+</div>
   </div>
 </section>
   );

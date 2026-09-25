@@ -250,7 +250,7 @@ export default async function RoomDetailPage({ params }) {
 
       {/* Footer Navigation */}
       <footer className="px-4 py-16 sm:px-6 lg:px-8 bg-surface-accent/40">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl max-[300px]:flex-col max-[300px]:items-center flex-row gap-6 justify-between">
           {/* All Rooms */}
           <Link
             href="/learn/rooms#room-explorer"

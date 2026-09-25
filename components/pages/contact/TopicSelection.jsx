@@ -91,7 +91,7 @@ export default function TopicSelection() {
                     <div className="space-y-1">
                       <div className="flex items-center space-x-3">
                         <span
-                          className={`font-serif text-lg font-medium transition-colors sm:text-xl ${
+                          className={`font-serif text-base font-medium transition-colors sm:text-lg ${
                             isSelected
                               ? "text-[#8C6A3C]"
                               : "text-[#2C2825] group-hover:text-[#8C6A3C]"

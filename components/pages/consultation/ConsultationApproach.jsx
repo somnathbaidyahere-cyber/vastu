@@ -45,11 +45,11 @@ export default function ConsultationApproach() {
                 {number}
               </span>
 
-              <h3 className="mt-6 text-2xl font-medium text-foreground">
+              <h3 className="mt-6 text-xl font-medium text-foreground">
                 {name}
               </h3>
 
-              <p className="mt-4 max-w-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-sm max-w-sm leading-relaxed text-muted-foreground">
                 {body}
               </p>
 

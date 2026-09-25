@@ -26,7 +26,7 @@ export default function DirectionsHero() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="#the-eight"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+              className="inline-flex items-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
             >
               Explore the eight
               <ArrowRight className="h-4 w-4" />
@@ -34,7 +34,7 @@ export default function DirectionsHero() {
 
             <Link
               href="#glance"
-              className="inline-flex items-center rounded-full border border-border bg-card px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
+              className="inline-flex items-center rounded-full border border-border bg-card hero-btn font-medium text-foreground transition-colors hover:bg-secondary"
             >
               Compare at a glance
             </Link>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ConsultationHero() {
   return (
-    <header className="relative min-h-[calc(100svh-5rem)] overflow-hidden border-b border-border/60">
+    <header className="relative h-[90vh] overflow-hidden border-b border-border/60">
       <Image
         src="/rooms/doorway-2.webp"
         alt="A sequence of quiet stone doorways illuminated by natural light"
@@ -20,11 +20,11 @@ export default function ConsultationHero() {
             Consultation
           </p>
 
-          <h1 className="mt-5 text-5xl font-medium leading-[1.06] sm:text-6xl lg:text-7xl">
+          <h1 className="hero-heading text-primary-foreground">
             Have a space in mind?
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/85">
+          <p className="hero-description text-primary-foreground/85">
             Bring us the home you are planning, changing, or trying to
             understand. We’ll help you read it with clarity and practical
             context.
@@ -32,7 +32,7 @@ export default function ConsultationHero() {
 
           <a
             href="#booking"
-            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 font-medium text-primary transition-colors hover:shadow-divine-glow"
+            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary-foreground hero-btn font-medium text-primary transition-colors hover:shadow-divine-glow"
           >
             Book a consultation
             <ArrowDown

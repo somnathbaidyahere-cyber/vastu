@@ -36,7 +36,7 @@ export default function ConsultationRelevance() {
             Useful at moments of decision.
           </h2>
 
-          <p className="mt-5 leading-relaxed text-muted-foreground">
+          <p className="section-description">
             A consultation is most valuable when you have a real space and a
             clear question—not when you are looking for a generic checklist.
           </p>
@@ -49,7 +49,7 @@ export default function ConsultationRelevance() {
               href="#booking"
               className="group grid gap-2 border-b border-border/70 py-6 transition-colors hover:text-primary sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.3fr)_auto] sm:items-center"
             >
-              <h3 className="text-xl font-medium text-foreground transition-colors group-hover:text-primary">
+              <h3 className="text-base font-medium text-foreground transition-colors group-hover:text-primary">
                 {name}
               </h3>
 

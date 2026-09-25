@@ -114,7 +114,7 @@ export default async function BlogPage() {
     <>
       <BlogStructuredData />
 
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-surface/80">
         {/* Hero */}
         <section className="bg-ivory-pattern px-4 py-12 sm:px-6 lg:px-8 lg:py-15">
           <div className="mx-auto max-w-7xl">

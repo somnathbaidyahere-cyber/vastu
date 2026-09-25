@@ -83,7 +83,7 @@ export const spaceElements = [
     icon: Wind,
     character: "Exchange & movement",
     space:
-      "Ventilation, circulation and thresholds that allow activity to flow.",
+      "Ventilation, circulation and thresholds that allow activity to flow without any hindrance.",
     zone: "North-West",
   },
   {

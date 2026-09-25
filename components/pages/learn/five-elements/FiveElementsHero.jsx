@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
@@ -23,7 +22,7 @@ export default function FiveElementsHero() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="#elements"
-               className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+               className="group inline-flex items-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
             >
               Meet the elements
               <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
@@ -31,7 +30,7 @@ export default function FiveElementsHero() {
 
             <a
               href="#in-vastu"
-              className="inline-flex items-center rounded-full border border-border px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary" 
+              className="inline-flex items-center rounded-full border border-border hero-btn font-medium text-foreground transition-colors hover:bg-secondary" 
             >
               See it in a plan
             </a>

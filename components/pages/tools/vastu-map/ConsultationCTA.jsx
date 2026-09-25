@@ -113,11 +113,11 @@ export default function ConsultationCTA() {
               Ready for your property?
             </span>
 
-            <h2 className="cta-heading mt-6 max-w-2xl text-primary-foreground">
+            <h2 className="cta-heading mt-2 max-w-2xl text-primary-foreground">
               Your home is more than a grid.
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-accent-muted sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-accent-muted">
               Use the map to understand the framework. For guidance specific
               to your entrance, rooms and complete layout, get your property
               reviewed in context.
@@ -125,7 +125,7 @@ export default function ConsultationCTA() {
 
             <Link
               href="/consultation"
-              className="group mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
             >
               Get My Home Assessed
 

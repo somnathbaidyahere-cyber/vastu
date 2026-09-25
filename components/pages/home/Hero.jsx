@@ -27,15 +27,16 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-[10px] md:text-xs font-medium uppercase tracking-widest text-white">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-white">
               <Sun className="h-3.5 w-3.5" />
               Timeless Vastu Guidance
             </span>
-            <h1 className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-3xl font-heading leading-[1.15] text-primary-foreground md:text-5xl lg:text-6xl">
+            <h1 className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-3xl font-heading leading-[1.15] text-primary-foreground md:text-5xl">
               Align your space with{" "}
-              <span className="text-gradient-brand">ancient wisdom</span>
+              <span className="text-gradient-brand hidden md:inline-block ">ancient wisdom</span>
+              <span className="md:hidden text-surface-muted">ancient wisdom</span>
             </h1>
-            <p className="mt-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-surface-accent">
+            <p className="mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-surface md:text-surface-accent">
               VastuVeda blends traditional Indian Vastu Shastra with elegant,
               modern tools to help you create balanced, prosperous, and peaceful
               homes.
@@ -43,13 +44,13 @@ export default function Hero() {
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="/tools/compass"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-xs sm:text-sm md:text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+                className="inline-flex items-center justify-center rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
               >
                 Explore Tools
               </a>
               <Link
                 href="/learn/fundamentals"
-                className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-3.5 text-xs sm:text-sm md:text-base font-medium text-accent-muted transition-colors hover:bg-secondary hover:text-foreground"
+                className="inline-flex items-center justify-center rounded-full border border-border bg-card hero-btn font-medium text-accent-muted transition-colors hover:bg-secondary hover:text-foreground"
               >
                 Learn Vastu
               </Link>
@@ -57,15 +58,15 @@ export default function Hero() {
 
             <div className="mt-10 flex items-center gap-6 text-sm text-primary-foreground">
               <div className="flex flex-col  sm:flex-row sm:items-center gap-2">
-                <Compass className="h-4 w-4 text-primary" />
+                <Compass className="h-4 w-4 text-surface-muted md:text-primary" />
                 <span>Direction Analysis</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <Home className="h-4 w-4 text-primary" />
+                <Home className="h-4 w-4 text-surface-muted md:text-primary" />
                 <span>Room Planning</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <BookOpen className="h-4 w-4 text-primary" />
+                <BookOpen className="h-4 w-4 text-surface-muted md:text-primary" />
                 <span>Guided Courses</span>
               </div>
             </div>

@@ -12,7 +12,7 @@ export default function LearnHero() {
   return (
     <section className="relative overflow-hidden bg-ivory-pattern px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-24 lg:pt-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-primary">
             <Sun className="h-3.5 w-3.5" />
             The Learning Path
@@ -33,7 +33,7 @@ export default function LearnHero() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/learn/fundamentals"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
             >
               Begin with fundamentals
               <ArrowRight className="h-4 w-4 transition-all duration-100 group-hover:translate-x-1" />
@@ -41,7 +41,7 @@ export default function LearnHero() {
 
             <Link
               href="/tools"
-              className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-card hero-btn  font-medium text-foreground transition-colors hover:bg-secondary"
             >
               Open the toolkit
             </Link>

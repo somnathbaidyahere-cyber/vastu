@@ -19,14 +19,14 @@ export default function FundamentalsHero() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="#start-learning"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
             >
               Start the path{" "}
               <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
             </a>
             <a
               href="#core-concepts"
-              className="inline-flex items-center rounded-full border border-border px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
+              className="inline-flex items-center rounded-full border border-border hero-btn font-medium text-foreground transition-colors hover:bg-secondary"
             >
               Jump to concepts
             </a>

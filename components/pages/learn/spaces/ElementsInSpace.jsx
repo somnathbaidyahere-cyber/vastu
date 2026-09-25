@@ -66,7 +66,7 @@ export default function ElementsInSpace() {
               {selected.character}
             </h3>
 
-            <p className="mt-6 leading-relaxed text-muted-foreground">
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               {selected.space}
             </p>
           </div>

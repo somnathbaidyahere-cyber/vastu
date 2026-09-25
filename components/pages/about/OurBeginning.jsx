@@ -9,7 +9,7 @@ export default function OurBeginning() {
           We believe a space is more than walls, rooms and directions.
         </h2>
         <p className="section-description">It is where life unfolds.</p>
-        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-8 max-w-2xl text-sm md:text-base leading-relaxed text-muted-foreground">
           We started by asking a simple question: why does one room feel settled
           while another, built the same way, never quite feels right? The answer
           was rarely a single wall or a single direction — it was the
