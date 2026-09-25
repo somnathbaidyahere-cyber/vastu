@@ -3,10 +3,46 @@ import ToolsHero from "@/components/pages/tools/ToolsHero";
 import Features from "@/components/pages/tools/Features";
 import Tools from "@/components/pages/tools/Tools";
 
+import JsonLd from "@/components/seo/JsonLd";
+import { getWebPageSchema } from "@/lib/seo/schemas";
+import { schemaIds } from "@/lib/seo/ids";
+import { seoConfig } from "@/lib/seo/config";
+
+//  SEO
+const pageTitle = "Vastu Tools — Explore Your Home Better | VastuGuru";
+
+const pageDescription =
+  "Explore practical Vastu tools to understand directions, spaces, and essential Vastu concepts for your home.";
+
+const canonicalUrl = `${seoConfig.siteUrl}/tools`;
+
 export const metadata = {
-  title: "Learn Vastu — Fundamentals, Elements, Directions & Rooms | VastuVeda",
-  description:
-    "A guided path through Vastu Shastra: core principles, the five elements, the meaning of each direction, and room-by-room guidance for the modern Indian home.",
+  title: pageTitle,
+  description: pageDescription,
+
+  alternates: {
+    canonical: "/tools",
+  },
+
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/tools",
+    siteName: seoConfig.siteName,
+    type: "website",
+    locale: seoConfig.locale,
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const tools = [
@@ -48,8 +84,22 @@ export const tools = [
 ];
 
 export default function ToolsPage() {
+  const toolsSchema = getWebPageSchema({
+    id: `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: "Vastu Tools",
+    description: pageDescription,
+  });
+
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [toolsSchema],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <JsonLd data={pageSchema} />
+
       <ToolsHero />
 
       <Tools />

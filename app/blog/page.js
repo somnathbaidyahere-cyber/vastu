@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import JsonLd from "@/components/seo/JsonLd";
+import { getWebPageSchema } from "@/lib/seo/schemas";
+import { schemaIds } from "@/lib/seo/ids";
+import { seoConfig } from "@/lib/seo/config";
 
 import {
   getPublishedBlogs,
@@ -10,109 +13,93 @@ import {
 
 import { urlFor } from "@/lib/sanity/image";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
-
-const pageTitle = "Vastu Blog — Articles, Guides & Practical Insights | VastuVeda";
-
-const pageDescription =
-  "Read VastuVeda articles on rooms, directions, elements, planning and practical spatial guidance for modern Indian homes.";
-
-const canonicalUrl = `${siteUrl}/blog`;
-
 /* --------------------------------------------------
    SEO Metadata
 -------------------------------------------------- */
+const pageTitle =
+  "Vastu Blog — Articles, Guides & Practical Insights | VastuGuru";
+
+const pageDescription =
+  "Explore Vastu articles, practical guidance, and insights about rooms, directions, elements, and modern Indian homes.";
+
+const canonicalUrl = `${seoConfig.siteUrl}/blog`;
 
 export const metadata = {
   title: pageTitle,
+
   description: pageDescription,
 
   alternates: {
-    canonical: canonicalUrl,
+    canonical: "/blog",
   },
 
   openGraph: {
     title: pageTitle,
+
     description: pageDescription,
-    url: canonicalUrl,
-    siteName: "VastuVeda",
+
+    url: "/blog",
+
+    siteName: seoConfig.siteName,
+
     type: "website",
-    locale: "en_IN",
+
+    locale: seoConfig.locale,
+
     images: [
       {
-        url: `${siteUrl}/og/blog.jpg`,
+        url: "/og/blog.jpg",
+
         width: 1200,
+
         height: 630,
-        alt: "VastuVeda Blog — Articles and practical Vastu guides",
+
+        alt: "VastuGuru Blog — Articles and practical Vastu guides",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
+
     title: pageTitle,
+
     description: pageDescription,
-    images: [`${siteUrl}/og/blog.jpg`],
+
+    images: ["/og/blog.jpg"],
   },
 
   robots: {
     index: true,
+
     follow: true,
   },
 };
-
-/* --------------------------------------------------
-   JSON-LD
--------------------------------------------------- */
-
-function BlogStructuredData() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "@id": `${canonicalUrl}#blog`,
-
-    name: "VastuVeda Blog",
-    description: pageDescription,
-    url: canonicalUrl,
-
-    publisher: {
-      "@type": "Organization",
-      name: "VastuVeda",
-      url: siteUrl,
-      logo: {
-        "@type": "ImageObject",
-        url: `${siteUrl}/logo.png`,
-      },
-    },
-
-    inLanguage: "en-IN",
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData).replace(
-          /</g,
-          "\\u003c"
-        ),
-      }}
-    />
-  );
-}
-
-/* --------------------------------------------------
-   Page
--------------------------------------------------- */
 
 export default async function BlogPage() {
   const articles = await getPublishedBlogs();
   console.log(articles)
 
+    const blogSchema = getWebPageSchema({
+    id: schemaIds.blog,
+
+    url: canonicalUrl,
+
+    name: "Vastu Blog",
+
+    description:
+      "Discover Vastu insights, practical guidance, and helpful articles to understand your home and living spaces better.",
+  });
+
+  const pageSchema = {
+    "@context": "https://schema.org",
+
+    "@graph": [blogSchema],
+  };
+
   return (
     <>
-      <BlogStructuredData />
+      <JsonLd data={pageSchema} />
 
       <main className="min-h-screen bg-surface/80">
         {/* Hero */}

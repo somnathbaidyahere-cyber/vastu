@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/lib/site";
+import JsonLd from "@/components/seo/JsonLd";
+import { getGlobalSchemaGraph } from "@/lib/seo/schemas";
 
 
 const geistSans = Geist({
@@ -27,10 +29,6 @@ export const metadata = {
 
   applicationName: siteConfig.name,
 
-  alternates: {
-    canonical: "/",
-  },
-
   robots: {
     index: true,
     follow: true,
@@ -43,6 +41,14 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     url: "/",
+    images: [
+    {
+      url: "/images/seo/vastu-guru-default.jpg",
+      width: 1200,
+      height: 630,
+      alt: "VastuGuru — Vastu consultation and guidance",
+    },
+  ],
   },
 
   twitter: {
@@ -53,12 +59,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+const globalSchema = getGlobalSchemaGraph();
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full w-full flex flex-col">
+        <JsonLd data={globalSchema} />
+
         <Navbar />
         
         {children}
