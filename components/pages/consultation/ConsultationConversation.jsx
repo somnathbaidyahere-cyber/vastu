@@ -12,8 +12,10 @@ import {
 
 export default function ConsultationConversation() {
   // Replace these with your actual contact details
-  const whatsappNumber = "1234567890";
-  const phoneNumber = "+1234567890";
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP;
+  
+  const phoneNumber = whatsappNumber;
+
   const emailAddress = "hello@vastuguru.com";
 
   return (
@@ -78,9 +80,9 @@ export default function ConsultationConversation() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#E2DACC]">
                 <Link
                   href={`tel:${phoneNumber}`}
-                  className="flex items-center space-x-3 text-sm text-[#5C554E] hover:text-[#8C6A3C] transition-colors duration-150 py-2 group"
+                  className="group flex items-center space-x-3 text-sm text-[#5C554E] hover:text-[#8C6A3C] transition-colors duration-150 py-2 group"
                 >
-                  <Phone className="w-4 h-4 text-[#8C6A3C] group-hover:scale-105 transition-transform" />
+                  <Phone className="w-4 h-4 text-[#8C6A3C] group-hover:scale-105 trasition-all duration-100 group-hover:rotate-15" />
                   <span className="underline underline-offset-4 decoration-[#E2DACC] group-hover:decoration-[#8C6A3C]">
                     Call us
                   </span>
@@ -88,9 +90,9 @@ export default function ConsultationConversation() {
 
                 <Link
                   href={`mailto:${emailAddress}`}
-                  className="flex items-center space-x-3 text-sm text-[#5C554E] hover:text-[#8C6A3C] transition-colors duration-150 py-2 group"
+                  className="group flex items-center space-x-3 text-sm text-[#5C554E] hover:text-[#8C6A3C] transition-colors duration-150 py-2 group"
                 >
-                  <Mail className="w-4 h-4 text-[#8C6A3C] group-hover:scale-105 transition-transform" />
+                  <Mail className="w-4 h-4 text-[#8C6A3C] group-hover:scale-105 transition-all duration-100 group-hover:-translate-y-0.5" />
                   <span className="underline underline-offset-4 decoration-[#E2DACC] group-hover:decoration-[#8C6A3C]">
                     Send an email
                   </span>
