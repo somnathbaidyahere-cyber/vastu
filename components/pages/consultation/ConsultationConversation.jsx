@@ -16,7 +16,7 @@ export default function ConsultationConversation() {
   
   const phoneNumber = whatsappNumber;
 
-  const emailAddress = "hello@vastuguru.com";
+  const emailAddress = process.env.NEXT_PUBLIC_EMAIL;
 
   return (
     <section id="booking" className="w-full bg-surface text-[#2C2825] py-20 lg:py-32 px-6 sm:px-12 md:px-16 transition-colors duration-300">

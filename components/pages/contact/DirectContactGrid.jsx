@@ -7,7 +7,7 @@ import {
 
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP;
-const EMAIL_ADDRESS = "hello@vastuveda.com";
+const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL;
 const PHONE_NUMBER = WHATSAPP_NUMBER;
 
 export default function DirectContactGrid() {

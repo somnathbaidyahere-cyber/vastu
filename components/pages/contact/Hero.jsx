@@ -9,9 +9,8 @@ import {
   MessageCircle
 } from "lucide-react";
 
-const WHATSAPP_NUMBER = "919000000000"; // country code + number, digits only
-const EMAIL_ADDRESS = "hello@vastuveda.com";
-const PHONE_NUMBER = "+919000000000";
+const WHATSAPP_NUMBER =  process.env.NEXT_PUBLIC_WHATSAPP; // country code + number, digits only
+const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL;
 const RESPONSE_TIME = "24 hours";
 
 export default function Hero() {
