@@ -9,7 +9,7 @@ import { schemaIds } from "@/lib/seo/ids";
 import { seoConfig } from "@/lib/seo/config";
 
 //  SEO
-const pageTitle = "Vastu Tools — Explore Your Home Better | VastuGuru";
+const pageTitle = "Vastu Tools — Explore Your Home Better";
 
 const pageDescription =
   "Explore practical Vastu tools to understand directions, spaces, and essential Vastu concepts for your home.";

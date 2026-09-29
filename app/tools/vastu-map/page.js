@@ -10,34 +10,99 @@ import { faqs } from "@/data/vastuMapData";
 import FAQ from "@/components/ui/FAQ";
 import ConsultationCTA from "@/components/pages/tools/vastu-map/ConsultationCTA";
 
+import JsonLd from "@/components/seo/JsonLd";
+import { getWebPageSchema, getBreadcrumbSchema } from "@/lib/seo/schemas";
+import { seoConfig } from "@/lib/seo/config";
+
+const pageTitle = "Vastu Map — Explore Vastu Zones on Your Floor Plan";
+
+const pageDescription =
+  "Explore Vastu zones across your property with the Interactive Vastu Map and understand how rooms align with different directional sectors.";
+
+const canonicalUrl = `${seoConfig.siteUrl}/tools/vastu-map`;
+
 export const metadata = {
-  title: "Vastu Map — Explore the Directions of Your Home | LeadWala",
-  description:
-    "Explore the eight directional zones of your home and learn traditional Vastu associations with our interactive Vastu Map.",
+  title: pageTitle,
+  description: pageDescription,
+
+  alternates: {
+    canonical: "/tools/vastu-map",
+  },
+
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/tools/vastu-map",
+    siteName: seoConfig.siteName,
+    type: "website",
+    locale: seoConfig.locale,
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function VastuMapPage() {
+  const mapSchema = getWebPageSchema({
+    id: `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: "Interactive Vastu Map",
+    description: pageDescription,
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    {
+      name: "Home",
+      url: seoConfig.siteUrl,
+    },
+    {
+      name: "Tools",
+      url: `${seoConfig.siteUrl}/tools`,
+    },
+    {
+      name: "Interactive Vastu Map",
+      url: canonicalUrl,
+    },
+  ]);
+
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [mapSchema, breadcrumbSchema],
+  };
+
   return (
-    <main>
-      <VastuMapHero />
+    <>
+      <JsonLd data={pageSchema} />
 
-      <OrientHome />
+      <main>
+        <VastuMapHero />
 
-      <VastuMapExplorer />
+        <OrientHome />
 
-      <CenterZone />
+        <VastuMapExplorer />
 
-      <RoomAssociations />
+        <CenterZone />
 
-      <ApplyToYourHome />
+        <RoomAssociations />
 
-      <CommonMistakes />
+        <ApplyToYourHome />
 
-      <FreeVsPersonalized />
+        <CommonMistakes />
 
-      <FAQ faqs={faqs} />
+        <FreeVsPersonalized />
 
-      <ConsultationCTA />
-    </main>
+        <FAQ faqs={faqs} />
+
+        <ConsultationCTA />
+      </main>
+    </>
   );
 }

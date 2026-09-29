@@ -9,7 +9,6 @@ import { faqs } from "@/data/learnData";
 
 import JsonLd from "@/components/seo/JsonLd";
 import { getWebPageSchema } from "@/lib/seo/schemas";
-import { schemaIds } from "@/lib/seo/ids";
 import { seoConfig } from "@/lib/seo/config";
 
 const pageTitle = "Learn Vastu — Principles, Guidance & Insights | VastuGuru";
