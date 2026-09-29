@@ -10,38 +10,82 @@ import FinalCTASection from "@/components/pages/learn/fundamentals/FinalCTASecti
 import FAQ from "@/components/ui/FAQ";
 import { faqs, learningPath } from "@/data/fundamentals";
 
-const title = "Vastu Fundamentals — Principles, Directions & Core Concepts | VastuGuru";
-const description = "A beginner's guide to Vastu Shastra fundamentals: what Vastu is, the five elements, the eight directions, the brahmasthan, and how to read a home plan with clarity.";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  getWebPageSchema,
+  getBreadcrumbSchema,
+} from "@/lib/seo/schemas";
+import { seoConfig } from "@/lib/seo/config";
+
+const pageTitle = "Vastu Shastra Fundamentals — Learn the Basics";
+
+const pageDescription =
+  "Learn the fundamentals of Vastu Shastra, including the Vastu Purusha Mandala, Brahmasthan, directional axes, and the basic principles of spatial planning.";
+
+const canonicalUrl = `${seoConfig.siteUrl}/learn/fundamentals`;
 
 export const metadata = {
-  title,
-  description,
-  alternates: { canonical: "/learn/fundamentals" },
-  openGraph: { title, description, type: "article", url: "/learn/fundamentals" },
-  twitter: { card: "summary_large_image", title, description },
+  title: pageTitle,
+  description: pageDescription,
+
+  alternates: {
+    canonical: "/learn/fundamentals",
+  },
+
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/learn/fundamentals",
+    siteName: seoConfig.siteName,
+    type: "website",
+    locale: seoConfig.locale,
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
-function JsonLd() {
-  const jsonLd = {
+export default function FundamentalsPage() {
+    const fundamentalsSchema = getWebPageSchema({
+    id: `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: "Vastu Shastra Fundamentals",
+    description: pageDescription,
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    {
+      name: "Home",
+      url: seoConfig.siteUrl,
+    },
+    {
+      name: "Learn",
+      url: `${seoConfig.siteUrl}/learn`,
+    },
+    {
+      name: "Vastu Shastra Fundamentals",
+      url: canonicalUrl,
+    },
+  ]);
+
+  const pageSchema = {
     "@context": "https://schema.org",
-    "@graph": [
-      { "@type": "BreadcrumbList", itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-        { "@type": "ListItem", position: 2, name: "Learn", item: "/learn" },
-        { "@type": "ListItem", position: 3, name: "Fundamentals", item: "/learn/fundamentals" },
-      ] },
-      { "@type": "CollectionPage", name: "Vastu Fundamentals", description, url: "/learn/fundamentals", hasPart: learningPath.map((item) => ({ "@type": "Article", headline: item.title, description: item.body })) },
-      { "@type": "FAQPage", mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) },
-    ],
+    "@graph": [fundamentalsSchema, breadcrumbSchema],
   };
 
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
-}
-
-export default function FundamentalsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <JsonLd />
+    <>
+     <JsonLd data={pageSchema} />
+
+        <main className="min-h-screen bg-background">
       <Breadcrumbs />
       <FundamentalsHero />
       <IntroductionSection />
@@ -52,6 +96,9 @@ export default function FundamentalsPage() {
       <MoreFundamentalsSection />
       <FAQ faqs={faqs} />
       <FinalCTASection />
-    </div>
+    </main>
+
+    </>
+
   );
 }

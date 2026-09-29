@@ -117,7 +117,7 @@ export const studyPath = [
     step: "02",
     title: "Feel the elements",
     body: "Learn how the five elements sit in a plan before you judge any single room.",
-    href: "/learn/elements",
+    href: "/learn/five-elements",
   },
   {
     step: "03",

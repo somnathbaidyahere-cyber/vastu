@@ -1,9 +1,37 @@
 import React from 'react';
 import Link from 'next/link';
+import { seoConfig } from "@/lib/seo/config";
 
 export const metadata = {
-  title: 'Privacy Policy | VastuGuru',
-  description: 'Understand how VastuGuru collects, uses, and protects your information.',
+  title: "Privacy Policy",
+  description:
+    "Learn how VastuGuru collects, uses, protects, and handles information shared through the website.",
+
+  alternates: {
+    canonical: "/privacy",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Privacy Policy",
+    description:
+      "Learn how VastuGuru collects, uses, protects, and handles information shared through the website.",
+    url: "/privacy",
+    siteName: seoConfig.siteName,
+    type: "website",
+    locale: seoConfig.locale,
+  },
+
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy",
+    description:
+      "Learn how VastuGuru collects, uses, protects, and handles information shared through the website.",
+  },
 };
 
   
