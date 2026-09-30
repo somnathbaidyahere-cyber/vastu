@@ -7,7 +7,7 @@ export default function RoomsHero() {
   return (
     <header className="relative min-h-168 overflow-hidden border-y border-border/60 sm:min-h-184">
   <Image
-    src="/rooms/dine-living-area.webp"
+    src="/heroImages/dine-living-area.webp"
     alt="A sequence of warm stone doorways leading through naturally lit rooms"
     width={1536}
     height={1024}

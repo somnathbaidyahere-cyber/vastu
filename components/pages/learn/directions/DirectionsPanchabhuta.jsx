@@ -48,11 +48,11 @@ export default function DirectionsPanchabhuta() {
         </div>
 
         <div className="lg:col-span-7">
-          <span className="section-badge text-primary">
+          <span className="section-badge text-surface">
             How this connects
           </span>
 
-          <h2 className="section-heading">
+          <h2 className="section-heading text-surface-accent lg:text-foreground">
             Directions &amp; the five elements
           </h2>
 
