@@ -20,7 +20,7 @@ export default function ConsultationScope() {
           A connected reading of your space.
         </h2>
 
-        <p className="section-description w-3xl">
+        <p className="section-description">
           We look at each layer in relation to the next. Context determines
           which observations matter and how they can be applied responsibly.
         </p>

@@ -18,7 +18,7 @@ export default function Hero() {
     <header className="relative isolate px-4 pb-20 pt-7 sm:px-6 lg:px-8 lg:pb-28 min-h-170">
       <div className="absolute inset-0 bg-linear-to-r -z-5 from-foreground/90 via-foreground/55 to-foreground/10" />
 
-      <nav aria-label="Breadcrumb" className="px-4 pb-10 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" className="px-4 pb-3 sm:pb-10 sm:px-6 lg:px-8">
         <ol className="mx-auto flex max-w-7xl items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link
@@ -44,7 +44,7 @@ export default function Hero() {
       </nav>
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/contact/threshold.webp"
+          src="/heroImages/entry-space.webp"
           alt=""
           fill
           preload
@@ -73,7 +73,7 @@ export default function Hero() {
         </p>
 
         {/* Quick Contact Bar */}
-        <div className="mt-30 flex flex-wrap items-center gap-y-3 text-sm text-[#5C554E] pt-8">
+        <div className="mt-20  md:mt-30 flex flex-col sm:flex-row sm:items-center gap-y-3 text-sm text-[#5C554E] pt-8">
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"

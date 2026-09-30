@@ -5,7 +5,7 @@ export default function ConsultationHero() {
   return (
     <header className="relative h-[90vh] overflow-hidden border-b border-border/60">
       <Image
-        src="/rooms/doorway-2.webp"
+        src="/heroImages/doorway.webp"
         alt="A sequence of quiet stone doorways illuminated by natural light"
         width={1536}
         height={1024}

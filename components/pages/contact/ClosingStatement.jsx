@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-
 export default function ClosingStatement() {
   return (
     <section className="relative isolate bg-primary-foreground px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
@@ -17,10 +16,10 @@ export default function ClosingStatement() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-4xl">
+      <div className="relative mx-auto md:max-w-2xl lg:max-w-4xl">
         <div
           className="
-        relative overflow-hidden rounded-4xl
+        relative overflow-hidden rounded-3xl lg:rounded-4xl
         border border-white/35
         bg-primary/10
         px-6 py-12
@@ -52,7 +51,7 @@ export default function ClosingStatement() {
                 “Every space has its own questions.”
               </h2>
 
-              <p className=" cta-description">
+              <p className=" cta-description text-left">
                 Whatever you are curious about, your questions can start
                 anywhere. We are ready when you are.
               </p>

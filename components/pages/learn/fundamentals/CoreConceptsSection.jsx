@@ -26,7 +26,7 @@ export default function CoreConceptsSection() {
       {concepts.map(({ icon: Icon, name, sanskrit, body }) => (
         <article
           key={name}
-          className="group flex min-h-62.5 flex-col rounded-2xl border border-border/70 bg-suraface-accent p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-divine-glow sm:p-8 "
+          className="group flex min-h-62.5 flex-col rounded-2xl border border-border/70 bg-accent/3 p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-divine-glow sm:p-8 "
         >
           {/* Icon */}
           <div

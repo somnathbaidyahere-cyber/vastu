@@ -5,7 +5,18 @@ import { Compass, BookOpen, Home, Sun} from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative isolate bg-accent-foreground overflow-hidden h-[75vh] md:h-[60vh] lg:h-[85vh] px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24">
+    <section className="relative isolate bg-accent-foreground overflow-hidden    min-h-[520px]
+    h-[62vh]
+    max-h-[760px]
+    px-4 pb-16 pt-14
+    sm:px-6
+    md:min-h-[560px]
+    md:h-[64vh]
+    md:max-h-[680px]
+    lg:px-8
+    lg:pt-24 lg:pb-24
+    lg:h-[68vh]
+    lg:max-h-[820px]">
 
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
@@ -27,7 +38,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-white">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-accent/30 sm:bg-transparent px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-white">
               <Sun className="h-3.5 w-3.5" />
               Timeless Vastu Guidance
             </span>
@@ -58,15 +69,15 @@ export default function Hero() {
 
             <div className="mt-10 flex items-center gap-6 text-sm text-primary-foreground">
               <div className="flex flex-col  sm:flex-row sm:items-center gap-2">
-                <Compass className="h-4 w-4 text-surface-muted md:text-primary" />
+                <Compass className="h-4 w-4 text-surface-muted lg:text-primary" />
                 <span>Direction Analysis</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <Home className="h-4 w-4 text-surface-muted md:text-primary" />
+                <Home className="h-4 w-4 text-surface-muted lg:text-primary" />
                 <span>Room Planning</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <BookOpen className="h-4 w-4 text-surface-muted md:text-primary" />
+                <BookOpen className="h-4 w-4 text-surface-muted lg:text-primary" />
                 <span>Guided Courses</span>
               </div>
             </div>

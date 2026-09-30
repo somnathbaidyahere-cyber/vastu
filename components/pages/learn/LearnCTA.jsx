@@ -16,7 +16,7 @@ export default function LearnCTA() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto md:max-w-2xl lg:max-w-4xl">
         <div className="relative overflow-hidden rounded-4xl border border-white/35 bg-primary/10 px-6 py-16 text-center shadow-xl backdrop-blur-sm backdrop-saturate-120 sm:px-12 lg:py-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_100%)]" />

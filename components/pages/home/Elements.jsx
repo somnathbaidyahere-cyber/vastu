@@ -6,7 +6,7 @@ export default function Elements() {
           <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-primary-foreground">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-sm font-medium uppercase tracking-widest text-primary">
+            <span className="section-badge">
               The Panchabhutas
             </span>
             <h2 className="mt-3 text-3xl font-heading font-medium text-foreground sm:text-4xl">
@@ -62,7 +62,7 @@ function ElementCard({
   description,
 }) {
   return (
-    <div className="group rounded-2xl border border-border/60 bg-card p-6 transition-all hover:border-primary/30 hover:bg-secondary/50 hover:shadow-divine-glow">
+    <div className="group rounded-2xl border border-border/60 bg-accent/5 p-6 transition-all hover:border-primary/30 hover:bg-secondary/50 hover:shadow-divine-glow">
       <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
         {icon}
       </div>

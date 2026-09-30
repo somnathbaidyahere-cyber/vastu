@@ -32,7 +32,7 @@ export default function ElementsGrid() {
               <Link
                 key={element.slug}
                 href={`/learn/elements/${element.slug}`}
-                className={`group ${color} p-8 transition-colors hover:bg-secondary/60 rounded-2xl hover:shadow-divine-glow`}
+                className={`group ${color} mt-2 sm:mt-0 p-8 transition-colors hover:bg-secondary/60 rounded-2xl hover:shadow-divine-glow`}
               >
                 <Icon
                   className="h-5 w-5 text-primary"
