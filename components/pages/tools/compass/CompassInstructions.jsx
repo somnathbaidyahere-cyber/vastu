@@ -36,7 +36,7 @@ function CompassInstructions() {
               "Note North; every other direction is understood relative to it.",
             ],
           ].map(([Icon, number, heading, copy]) => (
-            <div key={number} className="group hover:bg-primary/30 p-7 sm:p-8">
+            <div key={number} className="group hover:bg-primary/30 p-7 sm:p-8 ">
               <div className="flex items-center justify-between">
                 <Icon className="h-7 w-7 text-primary " />
                 <span className="font-heading text-2xl text-primary/45 group-hover:text-primary ">
@@ -46,7 +46,7 @@ function CompassInstructions() {
               <h3 className="mt-8 text-xl font-medium text-primary ">
                 {heading}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground ">
+              <p className="mt-3 pb-2 md:pb-0 text-sm leading-relaxed text-muted-foreground border-b border-accent-hover/60  md:border-none ">
                 {copy}
               </p>
             </div>

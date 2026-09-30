@@ -108,21 +108,21 @@ export default function ConsultationCTA() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 px-6 py-14 sm:px-10 sm:py-16 lg:max-w-[62%] lg:px-16 lg:py-20">
+          <div className="relative z-10 px-6 py-10 sm:px-10 sm:py-16 lg:max-w-[62%] lg:px-16 lg:py-20">
 
             <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              <span className="h-px w-8 bg-primary/40" />
+              <span className="h-px w-8 bg-primary/40 hidden md:block" />
               Found your directions?
             </span>
 
-            <h2 className="cta-heading mt-6 max-w-2xl text-foreground">
+            <h2 className="cta-heading max-w-2xl text-foreground">
               Now understand what they mean for your home.
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm md:text-base leading-relaxed text-muted-foreground">
-              A compass can show you where each direction lies. A
+            <p className="cta-description text-foreground">
+              A compass can show you where each direction lies. <span className="hidden md:block">A
               property-specific Vastu review looks at how those directions,
-              your entrance, rooms and overall layout come together.
+              your entrance, rooms and overall layout come together. </span> 
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-5">
@@ -136,7 +136,7 @@ export default function ConsultationCTA() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
 
-              <span className="text-xs text-muted-foreground">
+              <span className="hidden md:block text-xs text-muted-foreground">
                 Bring your floor plan
               </span>
 

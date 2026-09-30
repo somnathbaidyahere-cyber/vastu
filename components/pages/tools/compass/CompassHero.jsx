@@ -21,14 +21,14 @@ function CompassHero() {
             establish North using your smartphone, and read the eight
             traditional Vastu directions.
           </p>
-          <div className="mt-5 flex items-start gap-3 border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted-foreground">
+          <div className="mt-5 hidden  md:flex items-start gap-3 border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted-foreground">
             <Smartphone className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
             This is an educational guide. It does not access your phone sensors
             or provide a live compass reading.
           </div>
           <a
             href="#find-center"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary hero-btn text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
           >
             Start the guide <ArrowDown className="h-4 w-4" />
           </a>
