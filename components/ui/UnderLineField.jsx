@@ -11,7 +11,7 @@ function UnderlinedField({
   multiline = false,
 }) {
   return (
-    <div className="space-y-2">
+    <div className="space-y-1.5">
       <div className="flex items-center justify-between gap-4">
         <label
           htmlFor={id}
@@ -21,11 +21,7 @@ function UnderlinedField({
           {required && " *"}
         </label>
 
-        {hint && (
-          <span className="text-xs italic text-[#A49A8D]">
-            {hint}
-          </span>
-        )}
+        {hint && <span className="text-xs italic text-[#A49A8D]">{hint}</span>}
       </div>
 
       {multiline ? (
@@ -62,17 +58,15 @@ function UnderlinedField({
         />
       )}
 
-     <div className="min-h-5 pt-1">
-  <p
-    id={`${id}-error`}
-    role="alert"
-    className={`text-xs leading-4 text-red-600 transition-opacity duration-200 ${
-      error ? "opacity-100" : "opacity-0"
-    }`}
-  >
-    {error || "\u00A0"}
-  </p>
-</div>
+      {error && (
+        <p
+          id={`${id}-error`}
+          role="alert"
+          className="pt-1 text-xs leading-4 text-red-600"
+        >
+          {error}
+        </p>
+      )}
     </div>
   );
 }
