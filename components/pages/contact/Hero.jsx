@@ -44,7 +44,7 @@ export default function Hero() {
       </nav>
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/contact/threshold.webp"
+          src="/heroImages/entry-space.webp"
           alt=""
           fill
           preload

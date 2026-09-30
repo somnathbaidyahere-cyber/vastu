@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import {
-  Grid3X3,
-  ArrowRight,
-} from "lucide-react";
+import { Grid3X3, ArrowRight } from "lucide-react";
 
 const directions = [
   {
@@ -103,7 +100,7 @@ const gridPositions = {
 
 export default function DirectionSpace() {
   const [selectedDirection, setSelectedDirection] = useState(
-    directions.find((direction) => direction.code === "NE")
+    directions.find((direction) => direction.code === "NE"),
   );
 
   return (
@@ -114,17 +111,13 @@ export default function DirectionSpace() {
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
         <div className="max-w-2xl">
-          <p className="section-badge">
-            Direction × space
-          </p>
+          <p className="section-badge">Direction × space</p>
 
-          <h2 className="section-heading">
-            Direction gives space a character
-          </h2>
+          <h2 className="section-heading">Direction gives space a character</h2>
 
           <p className="section-description">
-            Explore how orientation changes the relationship between
-            light, movement and spatial experience.
+            Explore how orientation changes the relationship between light,
+            movement and spatial experience.
           </p>
         </div>
 
@@ -132,18 +125,28 @@ export default function DirectionSpace() {
         <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:items-stretch">
           {/* Direction Grid */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto grid aspect-square max-w-xl grid-cols-3 grid-rows-3 gap-2 border border-border/60 bg-secondary/30 p-3 sm:gap-3 sm:p-5">
+            <div
+              className="
+    relative mx-auto grid aspect-square
+    w-[290px] max-w-full
+    grid-cols-3 grid-rows-3
+    gap-2
+    border border-border/60
+    bg-secondary/30
+    p-2
+    sm:w-[340px]
+    sm:gap-3 sm:p-4
+    lg:w-full lg:max-w-xl lg:p-5
+  "
+            >
               {directions.map((direction) => {
-                const active =
-                  selectedDirection.code === direction.code;
+                const active = selectedDirection.code === direction.code;
 
                 return (
                   <button
                     key={direction.code}
                     type="button"
-                    onClick={() =>
-                      setSelectedDirection(direction)
-                    }
+                    onClick={() => setSelectedDirection(direction)}
                     aria-pressed={active}
                     aria-label={`Explore ${direction.name}`}
                     className={`${
@@ -154,7 +157,7 @@ export default function DirectionSpace() {
                         : "border-border/60 bg-card text-foreground hover:border-primary/40 hover:bg-secondary"
                     }`}
                   >
-                    <span className="text-xl font-medium sm:text-2xl">
+                    <span className="text-lg font-medium sm:text-2xl">
                       {direction.code}
                     </span>
 
@@ -173,9 +176,9 @@ export default function DirectionSpace() {
 
               {/* Centre */}
               <div className="col-start-2 row-start-2 flex flex-col items-center justify-center border border-primary/30 bg-background text-center">
-                <Grid3X3 className="h-5 w-5 text-primary" />
+                <Grid3X3 className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
 
-                <span className="mt-2 text-xs font-medium">
+                <span className="mt-1.5 text-[11px] font-medium sm:mt-2 sm:text-xs">
                   Space
                 </span>
 
@@ -224,9 +227,7 @@ export default function DirectionSpace() {
                 </div>
 
                 <div className="grid grid-cols-2 py-4">
-                  <dt className="text-sm text-muted-foreground">
-                    Light
-                  </dt>
+                  <dt className="text-sm text-muted-foreground">Light</dt>
 
                   <dd className="text-right text-sm font-medium">
                     {selectedDirection.light}
@@ -234,9 +235,7 @@ export default function DirectionSpace() {
                 </div>
 
                 <div className="grid grid-cols-2 py-4">
-                  <dt className="text-sm text-muted-foreground">
-                    Movement
-                  </dt>
+                  <dt className="text-sm text-muted-foreground">Movement</dt>
 
                   <dd className="text-right text-sm font-medium">
                     {selectedDirection.movement}

@@ -32,7 +32,7 @@ export default function Hero() {
       </nav>
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/about/old-building-varanda.webp"
+          src="/heroImages/old-building-varanda.webp"
           alt="Old indian building varanda"
           fill
           preload

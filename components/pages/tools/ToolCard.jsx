@@ -41,7 +41,7 @@ export default function ToolCard({
   return (
     <Link
       href={href}
-      className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-7 transition-all hover:border-primary/30 hover:bg-secondary/40 hover:shadow-lg hover:shadow-primary/5 hover:shadow-divine-glow"
+      className="group relative flex flex-col rounded-2xl border border-border/60 bg-accent/3 p-7 transition-all hover:border-primary/30 hover:bg-secondary/40 hover:shadow-lg hover:shadow-primary/5 hover:shadow-divine-glow"
     >
       {badge && (
         <span className="absolute right-6 top-6 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-primary">

@@ -173,6 +173,13 @@ export default function ContactFormSection() {
         general: error.message,
       }));
     }
+    setValues({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    general: "",
+  })
   };
 
   return (

@@ -3,7 +3,7 @@ import { learnChapters } from "@/data/learnData";
 
 export default function LearnChapters() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24 bg-surface">
+    <section className="bg-surface px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <span className="section-badge">
@@ -14,12 +14,13 @@ export default function LearnChapters() {
             From first principles to the room you sleep in
           </h2>
 
-           <p className="section-description">
-            Build a foundation in Vastu Shastra before exploring individual directions, elements and rooms.
+          <p className="section-description">
+            Build a foundation in Vastu Shastra before exploring individual
+            directions, elements and rooms.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-6">
           {learnChapters.map((chapter, index) => (
             <LearnChapterCard
               key={chapter.href}

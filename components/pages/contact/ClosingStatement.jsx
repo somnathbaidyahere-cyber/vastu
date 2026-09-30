@@ -19,7 +19,7 @@ export default function ClosingStatement() {
       <div className="relative mx-auto md:max-w-2xl lg:max-w-4xl">
         <div
           className="
-        relative overflow-hidden rounded-3xl
+        relative overflow-hidden rounded-3xl lg:rounded-4xl
         border border-white/35
         bg-primary/10
         px-6 py-12
