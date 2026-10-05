@@ -116,7 +116,7 @@ function FreeVsPersonalized() {
         </div>
 
         {/* Disclaimer */}
-        <p className="mt-6 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-6 max-w-3xl section-para">
           The compass provides general directional knowledge. Property-specific
           interpretation may consider the complete and accurate layout.
         </p>

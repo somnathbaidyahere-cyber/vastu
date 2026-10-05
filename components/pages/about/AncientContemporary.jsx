@@ -31,7 +31,7 @@ export default function AncientContemporary() {
         </div>
 
        
-<div className="relative mx-auto mt-8 aspect-[4/3] w-full max-w-5xl overflow-hidden rounded-xl border border-border/60 sm:aspect-[16/9] lg:aspect-[16/7]">
+<div className="relative mx-auto mt-8 aspect-4/3 w-full max-w-5xl overflow-hidden rounded-xl border border-border/60 sm:aspect-[16/9] lg:aspect-[16/7]">
   <div className="absolute inset-0">
     <ImagePlaceholder
       src="/about/modern-courtyard.webp"
@@ -82,7 +82,7 @@ export default function AncientContemporary() {
 
     <ul className="mt-4 space-y-3 border-t border-border/60 pt-4 text-left">
       {then.map((item) => (
-        <li key={item} className="text-sm text-foreground">
+        <li key={item} className="section-para">
           {item}
         </li>
       ))}
@@ -97,7 +97,7 @@ export default function AncientContemporary() {
 
     <ul className="mt-4 space-y-3 border-t border-border/60 pt-4 text-left">
       {now.map((item) => (
-        <li key={item} className="text-sm text-foreground">
+        <li key={item} className="section-para">
           {item}
         </li>
       ))}

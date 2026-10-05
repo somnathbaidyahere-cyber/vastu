@@ -35,7 +35,7 @@ export default function DirectContactGrid() {
               <span>Start a conversation</span>
               <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <p className="text-xs text-[#7A7268] leading-relaxed">
+            <p className="text-xs md:text-sm text-[#7A7268] leading-relaxed">
               Best for prompt, conversational inquiries and brief questions.
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function DirectContactGrid() {
               <span>{EMAIL_ADDRESS}</span>
               <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <p className="text-xs text-[#7A7268] leading-relaxed">
+            <p className="text-xs md:text-sm text-[#7A7268] leading-relaxed">
               Best for long-form thoughts, drawings, or architectural queries.
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function DirectContactGrid() {
               <span>{PHONE_NUMBER}</span>
               <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <p className="text-xs text-[#7A7268] leading-relaxed">
+            <p className="text-xs md:text-sm text-[#7A7268] leading-relaxed">
               Mon–Fri, 10:00 AM to 6:00 PM IST.
             </p>
           </div>

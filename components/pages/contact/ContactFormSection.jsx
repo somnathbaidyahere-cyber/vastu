@@ -197,7 +197,7 @@ export default function ContactFormSection() {
               Prefer instant dialogue?
             </h3>
 
-            <p className="text-sm leading-relaxed text-[#5C554E]">
+            <p className="section-para text-[#5C554E]">
               Skip the web form entirely if you prefer. Start a chat with our
               consultation lead directly on WhatsApp for prompt, quiet
               responses.
@@ -274,7 +274,7 @@ export default function ContactFormSection() {
                     Send a message
                   </h3>
 
-                  <p className="mt-1 text-xs text-[#7A7268]">
+                  <p className="mt-1 section-para text-[#7A7268]">
                     Fill out the brief details below.
                   </p>
                 </div>
@@ -361,7 +361,7 @@ export default function ContactFormSection() {
 
                 {/* Submit Row */}
                 <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#E2DACC] pt-4">
-                  <span className="text-xs text-[#7A7268]">
+                  <span className="text-xs md:text-sm text-[#7A7268]">
                     We usually respond within {RESPONSE_TIME}.
                   </span>
 

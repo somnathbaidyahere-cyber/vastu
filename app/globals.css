@@ -224,7 +224,7 @@ body {
     @apply mt-4 text-sm md:text-base lg:text-lg text-foreground-muted;
   }
    .section-para {
-    @apply mt-4 text-sm md:text-base text-foreground-muted;
+    @apply mt-2 md:mt-3 text-sm md:text-base text-foreground-muted;
   }
 
   .cta-heading{

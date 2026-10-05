@@ -30,12 +30,12 @@ function FindCenterSection() {
               "Draw diagonal lines between opposite corners.",
               "Mark their meeting point as the practical center.",
             ].map((item, index) => (
-              <li key={item} className="flex gap-3 sm:gap-4">
+              <li key={item} className="flex gap-3 sm:gap-4 items-center">
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/30 text-xs font-semibold text-primary sm:h-8 sm:w-8 sm:text-sm">
                   {index + 1}
                 </span>
 
-                <span className="pt-1 text-sm text-foreground/80">{item}</span>
+                <span className="mt-0 section-para text-foreground/80">{item}</span>
               </li>
             ))}
           </ol>

@@ -46,7 +46,7 @@ function CompassInstructions() {
               <h3 className="mt-8 text-xl font-medium text-primary ">
                 {heading}
               </h3>
-              <p className="mt-3 pb-2 md:pb-0 text-sm leading-relaxed text-muted-foreground border-b border-accent-hover/60  md:border-none ">
+              <p className="mt-3 pb-2 md:pb-0 section-para border-b border-accent-hover/60  md:border-none ">
                 {copy}
               </p>
             </div>

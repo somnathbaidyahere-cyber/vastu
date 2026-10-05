@@ -17,7 +17,7 @@ export default function FinalConversion() {
         <h2 className="max-w-2xl text-3xl font-medium leading-tight text-primary-foreground sm:text-4xl">
           Your space is unique. Your questions should be too.
         </h2>
-        <p className="mt-6 max-w-md text-primary-foreground/80">
+        <p className=" max-w-md section-description text-primary-foreground/90">
           Tell us about your space and where you&apos;d like to begin.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-6">

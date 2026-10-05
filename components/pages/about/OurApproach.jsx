@@ -85,8 +85,7 @@ export default function OurApproach() {
 
                     <p
                       className="
-      mt-3 max-w-sm text-sm leading-relaxed
-      text-muted-foreground
+      mt-3 max-w-sm section-para
       transition-colors duration-500
       group-hover:text-foreground/75
     "
