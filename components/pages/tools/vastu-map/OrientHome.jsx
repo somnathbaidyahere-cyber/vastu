@@ -53,37 +53,37 @@ export default function OrientHome() {
           </Link>
         </div>
 
-        {/* Process */}
-        <div className="lg:col-span-7">
-          <div className="grid overflow-hidden rounded-[1.5rem] border border-border bg-border sm:grid-cols-3">
-            {steps.map((step) => {
-              const Icon = step.icon;
+      {/* Process */}
+<div className="lg:col-span-7">
+  <div className="grid overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3 sm:rounded-[1.5rem]">
+    {steps.map((step) => {
+      const Icon = step.icon;
 
-              return (
-                <div
-                  key={step.number}
-                  className="group bg-surface p-7 transition-colors hover:bg-secondary/40 sm:p-8"
-                >
-                  <div className="flex items-center justify-between">
-                    <Icon className="h-6 w-6 p-0.5 rounded-full text-primary transition-all duration-150 group-hover:text-surface group-hover:bg-primary" />
+      return (
+        <div
+          key={step.number}
+          className="group bg-surface p-4 transition-colors hover:bg-secondary/40 sm:p-6 lg:p-8"
+        >
+          <div className="flex items-center justify-between">
+            <Icon className="h-5 w-5 rounded-full p-0.5 text-primary transition-all duration-150 group-hover:bg-primary group-hover:text-surface sm:h-6 sm:w-6" />
 
-                    <span className="font-heading text-2xl text-primary/30 group-hover:text-primary">
-                      {step.number}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-7 text-lg font-medium text-foreground">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {step.description}
-                  </p>
-                </div>
-              );
-            })}
+            <span className="font-heading text-xl text-primary/30 transition-colors group-hover:text-primary sm:text-2xl">
+              {step.number}
+            </span>
           </div>
+
+          <h3 className="mt-4 text-base font-medium text-foreground sm:mt-6 sm:text-lg lg:mt-7">
+            {step.title}
+          </h3>
+
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:mt-3 sm:text-sm">
+            {step.description}
+          </p>
         </div>
+      );
+    })}
+  </div>
+</div>
 
       </div>
     </section>
