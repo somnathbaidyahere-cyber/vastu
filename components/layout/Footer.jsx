@@ -13,7 +13,7 @@ function Footer() {
   return (
     <footer className="border-t border-border/60 px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid items-start gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div>
       {/* Logo & Brand Name */}
       <Link href="/" className="flex items-center gap-1">
@@ -29,7 +29,7 @@ function Footer() {
       </Link>
 
       {/* Brief Description */}
-      <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+      <p className="mt-4 text-xs md:text-sm lg:text-base leading-relaxed text-muted-foreground">
         Ancient Vastu wisdom for modern, harmonious living. Tools,
         learning, and expert guidance for every home.
       </p>
@@ -77,7 +77,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Tools
             </h4>
-            <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
+            <ul className="mt-4 space-y-2text-xs md:text-sm lg:text-base text-muted-foreground">
               <li>
                 <a href="/tools/compass" className="hover:text-primary">
                   Vastu Compass
@@ -99,7 +99,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Learn
             </h4>
-            <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
+            <ul className="mt-4 space-y-2text-xs md:text-sm lg:text-base text-muted-foreground">
               <li>
                 <Link href="/learn/fundamentals" className="hover:text-primary">
                   Fundamentals
@@ -131,7 +131,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Company
             </h4>
-            <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
+            <ul className="mt-4 space-y-2text-xs md:text-sm lg:text-base text-muted-foreground">
               <li>
                 <a href="/about" className="hover:text-primary">
                   About Us
@@ -156,10 +156,10 @@ function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 sm:flex-row">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
             © {new Date().getFullYear()} VastuGuru. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-muted-foreground">
+          <div className="flex gap-6 text-xs md:text-sm lg:text-base text-muted-foreground">
             <a href="/privacy-policy" className="hover:text-primary transition-all duration-50 hover:-translate-y-0.5">
               Privacy
             </a>

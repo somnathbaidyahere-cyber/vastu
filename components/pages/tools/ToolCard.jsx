@@ -55,7 +55,7 @@ export default function ToolCard({
 
       <h3 className="mt-5 text-xl font-medium text-foreground">{name}</h3>
       <p className="mt-1 text-sm italic text-muted-foreground">{sanskrit}</p>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+      <p className="section-para">
         {description}
       </p>
 

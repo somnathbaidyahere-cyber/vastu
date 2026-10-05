@@ -41,7 +41,7 @@ export default function LearnChapterCard({
           {chapter.sanskrit}
         </p>
 
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+        <p className="section-para">
           {chapter.blurb}
         </p>
       </div>

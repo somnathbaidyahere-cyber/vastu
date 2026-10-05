@@ -198,7 +198,7 @@ function NavLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="relative px-4 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
+      className="relative px-4 py-2 text-sm lg:text-lg font-semibold text-foreground/90 transition-colors hover:text-primary"
     >
       {children}
     </Link>
@@ -214,7 +214,7 @@ function Dropdown({ label, isOpen, onToggle, onMouseEnter, links }) {
       <button
         type="button"
         onClick={onToggle}
-        className="group inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
+        className="group inline-flex items-center gap-1 px-4 py-2 text-base lg:text-lg font-semibold text-foreground/90 transition-colors hover:text-primary"
         aria-expanded={isOpen}
       >
         <span
@@ -242,11 +242,11 @@ function Dropdown({ label, isOpen, onToggle, onMouseEnter, links }) {
                 href={link.href}
                 className="group rounded-lg px-3 py-2.5 transition-colors hover:bg-secondary"
               >
-                <div className="text-sm font-medium text-foreground group-hover:text-primary">
+                <div className="text-sm lg:text-lg font-medium text-foreground group-hover:text-primary">
                   {link.label}
                 </div>
 
-                <div className="text-xs text-muted-foreground">
+                <div className="text-xs lg:text-sm text-muted-foreground">
                   {link.description}
                 </div>
               </Link>
