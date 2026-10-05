@@ -57,26 +57,27 @@ export default function ElementsSection() {
             </div>
           </div>
 
+          {/* Element visual */}
           <div className="lg:col-span-6">
-            <div className="relative mx-auto aspect-square max-w-2xl border-2 border-primary/25 bg-background p-[7%] shadow-divine">
-              <div className="absolute inset-[7%] grid grid-cols-3">
+            <div className="relative mx-auto aspect-square w-full max-w-[15rem] border border-primary/25 bg-background p-[8%] shadow-divine sm:max-w-[18rem] md:max-w-[20rem] lg:max-w-[24rem]">
+              <div className="absolute inset-[8%] grid grid-cols-3">
                 {zones.map((zone) => {
                   const isRelated = zone.element === selectedElement;
 
                   return (
                     <div
                       key={zone.id}
-                      className={`flex flex-col items-center justify-center border border-primary/15 text-center transition-all duration-500 ${zone.position} ${
+                      className={`flex min-w-0 flex-col items-center justify-center border border-primary/15 text-center transition-all duration-500 ${
                         isRelated
                           ? "bg-primary text-primary-foreground shadow-lg shadow-primary/15"
                           : "bg-card/55 text-muted-foreground opacity-45"
                       }`}
                     >
-                      <span className="font-heading text-xl sm:text-3xl">
+                      <span className="font-heading text-base sm:text-lg lg:text-xl">
                         {zone.id === "CENTER" ? "◉" : zone.id}
                       </span>
 
-                      <span className="mt-1 hidden text-[10px] uppercase tracking-widest sm:block">
+                      <span className="mt-1 hidden text-[8px] uppercase tracking-[0.12em] sm:block sm:text-[9px] lg:text-[10px] lg:tracking-widest">
                         {zone.quality}
                       </span>
                     </div>
