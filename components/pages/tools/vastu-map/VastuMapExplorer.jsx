@@ -218,7 +218,7 @@ export default function VastuMapExplorer() {
                   </span>
 
                   <span
-                    className={`mt-1 block text-[9px] uppercase tracking-widest ${
+                    className={`hidden md:block mt-1 text-[9px] uppercase tracking-widest ${
                       active
                         ? "text-primary-foreground/70"
                         : "text-muted-foreground"
