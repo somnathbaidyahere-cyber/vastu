@@ -28,7 +28,6 @@ export default function VastuMapHero() {
             {/* <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" /> */}
             <Grid3X3 className="h-4 w-4 shrink-0" />
 
-
             <p>
               This is an educational map. Use the Vastu Compass first to
               establish North for your property.
@@ -57,7 +56,7 @@ export default function VastuMapHero() {
 
         {/* Map visual */}
         <div className="lg:col-span-5">
-          <div className="relative mx-auto max-w-2xl">
+          <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-88 md:max-w-104 lg:max-w-2xl">
             <div className="absolute inset-0 -z-10 rounded-full bg-primary/5 blur-3xl" />
 
             <VastuMapGrid />
