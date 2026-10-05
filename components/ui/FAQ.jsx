@@ -56,7 +56,7 @@ function FAQ({ faqs }) {
                     </span>
 
                     {/* Question */}
-                    <span className="flex-1 text-sm font-medium text-foreground">
+                    <span className="flex-1 section-para text-foreground">
                       {faq.question}
                     </span>
 
@@ -79,7 +79,7 @@ function FAQ({ faqs }) {
                     <div className="min-h-0 overflow-hidden">
                       <div className="pb-6 pl-12 pr-10">
                         <p
-                          className={`max-w-2xl text-xs leading-relaxed text-muted-foreground transition-opacity duration-200 ${
+                          className={`max-w-2xl text-xs md:text-sm leading-relaxed text-muted-foreground transition-opacity duration-200 ${
                             isOpen ? "opacity-100" : "opacity-0"
                           }`}
                         >

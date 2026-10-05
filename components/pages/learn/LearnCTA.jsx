@@ -22,7 +22,7 @@ export default function LearnCTA() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_100%)]" />
           <div className="relative">
             <h2 className="cta-heading">Learn it, then test it on your home</h2>
-            <p className="cta-description">
+            <p className="cta-description mx-auto">
               Pair the chapters with the compass, the interactive map, and the
               mandala to see the theory land on your own floor plan.
             </p>
