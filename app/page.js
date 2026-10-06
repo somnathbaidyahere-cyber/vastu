@@ -4,7 +4,7 @@ import Elements from "@/components/pages/home/Elements";
 import Features from "@/components/pages/home/Features";
 
 import JsonLd from "@/components/seo/JsonLd";
-import { getGlobalSchemaGraph, getHomepageSchema } from "@/lib/seo/schemas";
+import { getHomepageSchema } from "@/lib/seo/schemas";
 
 export const metadata = {
   title: "Vastu Consultation & Guidance for Your Home",

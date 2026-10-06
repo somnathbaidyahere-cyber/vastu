@@ -17,7 +17,6 @@ import BlogFinalCTA from "@/components/pages/blogSlug/function BlogFinalCTA";
 
 import JsonLd from "@/components/seo/JsonLd";
 import { getBreadcrumbSchema, getBlogPostingSchema } from "@/lib/seo/schemas";
-import { schemaIds } from "@/lib/seo/ids";
 import { seoConfig } from "@/lib/seo/config";
 
 // Static Params Useful when blogs are stored locally.
@@ -51,9 +50,11 @@ export async function generateMetadata({ params }) {
 
   const canonicalUrl = `${seoConfig.siteUrl}/blog/${article.slug}`;
 
-  const imageUrl = article.coverImage?.startsWith("http")
-    ? article.coverImage
-    : `${seoConfig.siteUrl}${article.coverImage}`;
+  const imageUrl = article.coverImage
+    ? article.coverImage.startsWith("http")
+      ? article.coverImage
+      : `${seoConfig.siteUrl}${article.coverImage}`
+    : `${seoConfig.siteUrl}/og/blog.jpg`;
 
   return {
     title: seo.title,
@@ -110,17 +111,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-//  JSON-LD Helpers
-function getAbsoluteImageUrl(imagePath) {
-  if (!imagePath) return `${siteUrl}/og/blog.jpg`;
-
-  return imagePath.startsWith("http") ? imagePath : `${siteUrl}${imagePath}`;
-}
-
 export default async function BlogArticlePage({ params }) {
   const { slug } = await params;
 
   const article = await getBlogBySlug(slug);
+  
 
   if (!article) {
     notFound();
@@ -132,9 +127,11 @@ export default async function BlogArticlePage({ params }) {
 
   const canonicalUrl = `${seoConfig.siteUrl}/blog/${article.slug}`;
 
-  const imageUrl = article.coverImage?.startsWith("http")
+  const imageUrl = article.coverImage
+  ? article.coverImage.startsWith("http")
     ? article.coverImage
-    : `${seoConfig.siteUrl}${article.coverImage}`;
+    : `${seoConfig.siteUrl}${article.coverImage}`
+  : `${seoConfig.siteUrl}/og/blog.jpg`;
 
   const blogPostingSchema = getBlogPostingSchema({
     article,

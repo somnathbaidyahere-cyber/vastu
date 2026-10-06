@@ -11,9 +11,76 @@ import DirectionsExploreFurther from "@/components/pages/learn/directions/Direct
 import  FAQ  from '@/components/ui/FAQ';
 import { faqs } from "@/data/directions";
 
+import JsonLd from "@/components/seo/JsonLd";
+import { getWebPageSchema, getBreadcrumbSchema } from "@/lib/seo/schemas";
+import { seoConfig } from "@/lib/seo/config";
+
+const pageTitle = "Vastu Directions — Understand the Eight Directions";
+
+const pageDescription =
+  "Learn how the eight directions are understood in Vastu Shastra, their traditional associations, and how direction influences different spaces in a home.";
+
+const canonicalUrl = `${seoConfig.siteUrl}/learn/directions`; 
+
+export const metadata = {
+  title: pageTitle,
+  description: pageDescription,
+
+  alternates: {
+    canonical: "/learn/directions",
+  },
+
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/learn/directions",
+    siteName: seoConfig.siteName,
+    type: "website",
+    locale: seoConfig.locale,
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function DirectionsPage() {
+    const directionsSchema = getWebPageSchema({
+    id: `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: "Vastu Directions",
+    description: pageDescription,
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    {
+      name: "Home",
+      url: seoConfig.siteUrl,
+    },
+    {
+      name: "Learn",
+      url: `${seoConfig.siteUrl}/learn`,
+    },
+    {
+      name: "Directions",
+      url: canonicalUrl,
+    },
+  ]);
+
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [directionsSchema, breadcrumbSchema],
+  };
   return (
     <main className="min-h-screen bg-background">
+       <JsonLd data={pageSchema} />
       {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
