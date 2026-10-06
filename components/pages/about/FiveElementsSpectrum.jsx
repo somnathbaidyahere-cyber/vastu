@@ -66,7 +66,7 @@ export default function FiveElementsSpectrum() {
                 {current.quality}
               </h3>
             </div>
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-5 section-para">
               {current.name} shapes how a space holds{" "}
               {current.quality.toLowerCase()} — one part of a balance that only
               makes sense alongside the other four.

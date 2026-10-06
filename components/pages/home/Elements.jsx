@@ -12,7 +12,7 @@ export default function Elements() {
             <h2 className="mt-3 text-3xl font-heading font-medium text-foreground sm:text-4xl">
               Balance the five elements
             </h2>
-            <p className="mt-4 text-muted-foreground">
+            <p className="section-description">
               Vastu teaches that harmony arises when Earth, Water, Fire, Air, and Space are in
               balance within your living environment.
             </p>
@@ -70,7 +70,7 @@ function ElementCard({
         {title}{" "}
         <span className="text-sm font-normal text-muted-foreground">({subtitle})</span>
       </h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+      <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">{description}</p>
     </div>
   );
 }

@@ -59,7 +59,7 @@ export default function VastuReframed() {
             </span>
           ))}
         </div>
-        <p className="mx-auto mt-12 max-w-xl text-sm md:text-base leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-12 max-w-xl section-description">
           We explore Vastu as a system of relationships rather than a collection
           of isolated rules.
         </p>

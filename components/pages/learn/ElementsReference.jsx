@@ -19,7 +19,7 @@ export default function ElementsReference() {
           </div>
 
           <Link
-            href="/learn/elements"
+            href="/learn/five-elements"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
           >
             Full element guide

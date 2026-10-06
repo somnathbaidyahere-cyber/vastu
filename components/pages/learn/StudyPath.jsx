@@ -35,7 +35,7 @@ export default function StudyPath() {
                   {step.title}
                 </h3>
 
-                <p className="mt-1 text-muted-foreground">{step.body}</p>
+                <p className="mt-1 section-para">{step.body}</p>
 
                 <Link
                   href={step.href}

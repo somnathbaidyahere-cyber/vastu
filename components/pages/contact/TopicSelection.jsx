@@ -63,7 +63,7 @@ export default function TopicSelection() {
             How can we help you today?
           </h2>
 
-          <p className="max-w-xs text-sm leading-relaxed text-[#5C554E]">
+          <p className="max-w-xs section-description leading-relaxed text-[#5C554E]">
             Select a subject below to tailor your query.
             This helps us direct your question to the right
             space specialist immediately.
@@ -107,7 +107,7 @@ export default function TopicSelection() {
                         )}
                       </div>
 
-                      <p className="text-xs font-light text-[#5C554E] sm:text-sm">
+                      <p className="section-para text-[#5C554E]">
                         {item.subtext}
                       </p>
                     </div>

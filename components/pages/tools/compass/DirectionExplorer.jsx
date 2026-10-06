@@ -36,7 +36,7 @@ function DirectionExplorer() {
             <div className="lg:col-span-5" aria-live="polite">
               <div className="border-l-2 border-primary pl-6 sm:pl-8">
                 <div className="flex items-baseline gap-3">
-                  <span className="font-heading text-6xl text-primary/25">
+                  <span className="font-heading text-5xl md:text-6xl text-primary/25">
                     {selected.id}
                   </span>
                   <span className="text-sm italic text-primary">
@@ -49,10 +49,10 @@ function DirectionExplorer() {
                 <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-accent">
                   {selected.theme}
                 </p>
-                <p className="mt-6 leading-relaxed text-muted-foreground">
+                <p className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 leading-relaxed text-muted-foreground">
                   {selected.association}
                 </p>
-                <div className="mt-6 border-t border-border pt-6">
+                <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 border-t border-border pt-6">
                   <p className="text-xs font-semibold uppercase tracking-widest text-primary">
                     General guidance
                   </p>

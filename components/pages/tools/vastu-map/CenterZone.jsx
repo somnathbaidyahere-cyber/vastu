@@ -1,16 +1,39 @@
 import { Crosshair } from "lucide-react";
 import SectionLabel from "../../../ui/SectionLabel";
 
-
 export default function CenterZone() {
   return (
     <section className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-20">
-
         {/* Visual */}
         <div className="lg:col-span-6">
-          <div className="relative mx-auto aspect-square max-w-md overflow-hidden rounded-[1.75rem] border border-primary/20 bg-background/30  p-[12%] shadow-[0_25px_70px_-45px_var(--primary)]">
+          <div
+            className="
+      relative
+      mx-auto
+      aspect-square
+      w-full
+      max-w-[18rem]
+      overflow-hidden
+      rounded-2xl
+      border
+      border-primary/20
+      bg-background/30
+      p-[10%]
+      shadow-[0_20px_55px_-40px_var(--primary)]
 
+      sm:max-w-[22rem]
+      sm:rounded-[1.5rem]
+      sm:p-[11%]
+
+      md:max-w-[26rem]
+
+      lg:max-w-md
+      lg:rounded-[1.75rem]
+      lg:p-[12%]
+      lg:shadow-[0_25px_70px_-45px_var(--primary)]
+    "
+          >
             {/* Outer geometry */}
             <div className="absolute inset-[10%] rounded-full border border-primary/10" />
             <div className="absolute inset-[20%] rounded-full border border-primary/10" />
@@ -24,32 +47,62 @@ export default function CenterZone() {
             <div className="absolute left-1/2 top-1/2 h-[84%] w-px origin-center -rotate-45 bg-primary/6" />
 
             {/* Center */}
-            <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-2 border-primary bg-background text-center shadow-lg shadow-primary/10">
-              <Crosshair className="h-5 w-5 text-primary" />
+            <div
+              className="
+        absolute
+        left-1/2
+        top-1/2
+        flex
+        h-20
+        w-20
+        -translate-x-1/2
+        -translate-y-1/2
+        flex-col
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-primary
+        bg-background
+        text-center
+        shadow-md
+        shadow-primary/10
 
-              <span className="mt-2 text-[10px] font-semibold uppercase tracking-widest text-foreground">
+        sm:h-24
+        sm:w-24
+
+        md:h-28
+        md:w-28
+
+        lg:border-2
+        lg:shadow-lg
+      "
+            >
+              <Crosshair className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
+
+              <span className="mt-1 text-[9px] font-semibold uppercase tracking-widest text-foreground sm:mt-2 sm:text-[10px]">
                 Center
               </span>
 
-              <span className="mt-1 text-[9px] italic text-muted-foreground">
+              <span className="mt-0.5 text-[8px] italic text-muted-foreground sm:mt-1 sm:text-[9px]">
                 Brahmasthan
               </span>
             </div>
 
             {/* Direction labels */}
-            <span className="absolute left-1/2 top-[3%] -translate-x-1/2 text-[10px] font-semibold text-primary/60">
+            <span className="absolute left-1/2 top-[3%] -translate-x-1/2 text-[9px] font-semibold text-primary/60 sm:text-[10px]">
               N
             </span>
 
-            <span className="absolute right-[5%] top-1/2 -translate-y-1/2 text-[10px] font-semibold text-primary/60">
+            <span className="absolute right-[5%] top-1/2 -translate-y-1/2 text-[9px] font-semibold text-primary/60 sm:text-[10px]">
               E
             </span>
 
-            <span className="absolute bottom-[3%] left-1/2 -translate-x-1/2 text-[10px] font-semibold text-primary/60">
+            <span className="absolute bottom-[3%] left-1/2 -translate-x-1/2 text-[9px] font-semibold text-primary/60 sm:text-[10px]">
               S
             </span>
 
-            <span className="absolute left-[5%] top-1/2 -translate-y-1/2 text-[10px] font-semibold text-primary/60">
+            <span className="absolute left-[5%] top-1/2 -translate-y-1/2 text-[9px] font-semibold text-primary/60 sm:text-[10px]">
               W
             </span>
           </div>
@@ -57,13 +110,9 @@ export default function CenterZone() {
 
         {/* Content */}
         <div className="lg:col-span-6">
-          <SectionLabel number="03">
-            The central zone
-          </SectionLabel>
+          <SectionLabel number="03">The central zone</SectionLabel>
 
-          <h2 className="section-heading">
-            Keep the center in context
-          </h2>
+          <h2 className="section-heading">Keep the center in context</h2>
 
           <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
             The central area of a Vastu layout is traditionally referred to as
@@ -78,13 +127,12 @@ export default function CenterZone() {
             </p>
 
             <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted-foreground">
-              Real properties can have irregular shapes, extensions and
-              complex layouts. Those details can affect how traditional Vastu
-              principles are interpreted.
+              Real properties can have irregular shapes, extensions and complex
+              layouts. Those details can affect how traditional Vastu principles
+              are interpreted.
             </p>
           </div>
         </div>
-
       </div>
     </section>
   );

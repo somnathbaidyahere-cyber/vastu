@@ -75,7 +75,7 @@ function FeatureRow({ number, title, description }) {
       </div>
       <div>
         <h3 className="text-lg font-medium text-foreground">{title}</h3>
-        <p className="mt-1 text-muted-foreground">{description}</p>
+        <p className="mt-1 section-para">{description}</p>
       </div>
     </div>
   );
