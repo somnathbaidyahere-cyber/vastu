@@ -47,6 +47,8 @@ export async function generateMetadata({ params }) {
   }
 
   const seo = getSeoForBlog(article);
+  console.log(seo);
+  
 
   const canonicalUrl = `${seoConfig.siteUrl}/blog/${article.slug}`;
 
