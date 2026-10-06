@@ -13,6 +13,10 @@ import {
 
 import { getRoom, rooms } from "@/data/roomsData";
 
+import JsonLd from "@/components/seo/JsonLd";
+import { getWebPageSchema, getBreadcrumbSchema } from "@/lib/seo/schemas";
+import { seoConfig } from "@/lib/seo/config";
+
 // Generate all room pages at build time
 export function generateStaticParams() {
   return rooms.map((room) => ({
@@ -27,15 +31,22 @@ export async function generateMetadata({ params }) {
 
   if (!room) {
     return {
-      title: "Room guide unavailable | VastuVeda",
+      title: "Room guide unavailable",
       description: "Explore thoughtful Vastu guidance for the rooms of a home.",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
-  const pageTitle = `${room.name} in Vastu — Room Guide | VastuVeda`;
+  const pageTitle = `${room.name} in Vastu — Room Guide`;
+
   const pageDescription =
     room.introduction ||
     "Explore thoughtful Vastu guidance for the rooms of a home.";
+
+  const canonicalUrl = `${seoConfig.siteUrl}/learn/rooms/${room.slug}`;
 
   return {
     title: pageTitle,
@@ -45,15 +56,24 @@ export async function generateMetadata({ params }) {
       canonical: `/learn/rooms/${room.slug}`,
     },
 
+    robots: {
+      index: true,
+      follow: true,
+    },
+
     openGraph: {
       title: pageTitle,
       description: pageDescription,
+      url: canonicalUrl,
+      siteName: seoConfig.siteName,
       type: "article",
-      url: `/learn/rooms/${room.slug}`,
+      locale: seoConfig.locale,
     },
 
     twitter: {
       card: "summary_large_image",
+      title: pageTitle,
+      description: pageDescription,
     },
   };
 }
@@ -67,11 +87,46 @@ export default async function RoomDetailPage({ params }) {
     notFound();
   }
 
+  const canonicalUrl = `${seoConfig.siteUrl}/learn/rooms/${room.slug}`;
+
+  const pageDescription =
+    room.introduction ||
+    "Explore thoughtful Vastu guidance for the rooms of a home.";
+
+  const roomSchema = getWebPageSchema({
+    id: `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: `${room.name} in Vastu`,
+    description: pageDescription,
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    {
+      name: "Home",
+      url: seoConfig.siteUrl,
+    },
+    {
+      name: "Learn",
+      url: `${seoConfig.siteUrl}/learn`,
+    },
+    {
+      name: "Rooms",
+      url: `${seoConfig.siteUrl}/learn/rooms`,
+    },
+    {
+      name: room.name,
+      url: canonicalUrl,
+    },
+  ]);
+
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [roomSchema, breadcrumbSchema],
+  };
+
   const index = rooms.findIndex((item) => item.slug === room.slug);
 
   const nextRoom = rooms[(index + 1) % rooms.length];
-
-  const pageUrl = `/learn/rooms/${room.slug}`;
 
   const steps = [
     ["Observe", room.observe, Eye],
@@ -85,6 +140,8 @@ export default async function RoomDetailPage({ params }) {
 
   return (
     <article className="min-h-screen bg-background">
+      <JsonLd data={pageSchema} />
+
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="px-4 py-5 sm:px-6 lg:px-8">
         <ol className="mx-auto flex max-w-7xl flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
@@ -281,55 +338,6 @@ export default async function RoomDetailPage({ params }) {
           </Link>
         </div>
       </footer>
-
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: "/",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Learn",
-                    item: "/learn",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: "Rooms",
-                    item: "/learn/rooms",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 4,
-                    name: room.name,
-                    item: pageUrl,
-                  },
-                ],
-              },
-              {
-                "@type": "Article",
-                headline: `${room.name} in Vastu`,
-                description:
-                  room.introduction ||
-                  "Explore thoughtful Vastu guidance for the rooms of a home.",
-                url: pageUrl,
-              },
-            ],
-          }),
-        }}
-      />
     </article>
   );
 }

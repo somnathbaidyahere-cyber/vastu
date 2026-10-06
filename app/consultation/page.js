@@ -6,14 +6,62 @@ import ConsultationPreparation from "@/components/pages/consultation/Consultatio
 import ConsultationProcess from "@/components/pages/consultation/ConsultationProcess";
 import ConsultationConversation from "@/components/pages/consultation/ConsultationConversation"
 
+import JsonLd from "@/components/seo/JsonLd";
+import { getWebPageSchema } from "@/lib/seo/schemas";
+import { seoConfig } from "@/lib/seo/config";
+
+const pageTitle = "Vastu Consultation — Personalized Guidance for Your Home";
+
+const pageDescription =
+  "Get personalized Vastu consultation and guidance for your home. Discuss your space, understand its Vastu considerations, and explore practical recommendations.";
+
+const canonicalUrl = `${seoConfig.siteUrl}/consultation`;
+
 export const metadata = {
-  title: "Vastu Consultation for Your Home | VastuVeda",
-  description:
-    "Request a thoughtful Vastu consultation for a new build, renovation, move, or existing home. Understand your space through orientation, layout, elements, and context.",
+  title: pageTitle,
+  description: pageDescription,
+
+  alternates: {
+    canonical: "/consultation",
+  },
+
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/consultation",
+    siteName: seoConfig.siteName,
+    type: "website",
+    locale: seoConfig.locale,
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function ConsultationPage() {
+    const consultationSchema = getWebPageSchema({
+    id: `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: "Vastu Consultation",
+    description: pageDescription,
+  });
+
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [consultationSchema],
+  };
+
   return (
+    <>
+    <JsonLd data={pageSchema} />
     <main className="min-h-screen bg-background">
       <ConsultationHero />
 
@@ -30,5 +78,7 @@ export default function ConsultationPage() {
       <ConsultationConversation/>
 
     </main>
+    </>
+    
   );
 }

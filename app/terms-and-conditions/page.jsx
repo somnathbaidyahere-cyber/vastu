@@ -1,9 +1,36 @@
 import React from "react";
+import { seoConfig } from "@/lib/seo/config";
 
 export const metadata = {
-  title: "Terms & Conditions | VastuGuru",
+  title: "Terms & Conditions",
   description:
     "Review the terms governing the use of VastuGuru services, tools, and content.",
+
+  alternates: {
+    canonical: "/terms",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Terms & Conditions",
+    description:
+      "Review the terms governing the use of VastuGuru services, tools, and content.",
+    url: "/terms",
+    siteName: seoConfig.siteName,
+    type: "website",
+    locale: seoConfig.locale,
+  },
+
+  twitter: {
+    card: "summary",
+    title: "Terms & Conditions",
+    description:
+      "Review the terms governing the use of VastuGuru services, tools, and content.",
+  },
 };
 
 const emailAddress = process.env.NEXT_PUBLIC_EMAIL;

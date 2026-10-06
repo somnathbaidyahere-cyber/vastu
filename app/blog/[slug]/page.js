@@ -15,11 +15,10 @@ import RelatedArticles from "@/components/pages/blogSlug/RelatedArticles";
 import ConsultationBridge from "@/components/pages/contact/ConsultationBridge";
 import BlogFinalCTA from "@/components/pages/blogSlug/function BlogFinalCTA";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
-
-const siteName = "VastuGuru";
-
-const organizationId = `${siteUrl}/#organization`;
+import JsonLd from "@/components/seo/JsonLd";
+import { getBreadcrumbSchema, getBlogPostingSchema } from "@/lib/seo/schemas";
+import { schemaIds } from "@/lib/seo/ids";
+import { seoConfig } from "@/lib/seo/config";
 
 // Static Params Useful when blogs are stored locally.
 
@@ -39,9 +38,8 @@ export async function generateMetadata({ params }) {
 
   if (!article) {
     return {
-      title: "Article unavailable | VastuGuru",
+      title: "Article unavailable",
       description: "This VastuGuru article is unavailable.",
-
       robots: {
         index: false,
         follow: false,
@@ -51,23 +49,24 @@ export async function generateMetadata({ params }) {
 
   const seo = getSeoForBlog(article);
 
-  const canonicalUrl = `${siteUrl}/blog/${article.slug}`;
+  const canonicalUrl = `${seoConfig.siteUrl}/blog/${article.slug}`;
 
   const imageUrl = article.coverImage?.startsWith("http")
     ? article.coverImage
-    : `${siteUrl}${article.coverImage}`;
+    : `${seoConfig.siteUrl}${article.coverImage}`;
 
   return {
     title: seo.title,
     description: seo.description,
 
     alternates: {
-      canonical: canonicalUrl,
+      canonical: `/blog/${article.slug}`,
     },
 
     robots: {
       index: true,
       follow: true,
+
       googleBot: {
         index: true,
         follow: true,
@@ -81,13 +80,15 @@ export async function generateMetadata({ params }) {
       title: seo.title,
       description: seo.description,
       url: canonicalUrl,
-      siteName,
+
+      siteName: seoConfig.siteName,
       type: "article",
-      locale: "en_IN",
+      locale: seoConfig.locale,
 
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt || article.publishedAt,
-      authors: [article.author],
+
+      authors: article.author ? [article.author] : undefined,
       section: article.category,
 
       images: [
@@ -104,13 +105,12 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
-
       images: [imageUrl],
     },
   };
 }
 
-  //  JSON-LD Helpers
+//  JSON-LD Helpers
 function getAbsoluteImageUrl(imagePath) {
   if (!imagePath) return `${siteUrl}/og/blog.jpg`;
 
@@ -237,9 +237,41 @@ export default async function BlogArticlePage({ params }) {
 
   const toc = getArticleHeadings(article.body || []);
 
+  const canonicalUrl = `${seoConfig.siteUrl}/blog/${article.slug}`;
+
+  const imageUrl = article.coverImage?.startsWith("http")
+    ? article.coverImage
+    : `${seoConfig.siteUrl}${article.coverImage}`;
+
+  const blogPostingSchema = getBlogPostingSchema({
+    article,
+    canonicalUrl,
+    imageUrl,
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    {
+      name: "Home",
+      url: seoConfig.siteUrl,
+    },
+    {
+      name: "Blog",
+      url: `${seoConfig.siteUrl}/blog`,
+    },
+    {
+      name: article.title,
+      url: canonicalUrl,
+    },
+  ]);
+
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [blogPostingSchema, breadcrumbSchema],
+  };
+
   return (
     <>
-      <StructuredData article={article} />
+      <JsonLd data={pageSchema} />
 
       <main className="min-h-screen bg-background">
         <BlogBreadcrumb article={article} />
