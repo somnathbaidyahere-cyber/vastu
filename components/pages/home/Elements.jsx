@@ -9,7 +9,7 @@ export default function Elements() {
             <span className="section-badge">
               The Panchabhutas
             </span>
-            <h2 className="mt-3 text-3xl font-heading font-medium text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               Balance the five elements
             </h2>
             <p className="section-description">

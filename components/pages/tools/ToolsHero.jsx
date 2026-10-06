@@ -10,7 +10,7 @@ export default function ToolsHero() {
             <Compass className="h-3.5 w-3.5" />
             Vastu Toolkit
           </span>
-          <h1 className="hero-heading ">
+          <h1 className="hero-heading">
             Tools that translate{" "}
             <span className="text-gradient-brand">shastra</span> into action
           </h1>

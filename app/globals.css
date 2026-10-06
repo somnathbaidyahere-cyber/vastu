@@ -221,7 +221,7 @@ body {
     @apply mt-3 text-2xl sm:text-3xl md:text-[32px] font-heading font-medium text-foreground ;
   }
   .section-description {
-    @apply mt-4 text-sm md:text-base lg:text-lg text-foreground-muted;
+    @apply mt-2 md:mt-3 lg:mt-4 text-sm md:text-base lg:text-lg text-foreground-muted;
   }
    .section-para {
     @apply mt-2 md:mt-3 text-sm md:text-base text-foreground-muted;
