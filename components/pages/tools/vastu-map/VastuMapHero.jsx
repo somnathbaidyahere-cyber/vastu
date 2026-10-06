@@ -4,7 +4,7 @@ import VastuMapGrid from "./VastuMapGrid";
 
 export default function VastuMapHero() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
+    <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
         {/* Content */}
         <div className="lg:col-span-7">
@@ -24,7 +24,7 @@ export default function VastuMapHero() {
           </p>
 
           {/* Context note */}
-          <div className="mt-6 flex items-start gap-3 border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted-foreground">
+          <div className="mt-6 hidden md:flex items-start gap-3 border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted-foreground">
             {/* <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" /> */}
             <Grid3X3 className="h-4 w-4 shrink-0" />
 

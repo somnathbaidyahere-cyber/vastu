@@ -29,7 +29,7 @@ function Footer() {
       </Link>
 
       {/* Brief Description */}
-      <p className="mt-4 text-xs md:text-sm lg:text-base leading-relaxed text-muted-foreground">
+      <p className="mt-4 text-sm lg:text-base leading-relaxed text-muted-foreground">
         Ancient Vastu wisdom for modern, harmonious living. Tools,
         learning, and expert guidance for every home.
       </p>
@@ -77,7 +77,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Tools
             </h4>
-            <ul className="mt-4 space-y-2text-xs md:text-sm lg:text-base text-muted-foreground">
+            <ul className="mt-4 space-y-2text-xs text-sm lg:text-base text-muted-foreground">
               <li>
                 <a href="/tools/compass" className="hover:text-primary">
                   Vastu Compass
@@ -99,7 +99,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Learn
             </h4>
-            <ul className="mt-4 space-y-2text-xs md:text-sm lg:text-base text-muted-foreground">
+            <ul className="mt-4 space-y-2text-xs text-sm lg:text-base text-muted-foreground">
               <li>
                 <Link href="/learn/fundamentals" className="hover:text-primary">
                   Fundamentals
@@ -131,7 +131,7 @@ function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Company
             </h4>
-            <ul className="mt-4 space-y-2text-xs md:text-sm lg:text-base text-muted-foreground">
+            <ul className="mt-4 space-y-2text-xs text-sm lg:text-base text-muted-foreground">
               <li>
                 <a href="/about" className="hover:text-primary">
                   About Us

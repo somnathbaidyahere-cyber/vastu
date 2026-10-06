@@ -4,7 +4,7 @@ import CompassDiagram from "@/components/ui/CompassDiagram";
 
 function CompassHero() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
+    <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-border  px-4 py-1.5 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-primary">
