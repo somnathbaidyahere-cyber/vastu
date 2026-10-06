@@ -14,25 +14,25 @@ import {
 } from "@/lib/seo/schemas";
 import { seoConfig } from "@/lib/seo/config";
 
-const pageTitle = "Vastu for Spaces — Room-by-Room Guidance";
+const pageTitle = "Vastu for Rooms — Room-by-Room Guidance";
 
 const pageDescription =
   "Explore practical Vastu guidance for kitchens, bedrooms, pooja rooms, bathrooms, staircases, studies, and other spaces in the home.";
 
-const canonicalUrl = `${seoConfig.siteUrl}/learn/spaces`;
+const canonicalUrl = `${seoConfig.siteUrl}/learn/rooms`;
 
 export const metadata = {
   title: pageTitle,
   description: pageDescription,
 
   alternates: {
-    canonical: "/learn/spaces",
+    canonical: "/learn/rooms",
   },
 
   openGraph: {
     title: pageTitle,
     description: pageDescription,
-    url: "/learn/spaces",
+    url: "/learn/rooms",
     siteName: seoConfig.siteName,
     type: "website",
     locale: seoConfig.locale,
@@ -55,7 +55,7 @@ export default function RoomsPage() {
     const roomsSchema = getWebPageSchema({
     id: `${canonicalUrl}#webpage`,
     url: canonicalUrl,
-    name: "Vastu for Spaces",
+    name: "Vastu for Rooms",
     description: pageDescription,
   });
 
@@ -69,7 +69,7 @@ export default function RoomsPage() {
       url: `${seoConfig.siteUrl}/learn`,
     },
     {
-      name: "Vastu for Spaces",
+      name: "Rooms",
       url: canonicalUrl,
     },
   ]);

@@ -5,7 +5,6 @@ import Tools from "@/components/pages/tools/Tools";
 
 import JsonLd from "@/components/seo/JsonLd";
 import { getWebPageSchema } from "@/lib/seo/schemas";
-import { schemaIds } from "@/lib/seo/ids";
 import { seoConfig } from "@/lib/seo/config";
 
 //  SEO

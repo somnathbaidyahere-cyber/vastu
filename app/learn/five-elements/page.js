@@ -70,7 +70,7 @@ export default function FiveElementsPage() {
       url: `${seoConfig.siteUrl}/learn`,
     },
     {
-      name: "Five Elements of Vastu",
+      name: "Five Elements",
       url: canonicalUrl,
     },
   ]);

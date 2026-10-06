@@ -67,7 +67,7 @@ export default function SpacesPage() {
       url: `${seoConfig.siteUrl}/learn`,
     },
     {
-      name: "Vastu for Spaces",
+      name: "Spaces",
       url: canonicalUrl,
     },
   ]);

@@ -17,7 +17,6 @@ import BlogFinalCTA from "@/components/pages/blogSlug/function BlogFinalCTA";
 
 import JsonLd from "@/components/seo/JsonLd";
 import { getBreadcrumbSchema, getBlogPostingSchema } from "@/lib/seo/schemas";
-import { schemaIds } from "@/lib/seo/ids";
 import { seoConfig } from "@/lib/seo/config";
 
 // Static Params Useful when blogs are stored locally.
@@ -51,9 +50,11 @@ export async function generateMetadata({ params }) {
 
   const canonicalUrl = `${seoConfig.siteUrl}/blog/${article.slug}`;
 
-  const imageUrl = article.coverImage?.startsWith("http")
-    ? article.coverImage
-    : `${seoConfig.siteUrl}${article.coverImage}`;
+  const imageUrl = article.coverImage
+    ? article.coverImage.startsWith("http")
+      ? article.coverImage
+      : `${seoConfig.siteUrl}${article.coverImage}`
+    : `${seoConfig.siteUrl}/og/blog.jpg`;
 
   return {
     title: seo.title,
@@ -110,124 +111,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-//  JSON-LD Helpers
-function getAbsoluteImageUrl(imagePath) {
-  if (!imagePath) return `${siteUrl}/og/blog.jpg`;
-
-  return imagePath.startsWith("http") ? imagePath : `${siteUrl}${imagePath}`;
-}
-
-function createStructuredData(article) {
-  const canonicalUrl = `${siteUrl}/blog/${article.slug}`;
-
-  const imageUrl = getAbsoluteImageUrl(article.coverImage);
-
-  const breadcrumbItems = [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: siteUrl,
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Blog",
-      item: `${siteUrl}/blog`,
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: article.category,
-      item: `${siteUrl}/blog?category=${encodeURIComponent(article.category)}`,
-    },
-    {
-      "@type": "ListItem",
-      position: 4,
-      name: article.title,
-      item: canonicalUrl,
-    },
-  ];
-
-  return {
-    "@context": "https://schema.org",
-
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: siteName,
-        url: siteUrl,
-        logo: {
-          "@type": "ImageObject",
-          url: `${siteUrl}/logo.png`,
-        },
-      },
-
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${canonicalUrl}#breadcrumb`,
-        itemListElement: breadcrumbItems,
-      },
-
-      {
-        "@type": "BlogPosting",
-        "@id": `${canonicalUrl}#article`,
-
-        headline: article.title,
-        description: article.excerpt,
-        image: [imageUrl],
-
-        url: canonicalUrl,
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": canonicalUrl,
-        },
-
-        author: {
-          "@type": "Organization",
-          name: article.author || siteName,
-          url: siteUrl,
-        },
-
-        publisher: {
-          "@id": organizationId,
-        },
-
-        datePublished: article.publishedAt,
-        dateModified: article.updatedAt || article.publishedAt,
-
-        articleSection: article.category,
-        inLanguage: "en-IN",
-
-        isPartOf: {
-          "@type": "Blog",
-          "@id": `${siteUrl}/blog#blog`,
-          name: `${siteName} Blog`,
-          url: `${siteUrl}/blog`,
-        },
-      },
-    ],
-  };
-}
-
-function StructuredData({ article }) {
-  const structuredData = createStructuredData(article);
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
-      }}
-    />
-  );
-}
-
 export default async function BlogArticlePage({ params }) {
   const { slug } = await params;
 
   const article = await getBlogBySlug(slug);
+  
 
   if (!article) {
     notFound();
@@ -239,9 +127,11 @@ export default async function BlogArticlePage({ params }) {
 
   const canonicalUrl = `${seoConfig.siteUrl}/blog/${article.slug}`;
 
-  const imageUrl = article.coverImage?.startsWith("http")
+  const imageUrl = article.coverImage
+  ? article.coverImage.startsWith("http")
     ? article.coverImage
-    : `${seoConfig.siteUrl}${article.coverImage}`;
+    : `${seoConfig.siteUrl}${article.coverImage}`
+  : `${seoConfig.siteUrl}/og/blog.jpg`;
 
   const blogPostingSchema = getBlogPostingSchema({
     article,

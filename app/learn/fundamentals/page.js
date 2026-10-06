@@ -71,7 +71,7 @@ export default function FundamentalsPage() {
       url: `${seoConfig.siteUrl}/learn`,
     },
     {
-      name: "Vastu Shastra Fundamentals",
+      name: "Fundamentals",
       url: canonicalUrl,
     },
   ]);
