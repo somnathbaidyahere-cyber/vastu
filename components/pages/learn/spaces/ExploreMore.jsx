@@ -62,7 +62,7 @@ export default function ExploreMore() {
                   {item.title}
                 </h3>
 
-                <p className=" text-sm text-muted-foreground">
+                <p className="section-para">
                   {item.description}
                 </p>
 

@@ -211,7 +211,7 @@ export default function DirectionSpace() {
                 </span>
               </div>
 
-              <p className="mt-8 text-sm md:text-base leading-relaxed text-muted-foreground">
+              <p className="mt-8 section-para">
                 {selectedDirection.summary}
               </p>
 
