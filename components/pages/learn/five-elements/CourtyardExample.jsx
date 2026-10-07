@@ -24,13 +24,13 @@ export default function CourtyardExample() {
             The courtyard house
           </h2>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-xl section-para">
             Nowhere are the five elements easier to see than in the traditional
             courtyard home. An open centre holds space. Verandas let air move
             freely. Water, fire and earth each have their own physical role.
           </p>
 
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-xl section-para">
             The courtyard form gives each element room to perform its role
             without turning the house into a collection of isolated rules.
           </p>

@@ -24,7 +24,7 @@ export default function FiveElementsIntro() {
         Five substances, one home
       </h2>
 
-      <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
+      <div className="mt-6 space-y-5 section-para">
         <p>
           Classical Indian thought describes the physical world as a
           combination of five elements — earth, water, fire, air and space.
