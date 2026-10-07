@@ -1,84 +1,90 @@
 import ConsultationHero from "@/components/pages/consultation/ConsultationHero";
-import ConsultationRelevance from "@/components/pages/consultation/ConsultationRelevance";
-import ConsultationScope from "@/components/pages/consultation/ConsultationScope";
-import ConsultationApproach from "@/components/pages/consultation/ConsultationApproach";
-import ConsultationPreparation from "@/components/pages/consultation/ConsultationPreparation";
-import ConsultationProcess from "@/components/pages/consultation/ConsultationProcess";
-import ConsultationConversation from "@/components/pages/consultation/ConsultationConversation"
+import WhatYouGet from "@/components/pages/consultation/WhatYouGet";
+import StartWithWhatYouHave from "@/components/pages/consultation/StartWithWhatYouHave";
+import ConversationStarter from "@/components/pages/consultation/ConversationStarter";
+import FinalCta from "@/components/pages/consultation/FinalCta";
 
-import JsonLd from "@/components/seo/JsonLd";
-import { getWebPageSchema } from "@/lib/seo/schemas";
-import { seoConfig } from "@/lib/seo/config";
+const title = "Vastu Consultation for Your Home | VastuGuru";
 
-const pageTitle = "Vastu Consultation — Personalized Guidance for Your Home";
-
-const pageDescription =
-  "Get personalized Vastu consultation and guidance for your home. Discuss your space, understand its Vastu considerations, and explore practical recommendations.";
-
-const canonicalUrl = `${seoConfig.siteUrl}/consultation`;
+const description =
+  "Start a Vastu consultation for a new build, renovation, move, or existing home. No lengthy forms — begin with a simple conversation about your space.";
 
 export const metadata = {
-  title: pageTitle,
-  description: pageDescription,
+  title,
+  description,
 
   alternates: {
     canonical: "/consultation",
   },
 
   openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: "/consultation",
-    siteName: seoConfig.siteName,
+    title,
+    description,
     type: "website",
-    locale: seoConfig.locale,
+    url: "/consultation",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-  },
-
-  robots: {
-    index: true,
-    follow: true,
+    title,
+    description,
   },
 };
 
 export default function ConsultationPage() {
-    const consultationSchema = getWebPageSchema({
-    id: `${canonicalUrl}#webpage`,
-    url: canonicalUrl,
-    name: "Vastu Consultation",
-    description: pageDescription,
-  });
+  const breadcrumbSchema = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Consultation",
+        item: "/consultation",
+      },
+    ],
+  };
 
-  const pageSchema = {
+  const serviceSchema = {
+    "@type": "Service",
+    name: "Vastu Consultation",
+    description,
+    provider: {
+      "@type": "Organization",
+      name: "VastuGuru",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+  };
+
+  const structuredData = {
     "@context": "https://schema.org",
-    "@graph": [consultationSchema],
+    "@graph": [breadcrumbSchema, serviceSchema],
   };
 
   return (
     <>
-    <JsonLd data={pageSchema} />
-    <main className="min-h-screen bg-background">
-      <ConsultationHero />
+      <main>
+        <ConsultationHero />
+        <WhatYouGet />
+        <StartWithWhatYouHave />
+        <ConversationStarter />
+        <FinalCta />
+      </main>
 
-      <ConsultationRelevance />
-
-      <ConsultationScope />
-
-      <ConsultationApproach />
-
-      <ConsultationPreparation />
-
-      <ConsultationProcess />
-
-      <ConsultationConversation/>
-
-    </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
     </>
-    
   );
 }
