@@ -83,7 +83,7 @@ export default function RoomExplorer() {
                       {room.name}
                     </h3>
 
-                    <p className="mt-1 text-sm text-muted-foreground">
+                    <p className="mt-1 section-para">
                       {room.purpose}
                     </p>
 
