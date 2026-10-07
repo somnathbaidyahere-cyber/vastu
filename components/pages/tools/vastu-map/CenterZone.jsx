@@ -6,7 +6,7 @@ export default function CenterZone() {
     <section className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-20">
         {/* Visual */}
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-6 md:mx-auto md:w-[50%] lg:mx-0 lg:w-full">
           <div
             className="
       relative

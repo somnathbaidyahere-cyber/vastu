@@ -22,9 +22,9 @@ export default function ApplyToYourHome() {
         </div>
 
         {/* Visual + instructions */}
-        <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-center">
+        <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-center ">
           {/* Floor plan visual */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 md:mx-auto md:w-[60%] lg:mx-0 lg:w-full">
             <div
               className="
       relative
