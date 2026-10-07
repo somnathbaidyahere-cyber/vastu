@@ -27,7 +27,7 @@ function DirectionExplorer() {
           </div>
 
           <div className="mt-12 grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="md:mx-auto md:w-[70%] lg:col-span-7 lg:mx-0 lg:w-full">
+            <div className="md:mx-auto md:w-[60%] lg:col-span-7 lg:mx-0 lg:w-full">
               <CompassDiagram
                 selectedId={selectedId}
                 onSelect={setSelectedId}
