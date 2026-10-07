@@ -31,9 +31,9 @@ export default function ClosingStatement() {
       "
         >
           {/* Decorative gradients */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_10%)]" />
 
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_10%)]" />
 
           {/* Content */}
           <div
@@ -51,7 +51,7 @@ export default function ClosingStatement() {
                 “Every space has its own questions.”
               </h2>
 
-              <p className=" cta-description text-left">
+              <p className=" cta-description text-left text-white lg:text-surface">
                 Whatever you are curious about, your questions can start
                 anywhere. We are ready when you are.
               </p>

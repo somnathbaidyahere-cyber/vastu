@@ -54,7 +54,7 @@ export default function RoomRelationship() {
                 variant="ghost"
                 aria-pressed={activeSequence.id === sequence.id}
                 onClick={() => setActiveSequence(sequence)}
-                className={`h-auto flex-1 justify-start whitespace-normal rounded-sm border px-5 py-4 text-left ${
+                className={`h-auto flex-1 section-para justify-start whitespace-normal rounded-sm border px-5 py-4 text-left ${
                   activeSequence.id === sequence.id
                     ? "border-primary bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground"
                     : "border-border/60 bg-card text-foreground hover:bg-secondary"
@@ -75,7 +75,7 @@ export default function RoomRelationship() {
                   key={room}
                   className="flex items-center gap-3 sm:gap-5"
                 >
-                  <div className="flex h-24 min-w-24 items-center justify-center border border-primary/35 bg-secondary/40 px-4 text-center text-sm font-medium text-foreground sm:h-32 sm:min-w-32">
+                  <div className="flex h-24 min-w-24 items-center justify-center border border-primary/35 bg-secondary/40 px-4 text-center section-para sm:h-32 sm:min-w-32">
                     {room}
                   </div>
 

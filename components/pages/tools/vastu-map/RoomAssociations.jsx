@@ -58,7 +58,7 @@ export default function RoomAssociations() {
             </h2>
           </div>
 
-          <p className="max-w-xl text-sm md:text-base text-foreground-muted leading-relaxed lg:col-span-5">
+          <p className="max-w-xl section-description lg:col-span-5">
             Vastu traditionally associates certain spaces and activities with
             particular zones. Use these as broad reference points, not fixed
             rules for every home.

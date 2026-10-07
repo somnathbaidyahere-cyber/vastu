@@ -23,7 +23,7 @@ export default function FinalCTASection() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_100%)]" />
           <div className="relative">
             <h2 className="cta-heading">Now read it on your own home</h2>
-            <p className="cta-description">
+            <p className="mx-auto cta-description">
               The fundamentals only settle once you apply them. Open the toolkit
               and walk your plan with the compass and the mandala.
             </p>

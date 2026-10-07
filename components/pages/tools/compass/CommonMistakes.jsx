@@ -26,7 +26,7 @@ function CommonMistakes() {
                     0{index + 1}
                   </span>
                   <X className="h-4 w-4 shrink-0 text-orange-400" />
-                  <span className="text-foreground/85">{mistake}</span>
+                  <span className="section-para text-foreground/85">{mistake}</span>
                 </li>
               ))}
             </ul>

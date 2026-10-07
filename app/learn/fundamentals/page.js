@@ -11,10 +11,7 @@ import FAQ from "@/components/ui/FAQ";
 import { faqs, learningPath } from "@/data/fundamentals";
 
 import JsonLd from "@/components/seo/JsonLd";
-import {
-  getWebPageSchema,
-  getBreadcrumbSchema,
-} from "@/lib/seo/schemas";
+import { getWebPageSchema, getBreadcrumbSchema } from "@/lib/seo/schemas";
 import { seoConfig } from "@/lib/seo/config";
 
 const pageTitle = "Vastu Shastra Fundamentals — Learn the Basics";
@@ -54,7 +51,7 @@ export const metadata = {
 };
 
 export default function FundamentalsPage() {
-    const fundamentalsSchema = getWebPageSchema({
+  const fundamentalsSchema = getWebPageSchema({
     id: `${canonicalUrl}#webpage`,
     url: canonicalUrl,
     name: "Vastu Shastra Fundamentals",
@@ -83,22 +80,20 @@ export default function FundamentalsPage() {
 
   return (
     <>
-     <JsonLd data={pageSchema} />
+      <JsonLd data={pageSchema} />
 
-        <main className="min-h-screen bg-background">
-      <Breadcrumbs />
-      <FundamentalsHero />
-      <IntroductionSection />
-      <LearningPathSection />
-      <CoreConceptsSection />
-      <DirectionsSection />
-      <InteractiveToolsSection />
-      <MoreFundamentalsSection />
-      <FAQ faqs={faqs} />
-      <FinalCTASection />
-    </main>
-
+      <main className="min-h-screen bg-background">
+        <Breadcrumbs />
+        <FundamentalsHero />
+        <IntroductionSection />
+        <LearningPathSection />
+        <CoreConceptsSection />
+        <DirectionsSection />
+        <InteractiveToolsSection />
+        <MoreFundamentalsSection />
+        <FAQ faqs={faqs} />
+        <FinalCTASection />
+      </main>
     </>
-
   );
 }

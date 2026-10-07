@@ -48,7 +48,7 @@ export default function Hero() {
               <span className="md:hidden text-surface-muted">ancient wisdom</span>
             </h1>
             <p className="mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-surface md:text-surface-accent">
-              VastuVeda blends traditional Indian Vastu Shastra with elegant,
+              VastuGuru blends traditional Indian Vastu Shastra with elegant,
               modern tools to help you create balanced, prosperous, and peaceful
               homes.
             </p>

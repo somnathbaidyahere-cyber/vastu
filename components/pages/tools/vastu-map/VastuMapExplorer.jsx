@@ -65,6 +65,7 @@ export default function VastuMapExplorer() {
         lg:border-r
         lg:px-12
         lg:py-14
+        md:mx-auto md:w-[60%] lg:mx-0 lg:w-full
       "
             >
               {/* Ambient geometry */}

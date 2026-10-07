@@ -55,7 +55,7 @@ export default function VastuMapHero() {
         </div>
 
         {/* Map visual */}
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5 md:mx-auto md:w-[50%] lg:mx-0 lg:w-full">
           <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-88 md:max-w-104 lg:max-w-2xl">
             <div className="absolute inset-0 -z-10 rounded-full bg-primary/5 blur-3xl" />
 

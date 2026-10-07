@@ -2,15 +2,16 @@ import {
   Building2,
   FileUp,
   HelpCircle,
-  Image,
+  Camera,
   MapPin,
 } from "lucide-react";
+import Image from "next/image";
 
 const preparation = [
   [MapPin, "Location", "City and local context"],
   [FileUp, "Floor plan", "A clear plan, if available"],
   [Building2, "Orientation", "A north mark or compass reference"],
-  [Image, "Photos", "Useful views of key spaces"],
+  [Camera, "Photos", "Useful views of key spaces"],
   [HelpCircle, "Questions", "What you most want to resolve"],
 ];
 
@@ -18,14 +19,14 @@ export default function ConsultationPreparation() {
   return (
     <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
-        <div className="relative lg:col-span-7">
-          <img
+        <div className="relative lg:col-span-7 md:w-[70%] md:mx-auto lg:w-full lg:mx-0">
+          <Image
             src="/rooms/floor-plan.webp"
             alt="Architectural floor plan with drawing tools and material references"
             loading="lazy"
             width={1024}
             height={768}
-            className="aspect-[4/3] w-full object-cover"
+            className="aspect-4/3 w-full object-cover"
           />
 
           <div

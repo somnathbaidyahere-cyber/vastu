@@ -12,14 +12,14 @@ function DirectionExplorer() {
   return (
      <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="grid lg:gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <SectionLabel number="03">Explore the compass</SectionLabel>
               <h2 className="section-heading">
                 The eight Vastu directions
               </h2>
             </div>
-            <p className="max-w-xl text-muted-foreground lg:col-span-5">
+            <p className="max-w-xl section-description lg:col-span-5">
               Select a direction to explore its traditional association and
               broad planning guidance. These are educational principles, not a
               diagnosis of your home.
@@ -27,7 +27,7 @@ function DirectionExplorer() {
           </div>
 
           <div className="mt-12 grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-7">
+            <div className="md:mx-auto md:w-[60%] lg:col-span-7 lg:mx-0 lg:w-full">
               <CompassDiagram
                 selectedId={selectedId}
                 onSelect={setSelectedId}
@@ -49,14 +49,14 @@ function DirectionExplorer() {
                 <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-accent">
                   {selected.theme}
                 </p>
-                <p className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 leading-relaxed text-muted-foreground">
+                <p className="section-para">
                   {selected.association}
                 </p>
                 <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 border-t border-border pt-6">
                   <p className="text-xs font-semibold uppercase tracking-widest text-primary">
                     General guidance
                   </p>
-                  <p className="mt-3 leading-relaxed text-foreground/80">
+                  <p className="section-para text-foreground/80">
                     {selected.guidance}
                   </p>
                 </div>

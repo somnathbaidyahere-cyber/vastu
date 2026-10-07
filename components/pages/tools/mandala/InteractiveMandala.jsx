@@ -53,7 +53,7 @@ export default function InteractiveMandala() {
     <div className="mt-10 grid gap-10 lg:mt-14 lg:grid-cols-12 lg:items-center lg:gap-14">
 
       {/* Mandala */}
-      <div className="lg:col-span-6">
+      <div className="lg:col-span-6 md:mx-auto md:w-[50%] lg:mx-0 lg:w-[70%]">
         <div
           className="
             relative
@@ -125,7 +125,7 @@ export default function InteractiveMandala() {
           </p>
 
           {/* Meaning */}
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:mt-7 sm:text-base">
+          <p className="max-w-md section-para">
             {activeZone.meaning}
           </p>
 

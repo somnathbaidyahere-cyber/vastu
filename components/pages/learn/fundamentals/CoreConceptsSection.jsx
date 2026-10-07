@@ -15,7 +15,7 @@ export default function CoreConceptsSection() {
         Six ideas the rest of Vastu rests on
       </h2>
 
-      <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+      <p className="max-w-xl section-description">
         These are the principles that give Vastu its structure. Understand
         them first, and the rules that follow become much easier to read.
       </p>
@@ -49,7 +49,7 @@ export default function CoreConceptsSection() {
               {sanskrit}
             </p>
 
-            <p className="mt-4 text-sm leading-6 text-muted-foreground">
+            <p className="section-para">
               {body}
             </p>
           </div>

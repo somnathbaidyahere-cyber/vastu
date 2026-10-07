@@ -6,7 +6,7 @@ export default function CenterZone() {
     <section className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-20">
         {/* Visual */}
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-6 md:mx-auto md:w-[50%] lg:mx-0 lg:w-full">
           <div
             className="
       relative
@@ -114,7 +114,7 @@ export default function CenterZone() {
 
           <h2 className="section-heading">Keep the center in context</h2>
 
-          <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
+          <p className="max-w-xl section-description ">
             The central area of a Vastu layout is traditionally referred to as
             the Brahmasthan. In this simplified map, it acts as the central
             reference around which the eight directions are arranged.

@@ -34,7 +34,7 @@ function CompassHero() {
           </a>
         </div>
 
-        <div className="lg:col-span-5">
+        <div className="md:mx-auto md:w-[60%] lg:col-span-5 lg:mx-0 lg:w-full">
           <CompassDiagram selectedId="" onSelect={null} decorative />
         </div>
       </div>

@@ -243,7 +243,7 @@ function SystemNode({ label, description }) {
       "
     >
       <p className="text-[11px] font-medium leading-tight sm:text-sm">{label}</p>
-      <p className="mt-0.5 text-[8px] text-primary-foreground/60 sm:text-[10px]">
+      <p className="mt-0.5 text-[8px] text-primary-foreground/60 sm:text-xs">
         {description}
       </p>
     </div>

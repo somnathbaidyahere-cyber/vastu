@@ -42,11 +42,11 @@ export default function MoreFundamentalsSection() {
                 {article.kicker}
               </p>
 
-              <h3 className="mt-2 min-h-[3.5rem] text-lg font-medium leading-7 text-foreground">
+              <h3 className="mt-2 min-h-14 text-lg font-medium leading-7 text-foreground">
                 {article.title}
               </h3>
 
-              <p className="mt-2 min-h-[5rem] text-sm leading-relaxed text-muted-foreground">
+              <p className=" min-h-20 section-para">
                 {article.body}
               </p>
 

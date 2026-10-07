@@ -33,10 +33,10 @@ export const faqs = [
 
 
 export const learningPath = [
-  { n: "01", title: "What Vastu actually claims", body: "Separate the shastra's structural logic from later folklore. Learn what the texts say about light, air, weight and proportion — and what they never claimed at all.", meta: "6 min read · Orientation" },
-  { n: "02", title: "The five elements in a plan", body: "Earth, water, fire, air and space are placed by nature, not preference. See where each belongs and why the south-east resists water and the north-east resists weight.", meta: "8 min read · Pancha Bhuta" },
-  { n: "03", title: "Reading the grid", body: "The plan is divided into padas — a grid that turns a vague floor plan into readable zones. Understand the 9×9 division and the sensitive joints within it.", meta: "9 min read · Mandala" },
-  { n: "04", title: "Applying it room by room", body: "Kitchen, bed, prayer, storage, stairs. The order a consultant walks a home, and which corrections genuinely matter first.", meta: "10 min read · Griha Vinyasa" },
+  { n: "01", title: "What Vastu actually claims",href:"fundamentals", body: "Separate the shastra's structural logic from later folklore. Learn what the texts say about light, air, weight and proportion — and what they never claimed at all.", meta: "6 min read · Orientation" },
+  { n: "02", title: "The five elements in a plan",href:"five-elements", body: "Earth, water, fire, air and space are placed by nature, not preference. See where each belongs and why the south-east resists water and the north-east resists weight.", meta: "8 min read · Pancha Bhuta" },
+  { n: "03", title: "Reading the grid",href:"/tools/mandala", body: "The plan is divided into padas — a grid that turns a vague floor plan into readable zones. Understand the 9×9 division and the sensitive joints within it.", meta: "9 min read · Mandala" },
+  { n: "04", title: "Applying it room by room",href:"rooms", body: "Kitchen, bed, prayer, storage, stairs. The order a consultant walks a home, and which corrections genuinely matter first.", meta: "10 min read · Griha Vinyasa" },
 ];
 
 export const concepts = [

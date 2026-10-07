@@ -76,7 +76,7 @@ export default function OrientHome() {
             {step.title}
           </h3>
 
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:mt-3 md:text-base">
+          <p className="section-para">
             {step.description}
           </p>
         </div>

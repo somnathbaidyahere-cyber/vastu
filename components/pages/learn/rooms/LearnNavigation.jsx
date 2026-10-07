@@ -9,7 +9,7 @@ export default function LearnNavigation() {
           Continue exploring
         </p>
 
-        <h2 className="mt-4 max-w-2xl text-3xl font-medium sm:text-4xl">
+        <h2 className="section-heading text-primary-foreground">
           See how orientation and elemental qualities become everyday space.
         </h2>
 
@@ -22,7 +22,7 @@ export default function LearnNavigation() {
 
             <h3 className="mt-7 text-lg font-medium">Directions</h3>
 
-            <p className="mt-2 text-sm text-primary-foreground/70">
+            <p className="mt-2 section-para text-primary-foreground/70">
               Understand spatial orientation
             </p>
           </Link>
@@ -35,7 +35,7 @@ export default function LearnNavigation() {
 
             <h3 className="mt-7 text-lg font-medium">Five Elements</h3>
 
-            <p className="mt-2 text-sm text-primary-foreground/70">
+            <p className="mt-2 section-para text-primary-foreground/70">
               Understand the qualities of space
             </p>
           </Link>
@@ -48,7 +48,7 @@ export default function LearnNavigation() {
 
             <h3 className="mt-7 text-lg font-medium">Rooms</h3>
 
-            <p className="mt-2 text-sm text-primary/70">
+            <p className="mt-2 section-para text-primary/70">
               Apply these ideas to everyday spaces
             </p>
           </a>

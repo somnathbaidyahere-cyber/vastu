@@ -23,7 +23,7 @@ export default function FiveElementsCTA() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_100%)]" />
           <div className="relative">
             <h2 className="cta-heading">See the elements in your own plan</h2>
-            <p className="cta-description">
+            <p className="mx-auto cta-description">
               Explore how the five elements map onto the zones of a space.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">

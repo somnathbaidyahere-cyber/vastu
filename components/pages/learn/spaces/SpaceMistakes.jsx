@@ -29,7 +29,7 @@ export default function SpaceMistakes() {
                 0{index + 1}
               </span>
 
-              <h3 className="font-medium sm:col-span-4">
+              <h3 className="mt-0 section-para font-medium sm:col-span-4">
                 {item.mistake}
               </h3>
 

@@ -13,7 +13,7 @@ export default function DirectionOrientation() {
           </h2>
         </div>
 
-        <div className="space-y-5 text-base leading-relaxed text-muted-foreground lg:col-span-8">
+        <div className="space-y-5 section-para lg:col-span-8">
           <p>
             Direction matters in Vastu because the sun&apos;s path, prevailing
             wind and the flow of natural light are not symmetric across a day.

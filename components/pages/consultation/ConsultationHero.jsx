@@ -1,47 +1,61 @@
-import { ArrowDown } from "lucide-react";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+
+const whatsappUrl =
+  "https://wa.me/918017449616?text=" +
+  encodeURIComponent(
+    "Hello VastuGuru, I would like to start a consultation about my space."
+  );
 
 export default function ConsultationHero() {
   return (
-    <header className="relative h-[90vh] overflow-hidden border-b border-border/60">
+    <section className="relative isolate overflow-hidden">
       <Image
         src="/heroImages/doorway.webp"
-        alt="A sequence of quiet stone doorways illuminated by natural light"
+        alt="A calm doorway with natural light opening into a home"
         width={1536}
         height={1024}
         fetchPriority="high"
+        preload
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-foreground/90 via-foreground/55 to-foreground/10" />
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl items-end px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
-        <div className="max-w-2xl text-primary-foreground">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">
-            Consultation
-          </p>
+      <div className="absolute inset-0 bg-linear-to-r from-foreground/90 via-foreground/55 to-foreground/30" />
 
-          <h1 className="hero-heading text-primary-foreground">
-            Have a space in mind?
-          </h1>
 
-          <p className="hero-description text-primary-foreground/85">
-            Bring us the home you are planning, changing, or trying to
-            understand. We’ll help you read it with clarity and practical
-            context.
-          </p>
+      <div className="relative mx-auto flex min-h-[78vh] max-w-5xl flex-col items-center justify-center px-4 py-28 text-center sm:px-6 lg:px-8">
+        <span className="text-sm font-medium uppercase tracking-widest text-surface">
+          Vastu Consultation
+        </span>
 
-          <a
-            href="#booking"
-            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary-foreground hero-btn font-medium text-primary transition-colors hover:shadow-divine-glow"
-          >
-            Book a consultation
-            <ArrowDown
-              className="h-4 w-4 transition-all duration-150 group-hover:translate-y-1"
-              aria-hidden="true"
-            />
-          </a>
-        </div>
+        <h1 className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-3xl font-heading leading-[1.15] text-primary-foreground/80 md:text-5xl">
+          Understand your home. Make decisions with confidence.
+        </h1>
+
+        <p className="mt-6 max-w-xl hero-description text-secondary">
+          A one-on-one consultation that reads your space through orientation,
+          layout, and context — and leaves you with clear, practical next
+          steps.
+        </p>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 inline-flex items-center gap-2 rounded-full bg-surface px-8 py-4 text-base font-medium text-brand-brown transition-all hover:bg-brand-cream hover:shadow-lg"
+        >
+          Start a consultation
+
+          <ArrowRight
+            className="h-4 w-4"
+            aria-hidden="true"
+          />
+        </a>
+
+        <p className="mt-5 text-sm text-secondary">
+          No lengthy forms. Start with a conversation.
+        </p>
       </div>
-    </header>
+    </section>
   );
 }

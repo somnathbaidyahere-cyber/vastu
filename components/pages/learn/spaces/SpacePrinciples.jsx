@@ -52,7 +52,7 @@ export default function SpacePrinciples() {
                       {principle.name}
                     </h3>
 
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    <p className="section-para">
                       {principle.note}
                     </p>
                   </div>

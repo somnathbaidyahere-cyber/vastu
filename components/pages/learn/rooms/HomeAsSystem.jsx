@@ -19,7 +19,7 @@ export default function HomeAsSystem() {
             joining separate spaces into one lived experience.
           </p>
 
-          <div className="mt-9 space-y-4 border-l border-primary/35 pl-6 text-sm text-muted-foreground">
+          <div className="mt-9 space-y-4 border-l border-primary/35 pl-6 section-para">
             <p>
               <span className="font-medium text-foreground">Movement</span>{" "}
               connects arrival to daily routines.

@@ -55,7 +55,7 @@ function DirectionGroup({ title, items }) {
         {title}
       </p>
 
-      <ul className="mt-3 space-y-2 text-sm text-foreground">
+      <ul className="mt-3 space-y-2 section-para">
         {items.map((direction) => (
           <li key={direction.code}>{direction.name}</li>
         ))}

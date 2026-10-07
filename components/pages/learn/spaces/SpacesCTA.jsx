@@ -69,7 +69,8 @@ export default function SpacesCTA() {
               hero-btn
               font-medium
               transition
-              text-surface-accent
+              text-surface
+              lg:text-surface/80
               hover:bg-primary-foreground/10
             "
               >

@@ -8,7 +8,7 @@ export default function LearningPathSection() {
       className="relative scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8 lg:py-28 overflow-hidden"
     >
       {/* Subtle Ambient Background Gradient (Optional for depth) */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-linear(ellipse_at_top,_var(--tw-linear-stops))] from-primary/5 via-transparent to-transparent opacity-70" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-linear(ellipse_at_top,var(--tw-linear-stops))] from-primary/5 via-transparent to-transparent opacity-70" />
 
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}

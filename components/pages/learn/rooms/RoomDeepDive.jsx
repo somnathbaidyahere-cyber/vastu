@@ -13,7 +13,7 @@ export default function RoomDeepDive() {
               Go deeper
             </p>
 
-            <h2 className="mt-3 text-3xl font-medium text-foreground sm:text-4xl">
+            <h2 className="section-heading">
               Room by room
             </h2>
           </div>
