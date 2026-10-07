@@ -30,7 +30,7 @@ export default function DirectionsSection() {
               >
                 {/* Soft Colored Ambient Glow Underlayer */}
                 <div
-                  className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${d.accentColor} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+                  className={`pointer-events-none absolute inset-0 bg-linear-to-br ${d.accentColor} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
                 />
 
                 {/* Card Content */}
@@ -51,7 +51,7 @@ export default function DirectionsSection() {
                     </dd>
                   </div>
 
-                  <dd className="mt-3 text-xs leading-relaxed text-muted-foreground/90">
+                  <dd className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground/90">
                     {d.note}
                   </dd>
                 </div>
