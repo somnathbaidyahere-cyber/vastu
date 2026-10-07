@@ -58,8 +58,8 @@ export default function ElementsSection() {
           </div>
 
           {/* Element visual */}
-          <div className="lg:col-span-6">
-            <div className="relative mx-auto aspect-square w-full max-w-[15rem] border border-primary/25 bg-background p-[8%] shadow-divine sm:max-w-[18rem] md:max-w-[20rem] lg:max-w-[24rem]">
+          <div className="lg:col-span-6 md:mx-auto md:w-[55%] lg:mx-auto lg:w-[80%] ">
+            <div className="relative mx-auto aspect-square border border-primary/25 bg-background p-[8%] shadow-divine ">
               <div className="absolute inset-[8%] grid grid-cols-3">
                 {zones.map((zone) => {
                   const isRelated = zone.element === selectedElement;

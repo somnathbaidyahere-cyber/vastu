@@ -14,15 +14,17 @@ export default function Brahmasthan() {
       </div>
 
       <div className="relative mx-auto max-w-3xl text-center">
-        <CircleDot className="mx-auto h-9 w-9 text-primary-foreground/70" />
 
-        <span className="mt-6 section-badge text-primary-foreground/60">
+        <span className="section-badge text-primary-foreground/80">
           05 · Brahmasthan
         </span>
 
-        <h2 className="mt-5 text-primary-foreground section-heading">
+        <h2 className=" text-primary-foreground section-heading">
           The quiet center
         </h2>
+
+        <CircleDot className="mt-6 mx-auto h-9 w-9 text-primary-foreground/70" />
+
 
         <p className="mx-auto mt-7 max-w-2xl section-description text-primary-foreground/75">
           Brahmasthan is the Mandala’s central field—the place from which

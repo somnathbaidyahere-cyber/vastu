@@ -33,7 +33,7 @@ export default function MandalaHero() {
 
     {/* Mandala visual */}
     <div
-      className="relative flex items-center justify-center lg:col-span-6"
+      className="relative flex items-center justify-center lg:col-span-6 md:mx-auto md:w-[50%] lg:mx-0 lg:w-full"
       aria-hidden="true"
     >
       <div className="relative w-full max-w-68 sm:max-w-84 md:max-w-[24rem] lg:max-w-116 xl:max-w-lg">

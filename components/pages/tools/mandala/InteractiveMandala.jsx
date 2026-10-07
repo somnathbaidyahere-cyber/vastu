@@ -53,7 +53,7 @@ export default function InteractiveMandala() {
     <div className="mt-10 grid gap-10 lg:mt-14 lg:grid-cols-12 lg:items-center lg:gap-14">
 
       {/* Mandala */}
-      <div className="lg:col-span-6">
+      <div className="lg:col-span-6 md:mx-auto md:w-[50%] lg:mx-0 lg:w-[70%]">
         <div
           className="
             relative
