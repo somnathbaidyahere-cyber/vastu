@@ -20,13 +20,13 @@ const startWith = [
 
 export default function StartWithWhatYouHave() {
   return (
-    <section className="border-t border-border/70 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="border-t border-border/70 px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <span className="section-badge">Start with what you have</span>
 
           <h2 className="section-heading">
-            You don&apos; need everything ready.
+            You don&apos;t need everything ready.
           </h2>
 
           <p className="section-description">
@@ -36,7 +36,7 @@ export default function StartWithWhatYouHave() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-3">
+        <div className="mt-8 md:mt-10 lg:mt-14 grid gap-6 md:gap-8 lg:gap-10 sm:grid-cols-3">
           {startWith.map((item) => {
             const Icon = item.icon;
             return (

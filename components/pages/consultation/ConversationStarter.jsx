@@ -21,50 +21,51 @@ const spaceTypes = [
 function buildWhatsappUrl({ name, spaceType, need }) {
   const lines = [
     "Hello VastuGuru, I would like to start a consultation.",
+    "",
+    `My space: ${spaceType}.`,
+    `What I'd like guidance on: ${need}`,
   ];
 
   if (name) {
-    lines.push(`My name is ${name}.`);
-  }
-
-  if (spaceType) {
-    lines.push(`My space: ${spaceType}.`);
-  }
-
-  if (need) {
-    lines.push(`What I'd like guidance on: ${need}`);
+    lines.splice(2, 0, `My name is ${name}.`);
   }
 
   return (
-    "https://wa.me/918017449616?text=" +
-    encodeURIComponent(lines.join("\n"))
+    "https://wa.me/918017449616?text=" + encodeURIComponent(lines.join("\n"))
   );
 }
 
 export default function ConversationStarter() {
   const [name, setName] = useState("");
   const [spaceType, setSpaceType] = useState("");
+  const [spaceOpen, setSpaceOpen] = useState(false);
   const [need, setNeed] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const cleanName = name.trim().slice(0, 100);
+    const cleanSpaceType = spaceType.trim();
+    const cleanNeed = need.trim().slice(0, 500);
+
+    if (!cleanSpaceType || !cleanNeed) {
+      return;
+    }
+
     const url = buildWhatsappUrl({
-      name: name.trim().slice(0, 100),
-      spaceType,
-      need: need.trim().slice(0, 500),
+      name: cleanName,
+      spaceType: cleanSpaceType,
+      need: cleanNeed,
     });
 
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <section className="relative bg-surface overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="relative bg-surface overflow-hidden px-4 py-14 sm:px-6 md:py-20 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <span className="section-badge">
-            Start a conversation
-          </span>
+          <span className="section-badge">Start a conversation</span>
 
           <h2 className="section-heading">
             Tell us what you need — in one minute.
@@ -72,24 +73,18 @@ export default function ConversationStarter() {
 
           <p className="section-description">
             Answer three quick questions and continue on WhatsApp. Nothing is
-            submitted or stored — your words go straight into your own
-            message.
+            submitted or stored — your words go straight into your own message.
           </p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="mt-12 space-y-8"
-        >
+        <form onSubmit={handleSubmit} className="mt-12 space-y-8">
           <div>
             <label
               htmlFor="consult-name"
               className="block text-sm font-medium text-foreground"
             >
               Your name{" "}
-              <span className="text-muted-foreground">
-                (optional)
-              </span>
+              <span className="text-muted-foreground">(optional)</span>
             </label>
 
             <input
@@ -103,7 +98,7 @@ export default function ConversationStarter() {
             />
           </div>
 
-          <div>
+          <div className="relative">
             <label
               htmlFor="consult-space-type"
               className="block text-sm font-medium text-foreground"
@@ -111,23 +106,70 @@ export default function ConversationStarter() {
               What kind of space is it?
             </label>
 
-            <select
+            <button
               id="consult-space-type"
-              value={spaceType}
-              onChange={(event) => setSpaceType(event.target.value)}
-              className="mt-2 w-full border-0 border-b border-border bg-transparent py-3 text-base text-foreground focus:border-primary focus:outline-none"
+              type="button"
+              onClick={() => setSpaceOpen((open) => !open)}
+              className="mt-2 flex w-full items-center justify-between rounded-xl border border-border/60 bg-surface/70 px-4 py-3.5 text-left text-base text-foreground shadow-sm transition-all duration-200 hover:border-primary/30 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/10"
+              aria-haspopup="listbox"
+              aria-expanded={spaceOpen}
             >
-              <option value="">Choose one…</option>
+              <span
+                className={
+                  spaceType ? "text-foreground" : "text-muted-foreground"
+                }
+              >
+                {spaceType || "Choose your space type"}
+              </span>
 
-              {spaceTypes.map((type) => (
-                <option
-                  key={type}
-                  value={type}
-                >
-                  {type}
-                </option>
-              ))}
-            </select>
+              <svg
+                className={`h-4 w-4 text-muted-foreground transition-transform duration-300 ${
+                  spaceOpen ? "rotate-180" : ""
+                }`}
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 7.5L10 12.5L15 7.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+
+            {/* Rolling dropdown */}
+            <div
+              className={`absolute left-0 right-0 top-full z-20 mt-2 origin-top overflow-hidden rounded-xl border border-border/60 bg-surface shadow-lg transition-all duration-300 ease-out ${
+                spaceOpen
+                  ? "max-h-96 translate-y-0 scale-y-100 opacity-100"
+                  : "pointer-events-none max-h-0 -translate-y-2 scale-y-95 opacity-0"
+              }`}
+            >
+              <div className="p-1.5" role="listbox">
+                {spaceTypes.map((type) => (
+                  <button
+                    key={type}
+                    type="button"
+                    role="option"
+                    aria-selected={spaceType === type}
+                    onClick={() => {
+                      setSpaceType(type);
+                      setSpaceOpen(false);
+                    }}
+                    className={`w-full rounded-lg px-4 py-3 text-left text-sm transition-colors ${
+                      spaceType === type
+                        ? "bg-primary/8 text-foreground"
+                        : "text-foreground hover:bg-primary/5"
+                    }`}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div>
@@ -142,6 +184,7 @@ export default function ConversationStarter() {
               id="consult-need"
               value={need}
               onChange={(event) => setNeed(event.target.value)}
+              required
               maxLength={500}
               rows={3}
               placeholder="A sentence or two is enough."
@@ -152,19 +195,11 @@ export default function ConversationStarter() {
           <div className="flex flex-col items-center gap-5 pt-2">
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-base font-medium text-primary-foreground transition-all hover:opacity-90 hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-base font-medium text-primary-foreground transition-all hover:opacity-90 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <MessageCircle
-                className="h-4 w-4"
-                aria-hidden="true"
-              />
-
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Continue on WhatsApp
-
-              <ArrowRight
-                className="h-4 w-4"
-                aria-hidden="true"
-              />
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>
 
             <p className="text-sm text-muted-foreground">
