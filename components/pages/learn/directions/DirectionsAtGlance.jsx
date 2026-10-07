@@ -90,7 +90,7 @@ export default function DirectionsAtGlance() {
                       </span>
                     </td>
 
-                    <td className="px-4 sm:px-6 py-4 text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground/90">
+                    <td className="px-4 sm:px-6 py-4 section-para transition-colors duration-300 group-hover:text-foreground/90">
                       {direction.quality}
                     </td>
                   </tr>

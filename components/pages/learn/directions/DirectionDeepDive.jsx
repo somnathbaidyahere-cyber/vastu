@@ -68,7 +68,7 @@ export default function DirectionDeepDive() {
 
   {/* Foreground Content */}
   <div className="relative z-10 flex flex-wrap items-start justify-between gap-6">
-    <div className="flex-1 min-w-[280px]">
+    <div className="flex-1 min-w-70">
       <p className="text-xs font-semibold uppercase tracking-widest text-primary">
         {activeDirection.sanskrit}
       </p>
@@ -78,8 +78,8 @@ export default function DirectionDeepDive() {
       </h3>
 
       {/* Reserved height wrapper to prevent vertical height shifts */}
-      <div className="mt-3 min-h-[4.5rem] sm:min-h-[3.75rem]">
-        <p className="max-w-xl text-base leading-relaxed text-muted-foreground transition-opacity duration-300">
+      <div className="mt-3 min-h-18 sm:min-h-15">
+        <p className="max-w-xl section-para transition-opacity duration-300">
           {activeDirection.meaning}
         </p>
       </div>
@@ -115,7 +115,7 @@ export default function DirectionDeepDive() {
                 Traditional significance
               </h4>
 
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 section-para text-muted-foreground">
                 {activeDirection.significance}
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function DirectionDeepDive() {
                 Practical interpretation
               </h4>
 
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 section-para text-muted-foreground">
                 {activeDirection.practical}
               </p>
             </div>
