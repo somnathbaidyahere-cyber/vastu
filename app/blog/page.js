@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { NotebookPen } from "lucide-react";
+
 import JsonLd from "@/components/seo/JsonLd";
 import { getWebPageSchema } from "@/lib/seo/schemas";
 import { schemaIds } from "@/lib/seo/ids";
@@ -82,18 +84,19 @@ export default async function BlogPage() {
 
       <main className="min-h-screen bg-surface/80">
         {/* Hero */}
-        <section className="bg-ivory-pattern px-4 py-12 sm:px-6 lg:px-8 lg:py-15">
+        <section className="bg-ivory-pattern px-4 py-8 md:py-10 sm:px-6 lg:px-8 lg:py-15">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="text-sm font-medium uppercase tracking-widest text-primary">
-                Journal
-              </p>
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-white/70 px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-accent-hover mt-6">
+                <NotebookPen className="h-3.5 w-3.5" />
+                JOURNAL
+              </span>
 
               <h1 className="hero-heading">
                 Vastu <span className="text-gradient-brand">blog</span>
               </h1>
 
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              <p className="hero-description leading-relaxed">
                 Editorial guides for reading rooms, directions, elements and
                 everyday spaces with calm practical clarity.
               </p>

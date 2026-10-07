@@ -267,7 +267,7 @@ export default async function RoomDetailPage({ params }) {
                         {heading}
                       </h2>
 
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      <p className="section-para leading-relaxed">
                         {body}
                       </p>
                     </div>
@@ -296,7 +296,7 @@ export default async function RoomDetailPage({ params }) {
               </h2>
             </div>
 
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="leading-relaxed section-para">
               Climate, structure, family routines and the constraints of an
               existing home all matter. Use these ideas to notice the room more
               clearly before deciding what should change.

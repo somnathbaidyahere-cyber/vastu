@@ -46,7 +46,7 @@ function FAQ({ faqs }) {
                   >
                     {/* Number */}
                     <span
-                      className={`w-7 shrink-0 font-heading text-sm transition-colors md:text-base ${
+                      className={`w-7 shrink-0 font-heading section-para font-medium transition-colors ${
                         isOpen
                           ? "text-primary"
                           : "text-primary/30"
@@ -56,7 +56,11 @@ function FAQ({ faqs }) {
                     </span>
 
                     {/* Question */}
-                    <span className="flex-1 section-para text-foreground">
+                    <span className={`flex-1 section-para  text-foreground ${
+                        isOpen
+                          ? "font-medium"
+                          : ""
+                      }`}>
                       {faq.question}
                     </span>
 

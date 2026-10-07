@@ -10,6 +10,7 @@ export default function ConsultationHero() {
         width={1536}
         height={1024}
         fetchPriority="high"
+        preload
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-linear-to-r from-foreground/90 via-foreground/55 to-foreground/10" />

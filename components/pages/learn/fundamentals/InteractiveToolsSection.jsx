@@ -24,7 +24,7 @@ export default function InteractiveToolsSection() {
               <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground"><Icon className="h-5 w-5" /></span>
               <span>
                 <span className="block text-lg font-medium text-foreground">{name}</span>
-                <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">{body}</span>
+                <span className="mt-2 block text-sm md:text-base leading-relaxed text-muted-foreground">{body}</span>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">Open tool <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
               </span>
             </Link>

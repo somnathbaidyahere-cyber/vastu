@@ -49,7 +49,7 @@ export default function CoreConceptsSection() {
               {sanskrit}
             </p>
 
-            <p className="mt-4 text-sm leading-6 text-muted-foreground">
+            <p className="section-para">
               {body}
             </p>
           </div>
