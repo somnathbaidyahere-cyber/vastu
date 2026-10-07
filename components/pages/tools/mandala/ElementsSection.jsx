@@ -51,7 +51,7 @@ export default function ElementsSection() {
                 {activeElement?.[1]}
               </p>
 
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="section-para">
                 {activeElement?.[2]}
               </p>
             </div>

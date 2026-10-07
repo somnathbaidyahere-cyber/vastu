@@ -114,7 +114,7 @@ export default function CenterZone() {
 
           <h2 className="section-heading">Keep the center in context</h2>
 
-          <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
+          <p className="max-w-xl section-description ">
             The central area of a Vastu layout is traditionally referred to as
             the Brahmasthan. In this simplified map, it acts as the central
             reference around which the eight directions are arranged.

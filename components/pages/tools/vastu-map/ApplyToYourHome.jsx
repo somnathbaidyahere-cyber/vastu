@@ -15,7 +15,7 @@ export default function ApplyToYourHome() {
             </h2>
           </div>
 
-          <p className="max-w-xl text-sm md:text-base text-foreground-muted leading-relaxed lg:col-span-5">
+          <p className="max-w-xl section-description lg:col-span-5">
             Mark North on your floor plan, then see where your entrance, rooms
             and other major spaces fall within the directional framework.
           </p>

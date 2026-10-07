@@ -125,7 +125,7 @@ export default function InteractiveMandala() {
           </p>
 
           {/* Meaning */}
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:mt-7 sm:text-base">
+          <p className="max-w-md section-para">
             {activeZone.meaning}
           </p>
 

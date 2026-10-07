@@ -112,7 +112,7 @@ export default function FreeVsPersonalized() {
         </div>
 
         {/* Disclaimer */}
-        <p className="mt-6 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-6 max-w-3xl text-xs md:text-sm leading-relaxed text-muted-foreground">
           The map provides general educational guidance. Property-specific
           interpretation may consider the complete layout, orientation, entrance
           and other relevant details.
