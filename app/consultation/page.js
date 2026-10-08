@@ -4,73 +4,79 @@ import StartWithWhatYouHave from "@/components/pages/consultation/StartWithWhatY
 import ConversationStarter from "@/components/pages/consultation/ConversationStarter";
 import FinalCta from "@/components/pages/consultation/FinalCta";
 
-const title = "Vastu Consultation for Your Home | VastuGuru";
+import JsonLd from "@/components/seo/JsonLd";
+import { getWebPageSchema } from "@/lib/seo/schemas";
+import { seoConfig } from "@/lib/seo/config";
 
-const description =
-  "Start a Vastu consultation for a new build, renovation, move, or existing home. No lengthy forms — begin with a simple conversation about your space.";
+const pageTitle = "Vastu Consultation for Your Home | VastuGuru";
+
+const pageDescription =
+  "Start a Vastu consultation for a new build, renovation, move, or existing home. Begin with a simple conversation about your space and get practical guidance.";
+
+const canonicalUrl = `${seoConfig.siteUrl}/consultation`;
 
 export const metadata = {
-  title,
-  description,
+  title: pageTitle,
+  description: pageDescription,
 
   alternates: {
     canonical: "/consultation",
   },
 
   openGraph: {
-    title,
-    description,
-    type: "website",
+    title: pageTitle,
+    description: pageDescription,
     url: "/consultation",
+    siteName: seoConfig.siteName,
+    type: "website",
+    locale: seoConfig.locale,
   },
 
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
+    title: pageTitle,
+    description: pageDescription,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 export default function ConsultationPage() {
-  const breadcrumbSchema = {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Consultation",
-        item: "/consultation",
-      },
-    ],
-  };
+  const consultationSchema = getWebPageSchema({
+    id: `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: "Vastu Consultation",
+    description: pageDescription,
+  });
 
   const serviceSchema = {
     "@type": "Service",
+    "@id": `${canonicalUrl}#service`,
     name: "Vastu Consultation",
-    description,
+    description: pageDescription,
     provider: {
       "@type": "Organization",
-      name: "VastuGuru",
+      name: seoConfig.siteName,
     },
     areaServed: {
       "@type": "Country",
       name: "India",
     },
+    url: canonicalUrl,
   };
 
-  const structuredData = {
+  const pageSchema = {
     "@context": "https://schema.org",
-    "@graph": [breadcrumbSchema, serviceSchema],
+    "@graph": [consultationSchema, serviceSchema],
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-background">
+      <JsonLd data={pageSchema} />
+
       <main>
         <ConsultationHero />
         <WhatYouGet />
@@ -78,13 +84,6 @@ export default function ConsultationPage() {
         <ConversationStarter />
         <FinalCta />
       </main>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
-        }}
-      />
-    </>
+    </div>
   );
 }

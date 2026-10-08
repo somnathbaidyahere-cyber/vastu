@@ -81,7 +81,7 @@ export default function ConversationStarter() {
           <div>
             <label
               htmlFor="consult-name"
-              className="block text-sm font-medium text-foreground"
+              className="block section-para text-foreground"
             >
               Your name{" "}
               <span className="text-muted-foreground">(optional)</span>
@@ -101,7 +101,7 @@ export default function ConversationStarter() {
           <div className="relative">
             <label
               htmlFor="consult-space-type"
-              className="block text-sm font-medium text-foreground"
+              className="block section-para text-foreground"
             >
               What kind of space is it?
             </label>
@@ -175,7 +175,7 @@ export default function ConversationStarter() {
           <div>
             <label
               htmlFor="consult-need"
-              className="block text-sm font-medium text-foreground"
+              className="block section-para text-foreground"
             >
               What would you like guidance on?
             </label>

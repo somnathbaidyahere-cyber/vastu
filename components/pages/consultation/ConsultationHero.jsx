@@ -22,7 +22,7 @@ export default function ConsultationHero() {
 
       <div className="absolute inset-0 bg-linear-to-r from-foreground/90 via-foreground/55 to-foreground/30" />
 
-<div className="relative mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
         <span className="text-sm font-medium uppercase tracking-widest text-surface">
           Vastu Consultation
         </span>
