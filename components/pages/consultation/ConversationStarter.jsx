@@ -62,7 +62,7 @@ export default function ConversationStarter() {
   };
 
   return (
-    <section className="relative bg-surface overflow-hidden px-4 py-14 sm:px-6 md:py-20 lg:px-8 lg:py-28">
+    <section id="conversation" className="relative bg-surface overflow-hidden px-4 py-10 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="section-badge">Start a conversation</span>
@@ -77,7 +77,7 @@ export default function ConversationStarter() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="mt-12 space-y-8">
+        <form onSubmit={handleSubmit} className="mt-8 md:mt-10 lg:mt-12 space-y-4 md:space-y-6 lg:space-y-8">
           <div>
             <label
               htmlFor="consult-name"
@@ -94,7 +94,7 @@ export default function ConversationStarter() {
               onChange={(event) => setName(event.target.value)}
               maxLength={100}
               placeholder="What should we call you?"
-              className="mt-2 w-full border-0 border-b border-border bg-transparent py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
+              className="mt-1 md:mt-2 w-full border-0 border-b border-border bg-transparent py-1 md:py-2 lg:py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
             />
           </div>
 
@@ -110,7 +110,7 @@ export default function ConversationStarter() {
               id="consult-space-type"
               type="button"
               onClick={() => setSpaceOpen((open) => !open)}
-              className="mt-2 flex w-full items-center justify-between rounded-xl border border-border/60 bg-surface/70 px-4 py-3.5 text-left text-base text-foreground shadow-sm transition-all duration-200 hover:border-primary/30 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/10"
+              className="mt-1 md:mt-2 flex w-full items-center justify-between rounded-md md:rounded-lg lg:rounded-xl border border-border/60 bg-surface/70 px-4 py-1 md:py-2 lg:py-3 text-left text-base text-foreground shadow-sm transition-all duration-200 hover:border-primary/30 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/10"
               aria-haspopup="listbox"
               aria-expanded={spaceOpen}
             >
@@ -186,13 +186,13 @@ export default function ConversationStarter() {
               onChange={(event) => setNeed(event.target.value)}
               required
               maxLength={500}
-              rows={3}
+              rows={2}
               placeholder="A sentence or two is enough."
-              className="mt-2 w-full resize-none border-0 border-b border-border bg-transparent py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
+              className="mt-1 md:mt-2 w-full resize-none border-0 border-b border-border bg-transparent py-1 md:py-2 lg:py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
             />
           </div>
 
-          <div className="flex flex-col items-center gap-5 pt-2">
+          <div className="flex flex-col items-center gap-4 lg:gap-5 pt-2">
             <button
               type="submit"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary hero-btn px-6 py-3 font-medium text-primary-foreground transition-colors duration-500 disabled:cursor-not-allowed disabled:opacity-50 hover:text-black/70"

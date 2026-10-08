@@ -15,13 +15,13 @@ const emailUrl =
 
 export default function FinalCta() {
   return (
-    <section className="bg-cta-background py-24 lg:py-32">
+    <section className="bg-cta-background py-12 md:py-20 lg:py-32">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <h2 className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-3xl font-heading leading-[1.15] text-surface-accent md:text-5xl">
+        <h2 className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-2xl font-heading leading-[1.15] text-surface-accent md:text-4xl lg:text-5xl">
           Let&apos;s understand your home together.
         </h2>
 
-        <p className="mx-auto mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-surface md:text-surface-muted/85">
+        <p className="mx-auto mt-3 md:mt-4 lg:mt-6 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-surface md:text-surface-muted/85">
           Tell us about your space in your own words. We&apos;ll take it from
           there.
         </p>
@@ -30,7 +30,7 @@ export default function FinalCta() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-background hero-btn shadow-divine font-medium transition-all duration-200 hover:bg-accent hover:shadow-divine-lg hover:text-primary-foreground"
+          className="mt-6 md:mt-8 lg:mt-10 inline-flex items-center gap-2 rounded-full bg-background hero-btn shadow-divine font-medium transition-all duration-200 hover:bg-accent hover:shadow-divine-lg hover:text-primary-foreground"
         >
           Start a conversation
           <ArrowRight
@@ -39,7 +39,7 @@ export default function FinalCta() {
           />
         </a>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 text-xs md:text-sm text-accent-muted/90 sm:flex-row sm:gap-8">
+        <div className="mt-8 md:mt-10 lg:mt-12 flex flex-col items-center justify-center gap-3 text-xs md:text-sm text-accent-muted/90 sm:flex-row sm:gap-8">
           <a
             href={whatsappUrl}
             target="_blank"
@@ -82,11 +82,11 @@ export default function FinalCta() {
           </a>
         </div>
 
-        <p className="mt-10 text-xs sm:text-sm text-info-muted">
+        <p className="mt-6 md:mt-8 lg:mt-10 text-xs sm:text-sm text-info-muted">
           No lengthy forms. No complicated intake.
         </p>
 
-        <p className="mt-6 text-xs sm:text-sm text-info-muted">
+        <p className="mt-3 md:mt-4 lg:mt-6 text-xs sm:text-sm text-info-muted">
           Not ready to book yet?{" "}
           <Link
             href="/learn"

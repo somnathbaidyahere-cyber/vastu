@@ -20,7 +20,7 @@ const startWith = [
 
 export default function StartWithWhatYouHave() {
   return (
-    <section className="border-t border-border/70 px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="border-t border-border/70 px-4 py-10 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <span className="section-badge">Start with what you have</span>
