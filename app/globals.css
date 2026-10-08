@@ -11,6 +11,7 @@ html {
 
   /* Main warm parchment background */
   --background: #fff8e4;
+  --cta-background:#3d2b1f;
 
   /* Pure / elevated surfaces */
   --surface: #FFFDF8;
@@ -140,6 +141,7 @@ html {
 @theme inline {
   /* Backgrounds */
   --color-background: var(--background);
+  --color-cta-background:var(--cta-background);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
   --color-surface-accent: var(--surface-accent);
@@ -215,7 +217,7 @@ body {
   }
 
   .hero-btn{
-    @apply text-sm md:text-[15px] py-2.5 px-5 md:py-3 md:px-7
+    @apply text-sm md:text-[15px] lg:text-base py-2.5 px-5 md:py-3 md:px-7
   }
 
   .section-badge{
@@ -350,4 +352,56 @@ body {
   .vg-pulse,
   .vg-drift { animation: none; }
   .vg-pulse { opacity: 0; }
+}
+
+/*  Arro slide for consultation cta */
+@keyframes arrow-pendulum {
+  0% {
+    transform: translateX(0);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: translateX(5px);
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Whatsapp like button animation on hover */
+@keyframes whatsapp-fill {
+  0% {
+    transform: translate(-50%, 92%);
+  }
+
+  18% {
+    transform: translate(-50%, 55%);
+  }
+
+  38% {
+    transform: translate(-50%, 0%);
+  }
+
+  55% {
+    transform: translate(-50%, -8%);
+  }
+
+  72% {
+    transform: translate(-50%, 0%);
+  }
+
+  88% {
+    transform: translate(-50%, 55%);
+  }
+
+  100% {
+    transform: translate(-50%, 92%);
+  }
+} 
+
+.animate-whatsapp-fill {
+  animation: whatsapp-fill 3.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }

@@ -195,11 +195,24 @@ export default function ConversationStarter() {
           <div className="flex flex-col items-center gap-5 pt-2">
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-base font-medium text-primary-foreground transition-all hover:opacity-90 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary hero-btn px-6 py-3 font-medium text-primary-foreground transition-colors duration-500 disabled:cursor-not-allowed disabled:opacity-50 hover:text-black/70"
             >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              Continue on WhatsApp
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              {/* Rising Circle Fill */}
+              <span
+                aria-hidden="true"
+                className="absolute left-1/2 top-full aspect-square w-[150%] -translate-x-1/2 translate-y-0 rounded-full bg-[#23c75f] transition-transform duration-800 ease-in-out group-hover:translate-y-[-27%]"
+              />
+
+              {/* Button Contents */}
+              <MessageCircle
+                className="relative z-10 h-4 w-4"
+                aria-hidden="true"
+              />
+              <span className="relative z-10">Continue on WhatsApp</span>
+              <ArrowRight
+                className="relative z-10 h-4 w-4  transition-all duration-400 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
             </button>
 
             <p className="text-sm text-muted-foreground">
