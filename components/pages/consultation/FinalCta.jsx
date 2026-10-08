@@ -39,7 +39,7 @@ export default function FinalCta() {
           />
         </a>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 text-sm text-accent-muted/90 sm:flex-row sm:gap-8">
+        <div className="mt-12 flex flex-col items-center justify-center gap-4 text-xs md:text-sm text-accent-muted/90 sm:flex-row sm:gap-8">
           <a
             href={whatsappUrl}
             target="_blank"
@@ -47,10 +47,10 @@ export default function FinalCta() {
             className="group inline-flex items-center gap-2 transition-colors hover:text-white"
           >
             <MessageCircle
-              className="h-4 w-4 transition-transform duration-150 group-hover:scale-110 group-hover:text-[#25D366]"
+              className="h-3 w-3 md:h-4 md:w-4 transition-transform duration-150 group-hover:scale-110 group-hover:text-[#25D366]"
               aria-hidden="true"
             />
-            <span className="transition-transform duration-150 group-hover:translate-x-1">
+            <span className=" transition-transform duration-150 group-hover:translate-x-1">
               WhatsApp
             </span>
           </a>
@@ -60,7 +60,7 @@ export default function FinalCta() {
             className="group inline-flex items-center gap-2 transition-colors hover:text-white"
           >
             <Phone
-              className="h-4 w-4 transition-transform duration-150 group-hover:scale-110 group-hover:text-blue-500"
+              className="h-3 w-3 md:h-4 md:w-4 transition-transform duration-150 group-hover:scale-110 group-hover:text-blue-500"
               aria-hidden="true"
             />
             <span className="transition-transform duration-150 group-hover:translate-x-1">
@@ -73,7 +73,7 @@ export default function FinalCta() {
             className="group inline-flex items-center gap-2 transition-colors hover:text-white"
           >
             <Mail
-              className="h-4 w-4 transition-transform duration-150 group-hover:scale-110 group-hover:text-[#EF4444]"
+              className="h-3 w-3 md:h-4 md:w-4 transition-transform duration-150 group-hover:scale-110 group-hover:text-[#EF4444]"
               aria-hidden="true"
             />
             <span className="transition-transform duration-150 group-hover:translate-x-1">
@@ -82,11 +82,11 @@ export default function FinalCta() {
           </a>
         </div>
 
-        <p className="mt-10 text-sm text-info-muted">
+        <p className="mt-10 text-xs sm:text-sm text-info-muted">
           No lengthy forms. No complicated intake.
         </p>
 
-        <p className="mt-6 text-sm text-info-muted">
+        <p className="mt-6 text-xs sm:text-sm text-info-muted">
           Not ready to book yet?{" "}
           <Link
             href="/learn"
