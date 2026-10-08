@@ -24,14 +24,14 @@ export default function ConsultationHero() {
 
       <div className="relative mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
         <span className="text-[10px] md:text-xs lg:text-sm font-medium uppercase tracking-widest text-surface">
-          Vastu Consultation
+          Book Consultation
         </span>
 
         <h1 className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-3xl font-heading leading-[1.15] text-primary-foreground/80 md:text-4xl md:max-w-lg lg:text-5xl lg:max-w-3xl">
           Understand your home. Make decisions with confidence.
         </h1>
 
-        <p className="mt-6 max-w-xl hero-description text-secondary">
+        <p className="mt-2 md:mt-4 lg:mt-6 max-w-xl hero-description text-secondary">
           A one-on-one consultation that reads your space through orientation,
           layout, and context — and leaves you with clear, practical next steps.
         </p>
@@ -40,7 +40,7 @@ export default function ConsultationHero() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative mt-10 inline-flex items-center gap-2 overflow-hidden rounded-full bg-surface hero-btn px-6 py-3 font-medium transition-colors duration-500"
+          className="group relative mt-10 inline-flex items-center gap-2 overflow-hidden rounded-full bg-surface hero-btn transition-colors duration-500"
         >
           {/* Standard color test (bg-amber-200) */}
           <span

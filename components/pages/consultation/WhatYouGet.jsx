@@ -40,7 +40,7 @@ export default function WhatYouGet() {
 
             <Link
           href="/consultation#conversation"
-          className="mt-4 sm:mt-6 md:mt-8 lg:mt-10 hidden lg:inline-flex items-center gap-2 text-base font-medium text-primary transition-colors hover:text-accent"
+          className="mt-4 sm:mt-6 md:mt-8 lg:mt-10 hidden lg:inline-flex items-center gap-2 section-para text-primary transition-colors hover:text-accent"
         >
           Start a conversation
 
