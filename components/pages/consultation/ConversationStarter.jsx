@@ -200,7 +200,7 @@ export default function ConversationStarter() {
               {/* Rising Circle Fill */}
               <span
                 aria-hidden="true"
-                className="absolute left-1/2 top-full aspect-square w-[150%] -translate-x-1/2 translate-y-0 rounded-full bg-[#23c75f] transition-transform duration-800 ease-in-out group-hover:translate-y-[-27%]"
+                className="absolute left-1/2 top-full aspect-square w-[150%] -translate-x-1/2 translate-y-0 rounded-full bg-[#23c75f] transition-transform duration-800 ease-in-out group-hover:translate-y-[-28%]"
               />
 
               {/* Button Contents */}
