@@ -1,10 +1,5 @@
 import { ArrowRight } from "lucide-react";
-
-const whatsappUrl =
-  "https://wa.me/918017449616?text=" +
-  encodeURIComponent(
-    "Hello VastuGuru, I would like to start a consultation about my space."
-  );
+import Link from "next/link";
 
 const whatYouGet = [
   {
@@ -26,8 +21,8 @@ const whatYouGet = [
 
 export default function WhatYouGet() {
   return (
-    <section className="border-t border-border/70 bg-surface px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="mx-auto flex max-w-7xl flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+    <section className="border-t border-border/70 bg-surface px-4 py-10 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto flex max-w-7xl flex-col lg:flex-row items-start lg:items-center justify-between gap-4 md:gap-6 lg:gap-8">
         <div className="max-w-2xl">
           <span className="section-badge">
             What you get
@@ -37,11 +32,9 @@ export default function WhatYouGet() {
             A consultation built around your space.
           </h2>
 
-            <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 inline-flex items-center gap-2 text-base font-medium text-primary transition-colors hover:text-accent"
+            <Link
+          href="/consultation#conversation"
+          className="mt-4 sm:mt-6 md:mt-8 lg:mt-10 hidden lg:inline-flex items-center gap-2 section-para text-primary transition-colors hover:text-accent"
         >
           Start a conversation
 
@@ -49,14 +42,14 @@ export default function WhatYouGet() {
             className="h-4 w-4"
             aria-hidden="true"
           />
-        </a>
+        </Link>
         </div>
 
-        <div className="mt-14 space-y-0">
+        <div className="mt-8 sm:mt-10 lg:mt-14 space-y-0">
           {whatYouGet.map((item) => (
             <div
               key={item.number}
-              className="grid gap-3 border-t border-border py-8 sm:grid-cols-[80px_220px_1fr] sm:items-baseline sm:gap-8"
+              className="grid gap-3 border-t border-border py-4 md:py-6 lg:py-8 sm:grid-cols-[80px_220px_1fr] sm:items-baseline sm:gap-8"
             >
               <span className="text-sm font-medium text-primary">
                 {item.number}
@@ -74,6 +67,18 @@ export default function WhatYouGet() {
 
           <div className="border-t border-border" />
         </div>
+
+               <Link
+          href="/consultation#conversation"
+          className="mt-4 sm:mt-6 md:mt-8 lg:mt-10 inline-flex lg:hidden items-center gap-2 text-base font-medium text-primary transition-colors hover:text-accent "
+        >
+          Start a conversation
+
+          <ArrowRight
+            className="h-4 w-4"
+            aria-hidden="true"
+          />
+        </Link>
 
       
       </div>
