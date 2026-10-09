@@ -4,7 +4,7 @@ import PortableTextRenderer from "@/components/pages/blog/PortableTextRenderer";
 
 export default function ArticleLayout({ article, toc }) {
   return (
-    <section className="border-y border-border/60 bg-foreground-subtle/5 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="border-y border-border/60 bg-surface/60 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
         <ArticleContent article={article} />
 

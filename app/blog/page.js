@@ -17,7 +17,7 @@ import { urlFor } from "@/lib/sanity/image";
 
 //  SEO Metadata
 const pageTitle =
-  "Vastu Blog — Articles, Guides & Practical Insights | VastuGuru";
+  "Vastu Blog — Articles, Guides & Practical Insights";
 
 const pageDescription =
   "Explore Vastu articles, practical guidance, and insights about rooms, directions, elements, and modern Indian homes.";
