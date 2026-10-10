@@ -64,29 +64,22 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <JsonLd data={pageSchema} />
-      <Hero />
 
-      <OurBeginning />
-
-      <VastuReframed />
-
-      <FiveElementsSpectrum />
-
-      <OurApproach />
-
-      <ConversionOne />
-
-      <AncientContemporary />
-
-      <Philosophy />
-
-      <SpacesWeExplore />
-
-      <ContinueExploring />
-
-      <FinalConversion />
-    </div>
+      <main className="min-h-screen bg-background">
+        <Hero />
+        <OurBeginning />
+        <VastuReframed />
+        <FiveElementsSpectrum />
+        <OurApproach />
+        <ConversionOne />
+        <AncientContemporary />
+        <Philosophy />
+        <SpacesWeExplore />
+        <ContinueExploring />
+        <FinalConversion />
+      </main>
+    </>
   );
 }

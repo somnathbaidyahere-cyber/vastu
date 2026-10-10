@@ -6,6 +6,7 @@ function FindCenterSection() {
   return (
     <section
       id="find-center"
+      aria-labelledby="find-center-heading"
       className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 md:gap-12 lg:grid-cols-2 lg:gap-20">
@@ -16,7 +17,9 @@ function FindCenterSection() {
         <div className="order-1 lg:order-2">
           <SectionLabel number="01">Begin at the source</SectionLabel>
 
-          <h2 className="section-heading">Find your home&apos;s center</h2>
+          <h2 id="find-center-heading" className="section-heading">
+            Find your home&apos;s center
+          </h2>
 
           <p className="section-description">
             A whole-home direction reading begins at the approximate geometric
@@ -31,11 +34,16 @@ function FindCenterSection() {
               "Mark their meeting point as the practical center.",
             ].map((item, index) => (
               <li key={item} className="flex gap-3 sm:gap-4 items-center">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/30 text-xs font-semibold text-primary sm:h-8 sm:w-8 sm:text-sm">
+                <span
+                  aria-hidden="true"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/30 text-xs font-semibold text-primary sm:h-8 sm:w-8 sm:text-sm"
+                >
                   {index + 1}
                 </span>
 
-                <span className="mt-0 section-para text-foreground/80">{item}</span>
+                <span className="mt-0 section-para text-foreground/80">
+                  {item}
+                </span>
               </li>
             ))}
           </ol>

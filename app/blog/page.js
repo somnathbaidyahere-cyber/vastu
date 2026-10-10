@@ -16,8 +16,7 @@ import {
 import { urlFor } from "@/lib/sanity/image";
 
 //  SEO Metadata
-const pageTitle =
-  "Vastu Blog — Articles, Guides & Practical Insights";
+const pageTitle = "Vastu Blog — Articles, Guides & Practical Insights";
 
 const pageDescription =
   "Explore Vastu articles, practical guidance, and insights about rooms, directions, elements, and modern Indian homes.";
@@ -84,7 +83,10 @@ export default async function BlogPage() {
 
       <main className="min-h-screen bg-surface/80">
         {/* Hero */}
-        <section className="bg-ivory-pattern px-4 py-8 md:py-10 sm:px-6 lg:px-8 lg:py-15">
+        <section
+          aria-labelledby="blog-heading"
+          className="bg-ivory-pattern px-4 py-8 md:py-10 sm:px-6 lg:px-8 lg:py-15"
+        >
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-white/70 px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-accent-hover mt-6">
@@ -92,7 +94,7 @@ export default async function BlogPage() {
                 JOURNAL
               </span>
 
-              <h1 className="hero-heading">
+              <h1 id="blog-heading" className="hero-heading">
                 Vastu <span className="text-gradient-brand">blog</span>
               </h1>
 
@@ -120,6 +122,7 @@ export default async function BlogPage() {
                     <Link
                       key={article._id}
                       href={`/blog/${article.slug}`}
+                      aria-label={`Read article: ${article.title}`}
                       className="group block"
                     >
                       <article className="h-full">

@@ -1,71 +1,72 @@
-'use client'
-import {useState} from 'react'
+"use client";
+import { useState } from "react";
 import { directions } from "@/data/vastuCompassData";
-import SectionLabel from '@/components/ui/SectionLabel'
-import CompassDiagram from '@/components/ui/CompassDiagram'
+import SectionLabel from "@/components/ui/SectionLabel";
+import CompassDiagram from "@/components/ui/CompassDiagram";
 
 function DirectionExplorer() {
-    const [selectedId, setSelectedId] = useState("N");
-    const selected =
-      directions.find((direction) => direction.id === selectedId) ||
-      directions[0];
+  const [selectedId, setSelectedId] = useState("N");
+  const selected =
+    directions.find((direction) => direction.id === selectedId) ||
+    directions[0];
   return (
-     <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid lg:gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <SectionLabel number="03">Explore the compass</SectionLabel>
-              <h2 className="section-heading">
-                The eight Vastu directions
-              </h2>
-            </div>
-            <p className="max-w-xl section-description lg:col-span-5">
-              Select a direction to explore its traditional association and
-              broad planning guidance. These are educational principles, not a
-              diagnosis of your home.
-            </p>
+    <section
+      aria-labelledby="direction-explorer-heading"
+      className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-surface"
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="grid lg:gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <SectionLabel number="03">Explore the compass</SectionLabel>
+            <h2 id="direction-explorer-heading" className="section-heading">
+              The eight Vastu directions
+            </h2>
           </div>
+          <p className="max-w-xl section-description lg:col-span-5">
+            Select a direction to explore its traditional association and broad
+            planning guidance. These are educational principles, not a diagnosis
+            of your home.
+          </p>
+        </div>
 
-          <div className="mt-12 grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="md:mx-auto md:w-[60%] lg:col-span-7 lg:mx-0 lg:w-full">
-              <CompassDiagram
-                selectedId={selectedId}
-                onSelect={setSelectedId}
-              />
-            </div>
-            <div className="lg:col-span-5" aria-live="polite">
-              <div className="border-l-2 border-primary pl-6 sm:pl-8">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-heading text-5xl md:text-6xl text-primary/25">
-                    {selected.id}
-                  </span>
-                  <span className="text-sm italic text-primary">
-                    {selected.sanskrit}
-                  </span>
-                </div>
-                <h3 className="mt-3 text-3xl font-medium text-foreground">
-                  {selected.name}
-                </h3>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-accent">
-                  {selected.theme}
+        <div className="mt-12 grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="md:mx-auto md:w-[60%] lg:col-span-7 lg:mx-0 lg:w-full">
+            <CompassDiagram selectedId={selectedId} onSelect={setSelectedId} />
+          </div>
+          <div className="lg:col-span-5" aria-live="polite">
+            <div className="border-l-2 border-primary pl-6 sm:pl-8">
+              <div className="flex items-baseline gap-3">
+                <span
+                  aria-hidden="true"
+                  className="font-heading text-5xl md:text-6xl text-primary/25"
+                >
+                  {selected.id}
+                </span>
+                <span className="text-sm italic text-primary">
+                  {selected.sanskrit}
+                </span>
+              </div>
+              <h3 className="mt-3 text-3xl font-medium text-foreground">
+                {selected.name}
+              </h3>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-accent">
+                {selected.theme}
+              </p>
+              <p className="section-para">{selected.association}</p>
+              <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 border-t border-border pt-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                  General guidance
                 </p>
-                <p className="section-para">
-                  {selected.association}
+                <p className="section-para text-foreground/80">
+                  {selected.guidance}
                 </p>
-                <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 border-t border-border pt-6">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">
-                    General guidance
-                  </p>
-                  <p className="section-para text-foreground/80">
-                    {selected.guidance}
-                  </p>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-  )
+      </div>
+    </section>
+  );
 }
 
-export default DirectionExplorer
+export default DirectionExplorer;

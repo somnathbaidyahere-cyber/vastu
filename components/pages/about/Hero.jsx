@@ -33,7 +33,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10">
         <Image
           src="/heroImages/old-building-varanda.webp"
-          alt="Old indian building varanda"
+          alt=""
           fill
           preload
           fetchPriority="high"
@@ -45,7 +45,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl mt-5">
         {/* Editorial Subtitle Badge */}
         <span className="inline-flex items-center gap-2 rounded-full border border-border-muted bg-card/60 px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-surface-muted mt-6">
-          <Info className="h-3.5 w-3.5" />
+          <Info aria-hidden="true" className="h-3.5 w-3.5" />
           About Us
         </span>
 

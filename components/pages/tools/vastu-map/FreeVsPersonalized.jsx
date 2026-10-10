@@ -84,7 +84,10 @@ export default function FreeVsPersonalized() {
                 </div>
 
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary-foreground/20 bg-primary-foreground/10 sm:h-10 sm:w-10">
-                  <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                  <Sparkles
+                    aria-hidden="true"
+                    className="h-3.5 w-3.5 sm:h-4 sm:w-4"
+                  />
                 </div>
               </div>
 
@@ -94,7 +97,10 @@ export default function FreeVsPersonalized() {
                     key={item}
                     className="flex items-start gap-2.5 text-xs leading-relaxed text-primary-foreground/85 sm:gap-3 sm:text-sm"
                   >
-                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
+                    <Check
+                      aria-hidden="true"
+                      className="mt-0.5 h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4"
+                    />
                     {item}
                   </li>
                 ))}
@@ -105,7 +111,10 @@ export default function FreeVsPersonalized() {
                 className="group mt-7 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-5 py-3 text-xs font-medium text-primary transition-all hover:bg-brand-cream sm:mt-8 sm:px-6 sm:py-3.5 sm:text-sm lg:mt-9"
               >
                 Get My Property Reviewed
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4" />
+                <ArrowRight
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4"
+                />
               </Link>
             </div>
           </div>

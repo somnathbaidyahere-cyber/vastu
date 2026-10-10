@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight, Compass, Crosshair, Map } from "lucide-react";
 import SectionLabel from "../../../ui/SectionLabel";
 
-
 const steps = [
   {
     number: "01",
@@ -26,16 +25,16 @@ const steps = [
 
 export default function OrientHome() {
   return (
-    <section className="border-y border-border/60 bg-primary-foreground px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section
+      aria-labelledby="orient-home-heading"
+      className="border-y border-border/60 bg-primary-foreground px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+    >
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-20">
-
         {/* Intro */}
         <div className="lg:col-span-5">
-          <SectionLabel number="01">
-            Orient your home
-          </SectionLabel>
+          <SectionLabel number="01">Orient your home</SectionLabel>
 
-          <h2 className="section-heading">
+          <h2 id="orient-home-heading" className="section-heading">
             Start with North
           </h2>
 
@@ -49,42 +48,45 @@ export default function OrientHome() {
             className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
           >
             Use the Vastu Compass
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </div>
 
-      {/* Process */}
-<div className="lg:col-span-7">
-  <div className="grid overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3 sm:rounded-[1.5rem]">
-    {steps.map((step) => {
-      const Icon = step.icon;
+        {/* Process */}
+        <div className="lg:col-span-7">
+          <ol className="grid overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3 sm:rounded-[1.5rem]">
+            {steps.map((step) => {
+              const Icon = step.icon;
 
-      return (
-        <div
-          key={step.number}
-          className="group bg-surface p-4 transition-colors hover:bg-secondary/40 sm:p-6 lg:p-8"
-        >
-          <div className="flex items-center justify-between">
-            <Icon className="h-5 w-5 rounded-full p-0.5 text-primary transition-all duration-150 group-hover:bg-primary group-hover:text-surface sm:h-6 sm:w-6" />
+              return (
+                <li
+                  key={step.number}
+                  className="group bg-surface p-4 transition-colors hover:bg-secondary/40 sm:p-6 lg:p-8"
+                >
+                  <div className="flex items-center justify-between">
+                    <Icon
+                      aria-hidden="true"
+                      className="h-5 w-5 rounded-full p-0.5 text-primary transition-all duration-150 group-hover:bg-primary group-hover:text-surface sm:h-6 sm:w-6"
+                    />
 
-            <span className="font-heading text-xl text-primary/30 transition-colors group-hover:text-primary sm:text-2xl">
-              {step.number}
-            </span>
-          </div>
+                    <span
+                      aria-hidden="true"
+                      className="font-heading text-xl text-primary/30 transition-colors group-hover:text-primary sm:text-2xl"
+                    >
+                      {step.number}
+                    </span>
+                  </div>
 
-          <h3 className="mt-4 text-base font-medium text-foreground sm:mt-6 sm:text-lg lg:mt-7">
-            {step.title}
-          </h3>
+                  <h3 className="mt-4 text-base font-medium text-foreground sm:mt-6 sm:text-lg lg:mt-7">
+                    {step.title}
+                  </h3>
 
-          <p className="section-para">
-            {step.description}
-          </p>
+                  <p className="section-para">{step.description}</p>
+                </li>
+              );
+            })}
+          </ol>
         </div>
-      );
-    })}
-  </div>
-</div>
-
       </div>
     </section>
   );

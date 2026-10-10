@@ -4,18 +4,23 @@ import SectionLabel from "@/components/ui/SectionLabel";
 
 function CompassInstructions() {
   return (
-    <section className="border-y border-border/60 bg-linear-to-br from-surface to-surface-muted/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+    <section
+      aria-labelledby="compass-instructions-heading"
+      className="border-y border-border/60 bg-linear-to-br from-surface to-surface-muted/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <SectionLabel number="02">Orient the plan</SectionLabel>
-          <h2 className="section-heading">How to find the directions</h2>
+          <h2 id="compass-instructions-heading" className="section-heading">
+            How to find the directions
+          </h2>
           <p className="section-description">
             Use the compass app already available on your smartphone. The
             website does not read or display your device heading.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-surface md:grid-cols-3">
+        <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-surface md:grid-cols-3">
           {[
             [
               Crosshair,
@@ -36,10 +41,13 @@ function CompassInstructions() {
               "Note North; every other direction is understood relative to it.",
             ],
           ].map(([Icon, number, heading, copy]) => (
-            <div key={number} className="group hover:bg-primary/30 p-7 sm:p-8 ">
+            <li key={number} className="group hover:bg-primary/30 p-7 sm:p-8 ">
               <div className="flex items-center justify-between">
-                <Icon className="h-7 w-7 text-primary " />
-                <span className="font-heading text-2xl text-primary/45 group-hover:text-primary ">
+                <Icon aria-hidden="true" className="h-7 w-7 text-primary " />
+                <span
+                  aria-hidden="true"
+                  className="font-heading text-2xl text-primary/45 group-hover:text-primary "
+                >
                   {number}
                 </span>
               </div>
@@ -49,9 +57,9 @@ function CompassInstructions() {
               <p className="mt-3 pb-2 md:pb-0 section-para border-b border-accent-hover/60  md:border-none ">
                 {copy}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

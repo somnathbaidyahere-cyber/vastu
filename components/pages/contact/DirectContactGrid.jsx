@@ -1,10 +1,4 @@
-import {
-  MessageSquare,
-  Mail,
-  Phone,
-  ArrowUpRight,
-} from "lucide-react";
-
+import { MessageSquare, Mail, Phone, ArrowUpRight } from "lucide-react";
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP;
 const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL;
@@ -12,18 +6,26 @@ const PHONE_NUMBER = WHATSAPP_NUMBER;
 
 export default function DirectContactGrid() {
   return (
-    <section className="border-t border-border/70 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section
+      aria-labelledby="direct-channels-heading"
+      className="border-t border-border/70 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto max-w-7xl space-y-10 sm:space-y-12">
         <div>
           <p className="section-badge">DIRECT CHANNELS</p>
-          <h2 className="section-heading mt-2">Prefer to reach us directly?</h2>
+          <h2 id="direct-channels-heading" className="section-heading mt-2">
+            Prefer to reach us directly?
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E2DACC] border-t border-b border-[#E2DACC]">
           {/* Channel 1 */}
           <div className="py-8 sm:py-10 sm:pr-8 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono uppercase text-[#7A7268]">
-              <MessageSquare className="w-3.5 h-3.5 text-[#8C6A3C]" />
+              <MessageSquare
+                aria-hidden="true"
+                className="w-3.5 h-3.5 text-[#8C6A3C]"
+              />
               <span>WhatsApp</span>
             </div>
             <a
@@ -33,7 +35,10 @@ export default function DirectContactGrid() {
               className="group inline-flex items-center space-x-2 text-lg font-serif font-medium text-[#2C2825] hover:text-[#8C6A3C] transition-colors"
             >
               <span>Start a conversation</span>
-              <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight
+                aria-hidden="true"
+                className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </a>
             <p className="section-para text-[#7A7268] leading-relaxed">
               Best for prompt, conversational inquiries and brief questions.
@@ -43,7 +48,7 @@ export default function DirectContactGrid() {
           {/* Channel 2 */}
           <div className="py-8 sm:py-10 sm:px-8 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono uppercase text-[#7A7268]">
-              <Mail className="w-3.5 h-3.5 text-[#8C6A3C]" />
+              <Mail aria-hidden="true" className="w-3.5 h-3.5 text-[#8C6A3C]" />
               <span>Email</span>
             </div>
             <a
@@ -51,7 +56,10 @@ export default function DirectContactGrid() {
               className="group inline-flex items-center space-x-2 text-lg font-serif font-medium text-[#2C2825] hover:text-[#8C6A3C] transition-colors"
             >
               <span>{EMAIL_ADDRESS}</span>
-              <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight
+                aria-hidden="true"
+                className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </a>
             <p className="section-para text-[#7A7268] leading-relaxed">
               Best for long-form thoughts, drawings, or architectural queries.
@@ -61,7 +69,10 @@ export default function DirectContactGrid() {
           {/* Channel 3 */}
           <div className="py-8 sm:py-10 sm:pl-8 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono uppercase text-[#7A7268]">
-              <Phone className="w-3.5 h-3.5 text-[#8C6A3C]" />
+              <Phone
+                aria-hidden="true"
+                className="w-3.5 h-3.5 text-[#8C6A3C]"
+              />
               <span>Direct Phone</span>
             </div>
             <a
@@ -69,7 +80,10 @@ export default function DirectContactGrid() {
               className="group inline-flex items-center space-x-2 text-lg font-serif font-medium text-[#2C2825] hover:text-[#8C6A3C] transition-colors"
             >
               <span>{PHONE_NUMBER}</span>
-              <ArrowUpRight className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight
+                aria-hidden="true"
+                className="w-4 h-4 text-[#8C6A3C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </a>
             <p className="section-para text-[#7A7268] leading-relaxed">
               Mon–Fri, 10:00 AM to 6:00 PM IST.

@@ -6,10 +6,10 @@ import {
   Mail,
   Clock,
   ArrowUpRight,
-  MessageCircle
+  MessageCircle,
 } from "lucide-react";
 
-const WHATSAPP_NUMBER =  process.env.NEXT_PUBLIC_WHATSAPP; // country code + number, digits only
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP; // country code + number, digits only
 const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL;
 const RESPONSE_TIME = "24 hours";
 
@@ -18,7 +18,10 @@ export default function Hero() {
     <header className="relative isolate px-4 pb-20 pt-7 sm:px-6 lg:px-8 lg:pb-28 min-h-170">
       <div className="absolute inset-0 bg-linear-to-r -z-5 from-foreground/90 via-foreground/55 to-foreground/10" />
 
-      <nav aria-label="Breadcrumb" className="px-4 pb-3 sm:pb-10 sm:px-6 lg:px-8">
+      <nav
+        aria-label="Breadcrumb"
+        className="px-4 pb-3 sm:pb-10 sm:px-6 lg:px-8"
+      >
         <ol className="mx-auto flex max-w-7xl items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link
@@ -56,14 +59,15 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl mt-5">
         {/* Editorial Subtitle Badge */}
-         <span className="inline-flex items-center gap-2 rounded-full border border-border-muted bg-card/60 px-4 py-1.5 text-[10px]  font-medium uppercase tracking-widest text-surface-muted mt-6">
-              <MessageCircle className="h-3.5 w-3.5" />
-              Start a Conversation
-            </span>
+        <span className="inline-flex items-center gap-2 rounded-full border border-border-muted bg-card/60 px-4 py-1.5 text-[10px]  font-medium uppercase tracking-widest text-surface-muted mt-6">
+          <MessageCircle aria-hidden="true" className="h-3.5 w-3.5" />
+          Start a Conversation
+        </span>
 
         {/* Serif Headline */}
         <h1 className="hero-heading text-surface">
-          Let&rsquo;s{" "}<span className="text-gradient-brand">talk</span> about your space.
+          Let&rsquo;s <span className="text-gradient-brand">talk</span> about
+          your space.
         </h1>
 
         <p className="mt-6 hero-description text-surface max-w-2xl">

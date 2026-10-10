@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ArrowRight } from "lucide-react";
@@ -9,38 +8,32 @@ const TOPICS = [
     id: "general",
     label: "General enquiry",
     prompt: "What would you like to ask us?",
-    subtext:
-      "For quick questions, methodology details, or general guidance.",
+    subtext: "For quick questions, methodology details, or general guidance.",
   },
   {
     id: "vastu",
     label: "Vastu question",
-    prompt:
-      "What specific aspect of Vastu would you like to explore?",
+    prompt: "What specific aspect of Vastu would you like to explore?",
     subtext:
       "Clarification on principles, directions, or orientation concepts.",
   },
   {
     id: "space",
     label: "Discuss a space",
-    prompt:
-      "Tell us a little about the space you have in mind.",
-    subtext:
-      "For prospective homes, commercial spaces, or renovation plans.",
+    prompt: "Tell us a little about the space you have in mind.",
+    subtext: "For prospective homes, commercial spaces, or renovation plans.",
   },
   {
     id: "partnership",
     label: "Partnership or collaboration",
     prompt: "How can we collaborate together?",
-    subtext:
-      "For architects, interior designers, and real estate advisors.",
+    subtext: "For architects, interior designers, and real estate advisors.",
   },
   {
     id: "other",
     label: "Something else",
     prompt: "What would you like to discuss with us?",
-    subtext:
-      "Anything else that doesn't fit the categories above.",
+    subtext: "Anything else that doesn't fit the categories above.",
   },
 ];
 
@@ -50,23 +43,21 @@ export default function TopicSelection() {
   return (
     <section
       id="how-can-we-help"
+      aria-labelledby="topic-selection-heading"
       className="border-t border-border/70 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
         {/* Left Column Description */}
         <div className="space-y-4 lg:col-span-4">
-          <p className="section-badge">
-            TOPIC OF INQUIRY
-          </p>
+          <p className="section-badge">TOPIC OF INQUIRY</p>
 
-          <h2 className="section-heading">
+          <h2 id="topic-selection-heading" className="section-heading">
             How can we help you today?
           </h2>
 
           <p className="max-w-xs section-description leading-relaxed text-[#5C554E]">
-            Select a subject below to tailor your query.
-            This helps us direct your question to the right
-            space specialist immediately.
+            Select a subject below to tailor your query. This helps us direct
+            your question to the right space specialist immediately.
           </p>
         </div>
 
@@ -83,9 +74,7 @@ export default function TopicSelection() {
                     onClick={() => chooseTopic(item)}
                     aria-pressed={isSelected}
                     className={`group flex w-full items-start justify-between gap-6 rounded-sm px-3 py-6 text-left transition-all duration-200 sm:px-4 sm:py-7 ${
-                      isSelected
-                        ? "bg-[#F4EFE6]"
-                        : "hover:bg-[#F7F2E9]"
+                      isSelected ? "bg-[#F4EFE6]" : "hover:bg-[#F7F2E9]"
                     }`}
                   >
                     <div className="space-y-1">
@@ -121,6 +110,7 @@ export default function TopicSelection() {
                         }`}
                       >
                         <ArrowRight
+                          aria-hidden="true"
                           className={`h-4 w-4 transition-transform duration-300 ${
                             isSelected
                               ? "translate-x-0"

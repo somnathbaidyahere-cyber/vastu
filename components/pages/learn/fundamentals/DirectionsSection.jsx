@@ -22,42 +22,43 @@ export default function DirectionsSection() {
           </Link>
         </div>
         <div className="lg:col-span-8">
-          <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {directions.map((d) => (
               <div
                 key={d.code}
-                className={`group relative overflow-hidden rounded-2xl border border-border/50 bg-card/60 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:shadow-lg`}
+                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/60 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:shadow-lg"
               >
                 {/* Soft Colored Ambient Glow Underlayer */}
                 <div
                   className={`pointer-events-none absolute inset-0 bg-linear-to-br ${d.accentColor} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
                 />
 
-                {/* Card Content */}
+                {/* Card Content - Using a semantic wrapper div */}
                 <div className="relative z-10 flex flex-col justify-between h-full">
                   <div>
                     <div className="flex items-center justify-between">
-                      <dt className="text-2xl font-semibold tracking-tight text-foreground">
+                      <span className="text-2xl font-semibold tracking-tight text-foreground">
                         {d.code}
-                      </dt>
+                      </span>
                       {/* Subtle visual color pill */}
                       <span
                         className={`h-2 w-2 rounded-full bg-current ${d.accentColor.split(" ")[2]}`}
+                        aria-hidden="true"
                       />
                     </div>
 
-                    <dd className="mt-1.5 text-xs font-semibold uppercase tracking-wider text-foreground/90">
+                    <p className="mt-1.5 text-xs font-semibold uppercase tracking-wider text-foreground/90">
                       {d.name}
-                    </dd>
+                    </p>
                   </div>
 
-                  <dd className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground/90">
+                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground/90">
                     {d.note}
-                  </dd>
+                  </p>
                 </div>
               </div>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
     </section>

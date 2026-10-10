@@ -32,18 +32,21 @@ const spacesWeExplore = [
 
 export default function SpacesWeExplore() {
   return (
-    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section
+      aria-labelledby="spaces-explore-heading"
+      className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <span className="section-badge">Spaces we explore</span>
-          <h2 className="section-heading">
+          <h2 id="spaces-explore-heading" className="section-heading">
             Different spaces ask different questions.
           </h2>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-5">
+        <ul className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-5">
           {spacesWeExplore.map((space, index) => (
-            <div key={index} className="relative">
+            <li key={index} className="relative">
               <ImagePlaceholder
                 src={space.image}
                 alt={space.imageAlt}
@@ -53,19 +56,21 @@ export default function SpacesWeExplore() {
               <span className="mt-3 block text-sm font-medium text-foreground">
                 {space.name}
               </span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <Link
           href="/rooms"
           className="group mt-10 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-foreground"
         >
           Explore all spaces{" "}
-          <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-0.5" />
+          <ArrowRight
+            aria-hidden="true"
+            className="h-4 w-4 transition-all duration-150 group-hover:translate-x-0.5"
+          />
         </Link>
       </div>
     </section>
   );
 }
-

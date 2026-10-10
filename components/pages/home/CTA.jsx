@@ -4,7 +4,10 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="relative isolate px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-primary-foreground ">
+    <section
+      aria-labelledby="homepage-cta-heading"
+      className="relative isolate px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-primary-foreground "
+    >
       <div className="absolute inset-0 -z-10">
         <Image
           src="/backgrounds/early-morning.webp"
@@ -22,7 +25,7 @@ export default function CTA() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_50%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_50%)]" />
           <div className="relative flex flex-col items-center">
-            <h2 className="cta-heading">
+            <h2 id="homepage-cta-heading" className="cta-heading">
               Begin your journey toward harmony
             </h2>
             <p className="cta-description">

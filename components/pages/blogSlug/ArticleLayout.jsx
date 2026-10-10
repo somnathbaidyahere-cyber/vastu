@@ -4,7 +4,14 @@ import PortableTextRenderer from "@/components/pages/blog/PortableTextRenderer";
 
 export default function ArticleLayout({ article, toc }) {
   return (
-    <section className="border-y border-border/60 bg-surface/60 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section
+      aria-labelledby="article-layout-heading"
+      className="border-y border-border/60 bg-surface/60 px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+    >
+      <h2 id="article-layout-heading" className="sr-only">
+        Article content and navigation
+      </h2>
+
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
         <ArticleContent article={article} />
 
@@ -28,7 +35,7 @@ function ArticleContent({ article }) {
   return (
     <article className="min-w-0 lg:col-span-8">
       <div className="max-w-3xl">
-      <PortableTextRenderer value={article.body} />
+        <PortableTextRenderer value={article.body} />
       </div>
     </article>
   );
@@ -80,14 +87,12 @@ function ArticleSidebar({ article, toc }) {
           >
             Book consultation{" "}
             <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1 ml-1" />
-
           </Link>
         </div>
       </div>
     </aside>
   );
 }
-
 
 function ArticleTableOfContents({ toc }) {
   if (!toc?.length) return null;
@@ -103,17 +108,13 @@ function ArticleTableOfContents({ toc }) {
           <li
             key={item.blockKey || item.id}
             className={
-              item.level === 3
-                ? "ml-4 border-l border-border/60 pl-3"
-                : ""
+              item.level === 3 ? "ml-4 border-l border-border/60 pl-3" : ""
             }
           >
             <a
               href={`#${item.id}`}
               className={`block py-0.5 transition-colors hover:text-primary ${
-                item.level === 3
-                  ? "text-xs leading-5"
-                  : "font-medium leading-6"
+                item.level === 3 ? "text-xs leading-5" : "font-medium leading-6"
               }`}
             >
               {item.text}
@@ -124,7 +125,6 @@ function ArticleTableOfContents({ toc }) {
     </nav>
   );
 }
-
 
 function SidebarLinkCard({ title, text, href }) {
   return (

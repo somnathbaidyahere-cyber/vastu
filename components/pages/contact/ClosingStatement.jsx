@@ -3,7 +3,10 @@ import { ArrowRight } from "lucide-react";
 
 export default function ClosingStatement() {
   return (
-    <section className="relative isolate bg-primary-foreground px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section
+      aria-labelledby="contact-closing-heading"
+      className="relative isolate bg-primary-foreground px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
       <div className="absolute inset-0 -z-10">
         <Image
           src="/contact/calm-courtyard.webp"
@@ -31,9 +34,15 @@ export default function ClosingStatement() {
       "
         >
           {/* Decorative gradients */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_10%)]" />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.917_0.032_82.8/0.12),transparent_10%)]"
+          />
 
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_10%)]" />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(0.644_0.111_55/0.12),transparent_10%)]"
+          />
 
           {/* Content */}
           <div
@@ -47,7 +56,7 @@ export default function ClosingStatement() {
           >
             {/* Left — Text */}
             <div className="text-left">
-              <h2 className="cta-heading">
+              <h2 id="contact-closing-heading" className="cta-heading">
                 “Every space has its own questions.”
               </h2>
 
@@ -77,7 +86,10 @@ export default function ClosingStatement() {
             "
               >
                 Select a topic to begin
-                <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
+                <ArrowRight
+                  aria-hidden="true"
+                  className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1"
+                />
               </a>
             </div>
           </div>

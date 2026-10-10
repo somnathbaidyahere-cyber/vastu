@@ -13,14 +13,9 @@ export default function RelatedArticles({ articles, category }) {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="section-badge">
-              Related reading
-            </p>
+            <p className="section-badge">Related reading</p>
 
-            <h2
-              id="related-articles-heading"
-              className="section-heading"
-            >
+            <h2 id="related-articles-heading" className="section-heading">
               Continue from the same foundation
             </h2>
           </div>
@@ -35,45 +30,50 @@ export default function RelatedArticles({ articles, category }) {
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {articles.map((article) => {
-
             const value = article.coverImage;
-            const imageUrl = urlFor(value)
-              .width(1200)
-              .fit("max")
-              .auto("format")
-              .url();
+            const imageUrl = value
+              ? urlFor(value).width(1200).fit("max").auto("format").url()
+              : null;
 
-            const altText = value.alt || "Vastu article image";
+            const altText = value?.alt || "";
 
             return (
               <Link
                 key={article.slug}
                 href={`/blog/${article.slug}`}
-                className="group block"
+                className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
               >
                 <article className="h-full border-b border-border/60 pb-6">
                   <div className="relative aspect-4/3 overflow-hidden rounded-xl border border-border/60 bg-card">
-                    <Image
-                      src={imageUrl}
-                      alt={altText}
-                      fill
-                     unoptimized
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 motion-reduce:transition-none group-hover:scale-[1.025]"
-                    />
+                    {imageUrl ? (
+                      <Image
+                        src={imageUrl}
+                        alt={altText}
+                        fill
+                        unoptimized
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 motion-reduce:transition-none group-hover:scale-[1.025]"
+                      />
+                    ) : (
+                      <div aria-hidden="true" className="absolute inset-0" />
+                    )}
                   </div>
 
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                    {article.category}
-                  </p>
+                  {article.category && (
+                    <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                      {article.category}
+                    </p>
+                  )}
 
                   <h3 className="mt-2 text-xl font-medium leading-snug text-foreground group-hover:text-primary">
                     {article.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    {article.excerpt}
-                  </p>
+                  {article.excerpt && (
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      {article.excerpt}
+                    </p>
+                  )}
                 </article>
               </Link>
             );

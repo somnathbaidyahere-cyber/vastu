@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useRef, useEffect } from "react";
 
 const reframedWords = [
@@ -33,14 +33,20 @@ function useInView(threshold = 0.35) {
   return [ref, active];
 }
 
- 
 export default function VastuReframed() {
   const [ref, active] = useInView(0.4);
 
   return (
-    <section ref={ref} className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+    <section
+      ref={ref}
+      aria-labelledby="vastu-reframed-heading"
+      className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32"
+    >
       <div className="mx-auto max-w-4xl text-center">
         <p className="section-badge">Vastu, reframed</p>
+        <h2 id="vastu-reframed-heading" className="sr-only">
+          A new perspective on Vastu
+        </h2>
         <div className="mt-10 flex flex-col items-center gap-3">
           {reframedWords.map((word, index) => (
             <span

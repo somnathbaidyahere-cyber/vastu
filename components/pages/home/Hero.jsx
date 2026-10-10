@@ -6,6 +6,7 @@ import { Compass, BookOpen, Home, Sun } from "lucide-react";
 export default function Hero() {
   return (
     <section
+    aria-labelledby="home-hero-title"
       className="relative isolate bg-accent-foreground overflow-hidden    min-h-130
     h-[62vh]
     max-h-190
@@ -54,7 +55,7 @@ export default function Hero() {
               <Sun className="h-3.5 w-3.5 shrink-0" />
               Timeless Vastu Guidance
             </span>
-            <h1 className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-3xl font-heading leading-[1.15] text-primary-foreground md:text-5xl">
+            <h1  id="home-hero-title" className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-3xl font-heading leading-[1.15] text-primary-foreground md:text-5xl">
               Align your space with{" "}
               <span className="text-gradient-brand hidden md:inline-block ">
                 ancient wisdom
@@ -83,20 +84,20 @@ export default function Hero() {
               </Link>
             </div>
 
-            <div className="mt-10 flex items-center gap-6 text-sm text-primary-foreground">
-              <div className="flex flex-col  sm:flex-row sm:items-center gap-2">
+            <ul className="mt-10 flex items-center gap-6 text-sm text-primary-foreground">
+              <li className="flex flex-col  sm:flex-row sm:items-center gap-2">
                 <Compass className="h-4 w-4 text-surface-muted lg:text-primary" />
                 <span>Direction Analysis</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              </li>
+              <li className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <Home className="h-4 w-4 text-surface-muted lg:text-primary" />
                 <span>Room Planning</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              </li>
+              <li className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <BookOpen className="h-4 w-4 text-surface-muted lg:text-primary" />
                 <span>Guided Courses</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
           {/* 
             <div className="relative">

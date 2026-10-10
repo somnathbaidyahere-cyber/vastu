@@ -3,9 +3,12 @@ import Image from "next/image";
 
 export default function BlogFinalCTA() {
   return (
-    <section className="relative isolate px-4 py-16 sm:px-6 lg:px-8">
+    <section
+      aria-labelledby="blog-final-cta-heading"
+      className="relative isolate px-4 py-16 sm:px-6 lg:px-8"
+    >
       {/* Image background */}
-      <div className="absolute inset-0 -z-10">
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
         <Image
           src="/blogCta/sunset-valley.webp"
           alt=""
@@ -21,7 +24,10 @@ export default function BlogFinalCTA() {
             VastuGuru Journal
           </p>
 
-          <h2 className="cta-heading text-primary-foreground/95">
+          <h2
+            id="blog-final-cta-heading"
+            className="cta-heading text-primary-foreground/95"
+          >
             Keep learning with calm, practical Vastu guidance.
           </h2>
         </div>
@@ -31,7 +37,7 @@ export default function BlogFinalCTA() {
             href="/learn/fundamentals"
             className="group inline-flex rounded-full border border-border bg-white/10 px-5 py-2.5 text-sm font-medium text-surface transition-colors hover:bg-surface/16"
           >
-            <span className="transiion-all duration-100 group-hover:-translate-y-0.25">
+            <span className="transiion-all duration-100 group-hover:-translate-y-px">
               Learn fundamentals
             </span>
           </Link>
@@ -40,7 +46,7 @@ export default function BlogFinalCTA() {
             href="/tools"
             className="group inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            <span className="transiion-all duration-100 group-hover:-translate-y-0.25">
+            <span className="transiion-all duration-100 group-hover:-translate-y-px">
               Explore tools
             </span>
           </Link>

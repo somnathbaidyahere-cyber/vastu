@@ -4,7 +4,10 @@ import VastuMapGrid from "./VastuMapGrid";
 
 export default function VastuMapHero() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+    <section
+      aria-labelledby="vastu-map-hero-heading"
+      className="relative overflow-hidden border-b border-border/60 bg-ivory-pattern px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14"
+    >
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
         {/* Content */}
         <div className="lg:col-span-7">
@@ -13,7 +16,7 @@ export default function VastuMapHero() {
             Vastu Spatial Guide
           </span>
 
-          <h1 className="hero-heading">
+          <h1 id="vastu-map-hero-heading" className="hero-heading">
             See your Home through the{" "}
             <span className="text-gradient-brand">Vastu Map</span>
           </h1>
@@ -26,7 +29,7 @@ export default function VastuMapHero() {
           {/* Context note */}
           <div className="mt-6 hidden md:flex items-start gap-3 border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted-foreground">
             {/* <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" /> */}
-            <Grid3X3 className="h-4 w-4 shrink-0" />
+            <Grid3X3 aria-hidden="true" className="h-4 w-4 shrink-0" />
 
             <p>
               This is an educational map. Use the Vastu Compass first to
@@ -41,7 +44,7 @@ export default function VastuMapHero() {
               className="inline-flex items-center gap-2 rounded-full bg-primary hero-btn text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
             >
               Explore the map
-              <ArrowDown className="h-4 w-4" />
+              <ArrowDown aria-hidden="true" className="h-4 w-4" />
             </a>
 
             <Link
@@ -49,7 +52,7 @@ export default function VastuMapHero() {
               className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 hero-btn text-foreground transition-colors hover:bg-secondary"
             >
               Find North
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -57,7 +60,10 @@ export default function VastuMapHero() {
         {/* Map visual */}
         <div className="lg:col-span-5 md:mx-auto md:w-[50%] lg:mx-0 lg:w-full">
           <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-88 md:max-w-104 lg:max-w-2xl">
-            <div className="absolute inset-0 -z-10 rounded-full bg-primary/5 blur-3xl" />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -z-10 rounded-full bg-primary/5 blur-3xl"
+            />
 
             <VastuMapGrid />
           </div>

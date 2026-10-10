@@ -115,7 +115,6 @@ export default async function BlogArticlePage({ params }) {
   const { slug } = await params;
 
   const article = await getBlogBySlug(slug);
-  
 
   if (!article) {
     notFound();
@@ -128,10 +127,10 @@ export default async function BlogArticlePage({ params }) {
   const canonicalUrl = `${seoConfig.siteUrl}/blog/${article.slug}`;
 
   const imageUrl = article.coverImage
-  ? article.coverImage.startsWith("http")
-    ? article.coverImage
-    : `${seoConfig.siteUrl}${article.coverImage}`
-  : `${seoConfig.siteUrl}/og/blog.jpg`;
+    ? article.coverImage.startsWith("http")
+      ? article.coverImage
+      : `${seoConfig.siteUrl}${article.coverImage}`
+    : `${seoConfig.siteUrl}/og/blog.jpg`;
 
   const blogPostingSchema = getBlogPostingSchema({
     article,

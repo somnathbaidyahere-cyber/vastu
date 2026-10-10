@@ -4,7 +4,10 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceHolder";
 
 export default function FinalConversion() {
   return (
-    <section className="relative overflow-hidden max-h-[80vh]">
+    <section
+      aria-labelledby="final-conversion-heading"
+      className="relative overflow-hidden max-h-[80vh]"
+    >
       <ImagePlaceholder
         src="/about/modern-villa.webp"
         alt="modern villa evening view"
@@ -14,7 +17,10 @@ export default function FinalConversion() {
       />
       <div className="absolute inset-0 bg-foreground/25" aria-hidden="true" />
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
-        <h2 className="max-w-2xl text-3xl font-medium leading-tight text-primary-foreground sm:text-4xl">
+        <h2
+          id="final-conversion-heading"
+          className="max-w-2xl text-3xl font-medium leading-tight text-primary-foreground sm:text-4xl"
+        >
           Your space is unique. Your questions should be too.
         </h2>
         <p className=" max-w-md section-description text-primary-foreground/90">
@@ -26,7 +32,10 @@ export default function FinalConversion() {
             className="group inline-flex items-center gap-2 rounded-full bg-primary-foreground/70 hero-btn font-medium text-foreground transition-colors hover:bg-primary-foreground/50 "
           >
             Start a conversation{" "}
-            <ArrowRight className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1" />
+            <ArrowRight
+              aria-hidden="true"
+              className="h-4 w-4 transition-all duration-150 group-hover:translate-x-1"
+            />
           </Link>
           <Link
             href="/learn"

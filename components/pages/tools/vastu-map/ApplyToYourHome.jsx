@@ -3,14 +3,17 @@ import SectionLabel from "../../../ui/SectionLabel";
 
 export default function ApplyToYourHome() {
   return (
-    <section className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section
+      aria-labelledby="apply-home-heading"
+      className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <SectionLabel number="05">Apply it to your home</SectionLabel>
 
-            <h2 className="section-heading">
+            <h2 id="apply-home-heading" className="section-heading">
               Now look at your own floor plan.
             </h2>
           </div>
@@ -24,7 +27,10 @@ export default function ApplyToYourHome() {
         {/* Visual + instructions */}
         <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-center ">
           {/* Floor plan visual */}
-          <div className="lg:col-span-5 md:mx-auto md:w-[60%] lg:mx-0 lg:w-full">
+          <div
+            aria-hidden="true"
+            className="lg:col-span-5 md:mx-auto md:w-[60%] lg:mx-0 lg:w-full"
+          >
             <div
               className="
       relative
@@ -124,9 +130,12 @@ export default function ApplyToYourHome() {
 
           {/* Steps */}
           <div className="lg:col-span-7">
-            <div className="space-y-8">
-              <div className="flex gap-5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background/30 text-primary">
+            <ol className="m-0 space-y-8 p-0">
+              <li className="flex gap-5">
+                <div
+                  aria-hidden="true"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background/30 text-primary"
+                >
                   <Compass className="h-4 w-4" />
                 </div>
 
@@ -144,10 +153,13 @@ export default function ApplyToYourHome() {
                     on a copy of your floor plan.
                   </p>
                 </div>
-              </div>
+              </li>
 
-              <div className="flex gap-5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background/30 text-primary">
+              <li className="flex gap-5">
+                <div
+                  aria-hidden="true"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background/30 text-primary"
+                >
                   <MapPinned className="h-4 w-4" />
                 </div>
 
@@ -165,7 +177,7 @@ export default function ApplyToYourHome() {
                     major spaces fall within the directional zones.
                   </p>
                 </div>
-              </div>
+              </li>
 
               <div className="flex gap-5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-background/30 text-primary">
@@ -187,7 +199,7 @@ export default function ApplyToYourHome() {
                   </p>
                 </div>
               </div>
-            </div>
+            </ol>
 
             {/* Important note */}
             <div className="mt-10 border-l-2 border-accent/40 pl-5">
