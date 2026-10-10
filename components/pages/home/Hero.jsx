@@ -1,23 +1,24 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Compass, BookOpen, Home, Sun} from "lucide-react";
+import { Compass, BookOpen, Home, Sun } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative isolate bg-accent-foreground overflow-hidden    min-h-[520px]
+    <section
+      className="relative isolate bg-accent-foreground overflow-hidden    min-h-130
     h-[62vh]
-    max-h-[760px]
+    max-h-190
     px-4 pb-16 pt-14
     sm:px-6
-    md:min-h-[560px]
+    md:min-h-140
     md:h-[64vh]
-    md:max-h-[680px]
+    md:max-h-170
     lg:px-8
     lg:pt-24 lg:pb-24
     lg:h-[68vh]
-    lg:max-h-[820px]">
-
+    lg:max-h-205"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -33,19 +34,34 @@ export default function Hero() {
       {/*  overlay layer  */}
       <div className="absolute inset-0 -z-5 bg-linear-to-r from-foreground/30 via-foreground/50 to-transparent" />
 
-
-
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-accent/30 sm:bg-transparent px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-white">
-              <Sun className="h-3.5 w-3.5" />
+            <span
+              className="
+    inline-flex items-center gap-2 rounded-full
+    border border-white/30
+    bg-black/25
+    px-4 py-1.5
+    text-[10px] font-medium uppercase tracking-widest text-white
+    shadow-sm
+    backdrop-blur-md
+    sm:bg-black/20
+    md:bg-black/15
+    lg:border-border lg:bg-transparent lg:backdrop-blur-none lg:shadow-none
+  "
+            >
+              <Sun className="h-3.5 w-3.5 shrink-0" />
               Timeless Vastu Guidance
             </span>
             <h1 className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-3xl font-heading leading-[1.15] text-primary-foreground md:text-5xl">
               Align your space with{" "}
-              <span className="text-gradient-brand hidden md:inline-block ">ancient wisdom</span>
-              <span className="md:hidden text-surface-muted">ancient wisdom</span>
+              <span className="text-gradient-brand hidden md:inline-block ">
+                ancient wisdom
+              </span>
+              <span className="md:hidden text-surface-muted">
+                ancient wisdom
+              </span>
             </h1>
             <p className="mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-surface md:text-surface-accent">
               VastuGuru blends traditional Indian Vastu Shastra with elegant,
