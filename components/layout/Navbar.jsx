@@ -10,17 +10,17 @@ const toolsLinks = [
   {
     label: "Vastu Compass",
     href: "/tools/compass",
-    description: "Find and understand property directions",
+    description: "Find your propert's directions",
   },
   {
     label: "Interactive Vastu Map",
     href: "/tools/vastu-map",
-    description: "Explore Vastu zones across your property",
+    description: "Explore Vastu zones",
   },
   {
     label: "Mandala",
     href: "/tools/mandala",
-    description: "Understand the Vastu Purusha Mandala",
+    description: "Understand the Vastu Mandala",
   },
 ];
 
@@ -227,7 +227,7 @@ function Dropdown({ label, isOpen, onToggle, onMouseEnter, links }) {
           {label}
         </span>
         <ChevronDown
-          className={`h-4 w-4 transition-transform duration-200 ${
+          className={`h-4 w-4 transition-transform duration-200 text-base ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -235,18 +235,18 @@ function Dropdown({ label, isOpen, onToggle, onMouseEnter, links }) {
 
       {isOpen && (
         <div className="divine-shadow absolute left-0 top-full mt-1 w-72 overflow-hidden rounded-xl border border-border bg-surface p-2">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="group rounded-lg px-3 py-2.5 transition-colors hover:bg-secondary"
               >
-                <div className="text-sm lg:text-lg font-medium text-foreground group-hover:text-primary">
+                <div className="text-sm lg:text-base font-medium text-foreground group-hover:text-primary">
                   {link.label}
                 </div>
 
-                <div className="text-xs lg:text-sm text-muted-foreground">
+                <div className="text-xs lg:text-[13px] text-muted-foreground">
                   {link.description}
                 </div>
               </Link>

@@ -73,6 +73,10 @@ export default function ConversationStarter() {
     });
 
     window.open(url, "_blank", "noopener,noreferrer");
+
+    setName("")
+    setSpaceType("")
+    setNeed("")
   };
 
   return (
