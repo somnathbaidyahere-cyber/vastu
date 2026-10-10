@@ -6,45 +6,76 @@ export default function TableBlock({ value }) {
   }
 
   const hasHeader = value.hasHeader !== false;
+  const headerCells = hasHeader ? rows[0]?.cells ?? [] : [];
+  const bodyRows = rows.slice(hasHeader ? 1 : 0);
+
+  // Use the largest row width so every column shares the available space.
+  const columnCount = Math.max(
+    headerCells.length,
+    ...bodyRows.map((row) => row.cells?.length ?? 0),
+    1
+  );
+
+  const formatHeader = (text) => {
+    if (typeof text !== "string" || !text.length) {
+      return text;
+    }
+
+    return text.charAt(0).toLocaleUpperCase() + text.slice(1);
+  };
 
   return (
-    <figure className="my-10 min-w-0">
+    <figure className="my-10 w-full min-w-0">
       {value.caption && (
-        <figcaption className="mb-4 text-base font-medium leading-7 text-foreground">
+        <figcaption className="mb-4 text-base font-semibold leading-7 text-foreground sm:text-lg">
           {value.caption}
         </figcaption>
       )}
 
-      <div className="w-full overflow-x-auto rounded-xl border border-border/70">
-        <table className="w-full min-w-max border-collapse text-left text-sm sm:text-base">
-          {hasHeader && rows[0]?.cells?.length > 0 && (
-            <thead className="bg-muted/60">
+      <div className="w-full min-w-0 overflow-x-auto rounded-xl border border-border/90 bg-card">
+        <table className="w-full table-fixed border-collapse text-left text-sm sm:text-base">
+          <colgroup>
+            {Array.from({ length: columnCount }).map((_, index) => (
+              <col key={index} style={{ width: `${100 / columnCount}%` }} />
+            ))}
+          </colgroup>
+
+          {hasHeader && headerCells.length > 0 && (
+            <thead className="bg-foreground/5">
               <tr>
-                {rows[0].cells.map((cell, index) => (
+                {headerCells.map((cell, index) => (
                   <th
                     key={index}
                     scope="col"
-                    className="border-b border-border px-4 py-3 font-semibold text-foreground sm:px-5"
+                    className={`border-b-2 border-border/80 px-4 py-3.5 font-semibold text-foreground sm:px-5 ${
+                      index > 0 ? "border-l border-border/70" : ""
+                    }`}
                   >
-                    {cell}
+                    <span className="break-words">
+                      {formatHeader(cell)}
+                    </span>
                   </th>
                 ))}
               </tr>
             </thead>
           )}
 
-          <tbody className="divide-y divide-border/70">
-            {rows.slice(hasHeader ? 1 : 0).map((row, rowIndex) => (
+          <tbody>
+            {bodyRows.map((row, rowIndex) => (
               <tr
                 key={row._key || rowIndex}
-                className="transition-colors hover:bg-muted/30"
+                className="border-b border-border/70 last:border-b-0 transition-colors bg-surface/40"
               >
-                {(row.cells ?? []).map((cell, cellIndex) => (
+                {Array.from({ length: columnCount }).map((_, cellIndex) => (
                   <td
                     key={cellIndex}
-                    className="px-4 py-3 leading-7 text-foreground/85 sm:px-5"
+                    className={`px-4 py-3.5 leading-7 text-foreground sm:px-5 ${
+                      cellIndex > 0 ? "border-l border-border/70" : ""
+                    }`}
                   >
-                    {cell}
+                    <div className="break-words">
+                      {row.cells?.[cellIndex] ?? ""}
+                    </div>
                   </td>
                 ))}
               </tr>

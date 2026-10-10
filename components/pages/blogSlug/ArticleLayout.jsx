@@ -4,7 +4,7 @@ import PortableTextRenderer from "@/components/pages/blog/PortableTextRenderer";
 
 export default function ArticleLayout({ article, toc }) {
   return (
-    <section className="border-y border-border/60 bg-foreground-subtle/5 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="border-y border-border/60 bg-surface/60 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
         <ArticleContent article={article} />
 
@@ -88,6 +88,7 @@ function ArticleSidebar({ article, toc }) {
   );
 }
 
+
 function ArticleTableOfContents({ toc }) {
   if (!toc?.length) return null;
 
@@ -99,10 +100,21 @@ function ArticleTableOfContents({ toc }) {
 
       <ol className="space-y-2 text-sm text-muted-foreground">
         {toc.map((item) => (
-          <li key={item.id}>
+          <li
+            key={item.blockKey || item.id}
+            className={
+              item.level === 3
+                ? "ml-4 border-l border-border/60 pl-3"
+                : ""
+            }
+          >
             <a
               href={`#${item.id}`}
-              className="transition-colors hover:text-primary"
+              className={`block py-0.5 transition-colors hover:text-primary ${
+                item.level === 3
+                  ? "text-xs leading-5"
+                  : "font-medium leading-6"
+              }`}
             >
               {item.text}
             </a>
@@ -112,6 +124,7 @@ function ArticleTableOfContents({ toc }) {
     </nav>
   );
 }
+
 
 function SidebarLinkCard({ title, text, href }) {
   return (

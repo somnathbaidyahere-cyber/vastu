@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function ConsultationBridge() {
   return (
-    <section className="border-t border-border/70 bg-surface px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="border-t-1/4 border-border/70 bg-surface px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto flex max-w-7xl flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
         <div className="max-w-2xl space-y-3">
           <div className="inline-flex items-center space-x-2">

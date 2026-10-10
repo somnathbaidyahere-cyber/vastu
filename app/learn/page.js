@@ -11,7 +11,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { getWebPageSchema } from "@/lib/seo/schemas";
 import { seoConfig } from "@/lib/seo/config";
 
-const pageTitle = "Learn Vastu — Principles, Guidance & Insights | VastuGuru";
+const pageTitle = "Learn Vastu — Principles, Guidance & Insights";
 
 const pageDescription =
   "Learn the fundamentals of Vastu through practical explanations of directions, elements, rooms, and living spaces.";

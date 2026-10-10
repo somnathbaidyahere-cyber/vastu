@@ -41,6 +41,9 @@ export default function ConversationStarter() {
   const [spaceOpen, setSpaceOpen] = useState(false);
   const [need, setNeed] = useState("");
 
+  const [spaceTypeError, setSpaceTypeError] = useState("");
+  const [needError, setNeedError] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -48,7 +51,18 @@ export default function ConversationStarter() {
     const cleanSpaceType = spaceType.trim();
     const cleanNeed = need.trim().slice(0, 500);
 
-    if (!cleanSpaceType || !cleanNeed) {
+    const nextSpaceTypeError = cleanSpaceType
+      ? ""
+      : "Please select your space type.";
+
+    const nextNeedError = cleanNeed
+      ? ""
+      : "Please tell us what you would like guidance on.";
+
+    setSpaceTypeError(nextSpaceTypeError);
+    setNeedError(nextNeedError);
+
+    if (nextSpaceTypeError || nextNeedError) {
       return;
     }
 
@@ -62,7 +76,10 @@ export default function ConversationStarter() {
   };
 
   return (
-    <section id="conversation" className="relative bg-surface overflow-hidden px-4 py-10 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section
+      id="conversation"
+      className="relative bg-surface overflow-hidden px-4 py-10 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="section-badge">Start a conversation</span>
@@ -77,7 +94,10 @@ export default function ConversationStarter() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="mt-8 md:mt-10 lg:mt-12 space-y-4 md:space-y-6 lg:space-y-8">
+        <form
+          onSubmit={handleSubmit}
+          className="mt-8 md:mt-10 lg:mt-12 space-y-4 md:space-y-6 lg:space-y-8"
+        >
           <div>
             <label
               htmlFor="consult-name"
@@ -109,10 +129,21 @@ export default function ConversationStarter() {
             <button
               id="consult-space-type"
               type="button"
-              onClick={() => setSpaceOpen((open) => !open)}
-              className="mt-1 md:mt-2 flex w-full items-center justify-between rounded-md md:rounded-lg lg:rounded-xl border border-border/60 bg-surface/70 px-4 py-1 md:py-2 lg:py-3 text-left text-base text-foreground shadow-sm transition-all duration-200 hover:border-primary/30 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/10"
+              onClick={() => {
+                if (spaceOpen && !spaceType) {
+                  setSpaceTypeError("Please select your space type.");
+                }
+
+                setSpaceOpen((open) => !open);
+              }}
               aria-haspopup="listbox"
               aria-expanded={spaceOpen}
+              aria-describedby={
+                spaceTypeError ? "consult-space-type-error" : undefined
+              }
+              className={`mt-1 md:mt-2 flex w-full items-center justify-between rounded-md md:rounded-lg lg:rounded-xl border bg-surface/70 px-4 py-1 md:py-2 lg:py-3 text-left text-base text-foreground shadow-sm transition-all duration-200 hover:border-primary/30 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/10 ${
+                spaceTypeError ? "border-red-500" : "border-border/60"
+              }`}
             >
               <span
                 className={
@@ -148,16 +179,26 @@ export default function ConversationStarter() {
                   : "pointer-events-none max-h-0 -translate-y-2 scale-y-95 opacity-0"
               }`}
             >
-              <div className="p-1.5" role="listbox">
+              <div
+                className="p-1.5"
+                role="listbox"
+                aria-labelledby="consult-space-type"
+                aria-invalid={Boolean(spaceTypeError)}
+                aria-describedby={
+                  spaceTypeError ? "consult-space-type-error" : undefined
+                }
+              >
                 {spaceTypes.map((type) => (
                   <button
                     key={type}
                     type="button"
                     role="option"
+                    required
                     aria-selected={spaceType === type}
                     onClick={() => {
                       setSpaceType(type);
                       setSpaceOpen(false);
+                      setSpaceTypeError("");
                     }}
                     className={`w-full rounded-lg px-4 py-3 text-left text-sm transition-colors ${
                       spaceType === type
@@ -170,27 +211,67 @@ export default function ConversationStarter() {
                 ))}
               </div>
             </div>
+
+            <div className="min-h-5 pt-1" aria-live="polite">
+              {spaceTypeError && (
+                <p
+                  id="consult-space-type-error"
+                  role="alert"
+                  className="text-sm leading-4 text-red-600"
+                >
+                  {spaceTypeError}
+                </p>
+              )}
+            </div>
           </div>
 
-          <div>
-            <label
-              htmlFor="consult-need"
-              className="block section-para text-foreground"
-            >
-              What would you like guidance on?
-            </label>
+          
+<div>
+  <label
+    htmlFor="consult-need"
+    className="block section-para text-foreground"
+  >
+    What would you like guidance on?
+  </label>
 
-            <textarea
-              id="consult-need"
-              value={need}
-              onChange={(event) => setNeed(event.target.value)}
-              required
-              maxLength={500}
-              rows={2}
-              placeholder="A sentence or two is enough."
-              className="mt-1 md:mt-2 w-full resize-none border-0 border-b border-border bg-transparent py-1 md:py-2 lg:py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
-            />
-          </div>
+  <textarea
+    id="consult-need"
+    value={need}
+    onChange={(event) => {
+      setNeed(event.target.value);
+
+      if (event.target.value.trim()) {
+        setNeedError("");
+      }
+    }}
+    maxLength={500}
+    rows={2}
+    aria-invalid={Boolean(needError)}
+    aria-describedby="consult-need-error"
+    placeholder="A sentence or two is enough."
+    className={`mt-1 md:mt-2 w-full resize-none border-0 border-b bg-transparent py-1 md:py-2 lg:py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none ${
+      needError
+        ? "border-red-500 focus:border-red-500"
+        : "border-border focus:border-primary"
+    }`}
+  />
+
+  <div
+    id="consult-need-error"
+    className="min-h-5 pt-1"
+    aria-live="polite"
+  >
+    {needError && (
+      <p
+        role="alert"
+        className="text-sm leading-4 text-red-600"
+      >
+        {needError}
+      </p>
+    )}
+  </div>
+</div>
+
 
           <div className="flex flex-col items-center gap-4 lg:gap-5 pt-2">
             <button
