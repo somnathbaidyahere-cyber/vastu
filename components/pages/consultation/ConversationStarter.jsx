@@ -225,53 +225,48 @@ export default function ConversationStarter() {
             </div>
           </div>
 
-          
-<div>
-  <label
-    htmlFor="consult-need"
-    className="block section-para text-foreground"
-  >
-    What would you like guidance on?
-  </label>
+          <div>
+            <label
+              htmlFor="consult-need"
+              className="block section-para text-foreground"
+            >
+              What would you like guidance on?
+            </label>
 
-  <textarea
-    id="consult-need"
-    value={need}
-    onChange={(event) => {
-      setNeed(event.target.value);
+            <textarea
+              id="consult-need"
+              value={need}
+              onChange={(event) => {
+                setNeed(event.target.value);
 
-      if (event.target.value.trim()) {
-        setNeedError("");
-      }
-    }}
-    maxLength={500}
-    rows={2}
-    aria-invalid={Boolean(needError)}
-    aria-describedby="consult-need-error"
-    placeholder="A sentence or two is enough."
-    className={`mt-1 md:mt-2 w-full resize-none border-0 border-b bg-transparent py-1 md:py-2 lg:py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none ${
-      needError
-        ? "border-red-500 focus:border-red-500"
-        : "border-border focus:border-primary"
-    }`}
-  />
+                if (event.target.value.trim()) {
+                  setNeedError("");
+                }
+              }}
+              maxLength={500}
+              rows={2}
+              aria-invalid={Boolean(needError)}
+              aria-describedby="consult-need-error"
+              placeholder="A sentence or two is enough."
+              className={`mt-1 md:mt-2 w-full resize-none border-0 border-b bg-transparent py-1 md:py-2 lg:py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none ${
+                needError
+                  ? "border-red-500 focus:border-red-500"
+                  : "border-border focus:border-primary"
+              }`}
+            />
 
-  <div
-    id="consult-need-error"
-    className="min-h-5 pt-1"
-    aria-live="polite"
-  >
-    {needError && (
-      <p
-        role="alert"
-        className="text-sm leading-4 text-red-600"
-      >
-        {needError}
-      </p>
-    )}
-  </div>
-</div>
-
+            <div
+              id="consult-need-error"
+              className="min-h-5 pt-1"
+              aria-live="polite"
+            >
+              {needError && (
+                <p role="alert" className="text-sm leading-4 text-red-600">
+                  {needError}
+                </p>
+              )}
+            </div>
+          </div>
 
           <div className="flex flex-col items-center gap-4 lg:gap-5 pt-2">
             <button
