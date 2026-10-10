@@ -44,7 +44,10 @@ export default function ArticleHero({ article }) {
 
           {article.updatedAt && article.updatedAt !== article.publishedAt && (
             <p className="mt-3 text-xs text-muted-foreground">
-              Updated {formatBlogDate(article.updatedAt)}
+              Updated{" "}
+              <time dateTime={article.updatedAt}>
+                {formatBlogDate(article.updatedAt)}
+              </time>
             </p>
           )}
         </div>
@@ -54,7 +57,7 @@ export default function ArticleHero({ article }) {
             {article.coverImage ? (
               <Image
                 src={article.coverImage}
-                alt={article.imageAlt || article.title}
+                alt={article.imageAlt || ""}
                 fill
                 unoptimized
                 className="object-cover"
@@ -62,7 +65,11 @@ export default function ArticleHero({ article }) {
                 priority
               />
             ) : (
-              <div className="flex h-full min-h-64 items-center justify-center text-sm text-muted-foreground">
+              <div
+                role="img"
+                aria-label="No cover image available"
+                className="flex h-full min-h-64 items-center justify-center text-sm text-muted-foreground"
+              >
                 No image available
               </div>
             )}

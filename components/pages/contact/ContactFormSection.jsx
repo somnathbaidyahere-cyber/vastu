@@ -174,17 +174,18 @@ export default function ContactFormSection() {
       }));
     }
     setValues({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    general: "",
-  })
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      general: "",
+    });
   };
 
   return (
     <section
       ref={formRef}
+      aria-label="Contact options and message form"
       className="scroll-mt-8 border-t border-border/70 bg-surface px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-12">
@@ -192,6 +193,9 @@ export default function ContactFormSection() {
         <div className="space-y-6 lg:col-span-5">
           <div className="space-y-6 rounded-sm border border-[#E2DACC] bg-[#FAF7F0] p-8 shadow-xs sm:p-10">
             <p className="section-badge">DIRECT WHATSAPP INITIATIVE</p>
+            <h2 id="contact-options-heading" className="sr-only">
+              Contact options and inquiry form
+            </h2>
 
             <h3 className="font-serif text-2xl text-[#2C2825]">
               Prefer instant dialogue?
@@ -230,7 +234,8 @@ export default function ContactFormSection() {
 
         {/* Right Side Form */}
 
-        <div className="
+        <div
+          className="
   w-full
   rounded-sm
   border border-[#E2DACC]
@@ -241,7 +246,8 @@ export default function ContactFormSection() {
   lg:col-span-6
   lg:col-start-7
   lg:p-7
-">
+"
+        >
           {status === "sent" ? (
             <div className="space-y-4 py-8 text-center">
               <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#8C6A3C]/10 text-[#8C6A3C]">
@@ -290,6 +296,7 @@ export default function ContactFormSection() {
                     <button
                       type="button"
                       onClick={clearTopic}
+                      aria-label="Clear selected topic"
                       className="ml-1 font-bold text-[#7A7268] hover:text-[#2C2825]"
                       title="Clear topic"
                     >

@@ -9,11 +9,11 @@ const exploreLinks = [
 
 export default function ContinueExploring() {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8">
+    <section  aria-labelledby="continue-exploring-heading" className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <span className="text-sm font-medium uppercase tracking-widest text-primary">
+        <h2 id="continue-exploring-heading" className="text-sm font-medium uppercase tracking-widest text-primary">
           Explore further
-        </span>
+        </h2>
 
         <ul className="mt-6 divide-y divide-border/60 border-t border-border/60 perspective:[1000px]">
           {exploreLinks.map((link) => (
@@ -26,7 +26,7 @@ export default function ContinueExploring() {
                   {link.label}
                 </span>
 
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 transform-3d group-hover:translate-x-1.5 group-hover:transform-[translateZ(15px)]" />
+                <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 transform-3d group-hover:translate-x-1.5 group-hover:transform-[translateZ(15px)]" />
               </Link>
             </li>
           ))}

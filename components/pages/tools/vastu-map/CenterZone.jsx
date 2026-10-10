@@ -3,10 +3,16 @@ import SectionLabel from "../../../ui/SectionLabel";
 
 export default function CenterZone() {
   return (
-    <section className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section
+      aria-labelledby="center-zone-heading"
+      className="border-y border-border/60 bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-20">
         {/* Visual */}
-        <div className="lg:col-span-6 md:mx-auto md:w-[50%] lg:mx-0 lg:w-full">
+        <div
+          aria-hidden="true"
+          className="lg:col-span-6 md:mx-auto md:w-[50%] lg:mx-0 lg:w-full"
+        >
           <div
             className="
       relative
@@ -112,7 +118,9 @@ export default function CenterZone() {
         <div className="lg:col-span-6">
           <SectionLabel number="03">The central zone</SectionLabel>
 
-          <h2 className="section-heading">Keep the center in context</h2>
+          <h2 id="center-zone-heading" className="section-heading">
+            Keep the center in context
+          </h2>
 
           <p className="max-w-xl section-description ">
             The central area of a Vastu layout is traditionally referred to as

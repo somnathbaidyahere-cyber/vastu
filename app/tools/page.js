@@ -96,14 +96,18 @@ export default function ToolsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <JsonLd data={pageSchema} />
+ 
+<>
+  <JsonLd data={pageSchema} />
 
-      <ToolsHero />
+  <main className="min-h-screen bg-background">
+    <ToolsHero />
 
-      <Tools />
+    <Tools />
 
-      <Features />
-    </div>
+    <Features />
+  </main>
+</>
+
   );
 }

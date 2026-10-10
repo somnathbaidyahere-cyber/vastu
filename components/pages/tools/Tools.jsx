@@ -41,35 +41,40 @@ const tools = [
 
 export default function Tools() {
   return (
-    <section className=" px-4 py-20 sm:px-6 lg:px-8 lg:py-28 bg-primary-foreground">
-
+    <section
+      aria-labelledby="tools-section-heading"
+      className="bg-primary-foreground px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-medium uppercase tracking-widest text-primary">
             Three core tools
           </span>
-          <h2 className="section-heading">
+
+          <h2 id="tools-section-heading" className="section-heading">
             Everything you need for a balanced home
           </h2>
+
           <p className="section-description">
             Use them in any order, or follow the recommended flow below.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <ul className="mt-12 grid list-none gap-6 p-0 sm:grid-cols-2">
           {tools.map((tool) => (
-            <ToolCard
-              key={tool.slug}
-              href={tool.href}
-              icon={tool.icon}
-              name={tool.name}
-              sanskrit={tool.sanskrit}
-              description={tool.description}
-              highlights={tool.highlights}
-              badge={"badge" in tool ? tool.badge : undefined}
-            />
+            <li key={tool.slug} className="min-w-0">
+              <ToolCard
+                href={tool.href}
+                icon={tool.icon}
+                name={tool.name}
+                sanskrit={tool.sanskrit}
+                description={tool.description}
+                highlights={tool.highlights}
+                badge={"badge" in tool ? tool.badge : undefined}
+              />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

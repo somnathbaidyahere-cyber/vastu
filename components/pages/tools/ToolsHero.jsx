@@ -3,17 +3,22 @@ import { Compass } from "lucide-react";
 
 export default function ToolsHero() {
   return (
-    <section className=" bg-ivory-pattern pb-14 pt-16 lg:pb-16 lg:pt-24">
+    <section
+      aria-labelledby="tools-hero-heading"
+      className="bg-ivory-pattern pb-14 pt-16 lg:pb-16 lg:pt-24"
+    >
       <div className="mx-auto max-w-3xl text-center">
         <div className="px-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-[10px] md:text-xs font-medium uppercase tracking-widest text-accent-hover">
-            <Compass className="h-3.5 w-3.5" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-accent-hover md:text-xs">
+            <Compass aria-hidden="true" className="h-3.5 w-3.5" />
             Vastu Toolkit
           </span>
-          <h1 className="hero-heading">
+
+          <h1 id="tools-hero-heading" className="hero-heading">
             Tools that translate{" "}
             <span className="text-gradient-brand">shastra</span> into action
           </h1>
+
           <p className="hero-description">
             Each tool follows classical Vastu Shastra rules — directions, zones,
             and the five elements — presented simply enough to use on your own
@@ -21,13 +26,14 @@ export default function ToolsHero() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center  gap-4">
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/tools/compass"
             className="inline-flex items-center justify-center rounded-full bg-primary hero-btn font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
           >
             Start with the compass
           </Link>
+
           <Link
             href="/learn/fundamentals"
             className="inline-flex items-center justify-center rounded-full border border-border bg-card hero-btn font-medium text-foreground transition-colors hover:bg-secondary hover:text-foreground"

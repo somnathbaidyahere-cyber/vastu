@@ -18,11 +18,11 @@ export default function FiveElementsSpectrum() {
   const Icon = current.icon;
 
   return (
-    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section aria-labelledby="five-elements-heading" className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <p className="section-badge">The five elements</p>
-          <h2 className="section-heading">
+          <h2 id="five-elements-heading" className="section-heading">
             Everything begins with the elements.
           </h2>
         </div>

@@ -24,53 +24,60 @@ export const toolSteps = [
 
 export default function Features() {
   return (
-    <section className="border-t border-border/60 bg-secondary/30">
-  <div className="grid lg:min-h-[700px] lg:grid-cols-2">
-    
-    {/* Left Image */}
-    <div className="relative hidden min-h-full overflow-hidden lg:block">
-      <Image
-        src="/backgrounds/indian-scriptures.webp"
-        alt=""
-        fill
-        sizes="50vw"
-        className="object-cover object-center opacity-90"
-      />
-    </div>
+    <section
+      aria-labelledby="tool-steps-heading"
+      className="border-t border-border/60 bg-secondary/30"
+    >
+      <div className="grid lg:min-h-175 lg:grid-cols-2">
+        {/* Left Image */}
+        <div
+          aria-hidden="true"
+          className="relative hidden min-h-full overflow-hidden lg:block"
+        >
+          <Image
+            src="/backgrounds/indian-scriptures.webp"
+            alt=""
+            fill
+            sizes="50vw"
+            className="object-cover object-center opacity-90"
+          />
+        </div>
 
-    {/* Right Content */}
-    <div className="px-4 py-20 sm:px-6 lg:px-16 lg:py-28 xl:px-24">
-      <div className="max-w-xl">
-        <span className="section-badge">
-          How it works
-        </span>
+        {/* Right Content */}
+        <div className="px-4 py-20 sm:px-6 lg:px-16 lg:py-28 xl:px-24">
+          <div className="max-w-xl">
+            <span className="section-badge">How it works</span>
 
-        <h2 className="section-heading">
-          A calm, three-step ritual
-        </h2>
+            <h2 id="tool-steps-heading" className="section-heading">
+              A calm, three-step ritual
+            </h2>
 
-        <p className="section-description">
-          Orient, map, then remedy — the same sequence a traditional
-          consultant follows on site.
-        </p>
+            <p className="section-description">
+              Orient, map, then remedy — the same sequence a traditional
+              consultant follows on site.
+            </p>
 
-        <div className="mt-10 space-y-6">
-          {toolSteps.map((step) => (
-            <FeatureRow key={step.number} {...step} />
-          ))}
+            <ol className="mt-10 space-y-6">
+              {toolSteps.map((step) => (
+                <li key={step.number}>
+                  <FeatureRow key={step.number} {...step} />
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</section>
+    </section>
   );
 }
 
 function FeatureRow({ number, title, description }) {
   return (
     <div className="flex gap-5">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-card text-sm font-medium text-primary">
+      <div
+        aria-hidden="true"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-card text-sm font-medium text-primary"
+      >
         {number}
       </div>
       <div>

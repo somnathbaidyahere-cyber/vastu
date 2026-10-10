@@ -1,5 +1,3 @@
-
-
 const approachStages = [
   {
     number: "01",
@@ -20,7 +18,10 @@ const approachStages = [
 
 export default function OurApproach() {
   return (
-    <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section
+      aria-labelledby="our-approach-heading"
+      className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="max-w-2xl">
@@ -29,20 +30,23 @@ export default function OurApproach() {
             Our approach
           </p>
 
-          <h2 className="section-heading  ">Understand, interpret, apply.</h2>
+          <h2 id="our-approach-heading" className="section-heading  ">
+            Understand, interpret, apply.
+          </h2>
         </div>
 
         {/* Approach Journey */}
         <div className="relative mt-16 lg:mt-20">
-          <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
+          <ol className="grid gap-12 lg:grid-cols-3 lg:gap-16">
             {approachStages.map((stage, index) => {
               const isLast = index === approachStages.length - 1;
 
               return (
-                <div key={stage.number} className="group relative">
+                <li key={stage.number} className="group relative">
                   {/* Step marker */}
                   <div className="relative z-10 flex items-center justify-between">
                     <div
+                      aria-hidden="true"
                       className="
                         flex h-6 w-6 items-center justify-center
                         rounded-full
@@ -97,6 +101,7 @@ export default function OurApproach() {
                   {/* Bottom detail */}
                   <div className="mt-3 md:mt-4 flex items-center gap-2 lg:mt-8">
                     <span
+                      aria-hidden="true"
                       className="
       h-px w-8 bg-border/70
       transition-all duration-500
@@ -118,10 +123,10 @@ export default function OurApproach() {
                       {index === 2 && "Respond"}
                     </span>
                   </div>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ol>
         </div>
       </div>
     </section>

@@ -16,6 +16,7 @@ export default function VastuMapExplorer() {
   return (
     <section
       id="map-explorer"
+      aria-labelledby="map-explorer-heading"
       className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
@@ -24,7 +25,9 @@ export default function VastuMapExplorer() {
           <div className="lg:col-span-7">
             <SectionLabel number="02">Explore the map</SectionLabel>
 
-            <h2 className="section-heading">Explore each Vastu zone</h2>
+            <h2 id="map-explorer-heading" className="section-heading">
+              Explore each Vastu zone
+            </h2>
           </div>
 
           <p className="max-w-xl section-description lg:col-span-5">
@@ -105,6 +108,8 @@ export default function VastuMapExplorer() {
 
             {/* Information panel */}
             <div
+              aria-live="polite"
+              aria-atomic="true"
               className="
         flex
         flex-col
@@ -159,9 +164,7 @@ export default function VastuMapExplorer() {
                   Traditional association
                 </p>
 
-                <p className="section-para">
-                  {selected?.association}
-                </p>
+                <p className="section-para">{selected?.association}</p>
               </div>
 
               {/* Guidance */}
@@ -170,9 +173,7 @@ export default function VastuMapExplorer() {
                   General guidance
                 </p>
 
-                <p className="section-para">
-                  {selected?.guidance}
-                </p>
+                <p className="section-para">{selected?.guidance}</p>
               </div>
 
               {/* Disclaimer */}
@@ -186,7 +187,10 @@ export default function VastuMapExplorer() {
         </div>
 
         {/* Direction navigator */}
-        <div className="mt-6 grid grid-cols-4 overflow-hidden rounded-[1.25rem] border border-border bg-background sm:grid-cols-8">
+        <div
+          aria-label="Choose a Vastu direction"
+          className="mt-6 grid grid-cols-4 overflow-hidden rounded-[1.25rem] border border-border bg-background sm:grid-cols-8"
+        >
           {directions
             .filter((direction) => direction.id !== "CENTER")
             .map((direction) => {
@@ -197,17 +201,23 @@ export default function VastuMapExplorer() {
                   key={direction.id}
                   type="button"
                   onClick={() => setSelectedId(direction.id)}
+                  aria-pressed={active}
+                  aria-label={`${direction.name} direction`}
                   className={`border-r border-b border-border px-3 py-4 text-center transition-colors last:border-r-0 sm:border-b-0 ${
                     active
                       ? "bg-primary text-primary-foreground"
                       : "text-foreground hover:bg-secondary"
                   }`}
                 >
-                  <span className="block font-heading text-lg">
+                  <span
+                    aria-hidden="true"
+                    className="block font-heading text-lg"
+                  >
                     {direction.id}
                   </span>
 
                   <span
+                    aria-hidden="true"
                     className={`hidden md:block mt-1 text-[9px] uppercase tracking-widest ${
                       active
                         ? "text-primary-foreground/70"

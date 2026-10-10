@@ -2,10 +2,13 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceHolder";
 
 export default function OurBeginning() {
   return (
-    <section className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section
+      aria-labelledby="our-beginning-heading"
+      className="border-y border-border/60 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
       <div className="mx-auto max-w-4xl text-center">
         <p className="section-badge">Why we exist</p>
-        <h2 className="section-heading">
+        <h2 id="our-beginning-heading" className="section-heading">
           We believe a space is more than walls, rooms and directions.
         </h2>
         <p className="section-description">It is where life unfolds.</p>
@@ -21,7 +24,7 @@ export default function OurBeginning() {
       <div className="relative mx-auto mt-16 max-w-5xl">
         <ImagePlaceholder
           src="/section-images/dark-courtyard.webp"
-          alt="dark Indian house courtyard"
+          alt=""
           label="Threshold / courtyard"
           ratio="aspect-[16/8]"
           className="relative z-0 rounded-xl"

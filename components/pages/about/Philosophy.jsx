@@ -1,9 +1,12 @@
 export default function Philosophy() {
   return (
-    <section className="border-y border-border/60 bg-primary  px-4 py-24 sm:px-6 lg:px-8 lg:py-36">
+    <section
+      aria-labelledby="philosophy-heading"
+      className="border-y border-border/60 bg-primary  px-4 py-24 sm:px-6 lg:px-8 lg:py-36"
+    >
       <div className="mx-auto max-w-3xl text-center">
         <p className="section-badge text-surface-muted">Our philosophy</p>
-        <h2 className="section-heading text-surface">
+        <h2 id="philosophy-heading" className="section-heading text-surface">
           Vastu should create awareness, not anxiety.
         </h2>
         <p className="section-description text-surface-accent">
