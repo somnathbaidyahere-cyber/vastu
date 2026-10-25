@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   CheckCircle2,
   MessageSquare,
+  WifiOff,
 } from "lucide-react";
 
 import { useContact } from "./ContactContext";
@@ -16,12 +17,15 @@ import {
   sanitizeEmail,
   sanitizeIndianMobile,
 } from "@/lib/whatsapp";
+import useOnlineStatus from "@/hooks/useOnlineStatus";
 
 // Keep these in your existing constants/config file
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP;
 const RESPONSE_TIME = "24–48 hours";
 
 export default function ContactFormSection() {
+  const { isOnline, isOffline } = useOnlineStatus();
+
   const { topic, clearTopic, formRef } = useContact();
 
   const [status, setStatus] = "";
@@ -220,6 +224,15 @@ export default function ContactFormSection() {
 
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
+            {isOffline && (
+              <p
+                role="status"
+                className=" inline-flex gap-1 text-xs text-amber-600"
+              >
+                <WifiOff className="w-4 h-4 text-red-500" /> No internet
+                connection.
+              </p>
+            )}
 
             <div className="flex items-start space-x-3 border-t border-[#E2DACC] pt-4 text-xs text-[#7A7268]">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#8C6A3C]" />
@@ -383,6 +396,15 @@ export default function ContactFormSection() {
 
                     <ArrowRight className="h-4 w-4" />
                   </button>
+                  {isOffline && (
+                    <p
+                      role="status"
+                      className=" inline-flex gap-1 text-xs text-amber-600"
+                    >
+                      <WifiOff className="w-4 h-4 text-red-500" /> No internet
+                      connection.
+                    </p>
+                  )}
                 </div>
               </form>
             </div>

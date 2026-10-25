@@ -1,12 +1,18 @@
+'use client'
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, WifiOff } from 'lucide-react';
+import useOnlineStatus from "@/hooks/useOnlineStatus";
+
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP;
 const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL;
 
 function Footer() {
+  const { isOnline, isOffline } = useOnlineStatus();
+
   const message = "Hi Vastu Guru! I have a vastu query.."
   const encodedMessage = encodeURIComponent(message.trim());
 
@@ -72,6 +78,11 @@ function Footer() {
           <Mail className="h-4 w-4" />
         </a>
       </div>
+        {isOffline && (
+          <p role="status" className="mt-3 inline-flex gap-1 text-xs text-amber-600">
+           <WifiOff className="w-4 h-4 text-red-400"/> No internet connection.
+          </p>
+        )}
     </div>
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
