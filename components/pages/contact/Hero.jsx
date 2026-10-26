@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -7,13 +8,17 @@ import {
   Clock,
   ArrowUpRight,
   MessageCircle,
+  WifiOff,
 } from "lucide-react";
+import useOnlineStatus from "@/hooks/useOnlineStatus";
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP; // country code + number, digits only
 const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL;
 const RESPONSE_TIME = "24 hours";
 
 export default function Hero() {
+  const { isOnline, isOffline } = useOnlineStatus();
+
   return (
     <header className="relative isolate px-4 pb-20 pt-7 sm:px-6 lg:px-8 lg:pb-28 min-h-170">
       <div className="absolute inset-0 bg-linear-to-r -z-5 from-foreground/90 via-foreground/55 to-foreground/10" />
@@ -112,6 +117,11 @@ export default function Hero() {
             <span>Response within {RESPONSE_TIME}</span>
           </div>
         </div>
+        {isOffline && (
+          <p role="status" className="mt-3 inline-flex gap-1 text-xs text-amber-100">
+           <WifiOff className="w-4 h-4 text-red-400"/> No internet connection.
+          </p>
+        )}
       </div>
     </header>
   );
