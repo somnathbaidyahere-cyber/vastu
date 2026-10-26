@@ -1,10 +1,20 @@
-import { MessageSquare, Mail, Phone, ArrowUpRight } from "lucide-react";
+'use client'
+import {
+  MessageSquare,
+  Mail,
+  Phone,
+  ArrowUpRight,
+  WifiOff,
+} from "lucide-react";
+import useOnlineStatus from "@/hooks/useOnlineStatus";
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP;
 const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL;
 const PHONE_NUMBER = WHATSAPP_NUMBER;
 
 export default function DirectContactGrid() {
+  const { isOnline, isOffline } = useOnlineStatus();
+
   return (
     <section
       aria-labelledby="direct-channels-heading"
@@ -22,6 +32,7 @@ export default function DirectContactGrid() {
           {/* Channel 1 */}
           <div className="py-8 sm:py-10 sm:pr-8 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono uppercase text-[#7A7268]">
+              {isOffline && <WifiOff className="w-4 h-4 text-red-500" />}
               <MessageSquare
                 aria-hidden="true"
                 className="w-3.5 h-3.5 text-[#8C6A3C]"
@@ -34,6 +45,7 @@ export default function DirectContactGrid() {
               rel="noopener noreferrer"
               className="group inline-flex items-center space-x-2 text-lg font-serif font-medium text-[#2C2825] hover:text-[#8C6A3C] transition-colors"
             >
+
               <span>Start a conversation</span>
               <ArrowUpRight
                 aria-hidden="true"
@@ -48,6 +60,7 @@ export default function DirectContactGrid() {
           {/* Channel 2 */}
           <div className="py-8 sm:py-10 sm:px-8 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono uppercase text-[#7A7268]">
+              {isOffline && <WifiOff className="w-4 h-4 text-red-500" />}
               <Mail aria-hidden="true" className="w-3.5 h-3.5 text-[#8C6A3C]" />
               <span>Email</span>
             </div>
