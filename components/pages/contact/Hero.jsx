@@ -17,7 +17,7 @@ const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL;
 const RESPONSE_TIME = "24 hours";
 
 export default function Hero() {
-  const { isOnline, isOffline } = useOnlineStatus();
+  const { isOffline } = useOnlineStatus();
 
   return (
     <header className="relative isolate px-4 pb-20 pt-7 sm:px-6 lg:px-8 lg:pb-28 min-h-170">
