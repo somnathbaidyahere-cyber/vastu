@@ -20,7 +20,7 @@ export const metadata = {
     description:
       "Explore Vastu principles, useful tools, and personalized consultation guidance to understand your home better.",
     url: "/",
-    siteName: "VastuGuru",
+    siteName: "HarGharVastu",
     locale: "en_IN",
     type: "website",
       images: [
@@ -31,7 +31,7 @@ export const metadata = {
 
       height: 630,
 
-      alt: "VastuGuru — Vastu consultation and guidance for your home",
+      alt: "HarGharVastu — Vastu consultation and guidance for your home",
     },
   ],
   },

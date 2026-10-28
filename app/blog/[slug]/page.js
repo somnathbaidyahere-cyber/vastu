@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
   if (!article) {
     return {
       title: "Article unavailable",
-      description: "This VastuGuru article is unavailable.",
+      description: "This HarGharVastu article is unavailable.",
       robots: {
         index: false,
         follow: false,

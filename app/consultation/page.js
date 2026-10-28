@@ -8,7 +8,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { getWebPageSchema } from "@/lib/seo/schemas";
 import { seoConfig } from "@/lib/seo/config";
 
-const pageTitle = "Vastu Consultation for Your Home | VastuGuru";
+const pageTitle = "Vastu Consultation for Your Home | HarGharVastu";
 
 const pageDescription =
   "Start a Vastu consultation for a new build, renovation, move, or existing home. Begin with a simple conversation about your space and get practical guidance.";

@@ -47,7 +47,7 @@ export const metadata = {
       url: "/images/seo/vastu-guru-default.jpg",
       width: 1200,
       height: 630,
-      alt: "VastuGuru — Vastu consultation and guidance",
+      alt: "HarGharVastu — Vastu consultation and guidance",
     },
   ],
   },

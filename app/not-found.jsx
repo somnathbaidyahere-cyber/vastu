@@ -2,7 +2,7 @@ import Link from "next/link";
 import CompassStage from "@/components/ui/CompassStage";
 
 export const metadata = {
-  title: "404 — Page not found | VastuGuru",
+  title: "404 — Page not found | HarGharVastu",
   robots: { index: false },
 };
 
@@ -36,7 +36,7 @@ export default function NotFound() {
 
       <div className="w-full max-w-xl text-center">
         <p className="mb-8 font-serif text-sm tracking-[0.32em] text-[#8B5E2B]">
-          VASTUGURU
+          HarGharVastu
         </p>
 
         <CompassStage>

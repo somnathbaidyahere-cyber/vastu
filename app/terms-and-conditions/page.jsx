@@ -4,7 +4,7 @@ import { seoConfig } from "@/lib/seo/config";
 export const metadata = {
   title: "Terms & Conditions",
   description:
-    "Review the terms governing the use of VastuGuru services, tools, and content.",
+    "Review the terms governing the use of HarGharVastu services, tools, and content.",
 
   alternates: {
     canonical: "/terms",
@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: "Terms & Conditions",
     description:
-      "Review the terms governing the use of VastuGuru services, tools, and content.",
+      "Review the terms governing the use of HarGharVastu services, tools, and content.",
     url: "/terms",
     siteName: seoConfig.siteName,
     type: "website",
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary",
     title: "Terms & Conditions",
     description:
-      "Review the terms governing the use of VastuGuru services, tools, and content.",
+      "Review the terms governing the use of HarGharVastu services, tools, and content.",
   },
 };
 
@@ -39,7 +39,7 @@ const websiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 export default function TermsAndConditionsPage() {
   const sections = [
     { id: "intro", title: "1. Introduction" },
-    { id: "about", title: "2. About VastuGuru" },
+    { id: "about", title: "2. About HarGharVastu" },
     { id: "educational-content", title: "3. Educational Content" },
     { id: "vastu-tools", title: "4. Vastu Tools" },
     { id: "enquiries", title: "5. Consultation Enquiries" },
@@ -92,7 +92,7 @@ export default function TermsAndConditionsPage() {
             <div className="rounded-xl border border-amber-200 bg-amber-50/40 p-6 text-sm text-stone-800 space-y-2">
               <p className="font-bold text-amber-900">Important Disclaimer</p>
               <p>
-                VastuGuru provides educational information and traditional Vastu
+                HarGharVastu provides educational information and traditional Vastu
                 principles. Our educational content, guidance, and tools are not
                 substitutes for professional architectural, legal, financial,
                 structural, or medical advice.
@@ -105,10 +105,10 @@ export default function TermsAndConditionsPage() {
                 1. Introduction
               </h2>
               <p>
-                Welcome to <strong>VastuGuru</strong>.
+                Welcome to <strong>HarGharVastu</strong>.
               </p>
               <p>
-                These Terms & Conditions govern your use of the VastuGuru
+                These Terms & Conditions govern your use of the HarGharVastu
                 website and its available features. By accessing or using the
                 website, you agree to comply with these Terms. If you do not
                 agree, please discontinue your use of the website.
@@ -118,10 +118,10 @@ export default function TermsAndConditionsPage() {
             {/* Section 2 */}
             <section id="about" className="scroll-mt-8 space-y-3">
               <h2 className="text-2xl font-semibold text-stone-900">
-                2. About VastuGuru
+                2. About HarGharVastu
               </h2>
               <p>
-                VastuGuru aims to promote awareness and thoughtful understanding
+                HarGharVastu aims to promote awareness and thoughtful understanding
                 of Vastu Shastra and space harmony. Our goal is to encourage
                 positive learning without causing anxiety or undue pressure.
               </p>
@@ -136,7 +136,7 @@ export default function TermsAndConditionsPage() {
                 Content published across our articles, tools, and guides is
                 provided for general educational purposes. Vastu Shastra
                 interpretations may vary among different schools of thought; our
-                content reflects VastuGuru’s specific framework and should not
+                content reflects HarGharVastu’s specific framework and should not
                 automatically be treated as universally established scientific
                 facts.
               </p>
@@ -212,7 +212,7 @@ export default function TermsAndConditionsPage() {
                 7. No Guaranteed Outcomes
               </h2>
               <p>
-                Vastu principles are holistic guidance. VastuGuru does{" "}
+                Vastu principles are holistic guidance. HarGharVastu does{" "}
                 <strong>not</strong> promise or guarantee specific financial
                 wealth, medical health outcomes, guaranteed business success, or
                 immediate elimination of misfortune.
@@ -230,7 +230,7 @@ export default function TermsAndConditionsPage() {
               <p>
                 All original content, visual design elements, branding,
                 illustrations, and software interfaces are protected property
-                owned by or licensed to VastuGuru. Unauthorized reproduction or
+                owned by or licensed to HarGharVastu. Unauthorized reproduction or
                 commercial redistribution is strictly prohibited.
               </p>
             </section>
@@ -277,7 +277,7 @@ export default function TermsAndConditionsPage() {
                 12. Limitations and Disclaimers
               </h2>
               <p>
-                To the maximum extent permitted by law, VastuGuru disclaims
+                To the maximum extent permitted by law, HarGharVastu disclaims
                 liability for inaccuracies or outdated information. Users apply
                 Vastu advice based on their personal discretion.
               </p>
@@ -308,7 +308,7 @@ export default function TermsAndConditionsPage() {
               </p>
               <div className="bg-stone-50 rounded-lg p-4 border border-stone-200 text-sm space-y-1">
                 <p>
-                  <strong>VastuGuru</strong>
+                  <strong>HarGharVastu</strong>
                 </p>
                 <p>
                   Email:{" "}

@@ -30,7 +30,7 @@ function Footer() {
           height={30} 
         />
         <span className="text-gradient-logo text-2xl font-heading font-semibold tracking-tight">
-          VastuGuru
+          HarGharVastu
         </span>
       </Link>
 
@@ -168,7 +168,7 @@ function Footer() {
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 sm:flex-row">
           <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
-            © {new Date().getFullYear()} VastuGuru. All rights reserved.
+            © {new Date().getFullYear()} HarGharVastu. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs md:text-sm lg:text-base text-muted-foreground">
             <a href="/privacy-policy" className="hover:text-primary transition-all duration-50 hover:-translate-y-0.5">

@@ -43,7 +43,7 @@ export const metadata = {
         url: "/og/blog.jpg",
         width: 1200,
         height: 630,
-        alt: "VastuGuru Blog — Articles and practical Vastu guides",
+        alt: "HarGharVastu Blog — Articles and practical Vastu guides",
       },
     ],
   },

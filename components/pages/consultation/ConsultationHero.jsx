@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 const whatsappUrl =
   "https://wa.me/918017449616?text=" +
   encodeURIComponent(
-    "Hello VastuGuru, I would like to start a consultation about my space.",
+    "Hello HarGharVastu, I would like to start a consultation about my space.",
   );
 
 export default function ConsultationHero() {

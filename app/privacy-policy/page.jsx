@@ -5,7 +5,7 @@ import { seoConfig } from "@/lib/seo/config";
 export const metadata = {
   title: "Privacy Policy",
   description:
-    "Learn how VastuGuru collects, uses, protects, and handles information shared through the website.",
+    "Learn how HarGharVastu collects, uses, protects, and handles information shared through the website.",
 
   alternates: {
     canonical: "/privacy",
@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: "Privacy Policy",
     description:
-      "Learn how VastuGuru collects, uses, protects, and handles information shared through the website.",
+      "Learn how HarGharVastu collects, uses, protects, and handles information shared through the website.",
     url: "/privacy",
     siteName: seoConfig.siteName,
     type: "website",
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary",
     title: "Privacy Policy",
     description:
-      "Learn how VastuGuru collects, uses, protects, and handles information shared through the website.",
+      "Learn how HarGharVastu collects, uses, protects, and handles information shared through the website.",
   },
 };
 
@@ -94,15 +94,15 @@ export default function PrivacyPolicyPage() {
             {/* Quick Summary Callout */}
             <div className="rounded-xl border border-amber-200 bg-amber-50/30 p-6 text-sm text-stone-800">
               <p className="font-semibold text-amber-900 mb-1">Quick Summary</p>
-              VastuGuru collects basic details like your name, email, and message when you contact us. We do not maintain a permanent database of contact enquiries on our server; communications are handled via direct channels like WhatsApp, Phone, or Email.
+              HarGharVastu collects basic details like your name, email, and message when you contact us. We do not maintain a permanent database of contact enquiries on our server; communications are handled via direct channels like WhatsApp, Phone, or Email.
             </div>
 
             {/* Section 1 */}
             <section id="introduction" className="scroll-mt-8 space-y-3">
               <h2 className="text-2xl font-semibold text-stone-900">1. Introduction</h2>
-              <p>Welcome to <strong>VastuGuru</strong>.</p>
+              <p>Welcome to <strong>HarGharVastu</strong>.</p>
               <p>
-                VastuGuru is an educational platform designed to help individuals explore Vastu Shastra, its traditional principles, the relationship between spaces and their occupants, and ways of understanding the orientation and arrangement of spaces.
+                HarGharVastu is an educational platform designed to help individuals explore Vastu Shastra, its traditional principles, the relationship between spaces and their occupants, and ways of understanding the orientation and arrangement of spaces.
               </p>
               <p>
                 Our website provides educational articles, blogs, informational tools, and ways to contact us regarding Vastu-related consultations.
@@ -133,7 +133,7 @@ export default function PrivacyPolicyPage() {
 
               <div className="space-y-3 pt-2">
                 <h3 className="text-lg font-semibold text-stone-800">2.2 Information Provided via Direct Communication</h3>
-                <p>You may choose to contact VastuGuru directly through WhatsApp, phone calls, or email. The details you share depend entirely on what you voluntarily provide to assist your enquiry.</p>
+                <p>You may choose to contact HarGharVastu directly through WhatsApp, phone calls, or email. The details you share depend entirely on what you voluntarily provide to assist your enquiry.</p>
               </div>
 
               <div className="space-y-3 pt-2">
@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
             {/* Section 3 */}
             <section id="how-we-use-information" className="scroll-mt-8 space-y-3">
               <h2 className="text-2xl font-semibold text-stone-900">3. How We Use Your Information</h2>
-              <p>Information provided to VastuGuru may be used to:</p>
+              <p>Information provided to HarGharVastu may be used to:</p>
               <ul className="list-disc pl-6 space-y-1">
                 <li>Understand and respond to your questions or enquiries.</li>
                 <li>Communicate with you regarding requested consultations or guidance.</li>
@@ -164,7 +164,7 @@ export default function PrivacyPolicyPage() {
                 Submitting our contact form may initiate a communication flow transmitted through third-party platforms like WhatsApp or direct email routing.
               </p>
               <p>
-                <strong>Database Retention:</strong> VastuGuru does not maintain its own database for retaining submitted contact form enquiries. Transmitted messages exist within standard communication provider accounts (such as WhatsApp or email inboxes) as part of ordinary correspondence.
+                <strong>Database Retention:</strong> HarGharVastu does not maintain its own database for retaining submitted contact form enquiries. Transmitted messages exist within standard communication provider accounts (such as WhatsApp or email inboxes) as part of ordinary correspondence.
               </p>
             </section>
 
@@ -180,7 +180,7 @@ export default function PrivacyPolicyPage() {
             <section id="cookies" className="scroll-mt-8 space-y-3">
               <h2 className="text-2xl font-semibold text-stone-900">6. Cookies and Similar Technologies</h2>
               <p>
-                VastuGuru may use cookies or essential technologies required for website operations, performance, and security.
+                HarGharVastu may use cookies or essential technologies required for website operations, performance, and security.
               </p>
             </section>
 
@@ -245,7 +245,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl font-semibold text-stone-900">14. Contact Us</h2>
               <p>For questions or privacy inquiries, please reach out to us:</p>
               <div className="bg-stone-50 rounded-lg p-4 border border-stone-200 text-sm space-y-1">
-                <p><strong>VastuGuru</strong></p>
+                <p><strong>HarGharVastu</strong></p>
                 <p>Email: <a href={`mailto:${emailAddress}`} className="text-amber-800 underline">{emailAddress}</a></p>
                 <p>Website: <a href={`${websiteUrl}`} className="text-amber-800 underline">{websiteUrl}</a></p>
                 {/* <p>Address: [Insert Business Address, if applicable]</p> */}
