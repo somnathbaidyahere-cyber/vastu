@@ -6,7 +6,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 const callUrl = "tel:+918017449616";
 
 const emailUrl =
-  "mailto:hello@vastuguru.in?subject=" +
+  "mailto:hello@hargharvastu.in?subject=" +
   encodeURIComponent("Vastu consultation request");
 
 const spaceTypes = [
@@ -20,7 +20,7 @@ const spaceTypes = [
 
 function buildWhatsappUrl({ name, spaceType, need }) {
   const lines = [
-    "Hello VastuGuru, I would like to start a consultation.",
+    "Hello HarGharVastu, I would like to start a consultation.",
     "",
     `My space: ${spaceType}.`,
     `What I'd like guidance on: ${need}`,

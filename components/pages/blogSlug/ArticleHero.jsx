@@ -22,7 +22,7 @@ export default function ArticleHero({ article }) {
 
           <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
             <span className="font-medium text-foreground">
-              {article.author || "VastuGuru"}
+              {article.author || "HarGharVastu"}
             </span>
 
             <span

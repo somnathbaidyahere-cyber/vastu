@@ -23,7 +23,7 @@ function FAQ({ faqs }) {
           </h2>
 
           <p className="section-description max-w-sm">
-            Practical notes to keep in mind before you explore VastuGuru.
+            Practical notes to keep in mind before you explore HarGharVastu.
           </p>
         </div>
 

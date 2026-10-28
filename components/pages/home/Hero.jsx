@@ -65,7 +65,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-surface md:text-surface-accent">
-              VastuGuru blends traditional Indian Vastu Shastra with elegant,
+              HarGharVastu blends traditional Indian Vastu Shastra with elegant,
               modern tools to help you create balanced, prosperous, and peaceful
               homes.
             </p>

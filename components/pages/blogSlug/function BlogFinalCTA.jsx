@@ -21,7 +21,7 @@ export default function BlogFinalCTA() {
       <div className="mx-auto flex max-w-7xl flex-col gap-6 pb-5 border-b border-border/60  pt-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xss md:text-sm font-medium uppercase tracking-widest text-accent-muted mb-2">
-            VastuGuru Journal
+            HarGharVastu Journal
           </p>
 
           <h2

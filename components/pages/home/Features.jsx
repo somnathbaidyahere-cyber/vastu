@@ -9,7 +9,7 @@ export default function Features() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <span className="section-badge">Why VastuGuru</span>
+            <span className="section-badge">Why HarGharVastu</span>
             <h2 id="features-heading" className="section-heading">
               Designed for modern Indian homes
             </h2>

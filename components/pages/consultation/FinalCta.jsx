@@ -4,13 +4,13 @@ import { ArrowRight, Mail, MessageCircle, Phone } from "lucide-react";
 const whatsappUrl =
   "https://wa.me/918017449616?text=" +
   encodeURIComponent(
-    "Hello VastuGuru, I would like to start a consultation about my space.",
+    "Hello hargharvastu, I would like to start a consultation about my space.",
   );
 
 const callUrl = "tel:+918017449616";
 
 const emailUrl =
-  "mailto:hello@vastuguru.in?subject=" +
+  "mailto:hello@hargharvastu.in?subject=" +
   encodeURIComponent("Vastu consultation request");
 
 export default function FinalCta() {
